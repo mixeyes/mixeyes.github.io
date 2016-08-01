@@ -40954,7 +40954,7 @@
 	
 	      this.GameService.list().then(function (res) {
 	        _this2.list = res;
-	        _this2.emptyList = _this2.list.length > 0;
+	        _this2.emptyList = _this2.list.length == 0;
 	      }).catch(function () {
 	        _this2.emptyList = false;
 	      });
@@ -41249,4 +41249,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-1234cbb9153e72989485.js.map
+//# sourceMappingURL=bundle-772f0c07f6495842ceb1.js.map

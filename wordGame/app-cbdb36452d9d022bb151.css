@@ -9290,9 +9290,6 @@ signin {
   background-size: 100%;
   -o-background-size: 100%;
 }
-.game .game-square {
-  background-color: #696969;
-}
 .game .game-body {
   display: table-cell;
   vertical-align: middle;
@@ -9302,6 +9299,9 @@ signin {
 }
 .game .game-body .game-text {
   font-size: 18px;
+}
+.game .game-body .game-square {
+  background-color: #696969;
 }
 @media (min-width: 768px) {
   .game {
@@ -9591,4 +9591,4 @@ signin {
 }
 
 
-/*# sourceMappingURL=app-602fe710222532846fa0.css.map*/
+/*# sourceMappingURL=app-cbdb36452d9d022bb151.css.map*/

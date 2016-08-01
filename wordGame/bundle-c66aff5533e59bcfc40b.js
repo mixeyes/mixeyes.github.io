@@ -41168,7 +41168,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = _angular2.default.module('app.components.playGame', []).component('gamePlay', _playGameComponent2.default).name;
+	exports.default = _angular2.default.module('app.components.gamePlay', []).component('gamePlay', _playGameComponent2.default).name;
 
 /***/ },
 /* 287 */
@@ -41250,4 +41250,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-2900329003ade4a08d89.js.map
+//# sourceMappingURL=bundle-c66aff5533e59bcfc40b.js.map

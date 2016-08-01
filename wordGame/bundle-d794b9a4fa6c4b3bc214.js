@@ -41149,7 +41149,6 @@
 	
 	        this.GameService.create(game).then(function (response) {
 	          _this.UserService.userInfo.gameID = response._id;
-	          console.log(_this.location);
 	          _this.window.location.href = '#/gamePlay';
 	          // _this.location.path('#/gamePlay');
 	        });
@@ -41278,6 +41277,7 @@
 	      this.GameService.addWord(this.game, this.player).then(function (result) {
 	        _this.game = result;
 	      });
+	      _angular2.default.element(event.target).value = '';
 	    }
 	  }]);
 	  return PlayGameController;
@@ -41287,4 +41287,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-39d57b81b60b84e852fd.js.map
+//# sourceMappingURL=bundle-d794b9a4fa6c4b3bc214.js.map

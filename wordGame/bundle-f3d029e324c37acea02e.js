@@ -40935,8 +40935,8 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var ConnectController = function () {
-	  ConnectController.$inject = ["GameService", "UserService", "GameFactory", "$location", "$scope", "commonFactory"];
-	  function ConnectController(GameService, UserService, GameFactory, $location, $scope, commonFactory) {
+	  ConnectController.$inject = ["GameService", "UserService", "GameFactory", "$location", "$scope", "commonFactory", "$window"];
+	  function ConnectController(GameService, UserService, GameFactory, $location, $scope, commonFactory, $window) {
 	    'ngInject';
 	
 	    (0, _classCallCheck3.default)(this, ConnectController);
@@ -40944,6 +40944,7 @@
 	    this.UserService = UserService;
 	    this.GameFactory = GameFactory;
 	    this.location = $location;
+	    this.window = $window;
 	    this.scope = $scope;
 	    this.commonFactory = commonFactory;
 	  }
@@ -40969,7 +40970,8 @@
 	      this.GameFactory.connectNewUser(user.playerID, gameID).then(function (response) {
 	        _this.UserService.userInfo.gameID = response._id;
 	        console.log(_this.location);
-	        _this.location.path('#/gamePlay');
+	        _this.window.location.href = '#/gamePlay';
+	        // _this.location.path('#/gamePlay');
 	        // _this.location.path('#/gameCreateRule');
 	      });
 	    }
@@ -41248,4 +41250,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-2f9c2bd0ee567d9b2ac4.js.map
+//# sourceMappingURL=bundle-f3d029e324c37acea02e.js.map

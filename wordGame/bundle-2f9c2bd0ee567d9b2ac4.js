@@ -208,6 +208,7 @@
 	
 	  $rootScope.$on('$routeChangeError', function (event, current, previous, eventObj) {
 	    if (eventObj.authenticated === false) {
+	      console.log($location);
 	      $location.path('#/signin');
 	    }
 	  });
@@ -40907,7 +40908,7 @@
 /* 280 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">connect to the existing game</span>\n        </h4>\n        <h3 ng-show=\"!$ctrl.emptyList\">List of the actual games:</h3>\n        <h3 ng-show=\"$ctrl.emptyList\">Have no active game</h3>\n\t\t\t\t<a ng-show=\"$ctrl.emptyList\" href=\"#/createNewGame\">Back to create new game page</a>\n\t</div>\n        <ul ng-show=\"!$ctrl.emptyList\">\n          <li ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n            <div class=\"row\">\n              <div class=\"col-md-3 main-text\">\n                {{game.word}}\n              </div>\n              <div class=\"col-md-3 main-text\">\n                <span>Now\n                  {{game.players.length}}\n                  players</span>\n              </div>\n              <!-- <div class=\"col-md-2 main-text\">\n                <span>Start time:\n                  {{game.startTime}}</span>\n              </div> -->\n              <div class=\"col-md-3 main-text\">\n                Duration:\n                <div id=\"{{game._id}}\">\n                  <span>\n                    <span class=\"hours\"></span>\n                    hr.</span>\n                  <span>\n                    <span class=\"minutes\"></span>\n                    min.</span>\n                  <span>\n                    <span class=\"seconds\"></span>\n                    sec.</span>\n                </div>\n                <!-- <span>Duration:\n                  {{game.duration}}\n                  minutes</span> -->\n              </div>\n              <div class=\"col-md-3 main-text\">\n                <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                  Connect\n                </button>\n              </div>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n";
+	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">connect to the existing game</span>\n        </h4>\n        <h3 ng-show=\"!$ctrl.emptyList\">List of the actual games:</h3>\n        <h3 ng-show=\"$ctrl.emptyList\">Have no active game</h3>\n\t\t\t\t<a ng-show=\"$ctrl.emptyList\" href=\"#/createNewGame\"><h4>Back to create new game page</h4></a>\n\t</div>\n        <ul ng-show=\"!$ctrl.emptyList\">\n          <li ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n            <div class=\"row\">\n              <div class=\"col-md-3 main-text\">\n                {{game.word}}\n              </div>\n              <div class=\"col-md-3 main-text\">\n                <span>Now\n                  {{game.players.length}}\n                  players</span>\n              </div>\n              <!-- <div class=\"col-md-2 main-text\">\n                <span>Start time:\n                  {{game.startTime}}</span>\n              </div> -->\n              <div class=\"col-md-3 main-text\">\n                Duration:\n                <div id=\"{{game._id}}\">\n                  <span>\n                    <span class=\"hours\"></span>\n                    hr.</span>\n                  <span>\n                    <span class=\"minutes\"></span>\n                    min.</span>\n                  <span>\n                    <span class=\"seconds\"></span>\n                    sec.</span>\n                </div>\n                <!-- <span>Duration:\n                  {{game.duration}}\n                  minutes</span> -->\n              </div>\n              <div class=\"col-md-3 main-text\">\n                <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                  Connect\n                </button>\n              </div>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n";
 
 /***/ },
 /* 281 */
@@ -40967,7 +40968,7 @@
 	      console.log(user);
 	      this.GameFactory.connectNewUser(user.playerID, gameID).then(function (response) {
 	        _this.UserService.userInfo.gameID = response._id;
-	        console.log(_this.UserService.userInfo.gameID);
+	        console.log(_this.location);
 	        _this.location.path('#/gamePlay');
 	        // _this.location.path('#/gameCreateRule');
 	      });
@@ -41134,7 +41135,7 @@
 	
 	        this.GameService.create(game).then(function (response) {
 	          _this.UserService.userInfo.gameID = response._id;
-	          console.log(_this.UserService.userInfo);
+	          console.log(_this.location);
 	          _this.location.path('#/gamePlay');
 	        });
 	      }
@@ -41247,4 +41248,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-ee7dd3a19d61f994b458.js.map
+//# sourceMappingURL=bundle-2f9c2bd0ee567d9b2ac4.js.map

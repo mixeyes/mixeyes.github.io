@@ -41201,7 +41201,7 @@
 /* 288 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p class=\"game-text\">\n            <span ng-bind=\"$ctrl.game.word\"></span>\n          </p>\n\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.updateProdDiscr($event):0\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p class=\"game-text\">\n            <h2 ng-bind=\"$ctrl.game.word\"></h2>\n          </p>\n          <br>\n          <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n            Finish\n          </button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 289 */
@@ -41253,4 +41253,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-1ca4606db7ac61acfe0e.js.map
+//# sourceMappingURL=bundle-be4c1a93d7fd047f9216.js.map

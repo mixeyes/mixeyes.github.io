@@ -41211,7 +41211,7 @@
 /* 288 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p>\n            <h3>Duration:</h3>\n            <h2>\n              <div id=\"{{game._id}}\">\n                <span>\n                  <span class=\"hours\"></span>\n                  hr.</span>\n                <span>\n                  <span class=\"minutes\"></span>\n                  min.</span>\n                <span>\n                  <span class=\"seconds\"></span>\n                  sec.</span>\n              </div>\n            </h2>\n          </p>\n          <p class=\"game-text\">\n            <h2 ng-bind=\"$ctrl.game.word\"></h2>\n          </p>\n          <br>\n          <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n          <br>\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n            Finish\n          </button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p>\n            <h3>Duration:</h3>\n            <h2>\n              <div id=\"{{$ctrl.game._id}}\">\n                <span>\n                  <span class=\"hours\"></span>\n                  hr.</span>\n                <span>\n                  <span class=\"minutes\"></span>\n                  min.</span>\n                <span>\n                  <span class=\"seconds\"></span>\n                  sec.</span>\n              </div>\n            </h2>\n          </p>\n          <p class=\"game-text\">\n            <h2 ng-bind=\"$ctrl.game.word\"  ng-init=\"$ctrl.gTimer()\"></h2>\n          </p>\n          <br>\n          <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n          <br>\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n            Finish\n          </button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 289 */
@@ -41248,9 +41248,6 @@
 	    this.scope = $scope;
 	    this.game = {};
 	    this.commonFactory = commonFactory;
-	    var duration = Number(this.game.duration);
-	    var deadline = new Date(Date.parse(this.game.startTime) + duration * 60 * 1000);
-	    this.commonFactory.initializeClock(this.game._id, deadline);
 	  }
 	
 	  (0, _createClass3.default)(PlayGameController, [{
@@ -41278,6 +41275,17 @@
 	      });
 	      _angular2.default.element(event.target).value = '';
 	    }
+	  }, {
+	    key: 'gTimer',
+	    value: function gTimer() {
+	      var _this3 = this;
+	
+	      _angular2.default.element(document).ready(function () {
+	        var duration = Number(_this3.game.duration);
+	        var deadline = new Date(Date.parse(_this3.game.startTime) + duration * 60 * 1000);
+	        _this3.commonFactory.initializeClock(_this3.game._id, deadline);
+	      });
+	    }
 	  }]);
 	  return PlayGameController;
 	}();
@@ -41286,4 +41294,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-f06304f8894b445d760f.js.map
+//# sourceMappingURL=bundle-0538fcb996733cfac72a.js.map

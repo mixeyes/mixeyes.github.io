@@ -38356,6 +38356,17 @@
 	        return null;
 	      });
 	    }
+	  }, {
+	    key: 'addWord',
+	    value: function addWord(game, playerID) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/players/' + playerID, (0, _stringify2.default)(game)).then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        _this.userInfo = null;
+	        _this.window.sessionStorage.userInfo = null;
+	        return null;
+	      });
+	    }
 	  }]);
 	  return GameService;
 	}();
@@ -41201,7 +41212,7 @@
 /* 288 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p class=\"game-text\">\n            <h2 ng-bind=\"$ctrl.game.word\"></h2>\n          </p>\n          <br>\n          <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n            Finish\n          </button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p class=\"game-text\">\n            <h2 ng-bind=\"$ctrl.game.word\"></h2>\n          </p>\n          <br>\n          <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n          <br>\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n            Finish\n          </button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 289 */
@@ -41238,11 +41249,24 @@
 	  (0, _createClass3.default)(PlayGameController, [{
 	    key: '$onInit',
 	    value: function $onInit() {
-	      var _this2 = this;
-	
 	      var _this = this;
 	      this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
-	        _this2.game = result;
+	        _this.game = result;
+	        _this.player = _this.UserService.getAuthUser().playerID;
+	      });
+	    }
+	  }, {
+	    key: 'addWord',
+	    value: function addWord(event) {
+	      var _this = this;
+	      var players = this.game.players;
+	      for (var i = 0; i < players.length; i++) {
+	        if (players[i].playerID == this.player) {
+	          players[i].words.push(event.target.value);
+	        }
+	      }
+	      this.GameService.addWord(this.game, this.player).then(function (result) {
+	        _this.game = result;
 	      });
 	    }
 	  }]);
@@ -41253,4 +41277,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-be4c1a93d7fd047f9216.js.map
+//# sourceMappingURL=bundle-25088455ffce7c36ebf0.js.map

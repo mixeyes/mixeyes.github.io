@@ -200,7 +200,7 @@
 	// .factory('authFactory', authFactory)
 	.config(_router2.default).config(['$httpProvider', function ($httpProvider) {
 	  $httpProvider.defaults.withCredentials = true;
-	}]).run(['$rootScope', '$location', function ($rootScope, $location) {
+	}]).run(['$rootScope', '$location', function ($rootScope, $window) {
 	
 	  $rootScope.$on('$routeChangeSuccess', function (userInfo) {
 	    console.log(userInfo);
@@ -208,8 +208,9 @@
 	
 	  $rootScope.$on('$routeChangeError', function (event, current, previous, eventObj) {
 	    if (eventObj.authenticated === false) {
-	      console.log($location);
-	      $location.path('#/signin');
+	      // console.log($location);
+	      // $location.path('#/signin');
+	      $window.location.href = '#/signin';
 	    }
 	  });
 	}]);
@@ -41138,7 +41139,8 @@
 	        this.GameService.create(game).then(function (response) {
 	          _this.UserService.userInfo.gameID = response._id;
 	          console.log(_this.location);
-	          _this.location.path('#/gamePlay');
+	          _this.window.location.href = '#/gamePlay';
+	          // _this.location.path('#/gamePlay');
 	        });
 	      }
 	    }
@@ -41199,7 +41201,7 @@
 /* 288 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n\t\t\t\t\t<p class=\"game-text\" ng-bind = \"$ctrl.mainWord\"></p>\n\n          <a ng-hide=\"$ctrl.UserService.getAuthUser()\" href=\"#/signin\" class=\"btn btn-circle page-scroll\">\n            <i class=\"fa fa-play-circle animated\"></i>\n          </a>\n\n          <a ng-show=\"$ctrl.UserService.getAuthUser()\" href=\"#/gameCreateRule\" class=\"btn btn-circle page-scroll\">\n            <i class=\"fa fa-play-circle animated\"></i>\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p class=\"game-text\">\n            <span ng-bind=\"$ctrl.game.word\"></span>\n          </p>\n\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.updateProdDiscr($event):0\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 289 */
@@ -41230,16 +41232,17 @@
 	    this.GameService = GameService;
 	    this.UserService = UserService;
 	    this.scope = $scope;
+	    this.game = {};
 	  }
 	
 	  (0, _createClass3.default)(PlayGameController, [{
 	    key: '$onInit',
 	    value: function $onInit() {
-	      var _this = this;
+	      var _this2 = this;
 	
+	      var _this = this;
 	      this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
-	        _this.game = result;
-	        _this.mainWord = _this.game.word;
+	        _this2.game = result;
 	      });
 	    }
 	  }]);
@@ -41250,4 +41253,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-f3d029e324c37acea02e.js.map
+//# sourceMappingURL=bundle-1ca4606db7ac61acfe0e.js.map

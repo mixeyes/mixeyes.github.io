@@ -37874,7 +37874,7 @@
 /* 200 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- signup Header -->\n<div class=\"signup\">\n  <div class=\"signup-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignUp page</h1>\n\t\t\t\t\t<h3 ng-bind=\"$ctrl.message\"style=\"color: red;\"></h3>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }\">\n              <label for=\"basic-url\">Enter you last name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"lastName\" ng-model=\"$ctrl.user.lastName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.firstName.$invalid && !user.firstName.$pristine }\">\n              <label for=\"basic-url\">Enter you first name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivan</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"firstName\" ng-model=\"$ctrl.user.firstName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.email.$invalid && !user.email.$pristine }\">\n              <label for=\"basic-url\">Enter you email</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948@gmail.com</span>\n                <input type=\"email\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"email\" ng-model=\"$ctrl.user.email\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div class=\"\">\n              <label for=\"basic-url\">Enter you password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.confPassword.$invalid && !user.confPassword.$pristine }\">\n              <label for=\"basic-url\">Confirm password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"confPassword\" ng-model=\"$ctrl.user.confPassword\" equals=\"{{$ctrl.user.password}}\">\n                <!-- ng-change=\"$ctrl.confirmPassword()\" -->\n              </div>\n              <div class=\"text-error\">\n                <span ng-show=\"user.confPassword.$error.equals\">Must be equal!</span>\n              </div>\n\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid && !user.confPassword.$pristine\" class=\"btn btn-success btn-block\">\n                Create Account\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\" >CANCEL</a>\n\t\t\t\t\t\t\t<!-- ng-click=\"$ctrl.closeWin()\" -->\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- signup Header -->\n<div class=\"signup\">\n  <div class=\"signup-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignUp page</h1>\n\t\t\t\t\t<h3 ng-bind=\"$ctrl.message\"style=\"color: red;\"></h3>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }\">\n              <label for=\"basic-url\">Enter you last name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"lastName\" ng-model=\"$ctrl.user.lastName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.firstName.$invalid && !user.firstName.$pristine }\">\n              <label for=\"basic-url\">Enter you first name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivan</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"firstName\" ng-model=\"$ctrl.user.firstName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.email.$invalid && !user.email.$pristine }\">\n              <label for=\"basic-url\">Enter you email</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948@gmail.com</span>\n                <input type=\"email\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"email\" ng-model=\"$ctrl.user.email\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div class=\"\">\n              <label for=\"basic-url\">Enter you password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.confPassword.$invalid && !user.confPassword.$pristine }\">\n              <label for=\"basic-url\">Confirm password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"confPassword\" ng-model=\"$ctrl.user.confPassword\" equals=\"$ctrl.user.password\">\n                <!-- ng-change=\"$ctrl.confirmPassword()\" -->\n              </div>\n              <div class=\"text-error\">\n                <span ng-show=\"user.confPassword.$error.equals\">Must be equal!</span>\n              </div>\n\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid && !user.confPassword.$pristine\" class=\"btn btn-success btn-block\">\n                Create Account\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\" >CANCEL</a>\n\t\t\t\t\t\t\t<!-- ng-click=\"$ctrl.closeWin()\" -->\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 201 */
@@ -38315,7 +38315,7 @@
 	  (0, _createClass3.default)(GameService, [{
 	    key: 'list',
 	    value: function list() {
-	      return this.$http.get(("http://localhost:3000") + '/games').then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        _this.userInfo = null;
@@ -38326,7 +38326,7 @@
 	  }, {
 	    key: 'create',
 	    value: function create(game) {
-	      return this.$http.post(("http://localhost:3000") + '/games/', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/games/', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        _this.userInfo = null;
@@ -38337,7 +38337,7 @@
 	  }, {
 	    key: 'detail',
 	    value: function detail(id) {
-	      return this.$http.get(("http://localhost:3000") + '/games/' + id).then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        _this.userInfo = null;
@@ -38348,7 +38348,7 @@
 	  }, {
 	    key: 'update',
 	    value: function update(game) {
-	      return this.$http.put(("http://localhost:3000") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        _this.userInfo = null;
@@ -38423,7 +38423,7 @@
 	    key: 'create',
 	    value: function create(user) {
 	      console.log(user);
-	      return this.$http.post(("http://localhost:3000") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
 	        return resp.data;
 	      });
 	    }
@@ -38439,7 +38439,7 @@
 	        username: user.userName.$modelValue,
 	        password: user.password.$modelValue
 	      };
-	      this.$http.post(("http://localhost:3000") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
+	      this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
 	        _this.userInfo = {
 	          userID: response.data._id,
 	          userName: response.data.username,
@@ -38458,7 +38458,7 @@
 	    value: function logout() {
 	      var _this = this;
 	      var deferred = this.q.defer();
-	      return this.$http.get(("http://localhost:3000") + '/user/logout').then(function (result) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/user/logout').then(function (result) {
 	        _this.userInfo = null;
 	        _this.window.sessionStorage.userInfo = null;
 	        deferred.resolve(result);
@@ -38540,7 +38540,7 @@
 	              case 0:
 	                _context.prev = 0;
 	                _context.next = 3;
-	                return this.$http.get(("http://localhost:3000") + '/player');
+	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player');
 	
 	              case 3:
 	                response = _context.sent;
@@ -38579,7 +38579,7 @@
 	              case 0:
 	                _context2.prev = 0;
 	                _context2.next = 3;
-	                return his.$http.post(("http://localhost:3000") + '/player/', (0, _stringify2.default)(player));
+	                return his.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
 	
 	              case 3:
 	                response = _context2.sent;
@@ -40909,7 +40909,7 @@
 /* 280 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">connect to the existing game</span>\n        </h4>\n        <h3>List of the actual games:</h3>\n\t\t\t\t<div ng-if=\"!!$ctrl.list.length\" class=\"connect-text\">have no active game</div>\n        <ul ng-if=\"$ctrl.list.length\">\n          <li ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n            <div class=\"row\">\n              <div class=\"col-md-3 main-text\">\n                {{game.word}}\n              </div>\n              <div class=\"col-md-3 main-text\">\n                <span>Now\n                  {{game.players.length}}\n                  players</span>\n              </div>\n              <!-- <div class=\"col-md-2 main-text\">\n                <span>Start time:\n                  {{game.startTime}}</span>\n              </div> -->\n              <div class=\"col-md-3 main-text\">\n                Duration:\n                <div id=\"{{game._id}}\">\n                  <span>\n                    <span class=\"hours\"></span>\n                    hr.</span>\n                  <span>\n                    <span class=\"minutes\"></span>\n                    min.</span>\n                  <span>\n                    <span class=\"seconds\"></span>\n                    sec.</span>\n                </div>\n                <!-- <span>Duration:\n                  {{game.duration}}\n                  minutes</span> -->\n              </div>\n              <div class=\"col-md-3 main-text\">\n                <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                  Connect\n                </button>\n              </div>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n";
+	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">connect to the existing game</span>\n        </h4>\n        <h3>List of the actual games:</h3>\n        <div ng-if=\"$ctrl.emptyList\" class=\"connect-text\">have no active game</div>\n        <ul>\n          <li ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n            <div class=\"row\">\n              <div class=\"col-md-3 main-text\">\n                {{game.word}}\n              </div>\n              <div class=\"col-md-3 main-text\">\n                <span>Now\n                  {{game.players.length}}\n                  players</span>\n              </div>\n              <!-- <div class=\"col-md-2 main-text\">\n                <span>Start time:\n                  {{game.startTime}}</span>\n              </div> -->\n              <div class=\"col-md-3 main-text\">\n                Duration:\n                <div id=\"{{game._id}}\">\n                  <span>\n                    <span class=\"hours\"></span>\n                    hr.</span>\n                  <span>\n                    <span class=\"minutes\"></span>\n                    min.</span>\n                  <span>\n                    <span class=\"seconds\"></span>\n                    sec.</span>\n                </div>\n                <!-- <span>Duration:\n                  {{game.duration}}\n                  minutes</span> -->\n              </div>\n              <div class=\"col-md-3 main-text\">\n                <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                  Connect\n                </button>\n              </div>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n";
 
 /***/ },
 /* 281 */
@@ -40956,6 +40956,9 @@
 	
 	      this.GameService.list().then(function (res) {
 	        _this2.list = res;
+	        _this2.emptyList = _this2.list.length > 0;
+	      }).catch(function () {
+	        _this2.emptyList = false;
 	      });
 	    }
 	  }, {
@@ -41247,4 +41250,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-1fc7a292647821cea2da.js.map
+//# sourceMappingURL=bundle-2900329003ade4a08d89.js.map

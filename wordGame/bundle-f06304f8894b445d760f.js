@@ -41256,10 +41256,11 @@
 	  (0, _createClass3.default)(PlayGameController, [{
 	    key: '$onInit',
 	    value: function $onInit() {
-	      var _this = this;
+	      var _this2 = this;
+	
 	      this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
-	        _this.game = result;
-	        _this.player = _this.UserService.getAuthUser().playerID;
+	        _this2.game = result;
+	        _this2.player = _this2.UserService.getAuthUser().playerID;
 	      });
 	    }
 	  }, {
@@ -41285,4 +41286,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-167701a7a0e6ac344183.js.map
+//# sourceMappingURL=bundle-f06304f8894b445d760f.js.map

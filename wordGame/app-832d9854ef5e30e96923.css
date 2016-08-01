@@ -9302,6 +9302,7 @@ signin {
 }
 .game .game-body .game-square {
   background-color: #696969;
+  padding-bottom: 15px;
 }
 @media (min-width: 768px) {
   .game {
@@ -9591,4 +9592,4 @@ signin {
 }
 
 
-/*# sourceMappingURL=app-cbdb36452d9d022bb151.css.map*/
+/*# sourceMappingURL=app-832d9854ef5e30e96923.css.map*/

@@ -41257,11 +41257,9 @@
 	      this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
 	        _this.game = result;
 	        _this.player = _this.UserService.getAuthUser().playerID;
-	        _angular2.default.element(document).ready(function () {
-	          var duration = Number(_this.game.duration);
-	          var deadline = new Date(Date.parse(_this.game.startTime) + duration * 60 * 1000);
-	          _this.commonFactory.initializeClock(_this.game._id, deadline);
-	        });
+	        var duration = Number(_this.game.duration);
+	        var deadline = new Date(Date.parse(_this.game.startTime) + duration * 60 * 1000);
+	        _this.commonFactory.initializeClock(_this.game._id, deadline);
 	      });
 	    }
 	  }, {
@@ -41287,4 +41285,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-d794b9a4fa6c4b3bc214.js.map
+//# sourceMappingURL=bundle-e3c7d84ace05b1f353c9.js.map

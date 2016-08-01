@@ -41256,7 +41256,6 @@
 	
 	      this.getGame().then(function (result) {
 	        _this2.game = result;
-	        console.log('onInit ' + _this2.game);
 	        _this2.player = _this2.UserService.getAuthUser().playerID;
 	      });
 	    }
@@ -41271,26 +41270,23 @@
 	    key: 'addWord',
 	    value: function addWord(event) {
 	      var _this = this;
-	      var players = this.game.players;
-	      for (var i = 0; i < players.length; i++) {
-	        if (players[i].playerID == this.player) {
-	          players[i].words.push(event.target.value);
+	      for (var i = 0; i < this.game.players.length; i++) {
+	        if (this.game.players[i].playerID == this.player) {
+	          this.game.players[i].words.push(event.target.value);
 	        }
 	      }
 	      this.GameService.addWord(this.game, this.player).then(function (result) {
 	        _this.game = result;
 	      });
-	      _angular2.default.element(event.target).value = '';
+	      event.target.value = '';
 	    }
 	  }, {
 	    key: 'gTimer',
 	    value: function gTimer() {
 	      var _this3 = this;
 	
-	      console.log('gtimer ' + this.game);
 	      _angular2.default.element(document).ready(function () {
 	        _this3.getGame().then(function (result) {
-	          console.log('result ' + result);
 	          var duration = Number(result.duration);
 	          var deadline = new Date(Date.parse(result.startTime) + duration * 60 * 1000);
 	          _this3.commonFactory.initializeClock(result._id, deadline);
@@ -41305,4 +41301,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-832d9854ef5e30e96923.js.map
+//# sourceMappingURL=bundle-1473aa00c9fb31631a2e.js.map

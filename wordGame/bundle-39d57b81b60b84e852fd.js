@@ -40920,7 +40920,7 @@
 /* 280 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">connect to the existing game</span>\n        </h4>\n        <h3 ng-show=\"!$ctrl.emptyList\">List of the actual games:</h3>\n        <h3 ng-show=\"$ctrl.emptyList\">Have no active game</h3>\n\t\t\t\t<a ng-show=\"$ctrl.emptyList\" href=\"#/createNewGame\"><h4>Back to create new game page</h4></a>\n\t</div>\n        <ul ng-show=\"!$ctrl.emptyList\">\n          <li ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n            <div class=\"row\">\n              <div class=\"col-md-3 main-text\">\n                {{game.word}}\n              </div>\n              <div class=\"col-md-3 main-text\">\n                <span>Now\n                  {{game.players.length}}\n                  players</span>\n              </div>\n              <!-- <div class=\"col-md-2 main-text\">\n                <span>Start time:\n                  {{game.startTime}}</span>\n              </div> -->\n              <div class=\"col-md-3 main-text\">\n                Duration:\n                <div id=\"{{game._id}}\">\n                  <span>\n                    <span class=\"hours\"></span>\n                    hr.</span>\n                  <span>\n                    <span class=\"minutes\"></span>\n                    min.</span>\n                  <span>\n                    <span class=\"seconds\"></span>\n                    sec.</span>\n                </div>\n                <!-- <span>Duration:\n                  {{game.duration}}\n                  minutes</span> -->\n              </div>\n              <div class=\"col-md-3 main-text\">\n                <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                  Connect\n                </button>\n              </div>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n";
+	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">connect to the existing game</span>\n        </h4>\n        <h3 ng-show=\"!$ctrl.emptyList\">List of the actual games:</h3>\n        <h3 ng-show=\"$ctrl.emptyList\">Have no active game</h3>\n        <a ng-show=\"$ctrl.emptyList\" href=\"#/createNewGame\">\n          <h4>Back to create new game page</h4>\n        </a>\n      </div>\n      <ul ng-show=\"!$ctrl.emptyList\">\n        <li ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n          <div class=\"row\">\n            <div class=\"col-md-3 main-text\">\n              {{game.word}}\n            </div>\n            <div class=\"col-md-3 main-text\">\n              <span>Now\n                {{game.players.length}}\n                players</span>\n            </div>\n            <div class=\"col-md-3 main-text\">\n              Duration:\n              <div id=\"{{game._id}}\">\n                <span>\n                  <span class=\"hours\"></span>\n                  hr.</span>\n                <span>\n                  <span class=\"minutes\"></span>\n                  min.</span>\n                <span>\n                  <span class=\"seconds\"></span>\n                  sec.</span>\n              </div>\n            </div>\n            <div class=\"col-md-3 main-text\">\n              <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                Connect\n              </button>\n            </div>\n          </div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n</div>\n</div>\n";
 
 /***/ },
 /* 281 */
@@ -41212,7 +41212,7 @@
 /* 288 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p class=\"game-text\">\n            <h2 ng-bind=\"$ctrl.game.word\"></h2>\n          </p>\n          <br>\n          <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n          <br>\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n            Finish\n          </button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p>\n            <h3>Duration:</h3>\n            <h2>\n              <div id=\"{{game._id}}\">\n                <span>\n                  <span class=\"hours\"></span>\n                  hr.</span>\n                <span>\n                  <span class=\"minutes\"></span>\n                  min.</span>\n                <span>\n                  <span class=\"seconds\"></span>\n                  sec.</span>\n              </div>\n            </h2>\n          </p>\n          <p class=\"game-text\">\n            <h2 ng-bind=\"$ctrl.game.word\"></h2>\n          </p>\n          <br>\n          <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n          <br>\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n            Finish\n          </button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 289 */
@@ -41232,11 +41232,15 @@
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
+	var _angular = __webpack_require__(153);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var PlayGameController = function () {
-	  PlayGameController.$inject = ["GameService", "UserService", "$scope"];
-	  function PlayGameController(GameService, UserService, $scope) {
+	  PlayGameController.$inject = ["GameService", "UserService", "$scope", "commonFactory"];
+	  function PlayGameController(GameService, UserService, $scope, commonFactory) {
 	    'ngInject';
 	
 	    (0, _classCallCheck3.default)(this, PlayGameController);
@@ -41244,6 +41248,7 @@
 	    this.UserService = UserService;
 	    this.scope = $scope;
 	    this.game = {};
+	    this.commonFactory = commonFactory;
 	  }
 	
 	  (0, _createClass3.default)(PlayGameController, [{
@@ -41253,6 +41258,11 @@
 	      this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
 	        _this.game = result;
 	        _this.player = _this.UserService.getAuthUser().playerID;
+	        _angular2.default.element(document).ready(function () {
+	          var duration = Number(_this.game.duration);
+	          var deadline = new Date(Date.parse(_this.game.startTime) + duration * 60 * 1000);
+	          _this.commonFactory.initializeClock(_this.game._id, deadline);
+	        });
 	      });
 	    }
 	  }, {
@@ -41277,4 +41287,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-25088455ffce7c36ebf0.js.map
+//# sourceMappingURL=bundle-39d57b81b60b84e852fd.js.map

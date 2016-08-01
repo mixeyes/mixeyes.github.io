@@ -41248,6 +41248,9 @@
 	    this.scope = $scope;
 	    this.game = {};
 	    this.commonFactory = commonFactory;
+	    var duration = Number(this.game.duration);
+	    var deadline = new Date(Date.parse(this.game.startTime) + duration * 60 * 1000);
+	    this.commonFactory.initializeClock(this.game._id, deadline);
 	  }
 	
 	  (0, _createClass3.default)(PlayGameController, [{
@@ -41257,9 +41260,6 @@
 	      this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
 	        _this.game = result;
 	        _this.player = _this.UserService.getAuthUser().playerID;
-	        var duration = Number(_this.game.duration);
-	        var deadline = new Date(Date.parse(_this.game.startTime) + duration * 60 * 1000);
-	        _this.commonFactory.initializeClock(_this.game._id, deadline);
 	      });
 	    }
 	  }, {
@@ -41285,4 +41285,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-e3c7d84ace05b1f353c9.js.map
+//# sourceMappingURL=bundle-167701a7a0e6ac344183.js.map

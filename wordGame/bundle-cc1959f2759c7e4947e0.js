@@ -41013,7 +41013,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = _angular2.default.module('app.components.createSection', []).component('createNewGame', ['GameService', 'PlayerService ', 'UserService ', '$location ', '$scope ', _createComponent2.default]).name;
+	exports.default = _angular2.default.module('app.components.createSection', []).component('createNewGame', _createComponent2.default).name;
 
 /***/ },
 /* 283 */
@@ -41247,4 +41247,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-6ad550aded9129ba82e1.js.map
+//# sourceMappingURL=bundle-cc1959f2759c7e4947e0.js.map

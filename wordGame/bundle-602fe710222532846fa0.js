@@ -40981,7 +40981,6 @@
 	      console.log(user);
 	      this.GameFactory.connectNewUser(user.playerID, gameID).then(function (response) {
 	        _this.UserService.userInfo.gameID = response._id;
-	        console.log(_this.location);
 	        _this.window.location.href = '#/gamePlay';
 	        // _this.location.path('#/gamePlay');
 	        // _this.location.path('#/gameCreateRule');
@@ -41211,7 +41210,7 @@
 /* 288 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p>\n            <h3>Duration:</h3>\n            <h2>\n              <div id=\"{{$ctrl.game._id}}\">\n                <span>\n                  <span class=\"hours\"></span>\n                  hr.</span>\n                <span>\n                  <span class=\"minutes\"></span>\n                  min.</span>\n                <span>\n                  <span class=\"seconds\"></span>\n                  sec.</span>\n              </div>\n            </h2>\n          </p>\n          <p class=\"game-text\">\n            <h2 ng-bind=\"$ctrl.game.word\"  ng-init=\"$ctrl.gTimer()\"></h2>\n          </p>\n          <br>\n          <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n          <br>\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n            Finish\n          </button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\" class=\"game-square\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"game-text\">Let's play. Your word:</p>\n          <p>\n            <h3>Duration:</h3>\n            <h2>\n              <div id=\"{{$ctrl.game._id}}\">\n                <span>\n                  <span class=\"hours\"></span>\n                  hr.</span>\n                <span>\n                  <span class=\"minutes\"></span>\n                  min.</span>\n                <span>\n                  <span class=\"seconds\"></span>\n                  sec.</span>\n              </div>\n            </h2>\n          </p>\n          <p class=\"game-text\">\n            <h2 ng-bind=\"$ctrl.game.word\"  ng-init=\"$ctrl.gTimer()\"></h2>\n          </p>\n          <br>\n          <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n          <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n          <br>\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n            Finish\n          </button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 289 */
@@ -41306,4 +41305,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-fad0690b92f19edda062.js.map
+//# sourceMappingURL=bundle-602fe710222532846fa0.js.map

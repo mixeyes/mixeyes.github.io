@@ -36694,12 +36694,6 @@
 	    resolve: {
 	      auth: ['$q', 'UserService', isAuthorize]
 	    }
-	  }).state('profile', {
-	    url: '/profile',
-	    template: '<profile-section></profile-section>',
-	    resolve: {
-	      auth: ['$q', 'UserService', isAuthorize]
-	    }
 	  }).state('connectExistingGame', {
 	    url: '/connectExistingGame',
 	    template: '<connect-existing-game></connect-existing-game>',
@@ -36709,6 +36703,12 @@
 	  }).state('createNewGame', {
 	    url: '/createNewGame',
 	    template: '<create-new-game></create-new-game>',
+	    resolve: {
+	      auth: ['$q', 'UserService', isAuthorize]
+	    }
+	  }).state('profile', {
+	    url: '/profile',
+	    template: '<profile-section></profile-section>',
 	    resolve: {
 	      auth: ['$q', 'UserService', isAuthorize]
 	    }
@@ -37119,13 +37119,13 @@
 	
 	var _createNewGameSection2 = _interopRequireDefault(_createNewGameSection);
 	
-	var _playGameSection = __webpack_require__(286);
+	var _gamePlaySection = __webpack_require__(286);
 	
-	var _playGameSection2 = _interopRequireDefault(_playGameSection);
+	var _gamePlaySection2 = _interopRequireDefault(_gamePlaySection);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = _angular2.default.module('app.components', [_app2.default, _navbarSection2.default, _mainSection2.default, _gameCreateRuleSection2.default, _profileSection2.default, _signUpSection2.default, _footerBlock2.default, _matchPassDir2.default, _signinSection2.default, _service2.default, _connectExistingGameSection2.default, _createNewGameSection2.default, _playGameSection2.default]).name;
+	exports.default = _angular2.default.module('app.components', [_app2.default, _navbarSection2.default, _mainSection2.default, _gameCreateRuleSection2.default, _profileSection2.default, _signUpSection2.default, _footerBlock2.default, _matchPassDir2.default, _signinSection2.default, _service2.default, _connectExistingGameSection2.default, _createNewGameSection2.default, _gamePlaySection2.default]).name;
 	// import './dashboard.css';
 
 /***/ },
@@ -38208,14 +38208,12 @@
 	  (0, _createClass3.default)(SignInController, [{
 	    key: 'submitForm',
 	    value: function submitForm() {
-	      var _this2 = this;
-	
 	      var _this = this;
 	      if (this.scope.user.$valid) {
 	        try {
 	          this.UserService.login(this.scope.user).then(function (result) {
-	            _this2.scope.userInfo = result;
-	            _this2.location.path('#/gameCreateRule');
+	            _this.scope.userInfo = result;
+	            _this.location.path('#/gameCreateRule');
 	          });
 	        } catch (e) {
 	          console.log(e);
@@ -40971,6 +40969,7 @@
 	        _this.UserService.userInfo.gameID = response._id;
 	        console.log(_this.UserService.userInfo.gameID);
 	        _this.location.path('#/gamePlay');
+	        // _this.location.path('#/gameCreateRule');
 	      });
 	    }
 	  }, {
@@ -41162,13 +41161,13 @@
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _playGameComponent = __webpack_require__(287);
+	var _gamePlayComponent = __webpack_require__(287);
 	
-	var _playGameComponent2 = _interopRequireDefault(_playGameComponent);
+	var _gamePlayComponent2 = _interopRequireDefault(_gamePlayComponent);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = _angular2.default.module('app.components.gamePlay', []).component('gamePlay', _playGameComponent2.default).name;
+	exports.default = _angular2.default.module('app.components.gamePlay', []).component('gamePlay', _gamePlayComponent2.default).name;
 
 /***/ },
 /* 287 */
@@ -41180,19 +41179,19 @@
 	  value: true
 	});
 	
-	var _playGameTmpl = __webpack_require__(288);
+	var _gamePlayTmpl = __webpack_require__(288);
 	
-	var _playGameTmpl2 = _interopRequireDefault(_playGameTmpl);
+	var _gamePlayTmpl2 = _interopRequireDefault(_gamePlayTmpl);
 	
-	var _playGameController = __webpack_require__(289);
+	var _gamePlayController = __webpack_require__(289);
 	
-	var _playGameController2 = _interopRequireDefault(_playGameController);
+	var _gamePlayController2 = _interopRequireDefault(_gamePlayController);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	  template: _playGameTmpl2.default,
-	  controller: _playGameController2.default
+	  template: _gamePlayTmpl2.default,
+	  controller: _gamePlayController2.default
 	};
 
 /***/ },
@@ -41250,4 +41249,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-c66aff5533e59bcfc40b.js.map
+//# sourceMappingURL=bundle-387d506dc369ad990828.js.map

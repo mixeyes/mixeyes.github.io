@@ -41257,6 +41257,7 @@
 	
 	      this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
 	        _this2.game = result;
+	        console.log('onInit ' + _this2.game);
 	        _this2.player = _this2.UserService.getAuthUser().playerID;
 	      });
 	    }
@@ -41280,7 +41281,9 @@
 	    value: function gTimer() {
 	      var _this3 = this;
 	
+	      console.log('gtimer ' + this.game);
 	      _angular2.default.element(document).ready(function () {
+	        console.log('element ' + _this3.game);
 	        var duration = Number(_this3.game.duration);
 	        var deadline = new Date(Date.parse(_this3.game.startTime) + duration * 60 * 1000);
 	        _this3.commonFactory.initializeClock(_this3.game._id, deadline);
@@ -41294,4 +41297,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-0538fcb996733cfac72a.js.map
+//# sourceMappingURL=bundle-0fb3b5b62109df71d0fb.js.map

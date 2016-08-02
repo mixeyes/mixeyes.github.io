@@ -38587,7 +38587,7 @@
 	      return list;
 	    }()
 	  }, {
-	    key: 'reate',
+	    key: 'create',
 	    value: function () {
 	      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(player) {
 	        var response;
@@ -38619,11 +38619,11 @@
 	        }, _callee2, this, [[0, 7]]);
 	      }));
 	
-	      function reate(_x) {
+	      function create(_x) {
 	        return _ref2.apply(this, arguments);
 	      }
 	
-	      return reate;
+	      return create;
 	    }()
 	  }]);
 	  return PlayerService;
@@ -41339,4 +41339,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-f2aecd353e0bb2c2f8b4.js.map
+//# sourceMappingURL=bundle-34964c302271d6d536e7.js.map

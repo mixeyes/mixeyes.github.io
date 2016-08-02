@@ -38360,7 +38360,8 @@
 	    key: 'addWord',
 	    value: function addWord(words, playerID) {
 	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
-	        return response.data;
+	        var obj = response.data;
+	        return obj;
 	      }).catch(function () {
 	        _this.userInfo = null;
 	        _this.window.sessionStorage.userInfo = null;
@@ -41310,4 +41311,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-79eef58dfd5bafd9900e.js.map
+//# sourceMappingURL=bundle-9bf5033aa66f1568156e.js.map

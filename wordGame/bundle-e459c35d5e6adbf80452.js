@@ -38326,7 +38326,7 @@
 	  }, {
 	    key: 'create',
 	    value: function create(game) {
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/games/', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        _this.userInfo = null;
@@ -41312,4 +41312,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-72eef8453260c217cff5.js.map
+//# sourceMappingURL=bundle-e459c35d5e6adbf80452.js.map

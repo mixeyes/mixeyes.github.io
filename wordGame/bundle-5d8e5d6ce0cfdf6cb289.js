@@ -41127,9 +41127,9 @@
 	
 	        try {
 	          for (var _iterator = (0, _getIterator3.default)(this.scope.game.players.$viewValue), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	            var player = _step.value;
+	            var _player = _step.value;
 	
-	            game.playerIDs.push(player);
+	            game.playerIDs.push(_player);
 	          }
 	        } catch (err) {
 	          _didIteratorError = true;
@@ -41146,6 +41146,11 @@
 	          }
 	        }
 	
+	        var player = {
+	          playerID: this.UserService.getAuthUser().playerID,
+	          words: []
+	        };
+	        game.playerIDs.push(player);
 	        this.GameService.create(game).then(function (response) {
 	          _this.UserService.userInfo.gameID = response._id;
 	          _this.window.location.href = '#/gamePlay';
@@ -41301,4 +41306,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-ddf46423d9164381606f.js.map
+//# sourceMappingURL=bundle-5d8e5d6ce0cfdf6cb289.js.map

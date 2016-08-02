@@ -9301,7 +9301,7 @@ signin {
   font-size: 18px;
 }
 .game .game-body .game-square {
-  background-color: rgba(105, 105, 105, 0.4);
+  background-color: rgba(105, 105, 105, 0.5);
   padding-bottom: 15px;
 }
 @media (min-width: 768px) {
@@ -9592,4 +9592,4 @@ signin {
 }
 
 
-/*# sourceMappingURL=app-018650527aefd15550f1.css.map*/
+/*# sourceMappingURL=app-ddf46423d9164381606f.css.map*/

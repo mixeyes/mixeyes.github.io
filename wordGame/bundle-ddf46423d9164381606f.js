@@ -41088,8 +41088,8 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var CreateController = function () {
-	  CreateController.$inject = ["GameService", "PlayerService", "UserService", "$location", "$scope"];
-	  function CreateController(GameService, PlayerService, UserService, $location, $scope) {
+	  CreateController.$inject = ["GameService", "PlayerService", "UserService", "$window", "$scope"];
+	  function CreateController(GameService, PlayerService, UserService, $window, $scope) {
 	    'ngInject';
 	
 	    (0, _classCallCheck3.default)(this, CreateController);
@@ -41098,7 +41098,7 @@
 	    this.UserService = UserService;
 	    this.durations = [5, 10, 15, 20, 25, 30, 45, 60];
 	    this.players = [];
-	    this.location = $location;
+	    this.window = $window;
 	    this.scope = $scope;
 	  }
 	
@@ -41301,4 +41301,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-018650527aefd15550f1.js.map
+//# sourceMappingURL=bundle-ddf46423d9164381606f.js.map

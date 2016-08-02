@@ -41282,10 +41282,11 @@
 	          this.game.players[i].words.push(event.target.value);
 	        }
 	      }
-	      this.GameService.addWord(this.game, this.player).then(function (result) {
-	        _this.game = result;
-	      });
 	      event.target.value = '';
+	      return this.GameService.addWord(this.game, this.player).then(function (result) {
+	        _this.game = result;
+	        return _this.game;
+	      });
 	    }
 	  }, {
 	    key: 'gTimer',
@@ -41308,4 +41309,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-49ad4e39071e1255e518.js.map
+//# sourceMappingURL=bundle-46c1fec6da297f2dbf24.js.map

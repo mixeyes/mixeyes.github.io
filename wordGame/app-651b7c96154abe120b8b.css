@@ -9304,6 +9304,11 @@ signin {
   background-color: rgba(105, 105, 105, 0.5);
   padding-bottom: 15px;
 }
+.game .game-body .game-words {
+  font-size: 15px;
+  color: yellow;
+  overflow: auto;
+}
 @media (min-width: 768px) {
   .game {
     height: 100%;
@@ -9592,4 +9597,4 @@ signin {
 }
 
 
-/*# sourceMappingURL=app-6774c58b3af663940bcb.css.map*/
+/*# sourceMappingURL=app-651b7c96154abe120b8b.css.map*/

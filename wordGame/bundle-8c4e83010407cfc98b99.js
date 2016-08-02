@@ -41261,7 +41261,7 @@
 	    this.scope = $scope;
 	    this.game = {};
 	    this.commonFactory = commonFactory;
-	    this.userWords = [];
+	    // this.userWords = [];
 	  }
 	
 	  (0, _createClass3.default)(PlayGameController, [{
@@ -41331,4 +41331,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-8156094dfad3a27b0e91.js.map
+//# sourceMappingURL=bundle-8c4e83010407cfc98b99.js.map

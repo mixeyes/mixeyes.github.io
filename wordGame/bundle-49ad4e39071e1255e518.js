@@ -41116,52 +41116,48 @@
 	  }, {
 	    key: 'submitForm',
 	    value: function submitForm() {
-	      var _this = this;
+	      var _this2 = this;
+	
 	      if (this.scope.game.word.$viewValue && this.scope.game.duration.$viewValue && this.scope.game.players.$viewValue.length > 0) {
-	        var game = {
-	          word: this.scope.game.word.$viewValue,
-	          duration: this.scope.game.duration.$viewValue
-	        };
-	        game.players = [];
-	        var _iteratorNormalCompletion = true;
-	        var _didIteratorError = false;
-	        var _iteratorError = undefined;
+	        (function () {
+	          var game = {
+	            word: _this2.scope.game.word.$viewValue,
+	            duration: _this2.scope.game.duration.$viewValue
+	          };
+	          game.playerIDs = [];
+	          var _iteratorNormalCompletion = true;
+	          var _didIteratorError = false;
+	          var _iteratorError = undefined;
 	
-	        try {
-	          for (var _iterator = (0, _getIterator3.default)(this.scope.game.players.$viewValue), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	            var playerID = _step.value;
-	
-	            var _player = {
-	              playerID: playerID,
-	              words: []
-	            };
-	            game.players.push(_player);
-	          }
-	        } catch (err) {
-	          _didIteratorError = true;
-	          _iteratorError = err;
-	        } finally {
 	          try {
-	            if (!_iteratorNormalCompletion && _iterator.return) {
-	              _iterator.return();
+	            for (var _iterator = (0, _getIterator3.default)(_this2.scope.game.players.$viewValue), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	              var playerID = _step.value;
+	
+	              game.playerIDs.push(playerID);
 	            }
+	          } catch (err) {
+	            _didIteratorError = true;
+	            _iteratorError = err;
 	          } finally {
-	            if (_didIteratorError) {
-	              throw _iteratorError;
+	            try {
+	              if (!_iteratorNormalCompletion && _iterator.return) {
+	                _iterator.return();
+	              }
+	            } finally {
+	              if (_didIteratorError) {
+	                throw _iteratorError;
+	              }
 	            }
 	          }
-	        }
 	
-	        var player = {
-	          playerID: this.UserService.getAuthUser().playerID,
-	          words: []
-	        };
-	        game.players.push(player);
-	        this.GameService.create(game).then(function (response) {
-	          _this.UserService.userInfo.gameID = response._id;
-	          _this.window.location.href = '#/gamePlay';
-	          // _this.location.path('#/gamePlay');
-	        });
+	          game.playerIDs.push(_this2.UserService.getAuthUser().playerID);
+	          var _this = _this2;
+	          _this2.GameService.create(game).then(function (response) {
+	            _this.UserService.userInfo.gameID = response._id;
+	            _this.window.location.href = '#/gamePlay';
+	            // _this.location.path('#/gamePlay');
+	          });
+	        })();
 	      }
 	    }
 	  }]);
@@ -41312,4 +41308,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-e459c35d5e6adbf80452.js.map
+//# sourceMappingURL=bundle-49ad4e39071e1255e518.js.map

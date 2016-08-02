@@ -38304,12 +38304,13 @@
 	
 	/* global API */
 	var GameService = function () {
-	  GameService.$inject = ["$http"];
-	  function GameService($http) {
+	  GameService.$inject = ["$http", "$window"];
+	  function GameService($http, $window) {
 	    'ngInject';
 	
 	    (0, _classCallCheck3.default)(this, GameService);
 	    this.$http = $http;
+	    this.window = $window;
 	  }
 	
 	  (0, _createClass3.default)(GameService, [{
@@ -41316,4 +41317,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-f41379d2be4351e0d87d.js.map
+//# sourceMappingURL=bundle-69ee077ba119f4a633a9.js.map

@@ -38348,7 +38348,7 @@
 	  }, {
 	    key: 'update',
 	    value: function update(game) {
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + _this.window.sessionStorage.userInfo.gameID + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        _this.userInfo = null;
@@ -38359,7 +38359,7 @@
 	  }, {
 	    key: 'addWord',
 	    value: function addWord(words, playerID) {
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + _this.window.sessionStorage.userInfo.gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
 	        var obj = response.data;
 	        return obj;
 	      }).catch(function () {
@@ -41311,4 +41311,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-9bf5033aa66f1568156e.js.map
+//# sourceMappingURL=bundle-93c1941cbc24ec3a77df.js.map

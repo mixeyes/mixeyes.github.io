@@ -41289,7 +41289,9 @@
 	      //     this.game.players[i].words.push(event.target.value);
 	      //   }
 	      // }
-	      var words = event.target.value;
+	      var words = {
+	        words: event.target.value
+	      };
 	      event.target.value = '';
 	      return this.GameService.addWord(this.UserService.getAuthUser().gameID, words, this.player).then(function (result) {
 	        _this.game = result;
@@ -41317,4 +41319,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-e03269b80599482053ce.js.map
+//# sourceMappingURL=bundle-067422d479b1a6874149.js.map

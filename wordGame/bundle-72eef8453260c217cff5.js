@@ -41122,16 +41122,20 @@
 	          word: this.scope.game.word.$viewValue,
 	          duration: this.scope.game.duration.$viewValue
 	        };
-	        game.playerIDs = [];
+	        game.players = [];
 	        var _iteratorNormalCompletion = true;
 	        var _didIteratorError = false;
 	        var _iteratorError = undefined;
 	
 	        try {
 	          for (var _iterator = (0, _getIterator3.default)(this.scope.game.players.$viewValue), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	            var _player = _step.value;
+	            var playerID = _step.value;
 	
-	            game.playerIDs.push(_player);
+	            var _player = {
+	              playerID: playerID,
+	              words: []
+	            };
+	            game.players.push(_player);
 	          }
 	        } catch (err) {
 	          _didIteratorError = true;
@@ -41152,7 +41156,7 @@
 	          playerID: this.UserService.getAuthUser().playerID,
 	          words: []
 	        };
-	        game.playerIDs.push(player);
+	        game.players.push(player);
 	        this.GameService.create(game).then(function (response) {
 	          _this.UserService.userInfo.gameID = response._id;
 	          _this.window.location.href = '#/gamePlay';
@@ -41308,4 +41312,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-de2cda6105fa0fa91147.js.map
+//# sourceMappingURL=bundle-72eef8453260c217cff5.js.map

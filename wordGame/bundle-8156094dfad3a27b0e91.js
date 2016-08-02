@@ -41272,7 +41272,17 @@
 	      this.getGame().then(function (result) {
 	        _this2.game = result;
 	        _this2.player = _this2.UserService.getAuthUser().playerID;
+	        _this2.getUserWords();
 	      });
+	    }
+	  }, {
+	    key: 'getUserWords',
+	    value: function getUserWords() {
+	      for (var i = 0; i < this.game.players.length; i++) {
+	        if (this.game.players[i].playerID == this.player) {
+	          this.userWords = this.game.players;
+	        }
+	      }
 	    }
 	  }, {
 	    key: 'getGame',
@@ -41321,4 +41331,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-651b7c96154abe120b8b.js.map
+//# sourceMappingURL=bundle-8156094dfad3a27b0e91.js.map

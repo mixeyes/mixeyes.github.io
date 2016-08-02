@@ -41280,6 +41280,7 @@
 	    value: function getUserWords() {
 	      for (var i = 0; i < this.game.players.length; i++) {
 	        if (this.game.players[i].playerID == this.player) {
+	          this.userWords = [];
 	          this.userWords.push(this.game.players[i].words);
 	        }
 	      }
@@ -41331,4 +41332,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-390729902be093308870.js.map
+//# sourceMappingURL=bundle-cde387a42b44bbba2150.js.map

@@ -38315,6 +38315,7 @@
 	  (0, _createClass3.default)(GameService, [{
 	    key: 'list',
 	    value: function list() {
+	      var _this = this;
 	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
@@ -38326,6 +38327,7 @@
 	  }, {
 	    key: 'create',
 	    value: function create(game) {
+	      var _this = this;
 	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
@@ -38337,6 +38339,7 @@
 	  }, {
 	    key: 'detail',
 	    value: function detail(id) {
+	      var _this = this;
 	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
@@ -38348,6 +38351,7 @@
 	  }, {
 	    key: 'update',
 	    value: function update(game) {
+	      var _this = this;
 	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
@@ -38359,7 +38363,8 @@
 	  }, {
 	    key: 'addWord',
 	    value: function addWord(words, playerID) {
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + _this.window.sessionStorage.userInfo.gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
+	      var _this = this;
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + this.window.sessionStorage.userInfo.gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
 	        var obj = response.data;
 	        return obj;
 	      }).catch(function () {
@@ -41311,4 +41316,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-93c1941cbc24ec3a77df.js.map
+//# sourceMappingURL=bundle-f41379d2be4351e0d87d.js.map

@@ -40835,7 +40835,9 @@
 	        words: []
 	      };
 	      game.players.push(newPlayer);
-	      return GameService.update(game);
+	      return GameService.update(game).then(function (obj) {
+	        return obj;
+	      });
 	    });
 	  }
 	};
@@ -41306,4 +41308,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-5d8e5d6ce0cfdf6cb289.js.map
+//# sourceMappingURL=bundle-de2cda6105fa0fa91147.js.map

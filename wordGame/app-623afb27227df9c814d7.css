@@ -9293,6 +9293,7 @@ signin {
 .game .game-body {
   display: table-cell;
   vertical-align: middle;
+  height: 850px;
 }
 .game .game-body .brand-heading {
   font-size: 40px;
@@ -9599,4 +9600,4 @@ signin {
 }
 
 
-/*# sourceMappingURL=app-c0270b2253af1636f69c.css.map*/
+/*# sourceMappingURL=app-623afb27227df9c814d7.css.map*/

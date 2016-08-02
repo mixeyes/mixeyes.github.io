@@ -9306,7 +9306,7 @@ signin {
   padding-bottom: 15px;
 }
 .game .game-body .game-words {
-  height: 75%;
+  display: inline-block;
   font-size: 20px;
   color: yellow;
   overflow: auto;
@@ -9599,4 +9599,4 @@ signin {
 }
 
 
-/*# sourceMappingURL=app-878427d8549a0a7238ff.css.map*/
+/*# sourceMappingURL=app-c0270b2253af1636f69c.css.map*/

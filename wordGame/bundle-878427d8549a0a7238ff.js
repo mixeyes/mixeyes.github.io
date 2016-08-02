@@ -41281,7 +41281,9 @@
 	      for (var i = 0; i < this.game.players.length; i++) {
 	        if (this.game.players[i].playerID == this.player) {
 	          this.userWords = [];
-	          this.userWords.push(this.game.players[i].words);
+	          for (var j = 0; j < this.game.players[i].words.length; j++) {
+	            this.userWords.push(this.game.players[i].words[j]);
+	          }
 	        }
 	      }
 	    }
@@ -41332,4 +41334,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-cde387a42b44bbba2150.js.map
+//# sourceMappingURL=bundle-878427d8549a0a7238ff.js.map

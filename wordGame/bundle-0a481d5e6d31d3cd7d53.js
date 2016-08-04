@@ -37647,7 +37647,7 @@
 /* 189 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- main Header -->\n<div class=\"main\">\n  <div class=\"main-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"main-text\">Try free.\n            <br>Created by Michael Leliakov.</p>\n\n          <a ng-hide=\"$ctrl.UserService.getAuthUser()\" href=\"#/signin\" class=\"btn btn-circle page-scroll\">\n            <i class=\"fa fa-play-circle animated\"></i>\n          </a>\n\n          <a ng-show=\"$ctrl.UserService.getAuthUser()\" href=\"#/gameCreateRule\" class=\"btn btn-circle page-scroll\">\n            <i class=\"fa fa-play-circle animated\"></i>\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- main Header -->\n<div class=\"main\">\n  <div class=\"main-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">WORD GAME</h1>\n          <p class=\"main-text\">Try free.\n            <br>Created by Michael Leliakov.</p>\n          <br><br>\n          <p>\n            To continue click here\n          </p>\n          <a ng-hide=\"$ctrl.UserService.getAuthUser()\" href=\"#/signin\" class=\"btn btn-circle page-scroll\">\n            <i class=\"fa fa-play-circle animated\"></i>\n          </a>\n\n          <a ng-show=\"$ctrl.UserService.getAuthUser()\" href=\"#/gameCreateRule\" class=\"btn btn-circle page-scroll\">\n            <i class=\"fa fa-play-circle animated\"></i>\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 190 */
@@ -41359,4 +41359,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-b466aa81118c5f7f4a8c.js.map
+//# sourceMappingURL=bundle-0a481d5e6d31d3cd7d53.js.map

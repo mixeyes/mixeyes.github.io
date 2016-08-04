@@ -9280,7 +9280,7 @@ signin {
   display: table;
   width: 100%;
   height: 100%;
-  padding: 100px 0;
+  padding-top: 100px;
   text-align: center;
   color: white;
   background: url(img/229248_main.jpg) no-repeat center;
@@ -9602,4 +9602,4 @@ signin {
 }
 
 
-/*# sourceMappingURL=app-6ec2d2c7d11a39827999.css.map*/
+/*# sourceMappingURL=app-9e382db66d32e5672882.css.map*/

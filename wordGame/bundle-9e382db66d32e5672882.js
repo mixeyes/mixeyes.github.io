@@ -36720,6 +36720,12 @@
 	    resolve: {
 	      auth: ['$q', 'UserService', isAuthorize]
 	    }
+	  }).state('updateDictionary', {
+	    url: '/updateDictionary',
+	    template: '<update-dictionary></update-dictionary>',
+	    resolve: {
+	      auth: ['$q', 'UserService', isAuthorize]
+	    }
 	  });
 	}];
 
@@ -37125,10 +37131,14 @@
 	
 	var _gamePlaySection2 = _interopRequireDefault(_gamePlaySection);
 	
+	var _updateDictionarySection = __webpack_require__(290);
+	
+	var _updateDictionarySection2 = _interopRequireDefault(_updateDictionarySection);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = _angular2.default.module('app.components', [_app2.default, _navbarSection2.default, _mainSection2.default, _gameCreateRuleSection2.default, _profileSection2.default, _signUpSection2.default, _footerBlock2.default, _matchPassDir2.default, _signinSection2.default, _service2.default, _connectExistingGameSection2.default, _createNewGameSection2.default, _gamePlaySection2.default]).name;
 	// import './dashboard.css';
+	exports.default = _angular2.default.module('app.components', [_app2.default, _navbarSection2.default, _mainSection2.default, _gameCreateRuleSection2.default, _profileSection2.default, _signUpSection2.default, _footerBlock2.default, _matchPassDir2.default, _signinSection2.default, _service2.default, _connectExistingGameSection2.default, _createNewGameSection2.default, _gamePlaySection2.default, _updateDictionarySection2.default]).name;
 
 /***/ },
 /* 160 */
@@ -41230,7 +41240,7 @@
 /* 288 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\" ng-init=\"$ctrl.checkTimer()\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n              <br>\n            </div>\n            <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n              Finish\n            </button>\n\n          </div>\n          <div class=\"col-md-2 col-xs-2 col-sm-2 col-lg-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\">\n              <li ng-repeat=\"word in $ctrl.userWords\">\n                <div ng-bind=\"word\"></div>\n              </li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\" ng-init=\"$ctrl.checkTimer()\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n              <br>\n              <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n                Finish\n              </button>\n            </div>\n          </div>\n          <div class=\"col-md-2 col-xs-2 col-sm-2 col-lg-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\">\n              <li ng-repeat=\"word in $ctrl.userWords\">\n                <div ng-bind=\"word\"></div>\n              </li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 289 */
@@ -41357,6 +41367,61 @@
 	
 	exports.default = PlayGameController;
 
-/***/ }
+/***/ },
+/* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(153);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _updateDictionaryComponent = __webpack_require__(291);
+	
+	var _updateDictionaryComponent2 = _interopRequireDefault(_updateDictionaryComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.updateDictionary', []).component('updateDictionary', _updateDictionaryComponent2.default).name;
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _updateDictionaryTmpl = __webpack_require__(292);
+	
+	var _updateDictionaryTmpl2 = _interopRequireDefault(_updateDictionaryTmpl);
+	
+	var _updateDictionaryController = __webpack_require__(293);
+	
+	var _updateDictionaryController2 = _interopRequireDefault(_updateDictionaryController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _updateDictionaryTmpl2.default,
+	  controller: _updateDictionaryController2.default
+	};
+
+/***/ },
+/* 292 */
+/***/ function(module, exports) {
+
+	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">UPDATE DICTIONARY</h1>\n            </div>\n            <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n            <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n            <br>\n          </div>\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n            Finish\n          </button>\n\n        </div>\n        <div class=\"col-md-2 col-xs-2 col-sm-2 col-lg-2 game-square game-words\">\n          <ol ng-show=\"$ctrl.userWords\">\n            <li ng-repeat=\"word in $ctrl.userWords\">\n              <div ng-bind=\"word\"></div>\n            </li>\n          </ol>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+
+/***/ },
+/* 293 */
+289
 /******/ ])));
-//# sourceMappingURL=bundle-6ec2d2c7d11a39827999.js.map
+//# sourceMappingURL=bundle-9e382db66d32e5672882.js.map

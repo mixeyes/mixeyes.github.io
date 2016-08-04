@@ -41352,6 +41352,7 @@
 	      var deadline = new Date(Date.parse(this.game.startTime) + duration * 60 * 1000);
 	      var actualTime = new Date();
 	      if (deadline < actualTime) {
+	        // update DOM
 	        var timer = _angular2.default.element(document.getElementById('game'));
 	        timer.remove();
 	        var element = _angular2.default.element('<p class="game-text">Your time expired</p>');
@@ -41422,6 +41423,129 @@
 
 /***/ },
 /* 293 */
-289
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classCallCheck2 = __webpack_require__(164);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(165);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _angular = __webpack_require__(153);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var PlayGameController = function () {
+	  PlayGameController.$inject = ["GameService", "UserService", "$scope", "commonFactory"];
+	  function PlayGameController(GameService, UserService, $scope, commonFactory) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, PlayGameController);
+	    this.GameService = GameService;
+	    this.UserService = UserService;
+	    this.scope = $scope;
+	    this.game = {};
+	    this.commonFactory = commonFactory;
+	    // this.userWords = [];
+	  }
+	
+	  (0, _createClass3.default)(PlayGameController, [{
+	    key: '$onInit',
+	    value: function $onInit() {
+	      var _this2 = this;
+	
+	      this.getGame().then(function (result) {
+	        _this2.game = result;
+	        _this2.player = _this2.UserService.getAuthUser().playerID;
+	        _this2.getUserWords();
+	      });
+	    }
+	  }, {
+	    key: 'getUserWords',
+	    value: function getUserWords() {
+	      for (var i = 0; i < this.game.players.length; i++) {
+	        if (this.game.players[i].playerID == this.player) {
+	          this.userWords = [];
+	          for (var j = 0; j < this.game.players[i].words.length; j++) {
+	            this.userWords.push(this.game.players[i].words[j]);
+	          }
+	        }
+	      }
+	    }
+	  }, {
+	    key: 'getGame',
+	    value: function getGame() {
+	      return this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
+	        return result;
+	      });
+	    }
+	  }, {
+	    key: 'addWord',
+	    value: function addWord(event) {
+	      var _this = this;
+	      // for (let i = 0; i < this.game.players.length; i++) {
+	      //   if (this.game.players[i].playerID == this.player) {
+	      //     this.game.players[i].words.push(event.target.value);
+	      //   }
+	      // }
+	      this.userWords.push(event.target.value);
+	      var words = {
+	        words: event.target.value
+	      };
+	      event.target.value = '';
+	      return this.GameService.addWord(this.UserService.getAuthUser().gameID, words, this.player).then(function (result) {
+	        _this.game = result;
+	        return _this.game;
+	      }).catch(function () {
+	        throw new Error('Your time expired');
+	      });
+	    }
+	  }, {
+	    key: 'gTimer',
+	    value: function gTimer() {
+	      var _this3 = this;
+	
+	      _angular2.default.element(document).ready(function () {
+	        _this3.getGame().then(function (result) {
+	          var duration = Number(result.duration);
+	          var deadline = new Date(Date.parse(result.startTime) + duration * 60 * 1000);
+	          var actualTime = new Date();
+	          _this3.commonFactory.initializeClock(result._id, deadline);
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'checkTimer',
+	    value: function checkTimer() {
+	      var duration = Number(this.game.duration);
+	      var deadline = new Date(Date.parse(this.game.startTime) + duration * 60 * 1000);
+	      var actualTime = new Date();
+	      if (deadline < actualTime) {
+	        var timer = _angular2.default.element(document.getElementById('game'));
+	        timer.remove();
+	        var element = _angular2.default.element('<p class="game-text">Your time expired</p>');
+	        _angular2.default.element(document.getElementById('gameHeader')).append(element);
+	        //clearTimeout(this.timeinterval);
+	        return;
+	      }
+	      setTimeout(this.checkTimer.bind(this), 1000);
+	    }
+	  }]);
+	  return PlayGameController;
+	}();
+	
+	exports.default = PlayGameController;
+
+/***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-8f0d40d753cc2151474c.js.map
+//# sourceMappingURL=bundle-edca87ea68417f9ee2b0.js.map

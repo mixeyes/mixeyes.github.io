@@ -38057,13 +38057,19 @@
 
 /***/ },
 /* 207 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _angular = __webpack_require__(153);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function () {
 	  return {
@@ -41105,7 +41111,7 @@
 	    this.GameService = GameService;
 	    this.PlayerService = PlayerService;
 	    this.UserService = UserService;
-	    this.durations = [5, 10, 15, 20, 25, 30, 45, 60];
+	    this.durations = [1, 2, 5, 10, 15, 20, 25, 30, 45, 60];
 	    this.players = [];
 	    this.window = $window;
 	    this.scope = $scope;
@@ -41224,7 +41230,7 @@
 /* 288 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n              <br>\n            </div>\n            <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n              Finish\n            </button>\n\n          </div>\n          <div class=\"col-md-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\">\n              <li ng-repeat=\"word in $ctrl.userWords\">\n                <div ng-bind=\"word\"></div>\n              </li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\" ng-init=\"$ctrl.checkTimer()\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n              <br>\n            </div>\n            <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n              Finish\n            </button>\n\n          </div>\n          <div class=\"col-md-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\">\n              <li ng-repeat=\"word in $ctrl.userWords\">\n                <div ng-bind=\"word\"></div>\n              </li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 289 */
@@ -41303,23 +41309,17 @@
 	      //     this.game.players[i].words.push(event.target.value);
 	      //   }
 	      // }
-	      if (this.checkTimer()) {
-	        this.userWords.push(event.target.value);
-	        var words = {
-	          words: event.target.value
-	        };
-	        event.target.value = '';
-	        return this.GameService.addWord(this.UserService.getAuthUser().gameID, words, this.player).then(function (result) {
-	          _this.game = result;
-	          return _this.game;
-	        });
-	      } else {
-	        var timer = _angular2.default.element('#game');
-	        timer.remove();
-	        var element = _angular2.default.element('<p class="game-text">Your time expired</p>');
-	        _angular2.default.element('#gameHeader').append(element);
-	        return this.game;
-	      }
+	      this.userWords.push(event.target.value);
+	      var words = {
+	        words: event.target.value
+	      };
+	      event.target.value = '';
+	      return this.GameService.addWord(this.UserService.getAuthUser().gameID, words, this.player).then(function (result) {
+	        _this.game = result;
+	        return _this.game;
+	      }).catch(function () {
+	        throw new Error('Your time expired');
+	      });
 	    }
 	  }, {
 	    key: 'gTimer',
@@ -41331,9 +41331,7 @@
 	          var duration = Number(result.duration);
 	          var deadline = new Date(Date.parse(result.startTime) + duration * 60 * 1000);
 	          var actualTime = new Date();
-	          if (actualTime < deadline) {
-	            _this3.commonFactory.initializeClock(result._id, deadline);
-	          }
+	          _this3.commonFactory.initializeClock(result._id, deadline);
 	        });
 	      });
 	    }
@@ -41343,7 +41341,15 @@
 	      var duration = Number(this.game.duration);
 	      var deadline = new Date(Date.parse(this.game.startTime) + duration * 60 * 1000);
 	      var actualTime = new Date();
-	      return deadline > actualTime;
+	      if (deadline < actualTime) {
+	        var timer = _angular2.default.element(document.getElementById('game'));
+	        timer.remove();
+	        var element = _angular2.default.element('<p class="game-text">Your time expired</p>');
+	        _angular2.default.element(document.getElementById('gameHeader')).append(element);
+	        //clearTimeout(this.timeinterval);
+	        return;
+	      }
+	      setTimeout(this.checkTimer.bind(this), 1000);
 	    }
 	  }]);
 	  return PlayGameController;
@@ -41353,4 +41359,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-589698e24f2aa308f7bf.js.map
+//# sourceMappingURL=bundle-b466aa81118c5f7f4a8c.js.map

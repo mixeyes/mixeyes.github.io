@@ -38603,7 +38603,7 @@
 	              case 0:
 	                _context2.prev = 0;
 	                _context2.next = 3;
-	                return his.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
+	                return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
 	
 	              case 3:
 	                response = _context2.sent;
@@ -38613,8 +38613,8 @@
 	                _context2.prev = 7;
 	                _context2.t0 = _context2['catch'](0);
 	
-	                _this.userInfo = null;
-	                _this.window.sessionStorage.userInfo = null;
+	                this.userInfo = null;
+	                this.window.sessionStorage.userInfo = null;
 	                throw _context2.t0;
 	
 	              case 12:
@@ -41359,4 +41359,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-0a481d5e6d31d3cd7d53.js.map
+//# sourceMappingURL=bundle-41aea355e06b5a6403c3.js.map

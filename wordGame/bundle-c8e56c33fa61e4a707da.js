@@ -41445,12 +41445,12 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var PlayGameController = function () {
-	  PlayGameController.$inject = ["GameService", "UserService", "$scope", "commonFactory"];
-	  function PlayGameController(GameService, UserService, $scope, commonFactory) {
+	var UpdateDictionaryController = function () {
+	  UpdateDictionaryController.$inject = ["GameService", "UserService", "$scope", "commonFactory"];
+	  function UpdateDictionaryController(GameService, UserService, $scope, commonFactory) {
 	    'ngInject';
 	
-	    (0, _classCallCheck3.default)(this, PlayGameController);
+	    (0, _classCallCheck3.default)(this, UpdateDictionaryController);
 	    this.GameService = GameService;
 	    this.UserService = UserService;
 	    this.scope = $scope;
@@ -41459,7 +41459,7 @@
 	    // this.userWords = [];
 	  }
 	
-	  (0, _createClass3.default)(PlayGameController, [{
+	  (0, _createClass3.default)(UpdateDictionaryController, [{
 	    key: '$onInit',
 	    value: function $onInit() {
 	      var _this2 = this;
@@ -41541,11 +41541,11 @@
 	      setTimeout(this.checkTimer.bind(this), 1000);
 	    }
 	  }]);
-	  return PlayGameController;
+	  return UpdateDictionaryController;
 	}();
 	
-	exports.default = PlayGameController;
+	exports.default = UpdateDictionaryController;
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-edca87ea68417f9ee2b0.js.map
+//# sourceMappingURL=bundle-c8e56c33fa61e4a707da.js.map

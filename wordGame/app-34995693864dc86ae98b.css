@@ -9229,9 +9229,15 @@ signin {
 .profile .profile-body .profile-text {
   font-size: 18px;
 }
+.profile .profile-body .profile-square {
+  height: 75%;
+  background-color: rgba(105, 105, 105, 0.3);
+  padding: 25px;
+}
 @media (min-width: 768px) {
   .profile {
     height: 100%;
+    padding: 50px;
   }
   .profile .profile-body .brand-heading {
     font-size: 100px;
@@ -9246,7 +9252,7 @@ signin {
   height: 100%;
   padding: 100px 0;
   text-align: center;
-  color: white;
+  color: rgba(255, 255, 172, 0.9);
   background: url(img/chernyy_chb_kost_moment_igra_shum_74543_1920x1080.jpg) no-repeat center;
   background-color: black;
   -webkit-background-size: 100%;
@@ -9264,6 +9270,11 @@ signin {
 .main .main-body .main-text {
   font-size: 18px;
 }
+.main .main-body .main-square {
+  height: 75%;
+  background-color: rgba(105, 105, 105, 0.3);
+  padding: 25px;
+}
 @media (min-width: 768px) {
   .main {
     height: 100%;
@@ -9274,6 +9285,11 @@ signin {
   }
   .main .main-body .main-text {
     font-size: 26px;
+  }
+  .main .main-body .main-square {
+    height: 75%;
+    background-color: rgba(105, 105, 105, 0.3);
+    padding: 5px;
   }
 }
 .game {
@@ -9350,6 +9366,11 @@ signin {
 .signup .signup-body .signup-text {
   font-size: 18px;
 }
+.signup .signup-body .signup-square {
+  height: 75%;
+  background-color: rgba(105, 105, 105, 0.3);
+  padding: 25px;
+}
 @media (min-width: 768px) {
   .signup {
     height: 100%;
@@ -9360,6 +9381,11 @@ signin {
   }
   .signup .signup-body .signup-text {
     font-size: 26px;
+  }
+  .signup .signup-body .signup-square {
+    height: 75%;
+    background-color: rgba(105, 105, 105, 0.3);
+    padding: 25px;
   }
 }
 .signin {
@@ -9424,6 +9450,11 @@ signin {
 .connect .connect-body .connect-text {
   font-size: 18px;
 }
+.connect .connect-body .connect-square {
+  height: 75%;
+  background-color: rgba(105, 105, 105, 0.3);
+  padding: 25px;
+}
 @media (min-width: 768px) {
   .connect {
     height: 100%;
@@ -9435,6 +9466,68 @@ signin {
   .connect .connect-body .connect-text {
     font-size: 26px;
   }
+  .connect .connect-body .connect-square {
+    height: 75%;
+    background-color: rgba(105, 105, 105, 0.3);
+    padding: 25px;
+  }
+}
+.f-res {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+  text-align: center;
+  color: rgba(255, 255, 172, 0.9);
+  background: url(img/13248.jpg) no-repeat center;
+  background-color: black;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+  -o-background-size: 100%;
+}
+.f-res .f-res-body {
+  display: table-cell;
+  vertical-align: middle;
+}
+.f-res .f-res-body .brand-heading {
+  font-size: 40px;
+}
+.f-res .f-res-body .f-res-text {
+  font-size: 20px;
+}
+.f-res .f-res-body a.f-res-words:hover {
+  color: #00c8ff;
+}
+.f-res .f-res-body .f-res-square {
+  height: 75%;
+  background-color: rgba(105, 105, 105, 0.3);
+  padding: 25px;
+}
+@media (min-width: 768px) {
+  .f-res {
+    height: 100%;
+    padding: 0;
+  }
+  .f-res .f-res-body .brand-heading {
+    font-size: 100px;
+  }
+  .f-res .f-res-body .f-res-text {
+    font-size: 26px;
+  }
+  .f-res .f-res-body .f-res-square {
+    height: 75%;
+    background-color: rgba(105, 105, 105, 0.3);
+    padding: 5px;
+  }
+}
+player .list-group-item {
+  background-color: rgba(42, 17, 32, 0.5);
+  color: whitesmoke;
+  font-size: 30px;
+}
+h3.modal-title {
+  color: #464242;
 }
 
 /* TypoPRO Lora Bold */
@@ -9602,4 +9695,4 @@ signin {
 }
 
 
-/*# sourceMappingURL=app-c8e56c33fa61e4a707da.css.map*/
+/*# sourceMappingURL=app-34995693864dc86ae98b.css.map*/

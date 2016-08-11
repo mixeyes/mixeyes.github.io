@@ -9522,12 +9522,25 @@ signin {
   }
 }
 player .list-group-item {
-  background-color: rgba(42, 17, 32, 0.5);
+  background-color: rgba(83, 255, 91, 0.2);
   color: whitesmoke;
   font-size: 30px;
 }
+player .list-group-item a {
+  color: red;
+  text-decoration: underline;
+}
 h3.modal-title {
   color: #464242;
+}
+.counter-fail {
+  background-color: red;
+}
+.counter-pass {
+  background-color: green;
+}
+.list-group {
+  margin: 5px;
 }
 
 /* TypoPRO Lora Bold */
@@ -9695,4 +9708,4 @@ h3.modal-title {
 }
 
 
-/*# sourceMappingURL=app-34995693864dc86ae98b.css.map*/
+/*# sourceMappingURL=app-f7d96c19020324c1b1ba.css.map*/

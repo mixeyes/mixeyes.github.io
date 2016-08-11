@@ -53867,7 +53867,7 @@
 /* 297 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\" ng-init=\"$ctrl.checkTimer()\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n              <br>\n              <a type=\"submit\" class=\"btn btn-success btn-block\" ng-href=\"#/firstResults\">\n                Finish\n              </a>\n            </div>\n          </div>\n          <div class=\"col-md-2 col-xs-2 col-sm-2 col-lg-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\">\n              <li ng-repeat=\"word in $ctrl.userWords\">\n                <div ng-bind=\"word\"></div>\n              </li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\" ng-init=\"$ctrl.checkTimer()\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n              <br>\n              <a type=\"submit\" class=\"btn btn-success btn-block\" ng-href=\"#/firstResults\">\n                Finish\n              </a>\n            </div>\n          </div>\n          <div class=\"col-md-2 col-xs-2 col-sm-2 col-lg-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\">\n              <li ng-repeat=\"word in $ctrl.userWords track by $index\">\n                <div ng-bind=\"word\"></div>\n              </li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 298 */
@@ -54233,7 +54233,7 @@
 /* 305 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"f-res\">\n  <div class=\"f-res-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 f-res-square\">\n            <br>\n            <h1 class=\"brand-heading\">FIRST RESULTS</h1>\n            <div class=\"f-res-text\">\n              <span ng-bind=\"$ctrl.winner.name\"></span>\n              is WIN</div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div ng-class=\"$ctrl.colClass\" ng-repeat=\"player in $ctrl.game.players track by player.playerID\">\n            <div class=\"row\">\n              <player player=\"player\"></player>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"f-res\">\n  <div class=\"f-res-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 f-res-square\">\n            <br>\n            <h1 class=\"brand-heading\">FIRST RESULTS</h1>\n            <h3>Play word was\n              <h2 ng-bind=\"$ctrl.game.word\"></h2>\n            </h3>\n            <div class=\"f-res-text\">\n              <span ng-show=\"!isDraw\">\n                <span ng-bind=\"$ctrl.winner.name\"></span>\n                WINS</span>\n              <span ng-show=\"isDraw\">A DRAW RESULT</span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div ng-class=\"$ctrl.colClass\" ng-repeat=\"player in $ctrl.game.players track by player.playerID\">\n            <div class=\"row\">\n              <player player=\"player\"></player>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 306 */
@@ -54284,17 +54284,35 @@
 	
 	      this.getGame().then(function (result) {
 	        _this.game = result;
+	        console.log(_this.game);
 	        // this.game.isFinished = true;
-	        _this.GameService.finishGame(_this.game._id);
-	        var id = _this.findWinner(_this.game);
-	        _this.getPlayer(id).then(function (res) {
-	          _this.winner = res;
-	          console.log('winner -' + (0, _stringify2.default)(_this.winner));
-	        });
+	        _this.game._id;
+	        if (!_this.isDrawResult(_this.game)) {
+	          var id = _this.findWinner(_this.game);
+	          _this.getPlayer(id).then(function (res) {
+	            _this.winner = res;
+	            console.log('winner -' + (0, _stringify2.default)(_this.winner));
+	          });
+	        }
+	        console.log(_this.scope.isDraw);
 	        var plCount = _this.game.players.length;
 	        var index = Math.floor(12 / plCount) || 1;
 	        _this.colClass = 'col-md-' + index + ' col-xs-' + index + ' col-sm-' + index + ' col-lg-' + index + ' game-square game-words';
 	      });
+	    }
+	  }, {
+	    key: 'isDrawResult',
+	    value: function isDrawResult(game) {
+	      this.scope.isDraw = false;
+	      for (var i = 0; i < game.players.length; i++) {
+	        if (game.players[i].words.length === game.players[0].words.length) {
+	          this.scope.isDraw = true;
+	        } else {
+	          this.scope.isDraw = false;
+	          return false;
+	        }
+	      }
+	      return this.scope.isDraw;
 	    }
 	  }, {
 	    key: 'findWinner',
@@ -54319,8 +54337,8 @@
 	  }, {
 	    key: 'getGame',
 	    value: function getGame() {
-	      return this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
-	        return result;
+	      return this.GameService.finishGame(this.UserService.getAuthUser().gameID).then(function (result) {
+	        return result.data;
 	      });
 	    }
 	
@@ -54404,7 +54422,7 @@
 /* 309 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- player Header -->\n<div class=\"list-group\">\n\n  <ol>\n    <li class=\"f-res-text list-group-item disabled\" ng-bind=\"$ctrl.plName\"></li>\n    <li ng-repeat=\"word in $ctrl.words\" class=\"list-group-item\">\n      <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n        <a class=\"f-res-words\" ng-show=\"{{!!!word.discription}}\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word)\"></a>\n        <span class=\"f-res-words\" ng-show=\"{{!!word.discription}}\" ng-bind=\"word.word\"></span>\n      </div>\n    </li>\n  </ol>\n</div>\n";
+	module.exports = "<!-- player Header -->\n<div>\n    <ol class=\"list-group\">\n      <li class=\"f-res-text list-group-item disabled\">\n        <span ng-bind=\"$ctrl.plName\"></span>\n        <span class=\"badge\" ng-class=\"counterClass\" ng-bind=\"$ctrl.counter\"></span>\n      </li>\n      <li ng-repeat=\"word in $ctrl.words\" class=\"list-group-item\">\n        <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n          <a class=\"f-res-words\" ng-show=\"{{!!!word.discription}}\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word)\"></a>\n          <span class=\"f-res-words\" ng-show=\"{{!!word.discription}}\" ng-bind=\"word.word\">\n            <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n          </span>\n        </div>\n      </li>\n    </ol>\n    <ol ng-show=\"$ctrl.player.wrongWords.length>0\" class=\"list-group\">\n      <li class=\"f-res-text list-group-item disabled\" style=\"background-color: rgba(255, 71, 69, 1);color: white;\">\n        <span>WRONG WORDS</span>\n        <span class=\"badge\" ng-bind=\"$ctrl.player.wrongWords.length\"></span>\n      </li>\n      <li ng-repeat=\"word in $ctrl.player.wrongWords\" class=\"list-group-item\" style=\"background-color: rgba(255, 0, 0, 0.2);\">\n        <span class=\"f-res-words\" ng-bind=\"word\"></span>\n      </li>\n    </ol>\n</div>\n";
 
 /***/ },
 /* 310 */
@@ -54453,6 +54471,7 @@
 	    this.$q = $q;
 	    this.$uibModal = $uibModal;
 	    this.scope = $scope;
+	    this.counter = 0;
 	  }
 	
 	  (0, _createClass3.default)(PlayerController, [{
@@ -54465,6 +54484,16 @@
 	        if (_this.player.words.length > 0) {
 	          _this.getWords().then(function (res) {
 	            _this.words = res;
+	            for (var i = 0; i < _this.words.length; i++) {
+	              if (_this.words[i].discription) {
+	                _this.counter++;
+	              }
+	            }
+	            if (_this.counter < _this.words.length) {
+	              _this.scope.counterClass = 'counter-fail';
+	            } else {
+	              _this.scope.counterClass = 'counter-pass';
+	            }
 	          });
 	        }
 	        //  else {
@@ -54508,6 +54537,11 @@
 	        _this2.WordService.create(result).then(function () {
 	          _this2.getWords().then(function (res) {
 	            _this2.words = res;
+	            for (var i = 0; i < _this2.words.length; i++) {
+	              if (_this2.words[i].discription) {
+	                _this2.counter++;
+	              }
+	            }
 	          });
 	        });
 	      }, function () {
@@ -71214,4 +71248,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-34995693864dc86ae98b.js.map
+//# sourceMappingURL=bundle-f7d96c19020324c1b1ba.js.map

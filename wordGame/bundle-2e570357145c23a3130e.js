@@ -37019,7 +37019,7 @@
 	 * angular-ui-bootstrap
 	 * http://angular-ui.github.io/bootstrap/
 	
-	 * Version: 2.0.1 - 2016-08-02
+	 * Version: 2.1.1 - 2016-08-20
 	 * License: MIT
 	 */angular.module("ui.bootstrap", ["ui.bootstrap.tpls", "ui.bootstrap.collapse","ui.bootstrap.tabindex","ui.bootstrap.accordion","ui.bootstrap.alert","ui.bootstrap.buttons","ui.bootstrap.carousel","ui.bootstrap.dateparser","ui.bootstrap.isClass","ui.bootstrap.datepicker","ui.bootstrap.position","ui.bootstrap.datepickerPopup","ui.bootstrap.debounce","ui.bootstrap.dropdown","ui.bootstrap.stackedMap","ui.bootstrap.modal","ui.bootstrap.paging","ui.bootstrap.pager","ui.bootstrap.pagination","ui.bootstrap.tooltip","ui.bootstrap.popover","ui.bootstrap.progressbar","ui.bootstrap.rating","ui.bootstrap.tabs","ui.bootstrap.timepicker","ui.bootstrap.typeahead"]);
 	angular.module("ui.bootstrap.tpls", ["uib/template/accordion/accordion-group.html","uib/template/accordion/accordion.html","uib/template/alert/alert.html","uib/template/carousel/carousel.html","uib/template/carousel/slide.html","uib/template/datepicker/datepicker.html","uib/template/datepicker/day.html","uib/template/datepicker/month.html","uib/template/datepicker/year.html","uib/template/datepickerPopup/popup.html","uib/template/modal/window.html","uib/template/pager/pager.html","uib/template/pagination/pagination.html","uib/template/tooltip/tooltip-html-popup.html","uib/template/tooltip/tooltip-popup.html","uib/template/tooltip/tooltip-template-popup.html","uib/template/popover/popover-html.html","uib/template/popover/popover-template.html","uib/template/popover/popover.html","uib/template/progressbar/bar.html","uib/template/progressbar/progress.html","uib/template/progressbar/progressbar.html","uib/template/rating/rating.html","uib/template/tabs/tab.html","uib/template/tabs/tabset.html","uib/template/timepicker/timepicker.html","uib/template/typeahead/typeahead-match.html","uib/template/typeahead/typeahead-popup.html"]);
@@ -37043,14 +37043,12 @@
 	          horizontal = !!('horizontal' in attrs);
 	          if (horizontal) {
 	            css = {
-	              width: 'auto',
-	              height: 'inherit'
+	              width: ''
 	            };
 	            cssTo = {width: '0'};
 	          } else {
 	            css = {
-	              width: 'inherit',
-	              height: 'auto'
+	              height: ''
 	            };
 	            cssTo = {height: '0'};
 	          }
@@ -37065,9 +37063,9 @@
 	
 	        function getScrollFromElement(element) {
 	          if (horizontal) {
-	            return {width: element.scrollWidth + 'px'};
+	            return {width: ''};
 	          }
-	          return {height: element.scrollHeight + 'px'};
+	          return {height: ''};
 	        }
 	
 	        function expand() {
@@ -37086,10 +37084,16 @@
 	                $animateCss(element, {
 	                  addClass: 'in',
 	                  easing: 'ease',
+	                  css: {
+	                    overflow: 'hidden'
+	                  },
 	                  to: getScrollFromElement(element[0])
 	                }).start()['finally'](expandDone);
 	              } else {
 	                $animate.addClass(element, 'in', {
+	                  css: {
+	                    overflow: 'hidden'
+	                  },
 	                  to: getScrollFromElement(element[0])
 	                }).then(expandDone);
 	              }
@@ -39744,7 +39748,11 @@
 	
 	  this.init = function(_ngModel_) {
 	    ngModel = _ngModel_;
-	    ngModelOptions = _ngModel_.$options;
+	    ngModelOptions = angular.isObject(_ngModel_.$options) ?
+	      _ngModel_.$options :
+	      {
+	        timezone: null
+	      };
 	    closeOnDateSelection = angular.isDefined($attrs.closeOnDateSelection) ?
 	      $scope.$parent.$eval($attrs.closeOnDateSelection) :
 	      datepickerPopupConfig.closeOnDateSelection;
@@ -39835,13 +39843,13 @@
 	          value = new Date(value);
 	        }
 	
-	        $scope.date = value;
+	        $scope.date = dateParser.fromTimezone(value, ngModelOptions.timezone);
 	
 	        return dateParser.filter($scope.date, dateFormat);
 	      });
 	    } else {
 	      ngModel.$formatters.push(function(value) {
-	        $scope.date = value;
+	        $scope.date = dateParser.fromTimezone(value, ngModelOptions.timezone);
 	        return value;
 	      });
 	    }
@@ -39893,7 +39901,7 @@
 	
 	  $scope.isDisabled = function(date) {
 	    if (date === 'today') {
-	      date = new Date();
+	      date = dateParser.fromTimezone(new Date(), ngModelOptions.timezone);
 	    }
 	
 	    var dates = {};
@@ -39950,7 +39958,8 @@
 	        date = new Date($scope.date);
 	        date.setFullYear(today.getFullYear(), today.getMonth(), today.getDate());
 	      } else {
-	        date = new Date(today.setHours(0, 0, 0, 0));
+	        date = dateParser.fromTimezone(today, ngModelOptions.timezone);
+	        date.setHours(0, 0, 0, 0);
 	      }
 	    }
 	    $scope.dateSelection(date);
@@ -40040,7 +40049,7 @@
 	    if (angular.isString(viewValue)) {
 	      var date = parseDateString(viewValue);
 	      if (!isNaN(date)) {
-	        return date;
+	        return dateParser.fromTimezone(date, ngModelOptions.timezone);
 	      }
 	    }
 	
@@ -40202,10 +40211,7 @@
 	    if (openScope === dropdownScope) {
 	      openScope = null;
 	      $document.off('click', closeDropdown);
-	      var dropdownMenu = dropdownScope.getDropdownElement();
-	      if (dropdownMenu) {
-	        dropdownMenu.off('keydown', this.keybindFilter);
-	      }
+	      $document.off('keydown', this.keybindFilter);
 	    }
 	  };
 	
@@ -40238,11 +40244,15 @@
 	  };
 	
 	  this.keybindFilter = function(evt) {
+	    var dropdownElement = openScope.getDropdownElement();
+	    var toggleElement = openScope.getToggleElement();
+	    var dropdownElementTargeted = dropdownElement && dropdownElement[0].contains(evt.target);
+	    var toggleElementTargeted = toggleElement && toggleElement[0].contains(evt.target);
 	    if (evt.which === 27) {
 	      evt.stopPropagation();
 	      openScope.focusToggleElement();
 	      closeDropdown();
-	    } else if (openScope.isKeynavEnabled() && [38, 40].indexOf(evt.which) !== -1 && openScope.isOpen) {
+	    } else if (openScope.isKeynavEnabled() && [38, 40].indexOf(evt.which) !== -1 && openScope.isOpen && (dropdownElementTargeted || toggleElementTargeted)) {
 	      evt.preventDefault();
 	      evt.stopPropagation();
 	      openScope.focusDropdownEntry(evt.which);
@@ -40434,13 +40444,11 @@
 	            var newEl = dropdownElement;
 	            self.dropdownMenu.replaceWith(newEl);
 	            self.dropdownMenu = newEl;
-	            self.dropdownMenu.on('keydown', uibDropdownService.keybindFilter);
+	            $document.on('keydown', uibDropdownService.keybindFilter);
 	          });
 	        });
 	      } else {
-	        if (self.dropdownMenu) {
-	          self.dropdownMenu.on('keydown', uibDropdownService.keybindFilter);
-	        }
+	        $document.on('keydown', uibDropdownService.keybindFilter);
 	      }
 	
 	      scope.focusToggleElement();
@@ -40850,6 +40858,15 @@
 	        'button:not([disabled]):not([tabindex=\'-1\']),select:not([disabled]):not([tabindex=\'-1\']), textarea:not([disabled]):not([tabindex=\'-1\']), ' +
 	        'iframe, object, embed, *[tabindex]:not([tabindex=\'-1\']), *[contenteditable=true]';
 	      var scrollbarPadding;
+	      var SNAKE_CASE_REGEXP = /[A-Z]/g;
+	
+	      // TODO: extract into common dependency with tooltip
+	      function snake_case(name) {
+	        var separator = '-';
+	        return name.replace(SNAKE_CASE_REGEXP, function(letter, pos) {
+	          return (pos ? separator : '') + letter.toLowerCase();
+	        });
+	      }
 	
 	      function isVisible(element) {
 	        return !!(element.offsetWidth ||
@@ -41086,6 +41103,21 @@
 	          }
 	        }
 	
+	        var content;
+	        if (modal.component) {
+	          content = document.createElement(snake_case(modal.component.name));
+	          content = angular.element(content);
+	          content.attr({
+	            resolve: '$resolve',
+	            'modal-instance': '$uibModalInstance',
+	            close: 'close($value)',
+	            dismiss: 'dismiss($value)'
+	          });
+	          content = $compile(content)(modal.scope);
+	        } else {
+	          content = modal.content;
+	        }
+	
 	        // Set the top modal index based on the index of the previous top modal
 	        topModalIndex = previousTopOpenedModal ? parseInt(previousTopOpenedModal.value.modalDomEl.attr('index'), 10) + 1 : 0;
 	        var angularDomEl = angular.element('<div uib-modal-window="modal-window"></div>');
@@ -41094,6 +41126,8 @@
 	          'template-url': modal.windowTemplateUrl,
 	          'window-top-class': modal.windowTopClass,
 	          'role': 'dialog',
+	          'aria-labelledby': modal.ariaLabelledBy,
+	          'aria-describedby': modal.ariaDescribedBy,
 	          'size': modal.size,
 	          'index': topModalIndex,
 	          'animate': 'animate',
@@ -41101,7 +41135,7 @@
 	          'tabindex': -1,
 	          'uib-modal-animation-class': 'fade',
 	          'modal-in-class': 'in'
-	        }).html(modal.content);
+	        }).append(content);
 	        if (modal.windowClass) {
 	          angularDomEl.addClass(modal.windowClass);
 	        }
@@ -41270,12 +41304,17 @@
 	            modalOptions.appendTo = modalOptions.appendTo || $document.find('body').eq(0);
 	
 	            //verify options
-	            if (!modalOptions.template && !modalOptions.templateUrl) {
-	              throw new Error('One of template or templateUrl options is required.');
+	            if (!modalOptions.component && !modalOptions.template && !modalOptions.templateUrl) {
+	              throw new Error('One of component or template or templateUrl options is required.');
 	            }
 	
-	            var templateAndResolvePromise =
-	              $q.all([getTemplatePromise(modalOptions), $uibResolve.resolve(modalOptions.resolve, {}, null, null)]);
+	            var templateAndResolvePromise;
+	            if (modalOptions.component) {
+	              templateAndResolvePromise = $q.when($uibResolve.resolve(modalOptions.resolve, {}, null, null));
+	            } else {
+	              templateAndResolvePromise =
+	                $q.all([getTemplatePromise(modalOptions), $uibResolve.resolve(modalOptions.resolve, {}, null, null)]);
+	            }
 	
 	            function resolveWithTemplate() {
 	              return templateAndResolvePromise;
@@ -41301,17 +41340,34 @@
 	                  }
 	                });
 	
+	                var modal = {
+	                  scope: modalScope,
+	                  deferred: modalResultDeferred,
+	                  renderDeferred: modalRenderDeferred,
+	                  closedDeferred: modalClosedDeferred,
+	                  animation: modalOptions.animation,
+	                  backdrop: modalOptions.backdrop,
+	                  keyboard: modalOptions.keyboard,
+	                  backdropClass: modalOptions.backdropClass,
+	                  windowTopClass: modalOptions.windowTopClass,
+	                  windowClass: modalOptions.windowClass,
+	                  windowTemplateUrl: modalOptions.windowTemplateUrl,
+	                  ariaLabelledBy: modalOptions.ariaLabelledBy,
+	                  ariaDescribedBy: modalOptions.ariaDescribedBy,
+	                  size: modalOptions.size,
+	                  openedClass: modalOptions.openedClass,
+	                  appendTo: modalOptions.appendTo
+	                };
+	
+	                var component = {};
 	                var ctrlInstance, ctrlInstantiate, ctrlLocals = {};
 	
-	                //controllers
-	                if (modalOptions.controller) {
-	                  ctrlLocals.$scope = modalScope;
-	                  ctrlLocals.$scope.$resolve = {};
-	                  ctrlLocals.$uibModalInstance = modalInstance;
-	                  angular.forEach(tplAndVars[1], function(value, key) {
-	                    ctrlLocals[key] = value;
-	                    ctrlLocals.$scope.$resolve[key] = value;
-	                  });
+	                if (modalOptions.component) {
+	                  constructLocals(component, false, true, false);
+	                  component.name = modalOptions.component;
+	                  modal.component = component;
+	                } else if (modalOptions.controller) {
+	                  constructLocals(ctrlLocals, true, false, true);
 	
 	                  // the third param will make the controller instantiate later,private api
 	                  // @see https://github.com/angular/angular.js/blob/master/src/ng/controller.js#L126
@@ -41332,25 +41388,31 @@
 	                  }
 	                }
 	
-	                $modalStack.open(modalInstance, {
-	                  scope: modalScope,
-	                  deferred: modalResultDeferred,
-	                  renderDeferred: modalRenderDeferred,
-	                  closedDeferred: modalClosedDeferred,
-	                  content: tplAndVars[0],
-	                  animation: modalOptions.animation,
-	                  backdrop: modalOptions.backdrop,
-	                  keyboard: modalOptions.keyboard,
-	                  backdropClass: modalOptions.backdropClass,
-	                  windowTopClass: modalOptions.windowTopClass,
-	                  windowClass: modalOptions.windowClass,
-	                  windowTemplateUrl: modalOptions.windowTemplateUrl,
-	                  size: modalOptions.size,
-	                  openedClass: modalOptions.openedClass,
-	                  appendTo: modalOptions.appendTo
-	                });
+	                if (!modalOptions.component) {
+	                  modal.content = tplAndVars[0];
+	                }
+	
+	                $modalStack.open(modalInstance, modal);
 	                modalOpenedDeferred.resolve(true);
 	
+	                function constructLocals(obj, template, instanceOnScope, injectable) {
+	                  obj.$scope = modalScope;
+	                  obj.$scope.$resolve = {};
+	                  if (instanceOnScope) {
+	                    obj.$scope.$uibModalInstance = modalInstance;
+	                  } else {
+	                    obj.$uibModalInstance = modalInstance;
+	                  }
+	
+	                  var resolves = template ? tplAndVars[1] : tplAndVars;
+	                  angular.forEach(resolves, function(value, key) {
+	                    if (injectable) {
+	                      obj[key] = value;
+	                    }
+	
+	                    obj.$scope.$resolve[key] = value;
+	                  });
+	                }
 	            }, function resolveError(reason) {
 	              modalOpenedDeferred.reject(reason);
 	              modalResultDeferred.reject(reason);
@@ -41733,10 +41795,10 @@
 	   */
 	  this.$get = ['$window', '$compile', '$timeout', '$document', '$uibPosition', '$interpolate', '$rootScope', '$parse', '$$stackedMap', function($window, $compile, $timeout, $document, $position, $interpolate, $rootScope, $parse, $$stackedMap) {
 	    var openedTooltips = $$stackedMap.createNew();
-	    $document.on('keypress', keypressListener);
+	    $document.on('keyup', keypressListener);
 	
 	    $rootScope.$on('$destroy', function() {
-	      $document.off('keypress', keypressListener);
+	      $document.off('keyup', keypressListener);
 	    });
 	
 	    function keypressListener(e) {
@@ -41744,7 +41806,6 @@
 	        var last = openedTooltips.top();
 	        if (last) {
 	          last.value.close();
-	          openedTooltips.removeTop();
 	          last = null;
 	        }
 	      }
@@ -41869,9 +41930,6 @@
 	            // By default, the tooltip is not open.
 	            // TODO add ability to start tooltip opened
 	            ttScope.isOpen = false;
-	            openedTooltips.add(ttScope, {
-	              close: hide
-	            });
 	
 	            function toggleTooltipBind() {
 	              if (!ttScope.isOpen) {
@@ -41998,6 +42056,10 @@
 	                }
 	              });
 	
+	              openedTooltips.add(ttScope, {
+	                close: hide
+	              });
+	
 	              prepObservers();
 	            }
 	
@@ -42010,6 +42072,9 @@
 	                tooltip.remove();
 	                tooltip = null;
 	              }
+	
+	              openedTooltips.remove(ttScope);
+	              
 	              if (tooltipLinkedScope) {
 	                tooltipLinkedScope.$destroy();
 	                tooltipLinkedScope = null;
@@ -42225,7 +42290,6 @@
 	            scope.$on('$destroy', function onDestroyTooltip() {
 	              unregisterTriggers();
 	              removeTooltip();
-	              openedTooltips.remove(ttScope);
 	              ttScope = null;
 	            });
 	          };
@@ -43450,7 +43514,7 @@
 	 * Extracted to a separate service for ease of unit testing
 	 */
 	  .factory('uibTypeaheadParser', ['$parse', function($parse) {
-	    //                      00000111000000000000022200000000000000003333333333333330000000000044000
+	    //                      000001111111100000000000002222222200000000000000003333333333333330000000000044444444000
 	    var TYPEAHEAD_REGEXP = /^\s*([\s\S]+?)(?:\s+as\s+([\s\S]+?))?\s+for\s+(?:([\$\w][\$\w\d]*))\s+in\s+([\s\S]+?)$/;
 	    return {
 	      parse: function(input) {
@@ -44197,7 +44261,7 @@
 	    "    </tr>\n" +
 	    "  </thead>\n" +
 	    "  <tbody>\n" +
-	    "    <tr class=\"uib-weeks\" ng-repeat=\"row in rows track by $index\">\n" +
+	    "    <tr class=\"uib-weeks\" ng-repeat=\"row in rows track by $index\" role=\"row\">\n" +
 	    "      <td ng-if=\"showWeeks\" class=\"text-center h6\"><em>{{ weekNumbers[$index] }}</em></td>\n" +
 	    "      <td ng-repeat=\"dt in row\" class=\"uib-day text-center\" role=\"gridcell\"\n" +
 	    "        id=\"{{::dt.uid}}\"\n" +
@@ -44228,7 +44292,7 @@
 	    "    </tr>\n" +
 	    "  </thead>\n" +
 	    "  <tbody>\n" +
-	    "    <tr class=\"uib-months\" ng-repeat=\"row in rows track by $index\">\n" +
+	    "    <tr class=\"uib-months\" ng-repeat=\"row in rows track by $index\" role=\"row\">\n" +
 	    "      <td ng-repeat=\"dt in row\" class=\"uib-month text-center\" role=\"gridcell\"\n" +
 	    "        id=\"{{::dt.uid}}\"\n" +
 	    "        ng-class=\"::dt.customClass\">\n" +
@@ -44258,7 +44322,7 @@
 	    "    </tr>\n" +
 	    "  </thead>\n" +
 	    "  <tbody>\n" +
-	    "    <tr class=\"uib-years\" ng-repeat=\"row in rows track by $index\">\n" +
+	    "    <tr class=\"uib-years\" ng-repeat=\"row in rows track by $index\" role=\"row\">\n" +
 	    "      <td ng-repeat=\"dt in row\" class=\"uib-year text-center\" role=\"gridcell\"\n" +
 	    "        id=\"{{::dt.uid}}\"\n" +
 	    "        ng-class=\"::dt.customClass\">\n" +
@@ -49146,6 +49210,18 @@
 	    resolve: {
 	      auth: ['$q', 'UserService', isAuthorize]
 	    }
+	  }).state('final', {
+	    url: '/final',
+	    template: '<final-section></final-section>',
+	    resolve: {
+	      auth: ['$q', 'UserService', isAuthorize]
+	    }
+	  }).state('qwerty', {
+	    url: '/qwerty',
+	    template: '<admin></admin>',
+	    resolve: {
+	      auth: ['$q', 'UserService', isAuthorize]
+	    }
 	  });
 	}];
 
@@ -49918,10 +49994,18 @@
 	
 	var _playerSection2 = _interopRequireDefault(_playerSection);
 	
+	var _finalSection = __webpack_require__(320);
+	
+	var _finalSection2 = _interopRequireDefault(_finalSection);
+	
+	var _adminSection = __webpack_require__(324);
+	
+	var _adminSection2 = _interopRequireDefault(_adminSection);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// import './dashboard.css';
-	exports.default = _angular2.default.module('app.components', [_app2.default, _navbarSection2.default, _mainSection2.default, _gameCreateRuleSection2.default, _profileSection2.default, _signUpSection2.default, _footerBlock2.default, _matchPassDir2.default, _signinSection2.default, _service2.default, _connectExistingGameSection2.default, _createNewGameSection2.default, _gamePlaySection2.default, _updateDictionarySection2.default, _firstResultsSection2.default, _playerSection2.default]).name;
+	exports.default = _angular2.default.module('app.components', [_app2.default, _navbarSection2.default, _mainSection2.default, _gameCreateRuleSection2.default, _profileSection2.default, _signUpSection2.default, _footerBlock2.default, _matchPassDir2.default, _signinSection2.default, _service2.default, _connectExistingGameSection2.default, _createNewGameSection2.default, _gamePlaySection2.default, _updateDictionarySection2.default, _firstResultsSection2.default, _playerSection2.default, _finalSection2.default, _adminSection2.default]).name;
 
 /***/ },
 /* 172 */
@@ -51148,7 +51232,7 @@
 	    key: 'list',
 	    value: function list() {
 	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games').then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51158,7 +51242,7 @@
 	    key: 'create',
 	    value: function create(game) {
 	      var _this = this;
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51168,7 +51252,7 @@
 	    key: 'detail',
 	    value: function detail(id) {
 	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id).then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/' + id).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51178,7 +51262,17 @@
 	    key: 'update',
 	    value: function update(game) {
 	      var _this = this;
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'save',
+	    value: function save(game) {
+	      var _this = this;
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51188,7 +51282,7 @@
 	    key: 'addWord',
 	    value: function addWord(gameID, words, playerID) {
 	      var _this = this;
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
 	        var obj = response.data;
 	        return obj;
 	      }).catch(function () {
@@ -51198,8 +51292,8 @@
 	  }, {
 	    key: 'finishGame',
 	    value: function finishGame(id) {
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id + '/finalize').then(function (res) {
-	        return res;
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/' + id + '/finalize').then(function (res) {
+	        return res.data;
 	      });
 	    }
 	  }]);
@@ -51269,7 +51363,7 @@
 	    key: 'create',
 	    value: function create(user) {
 	      console.log(user);
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
 	        return resp.data;
 	      });
 	    }
@@ -51282,7 +51376,7 @@
 	        username: user.userName.$modelValue,
 	        password: user.password.$modelValue
 	      };
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
 	        _this.userInfo = {
 	          userID: response.data._id,
 	          userName: response.data.username,
@@ -51300,7 +51394,7 @@
 	    value: function logout() {
 	      var _this = this;
 	      var deferred = this.q.defer();
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/user/logout').then(function (result) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/user/logout').then(function (result) {
 	        _this.deleteAuthUser();
 	        deferred.resolve(result);
 	      }, function (error) {
@@ -51387,7 +51481,7 @@
 	                console.log(this);
 	                _context.prev = 1;
 	                _context.next = 4;
-	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player');
+	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/player');
 	
 	              case 4:
 	                response = _context.sent;
@@ -51429,7 +51523,7 @@
 	              case 0:
 	                _context2.prev = 0;
 	                _context2.next = 3;
-	                return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
+	                return this.$http.post(("https://wgbackend.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
 	
 	              case 3:
 	                response = _context2.sent;
@@ -51465,7 +51559,7 @@
 	              case 0:
 	                _context3.prev = 0;
 	                _context3.next = 3;
-	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player/' + id);
+	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/player/' + id);
 	
 	              case 3:
 	                response = _context3.sent;
@@ -53640,7 +53734,7 @@
 	    key: 'list',
 	    value: function list() {
 	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary').then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/dictionary').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53650,7 +53744,7 @@
 	    key: 'create',
 	    value: function create(word) {
 	      var _this = this;
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53660,7 +53754,7 @@
 	    key: 'detail',
 	    value: function detail(word) {
 	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/' + word).then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/dictionary/' + word).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53670,7 +53764,7 @@
 	    key: 'update',
 	    value: function update(word) {
 	      var _this = this;
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53683,7 +53777,7 @@
 	      var collection = {
 	        words: words
 	      };
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -54366,24 +54460,32 @@
 	  }, {
 	    key: 'checkTimer',
 	    value: function checkTimer() {
+	      var _this4 = this;
+	
 	      var duration = Number(this.game.duration);
 	      var deadline = new Date(Date.parse(this.game.startTime) + duration * 60 * 1000);
 	      var actualTime = new Date();
 	      if (deadline < actualTime) {
-	        var navi = function navi() {
-	          this.state.go('firstResults');
-	        };
-	
 	        // update DOM
 	        var timer = _angular2.default.element(document.getElementById('game'));
 	        timer.remove();
 	        var element = _angular2.default.element('<p class="game-text">Your time expired</p>');
 	        _angular2.default.element(document.getElementById('gameHeader')).append(element);
 	
+	        var navi = function navi() {
+	          _this4.state.go('firstResults');
+	        };
 	        this.timeout(navi.bind(this), 3000);
 	        return;
 	      }
-	      setTimeout(this.checkTimer.bind(this), 1000);
+	      this.timer = this.timeout(this.checkTimer.bind(this), 1000);
+	      this.scope.$on('$locationChangeStart', function () {
+	        _this4.timeout.cancel(_this4.timer);
+	      });
+	      var deregister = this.scope.$on('$destroy', function () {
+	        _this4.timeout.cancel(_this4.timer);
+	      });
+	      this.timer.then(deregister, deregister);
 	    }
 	  }]);
 	  return PlayGameController;
@@ -54651,8 +54753,8 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var FirstResultsController = function () {
-	  FirstResultsController.$inject = ["GameService", "PlayerService", "UserService", "$scope", "commonFactory", "$q"];
-	  function FirstResultsController(GameService, PlayerService, UserService, $scope, commonFactory, $q) {
+	  FirstResultsController.$inject = ["GameService", "PlayerService", "UserService", "$scope", "commonFactory", "$q", "$timeout", "$state"];
+	  function FirstResultsController(GameService, PlayerService, UserService, $scope, commonFactory, $q, $timeout, $state) {
 	    'ngInject';
 	
 	    (0, _classCallCheck3.default)(this, FirstResultsController);
@@ -54662,6 +54764,8 @@
 	    this.commonFactory = commonFactory;
 	    this.UserService = UserService;
 	    this.$q = $q;
+	    this.timeout = $timeout;
+	    this.state = $state;
 	  }
 	
 	  (0, _createClass3.default)(FirstResultsController, [{
@@ -54672,19 +54776,18 @@
 	      this.getGame().then(function (result) {
 	        _this.game = result;
 	        console.log(_this.game);
-	        // this.game.isFinished = true;
-	        _this.game._id;
+	        var plCount = _this.game.players.length;
+	        var index = Math.floor(12 / plCount) || 1;
+	        _this.colClass = 'col-md-' + index + ' col-xs-' + index + ' col-sm-' + index + ' col-lg-' + index + ' game-square game-words';
 	        if (!_this.isDrawResult(_this.game)) {
+	          console.log(_this.scope.isDraw);
 	          var id = _this.findWinner(_this.game);
 	          _this.getPlayer(id).then(function (res) {
 	            _this.winner = res;
 	            console.log('winner -' + (0, _stringify2.default)(_this.winner));
 	          });
 	        }
-	        console.log(_this.scope.isDraw);
-	        var plCount = _this.game.players.length;
-	        var index = Math.floor(12 / plCount) || 1;
-	        _this.colClass = 'col-md-' + index + ' col-xs-' + index + ' col-sm-' + index + ' col-lg-' + index + ' game-square game-words';
+	        _this.checkWords(_this.game);
 	      });
 	    }
 	  }, {
@@ -54725,17 +54828,9 @@
 	    key: 'getGame',
 	    value: function getGame() {
 	      return this.GameService.finishGame(this.UserService.getAuthUser().gameID).then(function (result) {
-	        return result.data;
+	        return result;
 	      });
 	    }
-	
-	    // setWordTable() {
-	    //   const plCount = this.game.players.length;
-	    //   const index = Math.floor(12 / plCount);
-	    //   this.colClass = `col-md-${index} col-xs-${index} col-sm-${index} col-lg-${index} game-square game-words`;
-	    // }
-	    //
-	
 	  }, {
 	    key: 'getPlayerName',
 	    value: function getPlayerName(id) {
@@ -54744,6 +54839,47 @@
 	      this.getPlayer(id).then(function (result) {
 	        _this2.scope.player.name = result.name;
 	      });
+	    }
+	  }, {
+	    key: 'checkWords',
+	    value: function checkWords() {
+	      for (var i = 0; i < this.game.players.length; i++) {
+	        if (this.game.players[i].playerID == this.UserService.getAuthUser().playerID) {
+	          this.game.players[i].isCertain = true;
+	          for (var j = 0; j < this.game.players[i].words.length; j++) {
+	            if (!this.game.players[i].words[j].discription) {
+	              this.game.players[i].isCertain = false;
+	              break;
+	            }
+	          }
+	          if (this.game.players[i].isCertain) {
+	            this.GameService.save(this.game);
+	            this.timeout(navi.bind(this), 3000);
+	          }
+	        }
+	      }
+	
+	      function navi() {
+	        this.state.go('final');
+	      }
+	      setTimeout(this.checkWords.bind(this), 2000);
+	
+	      // this.GameService.detail(this.UserService.getAuthUser().gameID).then(res => {
+	      //   this.game = res;
+	      //   for (let i = 0; i <= res.players.length; i++) {
+	      //     if (res.players[i].playerID ==
+	      //       this.UserService.getAuthUser().playerID) {
+	      //       if (res.players[i].isCertain) {
+	      //         this.timeout(navi.bind(this), 3000);
+	      //       }
+	      //     }
+	      //   }
+	      //
+	      //   function navi() {
+	      //     this.state.go('finalSection');
+	      //   }
+	      //   setTimeout(this.checkWords.bind(this), 2000);
+	      // });
 	    }
 	  }]);
 	  return FirstResultsController;
@@ -54809,7 +54945,7 @@
 /* 314 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- player Header -->\n<div>\n    <ol class=\"list-group\">\n      <li class=\"f-res-text list-group-item disabled\">\n        <span ng-bind=\"$ctrl.plName\"></span>\n        <span class=\"badge\" ng-class=\"counterClass\" ng-bind=\"$ctrl.counter\"></span>\n      </li>\n      <li ng-repeat=\"word in $ctrl.words\" class=\"list-group-item\">\n        <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n          <a class=\"f-res-words\" ng-show=\"{{!!!word.discription}}\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word)\"></a>\n          <span class=\"f-res-words\" ng-show=\"{{!!word.discription}}\" ng-bind=\"word.word\">\n            <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n          </span>\n        </div>\n      </li>\n    </ol>\n    <ol ng-show=\"$ctrl.player.wrongWords.length>0\" class=\"list-group\">\n      <li class=\"f-res-text list-group-item disabled\" style=\"background-color: rgba(255, 71, 69, 1);color: white;\">\n        <span>WRONG WORDS</span>\n        <span class=\"badge\" ng-bind=\"$ctrl.player.wrongWords.length\"></span>\n      </li>\n      <li ng-repeat=\"word in $ctrl.player.wrongWords\" class=\"list-group-item\" style=\"background-color: rgba(255, 0, 0, 0.2);\">\n        <span class=\"f-res-words\" ng-bind=\"word\"></span>\n      </li>\n    </ol>\n</div>\n";
+	module.exports = "<!-- player Header -->\n<div>\n  <ol class=\"list-group\">\n    <li class=\"f-res-text list-group-item disabled\">\n      <span ng-bind=\"$ctrl.plName\"></span>\n      <span class=\"badge\" ng-class=\"counterClass\" ng-bind=\"$ctrl.counter\"></span>\n    </li>\n    <li ng-repeat=\"word in $ctrl.player.words track by $index\" class=\"list-group-item\">\n      <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n        <a class=\"f-res-words\" ng-show=\"!word.discription\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word.word, word.discription)\"></a>\n        <span class=\"f-res-words\" ng-show=\"word.discription\">\n          <span  ng-bind=\"word.word\"></span>\n          <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n        </span>\n      </div>\n    </li>\n  </ol>\n\n  <ol ng-show=\"$ctrl.player.wrongWords.length>0\" class=\"list-group\">\n    <li class=\"f-res-text list-group-itllem disabled\" style=\"background-color: rgba(255, 71, 69, 1);color: white;\">\n      <span>WRONG WORDS</span>\n      <span class=\"badge\" ng-bind=\"$ctrl.player.wrongWords.length\"></span>\n    </li>\n    <li ng-repeat=\"wrWord in $ctrl.player.wrongWords\" class=\"list-group-item\" style=\"background-color: rgba(255, 0, 0, 0.2);\">\n      {{wrWord.word}}\n      <span class=\"f-res-words\" ng-bind=\"wrWord\">\n        <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n      </span>\n    </li>\n  </ol>\n</div>\n";
 
 /***/ },
 /* 315 */
@@ -54820,6 +54956,10 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _stringify = __webpack_require__(226);
+	
+	var _stringify2 = _interopRequireDefault(_stringify);
 	
 	var _classCallCheck2 = __webpack_require__(176);
 	
@@ -54848,44 +54988,39 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var PlayerController = function () {
-	  PlayerController.$inject = ["PlayerService", "WordService", "$q", "$uibModal", "$scope"];
-	  function PlayerController(PlayerService, WordService, $q, $uibModal, $scope) {
+	  PlayerController.$inject = ["PlayerService", "GameService", "$q", "$uibModal", "$scope", "UserService"];
+	  function PlayerController(PlayerService, GameService, $q, $uibModal, $scope, UserService) {
 	    'ngInject';
 	
 	    (0, _classCallCheck3.default)(this, PlayerController);
 	    this.PlayerService = PlayerService;
-	    this.WordService = WordService;
+	    this.GameService = GameService;
 	    this.$q = $q;
 	    this.$uibModal = $uibModal;
 	    this.scope = $scope;
 	    this.counter = 0;
+	    this.UserService = UserService;
 	  }
 	
 	  (0, _createClass3.default)(PlayerController, [{
 	    key: '$onInit',
 	    value: function $onInit() {
-	      var _this = this;
+	      var _this2 = this;
 	
 	      this.getPlayer(this.player.playerID).then(function (result) {
-	        _this.plName = result.name;
-	        if (_this.player.words.length > 0) {
-	          _this.getWords().then(function (res) {
-	            _this.words = res;
-	            for (var i = 0; i < _this.words.length; i++) {
-	              if (_this.words[i].discription) {
-	                _this.counter++;
-	              }
+	        _this2.plName = result.name;
+	        if (_this2.player.words.length > 0) {
+	          for (var i = 0; i < _this2.player.words.length; i++) {
+	            if (_this2.player.words[i].discription) {
+	              _this2.counter++;
 	            }
-	            if (_this.counter < _this.words.length) {
-	              _this.scope.counterClass = 'counter-fail';
-	            } else {
-	              _this.scope.counterClass = 'counter-pass';
-	            }
-	          });
+	          }
+	          if (_this2.counter < _this2.player.words.length) {
+	            _this2.scope.counterClass = 'counter-fail';
+	          } else {
+	            _this2.scope.counterClass = 'counter-pass';
+	          }
 	        }
-	        //  else {
-	        //   this.words = [];
-	        // }
 	      });
 	    }
 	  }, {
@@ -54896,17 +55031,13 @@
 	      });
 	    }
 	  }, {
-	    key: 'getWords',
-	    value: function getWords() {
-	      return this.WordService.checkIsExist(this.player.words).then(function (result) {
-	        return result;
-	      });
-	    }
-	  }, {
 	    key: 'open',
-	    value: function open(_word) {
-	      var _this2 = this;
-	
+	    value: function open(word, discription) {
+	      var _this = this;
+	      var newWord = {
+	        word: word,
+	        discription: discription
+	      };
 	      var modalInstance = this.$uibModal.open({
 	        animation: true,
 	        template: _discriptionTmpl2.default,
@@ -54915,22 +55046,29 @@
 	        size: 'lg',
 	        resolve: {
 	          word: function word() {
-	            return _word;
+	            return newWord;
 	          }
 	        }
 	      });
 	
 	      modalInstance.result.then(function (result) {
-	        _this2.WordService.create(result).then(function () {
-	          _this2.getWords().then(function (res) {
-	            _this2.words = res;
-	            for (var i = 0; i < _this2.words.length; i++) {
-	              if (_this2.words[i].discription) {
-	                _this2.counter++;
-	              }
-	            }
-	          });
-	        });
+	        // console.log(`this.player.words = ${JSON.stringify(_this.player.words,null,2)}`);
+	        for (var i = 0; i < _this.player.words.length; i++) {
+	          if (_this.player.words[i].word == result.word) {
+	            _this.player.words[i].discription = result.discription;
+	          }
+	        }
+	        // this.WordService.create(result).then(() => {
+	        //   this.getWords().then(res => {
+	        //     this.words = res;
+	        //     for (let i = 0; i < this.words.length; i++) {
+	        //       if (this.words[i].discription) {
+	        //         this.counter++;
+	        //       }
+	        //     }
+	        //   });
+	        // })
+	        console.log((0, _stringify2.default)(_this.player.words, null, 2));
 	      }, function () {
 	        console.log('Modal dismissed at: ' + new Date());
 	      });
@@ -54959,7 +55097,7 @@
 	  var undefined;
 	
 	  /** Used as the semantic version number. */
-	  var VERSION = '4.14.2';
+	  var VERSION = '4.15.0';
 	
 	  /** Used as the size to enable large array optimizations. */
 	  var LARGE_ARRAY_SIZE = 200;
@@ -55096,8 +55234,8 @@
 	      reWrapDetails = /\{\n\/\* \[wrapped with (.+)\] \*/,
 	      reSplitDetails = /,? & /;
 	
-	  /** Used to match non-compound words composed of alphanumeric characters. */
-	  var reBasicWord = /[a-zA-Z0-9]+/g;
+	  /** Used to match words composed of alphanumeric characters. */
+	  var reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g;
 	
 	  /** Used to match backslashes in property paths. */
 	  var reEscapeChar = /\\(\\)?/g;
@@ -55129,8 +55267,8 @@
 	  /** Used to detect unsigned integer values. */
 	  var reIsUint = /^(?:0|[1-9]\d*)$/;
 	
-	  /** Used to match latin-1 supplementary letters (excluding mathematical operators). */
-	  var reLatin1 = /[\xc0-\xd6\xd8-\xde\xdf-\xf6\xf8-\xff]/g;
+	  /** Used to match Latin Unicode letters (excluding mathematical operators). */
+	  var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
 	
 	  /** Used to ensure capturing order of template delimiters. */
 	  var reNoMatch = /($^)/;
@@ -55191,10 +55329,10 @@
 	  var reComboMark = RegExp(rsCombo, 'g');
 	
 	  /** Used to match [string symbols](https://mathiasbynens.be/notes/javascript-unicode). */
-	  var reComplexSymbol = RegExp(rsFitz + '(?=' + rsFitz + ')|' + rsSymbol + rsSeq, 'g');
+	  var reUnicode = RegExp(rsFitz + '(?=' + rsFitz + ')|' + rsSymbol + rsSeq, 'g');
 	
 	  /** Used to match complex or compound words. */
-	  var reComplexWord = RegExp([
+	  var reUnicodeWord = RegExp([
 	    rsUpper + '?' + rsLower + '+' + rsOptLowerContr + '(?=' + [rsBreak, rsUpper, '$'].join('|') + ')',
 	    rsUpperMisc + '+' + rsOptUpperContr + '(?=' + [rsBreak, rsUpper + rsLowerMisc, '$'].join('|') + ')',
 	    rsUpper + '?' + rsLowerMisc + '+' + rsOptLowerContr,
@@ -55204,18 +55342,18 @@
 	  ].join('|'), 'g');
 	
 	  /** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
-	  var reHasComplexSymbol = RegExp('[' + rsZWJ + rsAstralRange  + rsComboMarksRange + rsComboSymbolsRange + rsVarRange + ']');
+	  var reHasUnicode = RegExp('[' + rsZWJ + rsAstralRange  + rsComboMarksRange + rsComboSymbolsRange + rsVarRange + ']');
 	
 	  /** Used to detect strings that need a more robust regexp to match words. */
-	  var reHasComplexWord = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
+	  var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
 	
 	  /** Used to assign default `context` object properties. */
 	  var contextProps = [
 	    'Array', 'Buffer', 'DataView', 'Date', 'Error', 'Float32Array', 'Float64Array',
 	    'Function', 'Int8Array', 'Int16Array', 'Int32Array', 'Map', 'Math', 'Object',
 	    'Promise', 'RegExp', 'Set', 'String', 'Symbol', 'TypeError', 'Uint8Array',
-	    'Uint8ClampedArray', 'Uint16Array', 'Uint32Array', 'WeakMap', '_', 'clearTimeout',
-	    'isFinite', 'parseInt', 'setTimeout'
+	    'Uint8ClampedArray', 'Uint16Array', 'Uint32Array', 'WeakMap',
+	    '_', 'clearTimeout', 'isFinite', 'parseInt', 'setTimeout'
 	  ];
 	
 	  /** Used to make template sourceURLs easier to identify. */
@@ -55253,16 +55391,17 @@
 	  cloneableTags[errorTag] = cloneableTags[funcTag] =
 	  cloneableTags[weakMapTag] = false;
 	
-	  /** Used to map latin-1 supplementary letters to basic latin letters. */
+	  /** Used to map Latin Unicode letters to basic Latin letters. */
 	  var deburredLetters = {
+	    // Latin-1 Supplement block.
 	    '\xc0': 'A',  '\xc1': 'A', '\xc2': 'A', '\xc3': 'A', '\xc4': 'A', '\xc5': 'A',
 	    '\xe0': 'a',  '\xe1': 'a', '\xe2': 'a', '\xe3': 'a', '\xe4': 'a', '\xe5': 'a',
 	    '\xc7': 'C',  '\xe7': 'c',
 	    '\xd0': 'D',  '\xf0': 'd',
 	    '\xc8': 'E',  '\xc9': 'E', '\xca': 'E', '\xcb': 'E',
 	    '\xe8': 'e',  '\xe9': 'e', '\xea': 'e', '\xeb': 'e',
-	    '\xcC': 'I',  '\xcd': 'I', '\xce': 'I', '\xcf': 'I',
-	    '\xeC': 'i',  '\xed': 'i', '\xee': 'i', '\xef': 'i',
+	    '\xcc': 'I',  '\xcd': 'I', '\xce': 'I', '\xcf': 'I',
+	    '\xec': 'i',  '\xed': 'i', '\xee': 'i', '\xef': 'i',
 	    '\xd1': 'N',  '\xf1': 'n',
 	    '\xd2': 'O',  '\xd3': 'O', '\xd4': 'O', '\xd5': 'O', '\xd6': 'O', '\xd8': 'O',
 	    '\xf2': 'o',  '\xf3': 'o', '\xf4': 'o', '\xf5': 'o', '\xf6': 'o', '\xf8': 'o',
@@ -55271,7 +55410,43 @@
 	    '\xdd': 'Y',  '\xfd': 'y', '\xff': 'y',
 	    '\xc6': 'Ae', '\xe6': 'ae',
 	    '\xde': 'Th', '\xfe': 'th',
-	    '\xdf': 'ss'
+	    '\xdf': 'ss',
+	    // Latin Extended-A block.
+	    '\u0100': 'A',  '\u0102': 'A', '\u0104': 'A',
+	    '\u0101': 'a',  '\u0103': 'a', '\u0105': 'a',
+	    '\u0106': 'C',  '\u0108': 'C', '\u010a': 'C', '\u010c': 'C',
+	    '\u0107': 'c',  '\u0109': 'c', '\u010b': 'c', '\u010d': 'c',
+	    '\u010e': 'D',  '\u0110': 'D', '\u010f': 'd', '\u0111': 'd',
+	    '\u0112': 'E',  '\u0114': 'E', '\u0116': 'E', '\u0118': 'E', '\u011a': 'E',
+	    '\u0113': 'e',  '\u0115': 'e', '\u0117': 'e', '\u0119': 'e', '\u011b': 'e',
+	    '\u011c': 'G',  '\u011e': 'G', '\u0120': 'G', '\u0122': 'G',
+	    '\u011d': 'g',  '\u011f': 'g', '\u0121': 'g', '\u0123': 'g',
+	    '\u0124': 'H',  '\u0126': 'H', '\u0125': 'h', '\u0127': 'h',
+	    '\u0128': 'I',  '\u012a': 'I', '\u012c': 'I', '\u012e': 'I', '\u0130': 'I',
+	    '\u0129': 'i',  '\u012b': 'i', '\u012d': 'i', '\u012f': 'i', '\u0131': 'i',
+	    '\u0134': 'J',  '\u0135': 'j',
+	    '\u0136': 'K',  '\u0137': 'k', '\u0138': 'k',
+	    '\u0139': 'L',  '\u013b': 'L', '\u013d': 'L', '\u013f': 'L', '\u0141': 'L',
+	    '\u013a': 'l',  '\u013c': 'l', '\u013e': 'l', '\u0140': 'l', '\u0142': 'l',
+	    '\u0143': 'N',  '\u0145': 'N', '\u0147': 'N', '\u014a': 'N',
+	    '\u0144': 'n',  '\u0146': 'n', '\u0148': 'n', '\u014b': 'n',
+	    '\u014c': 'O',  '\u014e': 'O', '\u0150': 'O',
+	    '\u014d': 'o',  '\u014f': 'o', '\u0151': 'o',
+	    '\u0154': 'R',  '\u0156': 'R', '\u0158': 'R',
+	    '\u0155': 'r',  '\u0157': 'r', '\u0159': 'r',
+	    '\u015a': 'S',  '\u015c': 'S', '\u015e': 'S', '\u0160': 'S',
+	    '\u015b': 's',  '\u015d': 's', '\u015f': 's', '\u0161': 's',
+	    '\u0162': 'T',  '\u0164': 'T', '\u0166': 'T',
+	    '\u0163': 't',  '\u0165': 't', '\u0167': 't',
+	    '\u0168': 'U',  '\u016a': 'U', '\u016c': 'U', '\u016e': 'U', '\u0170': 'U', '\u0172': 'U',
+	    '\u0169': 'u',  '\u016b': 'u', '\u016d': 'u', '\u016f': 'u', '\u0171': 'u', '\u0173': 'u',
+	    '\u0174': 'W',  '\u0175': 'w',
+	    '\u0176': 'Y',  '\u0177': 'y', '\u0178': 'Y',
+	    '\u0179': 'Z',  '\u017b': 'Z', '\u017d': 'Z',
+	    '\u017a': 'z',  '\u017c': 'z', '\u017e': 'z',
+	    '\u0132': 'IJ', '\u0133': 'ij',
+	    '\u0152': 'Oe', '\u0153': 'oe',
+	    '\u0149': "'n", '\u017f': 'ss'
 	  };
 	
 	  /** Used to map characters to HTML entities. */
@@ -55507,7 +55682,7 @@
 	   * specifying an index to search from.
 	   *
 	   * @private
-	   * @param {Array} [array] The array to search.
+	   * @param {Array} [array] The array to inspect.
 	   * @param {*} target The value to search for.
 	   * @returns {boolean} Returns `true` if `target` is found, else `false`.
 	   */
@@ -55520,7 +55695,7 @@
 	   * This function is like `arrayIncludes` except that it accepts a comparator.
 	   *
 	   * @private
-	   * @param {Array} [array] The array to search.
+	   * @param {Array} [array] The array to inspect.
 	   * @param {*} target The value to search for.
 	   * @param {Function} comparator The comparator invoked per element.
 	   * @returns {boolean} Returns `true` if `target` is found, else `false`.
@@ -55647,12 +55822,43 @@
 	  }
 	
 	  /**
+	   * Gets the size of an ASCII `string`.
+	   *
+	   * @private
+	   * @param {string} string The string inspect.
+	   * @returns {number} Returns the string size.
+	   */
+	  var asciiSize = baseProperty('length');
+	
+	  /**
+	   * Converts an ASCII `string` to an array.
+	   *
+	   * @private
+	   * @param {string} string The string to convert.
+	   * @returns {Array} Returns the converted array.
+	   */
+	  function asciiToArray(string) {
+	    return string.split('');
+	  }
+	
+	  /**
+	   * Splits an ASCII `string` into an array of its words.
+	   *
+	   * @private
+	   * @param {string} The string to inspect.
+	   * @returns {Array} Returns the words of `string`.
+	   */
+	  function asciiWords(string) {
+	    return string.match(reAsciiWord) || [];
+	  }
+	
+	  /**
 	   * The base implementation of methods like `_.findKey` and `_.findLastKey`,
 	   * without support for iteratee shorthands, which iterates over `collection`
 	   * using `eachFunc`.
 	   *
 	   * @private
-	   * @param {Array|Object} collection The collection to search.
+	   * @param {Array|Object} collection The collection to inspect.
 	   * @param {Function} predicate The function invoked per iteration.
 	   * @param {Function} eachFunc The function to iterate over `collection`.
 	   * @returns {*} Returns the found element or its key, else `undefined`.
@@ -55673,7 +55879,7 @@
 	   * support for iteratee shorthands.
 	   *
 	   * @private
-	   * @param {Array} array The array to search.
+	   * @param {Array} array The array to inspect.
 	   * @param {Function} predicate The function invoked per iteration.
 	   * @param {number} fromIndex The index to search from.
 	   * @param {boolean} [fromRight] Specify iterating from right to left.
@@ -55695,7 +55901,7 @@
 	   * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
 	   *
 	   * @private
-	   * @param {Array} array The array to search.
+	   * @param {Array} array The array to inspect.
 	   * @param {*} value The value to search for.
 	   * @param {number} fromIndex The index to search from.
 	   * @returns {number} Returns the index of the matched value, else `-1`.
@@ -55719,7 +55925,7 @@
 	   * This function is like `baseIndexOf` except that it accepts a comparator.
 	   *
 	   * @private
-	   * @param {Array} array The array to search.
+	   * @param {Array} array The array to inspect.
 	   * @param {*} value The value to search for.
 	   * @param {number} fromIndex The index to search from.
 	   * @param {Function} comparator The comparator invoked per element.
@@ -55982,7 +56188,8 @@
 	  }
 	
 	  /**
-	   * Used by `_.deburr` to convert latin-1 supplementary letters to basic latin letters.
+	   * Used by `_.deburr` to convert Latin-1 Supplement and Latin Extended-A
+	   * letters to basic Latin letters.
 	   *
 	   * @private
 	   * @param {string} letter The matched letter to deburr.
@@ -56020,6 +56227,28 @@
 	   */
 	  function getValue(object, key) {
 	    return object == null ? undefined : object[key];
+	  }
+	
+	  /**
+	   * Checks if `string` contains Unicode symbols.
+	   *
+	   * @private
+	   * @param {string} string The string to inspect.
+	   * @returns {boolean} Returns `true` if a symbol is found, else `false`.
+	   */
+	  function hasUnicode(string) {
+	    return reHasUnicode.test(string);
+	  }
+	
+	  /**
+	   * Checks if `string` contains a word composed of Unicode symbols.
+	   *
+	   * @private
+	   * @param {string} string The string to inspect.
+	   * @returns {boolean} Returns `true` if a word is found, else `false`.
+	   */
+	  function hasUnicodeWord(string) {
+	    return reHasUnicodeWord.test(string);
 	  }
 	
 	  /**
@@ -56156,14 +56385,9 @@
 	   * @returns {number} Returns the string size.
 	   */
 	  function stringSize(string) {
-	    if (!(string && reHasComplexSymbol.test(string))) {
-	      return string.length;
-	    }
-	    var result = reComplexSymbol.lastIndex = 0;
-	    while (reComplexSymbol.test(string)) {
-	      result++;
-	    }
-	    return result;
+	    return hasUnicode(string)
+	      ? unicodeSize(string)
+	      : asciiSize(string);
 	  }
 	
 	  /**
@@ -56174,7 +56398,9 @@
 	   * @returns {Array} Returns the converted array.
 	   */
 	  function stringToArray(string) {
-	    return string.match(reComplexSymbol);
+	    return hasUnicode(string)
+	      ? unicodeToArray(string)
+	      : asciiToArray(string);
 	  }
 	
 	  /**
@@ -56185,6 +56411,43 @@
 	   * @returns {string} Returns the unescaped character.
 	   */
 	  var unescapeHtmlChar = basePropertyOf(htmlUnescapes);
+	
+	  /**
+	   * Gets the size of a Unicode `string`.
+	   *
+	   * @private
+	   * @param {string} string The string inspect.
+	   * @returns {number} Returns the string size.
+	   */
+	  function unicodeSize(string) {
+	    var result = reUnicode.lastIndex = 0;
+	    while (reUnicode.test(string)) {
+	      result++;
+	    }
+	    return result;
+	  }
+	
+	  /**
+	   * Converts a Unicode `string` to an array.
+	   *
+	   * @private
+	   * @param {string} string The string to convert.
+	   * @returns {Array} Returns the converted array.
+	   */
+	  function unicodeToArray(string) {
+	    return string.match(reUnicode) || [];
+	  }
+	
+	  /**
+	   * Splits a Unicode `string` into an array of its words.
+	   *
+	   * @private
+	   * @param {string} The string to inspect.
+	   * @returns {Array} Returns the words of `string`.
+	   */
+	  function unicodeWords(string) {
+	    return string.match(reUnicodeWord) || [];
+	  }
 	
 	  /*--------------------------------------------------------------------------*/
 	
@@ -56225,19 +56488,23 @@
 	   * var defer = _.runInContext({ 'setTimeout': setImmediate }).defer;
 	   */
 	  function runInContext(context) {
-	    context = context ? _.defaults({}, context, _.pick(root, contextProps)) : root;
+	    context = context ? _.defaults(root.Object(), context, _.pick(root, contextProps)) : root;
 	
 	    /** Built-in constructor references. */
 	    var Array = context.Array,
+	        Date = context.Date,
 	        Error = context.Error,
+	        Function = context.Function,
 	        Math = context.Math,
+	        Object = context.Object,
 	        RegExp = context.RegExp,
+	        String = context.String,
 	        TypeError = context.TypeError;
 	
 	    /** Used for built-in method references. */
-	    var arrayProto = context.Array.prototype,
-	        objectProto = context.Object.prototype,
-	        stringProto = context.String.prototype;
+	    var arrayProto = Array.prototype,
+	        funcProto = Function.prototype,
+	        objectProto = Object.prototype;
 	
 	    /** Used to detect overreaching core-js shims. */
 	    var coreJsData = context['__core-js_shared__'];
@@ -56249,7 +56516,7 @@
 	    }());
 	
 	    /** Used to resolve the decompiled source of functions. */
-	    var funcToString = context.Function.prototype.toString;
+	    var funcToString = funcProto.toString;
 	
 	    /** Used to check objects for own properties. */
 	    var hasOwnProperty = objectProto.hasOwnProperty;
@@ -56282,14 +56549,14 @@
 	        Uint8Array = context.Uint8Array,
 	        getPrototype = overArg(Object.getPrototypeOf, Object),
 	        iteratorSymbol = Symbol ? Symbol.iterator : undefined,
-	        objectCreate = context.Object.create,
+	        objectCreate = Object.create,
 	        propertyIsEnumerable = objectProto.propertyIsEnumerable,
 	        splice = arrayProto.splice,
 	        spreadableSymbol = Symbol ? Symbol.isConcatSpreadable : undefined;
 	
 	    /** Mocked built-ins. */
 	    var ctxClearTimeout = context.clearTimeout !== root.clearTimeout && context.clearTimeout,
-	        ctxNow = context.Date && context.Date.now !== root.Date.now && context.Date.now,
+	        ctxNow = Date && Date.now !== root.Date.now && Date.now,
 	        ctxSetTimeout = context.setTimeout !== root.setTimeout && context.setTimeout;
 	
 	    /* Built-in method references for those with the same name as other `lodash` methods. */
@@ -56304,9 +56571,7 @@
 	        nativeMin = Math.min,
 	        nativeParseInt = context.parseInt,
 	        nativeRandom = Math.random,
-	        nativeReplace = stringProto.replace,
-	        nativeReverse = arrayProto.reverse,
-	        nativeSplit = stringProto.split;
+	        nativeReverse = arrayProto.reverse;
 	
 	    /* Built-in method references that are verified to be native. */
 	    var DataView = getNative(context, 'DataView'),
@@ -56314,11 +56579,11 @@
 	        Promise = getNative(context, 'Promise'),
 	        Set = getNative(context, 'Set'),
 	        WeakMap = getNative(context, 'WeakMap'),
-	        nativeCreate = getNative(context.Object, 'create');
+	        nativeCreate = getNative(Object, 'create');
 	
 	    /* Used to set `toString` methods. */
 	    var defineProperty = (function() {
-	      var func = getNative(context.Object, 'defineProperty'),
+	      var func = getNative(Object, 'defineProperty'),
 	          name = getNative.name;
 	
 	      return (name && name.length > 2) ? func : undefined;
@@ -57155,7 +57420,9 @@
 	     * @returns {Array} Returns the array of property names.
 	     */
 	    function arrayLikeKeys(value, inherited) {
-	      var result = (isArray(value) || isString(value) || isArguments(value))
+	      // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+	      // Safari 9 makes `arguments.length` enumerable in strict mode.
+	      var result = (isArray(value) || isArguments(value))
 	        ? baseTimes(value.length, String)
 	        : [];
 	
@@ -57227,7 +57494,7 @@
 	     * Gets the index at which the `key` is found in `array` of key-value pairs.
 	     *
 	     * @private
-	     * @param {Array} array The array to search.
+	     * @param {Array} array The array to inspect.
 	     * @param {*} key The key to search for.
 	     * @returns {number} Returns the index of the matched value, else `-1`.
 	     */
@@ -58652,7 +58919,7 @@
 	     * The base implementation of `_.set`.
 	     *
 	     * @private
-	     * @param {Object} object The object to query.
+	     * @param {Object} object The object to modify.
 	     * @param {Array|string} path The path of the property to set.
 	     * @param {*} value The value to set.
 	     * @param {Function} [customizer] The function to customize path creation.
@@ -58982,7 +59249,7 @@
 	     * The base implementation of `_.update`.
 	     *
 	     * @private
-	     * @param {Object} object The object to query.
+	     * @param {Object} object The object to modify.
 	     * @param {Array|string} path The path of the property to update.
 	     * @param {Function} updater The function to produce the updated value.
 	     * @param {Function} [customizer] The function to customize path creation.
@@ -59593,7 +59860,7 @@
 	      return function(string) {
 	        string = toString(string);
 	
-	        var strSymbols = reHasComplexSymbol.test(string)
+	        var strSymbols = hasUnicode(string)
 	          ? stringToArray(string)
 	          : undefined;
 	
@@ -59936,7 +60203,7 @@
 	        return charsLength ? baseRepeat(chars, length) : chars;
 	      }
 	      var result = baseRepeat(chars, nativeCeil(length / stringSize(chars)));
-	      return reHasComplexSymbol.test(chars)
+	      return hasUnicode(chars)
 	        ? castSlice(stringToArray(result), 0, length).join('')
 	        : result.slice(0, length);
 	    }
@@ -60603,7 +60870,7 @@
 	    var getTag = baseGetTag;
 	
 	    // Fallback for data views, maps, sets, and weak maps in IE 11,
-	    // for data views in Edge, and promises in Node.js.
+	    // for data views in Edge < 14, and promises in Node.js.
 	    if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
 	        (Map && getTag(new Map) != mapTag) ||
 	        (Promise && getTag(Promise.resolve()) != promiseTag) ||
@@ -60695,7 +60962,7 @@
 	      }
 	      var length = object ? object.length : 0;
 	      return !!length && isLength(length) && isIndex(key, length) &&
-	        (isArray(object) || isString(object) || isArguments(object));
+	        (isArray(object) || isArguments(object));
 	    }
 	
 	    /**
@@ -61676,7 +61943,7 @@
 	     * @memberOf _
 	     * @since 1.1.0
 	     * @category Array
-	     * @param {Array} array The array to search.
+	     * @param {Array} array The array to inspect.
 	     * @param {Function} [predicate=_.identity]
 	     *  The function invoked per iteration.
 	     * @param {number} [fromIndex=0] The index to search from.
@@ -61724,7 +61991,7 @@
 	     * @memberOf _
 	     * @since 2.0.0
 	     * @category Array
-	     * @param {Array} array The array to search.
+	     * @param {Array} array The array to inspect.
 	     * @param {Function} [predicate=_.identity]
 	     *  The function invoked per iteration.
 	     * @param {number} [fromIndex=array.length-1] The index to search from.
@@ -61893,7 +62160,7 @@
 	     * @memberOf _
 	     * @since 0.1.0
 	     * @category Array
-	     * @param {Array} array The array to search.
+	     * @param {Array} array The array to inspect.
 	     * @param {*} value The value to search for.
 	     * @param {number} [fromIndex=0] The index to search from.
 	     * @returns {number} Returns the index of the matched value, else `-1`.
@@ -62078,7 +62345,7 @@
 	     * @memberOf _
 	     * @since 0.1.0
 	     * @category Array
-	     * @param {Array} array The array to search.
+	     * @param {Array} array The array to inspect.
 	     * @param {*} value The value to search for.
 	     * @param {number} [fromIndex=array.length-1] The index to search from.
 	     * @returns {number} Returns the index of the matched value, else `-1`.
@@ -62456,7 +62723,7 @@
 	     * @memberOf _
 	     * @since 4.0.0
 	     * @category Array
-	     * @param {Array} array The array to search.
+	     * @param {Array} array The array to inspect.
 	     * @param {*} value The value to search for.
 	     * @returns {number} Returns the index of the matched value, else `-1`.
 	     * @example
@@ -62535,7 +62802,7 @@
 	     * @memberOf _
 	     * @since 4.0.0
 	     * @category Array
-	     * @param {Array} array The array to search.
+	     * @param {Array} array The array to inspect.
 	     * @param {*} value The value to search for.
 	     * @returns {number} Returns the index of the matched value, else `-1`.
 	     * @example
@@ -63664,7 +63931,7 @@
 	     * @memberOf _
 	     * @since 0.1.0
 	     * @category Collection
-	     * @param {Array|Object} collection The collection to search.
+	     * @param {Array|Object} collection The collection to inspect.
 	     * @param {Function} [predicate=_.identity]
 	     *  The function invoked per iteration.
 	     * @param {number} [fromIndex=0] The index to search from.
@@ -63702,7 +63969,7 @@
 	     * @memberOf _
 	     * @since 2.0.0
 	     * @category Collection
-	     * @param {Array|Object} collection The collection to search.
+	     * @param {Array|Object} collection The collection to inspect.
 	     * @param {Function} [predicate=_.identity]
 	     *  The function invoked per iteration.
 	     * @param {number} [fromIndex=collection.length-1] The index to search from.
@@ -63897,7 +64164,7 @@
 	     * @memberOf _
 	     * @since 0.1.0
 	     * @category Collection
-	     * @param {Array|Object|string} collection The collection to search.
+	     * @param {Array|Object|string} collection The collection to inspect.
 	     * @param {*} value The value to search for.
 	     * @param {number} [fromIndex=0] The index to search from.
 	     * @param- {Object} [guard] Enables use as an iteratee for methods like `_.reduce`.
@@ -64330,7 +64597,7 @@
 	     * @memberOf _
 	     * @since 0.1.0
 	     * @category Collection
-	     * @param {Array|Object} collection The collection to inspect.
+	     * @param {Array|Object|string} collection The collection to inspect.
 	     * @returns {number} Returns the collection size.
 	     * @example
 	     *
@@ -64348,14 +64615,11 @@
 	        return 0;
 	      }
 	      if (isArrayLike(collection)) {
-	        var result = collection.length;
-	        return (result && isString(collection)) ? stringSize(collection) : result;
+	        return isString(collection) ? stringSize(collection) : collection.length;
 	      }
-	      if (isObjectLike(collection)) {
-	        var tag = getTag(collection);
-	        if (tag == mapTag || tag == setTag) {
-	          return collection.size;
-	        }
+	      var tag = getTag(collection);
+	      if (tag == mapTag || tag == setTag) {
+	        return collection.size;
 	      }
 	      return baseKeys(collection).length;
 	    }
@@ -65764,7 +66028,7 @@
 	     * // => false
 	     */
 	    function isArguments(value) {
-	      // Safari 8.1 incorrectly makes `arguments.callee` enumerable in strict mode.
+	      // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
 	      return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
 	        (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
 	    }
@@ -65987,24 +66251,23 @@
 	     */
 	    function isEmpty(value) {
 	      if (isArrayLike(value) &&
-	          (isArray(value) || isString(value) || isFunction(value.splice) ||
-	            isArguments(value) || isBuffer(value))) {
+	          (isArray(value) || typeof value == 'string' ||
+	            typeof value.splice == 'function' || isBuffer(value) || isArguments(value))) {
 	        return !value.length;
 	      }
-	      if (isObjectLike(value)) {
-	        var tag = getTag(value);
-	        if (tag == mapTag || tag == setTag) {
-	          return !value.size;
-	        }
+	      var tag = getTag(value);
+	      if (tag == mapTag || tag == setTag) {
+	        return !value.size;
 	      }
-	      var isProto = isPrototype(value);
+	      if (nonEnumShadows || isPrototype(value)) {
+	        return !nativeKeys(value).length;
+	      }
 	      for (var key in value) {
-	        if (hasOwnProperty.call(value, key) &&
-	            !(isProto && key == 'constructor')) {
+	        if (hasOwnProperty.call(value, key)) {
 	          return false;
 	        }
 	      }
-	      return !(nonEnumShadows && nativeKeys(value).length);
+	      return true;
 	    }
 	
 	    /**
@@ -66152,8 +66415,7 @@
 	     */
 	    function isFunction(value) {
 	      // The use of `Object#toString` avoids issues with the `typeof` operator
-	      // in Safari 8 which returns 'object' for typed array and weak map constructors,
-	      // and PhantomJS 1.9 which returns 'function' for `NodeList` instances.
+	      // in Safari 8-9 which returns 'object' for typed array and other constructors.
 	      var tag = isObject(value) ? objectToString.call(value) : '';
 	      return tag == funcTag || tag == genTag;
 	    }
@@ -66967,7 +67229,7 @@
 	        return NAN;
 	      }
 	      if (isObject(value)) {
-	        var other = isFunction(value.valueOf) ? value.valueOf() : value;
+	        var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
 	        value = isObject(other) ? (other + '') : other;
 	      }
 	      if (typeof value != 'string') {
@@ -67325,7 +67587,7 @@
 	     * @memberOf _
 	     * @since 1.1.0
 	     * @category Object
-	     * @param {Object} object The object to search.
+	     * @param {Object} object The object to inspect.
 	     * @param {Function} [predicate=_.identity] The function invoked per iteration.
 	     * @returns {string|undefined} Returns the key of the matched element,
 	     *  else `undefined`.
@@ -67364,7 +67626,7 @@
 	     * @memberOf _
 	     * @since 2.0.0
 	     * @category Object
-	     * @param {Object} object The object to search.
+	     * @param {Object} object The object to inspect.
 	     * @param {Function} [predicate=_.identity] The function invoked per iteration.
 	     * @returns {string|undefined} Returns the key of the matched element,
 	     *  else `undefined`.
@@ -68606,8 +68868,9 @@
 	
 	    /**
 	     * Deburrs `string` by converting
-	     * [latin-1 supplementary letters](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
-	     * to basic latin letters and removing
+	     * [Latin-1 Supplement](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
+	     * and [Latin Extended-A](https://en.wikipedia.org/wiki/Latin_Extended-A)
+	     * letters to basic Latin letters and removing
 	     * [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks).
 	     *
 	     * @static
@@ -68623,7 +68886,7 @@
 	     */
 	    function deburr(string) {
 	      string = toString(string);
-	      return string && string.replace(reLatin1, deburrLetter).replace(reComboMark, '');
+	      return string && string.replace(reLatin, deburrLetter).replace(reComboMark, '');
 	    }
 	
 	    /**
@@ -68633,7 +68896,7 @@
 	     * @memberOf _
 	     * @since 3.0.0
 	     * @category String
-	     * @param {string} [string=''] The string to search.
+	     * @param {string} [string=''] The string to inspect.
 	     * @param {string} [target] The string to search for.
 	     * @param {number} [position=string.length] The position to search up to.
 	     * @returns {boolean} Returns `true` if `string` ends with `target`,
@@ -68989,7 +69252,7 @@
 	      var args = arguments,
 	          string = toString(args[0]);
 	
-	      return args.length < 3 ? string : nativeReplace.call(string, args[1], args[2]);
+	      return args.length < 3 ? string : string.replace(args[1], args[2]);
 	    }
 	
 	    /**
@@ -69050,11 +69313,11 @@
 	            (separator != null && !isRegExp(separator))
 	          )) {
 	        separator = baseToString(separator);
-	        if (separator == '' && reHasComplexSymbol.test(string)) {
+	        if (!separator && hasUnicode(string)) {
 	          return castSlice(stringToArray(string), 0, limit);
 	        }
 	      }
-	      return nativeSplit.call(string, separator, limit);
+	      return string.split(separator, limit);
 	    }
 	
 	    /**
@@ -69089,7 +69352,7 @@
 	     * @memberOf _
 	     * @since 3.0.0
 	     * @category String
-	     * @param {string} [string=''] The string to search.
+	     * @param {string} [string=''] The string to inspect.
 	     * @param {string} [target] The string to search for.
 	     * @param {number} [position=0] The position to search from.
 	     * @returns {boolean} Returns `true` if `string` starts with `target`,
@@ -69526,7 +69789,7 @@
 	      string = toString(string);
 	
 	      var strLength = string.length;
-	      if (reHasComplexSymbol.test(string)) {
+	      if (hasUnicode(string)) {
 	        var strSymbols = stringToArray(string);
 	        strLength = strSymbols.length;
 	      }
@@ -69663,7 +69926,7 @@
 	      pattern = guard ? undefined : pattern;
 	
 	      if (pattern === undefined) {
-	        pattern = reHasComplexWord.test(string) ? reComplexWord : reBasicWord;
+	        return hasUnicodeWord(string) ? unicodeWords(string) : asciiWords(string);
 	      }
 	      return string.match(pattern) || [];
 	    }
@@ -71633,6 +71896,198 @@
 
 	module.exports = "<div class=\"modal-header\">\n  <!-- <strong ng-bind=\"$ctrl.word.word\"> </strong> -->\n  <h3 class=\"modal-title\">Enter discription for\n    <strong ng-bind=\"vm.word.word\"></strong>\n  </h3>\n</div>\n<div class=\"modal-body\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Discription\" aria-describedby=\"sizing-addon1\" ng-model=\"vm.word.discription\">\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" type=\"button\" ng-click=\"vm.ok()\">OK</button>\n  <button class=\"btn btn-warning\" type=\"button\" ng-click=\"vm.cancel()\">Cancel</button>\n</div>\n";
 
+/***/ },
+/* 320 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(157);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _finalComponent = __webpack_require__(321);
+	
+	var _finalComponent2 = _interopRequireDefault(_finalComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.finalSection', []).component('finalSection', _finalComponent2.default).name;
+
+/***/ },
+/* 321 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _finalTmpl = __webpack_require__(322);
+	
+	var _finalTmpl2 = _interopRequireDefault(_finalTmpl);
+	
+	var _finalController = __webpack_require__(323);
+	
+	var _finalController2 = _interopRequireDefault(_finalController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _finalTmpl2.default,
+	  controller: _finalController2.default,
+	  bind: {
+	    user: '='
+	  }
+	};
+
+/***/ },
+/* 322 */
+/***/ function(module, exports) {
+
+	module.exports = "<!-- game Header -->\n<div class=\"f-res\">\n  <div class=\"f-res-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 f-res-square\">\n            <br>\n            <h1 class=\"brand-heading\" ng-init=\"$ctrl.checkWords()\">YOU'r winner</h1>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\" style=\"padding-bottom: 10px;\">\n        <a href=\"#/\" class=\"btn btn-success btn-block\">Back to main page</a>\n      </div>\n    </div>\n  </div>\n</div>\n";
+
+/***/ },
+/* 323 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classCallCheck2 = __webpack_require__(176);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(177);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var FinalController = function () {
+	  FinalController.$inject = ["UserService"];
+	  function FinalController(UserService) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, FinalController);
+	    this.UserService = UserService;
+	  }
+	
+	  (0, _createClass3.default)(FinalController, [{
+	    key: '$onInit',
+	    value: function $onInit() {
+	      this.user = this.UserService.getAuthUser();
+	    }
+	  }]);
+	  return FinalController;
+	}();
+	
+	exports.default = FinalController;
+
+/***/ },
+/* 324 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(157);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _adminComponent = __webpack_require__(325);
+	
+	var _adminComponent2 = _interopRequireDefault(_adminComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.admin', []).component('admin', _adminComponent2.default).name;
+
+/***/ },
+/* 325 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _adminTmpl = __webpack_require__(326);
+	
+	var _adminTmpl2 = _interopRequireDefault(_adminTmpl);
+	
+	var _adminController = __webpack_require__(327);
+	
+	var _adminController2 = _interopRequireDefault(_adminController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _adminTmpl2.default,
+	  controller: _adminController2.default,
+	  bind: {
+	    user: '='
+	  }
+	};
+
+/***/ },
+/* 326 */
+/***/ function(module, exports) {
+
+	module.exports = "<!-- About Section -->\n<div class=\"profile\">\n  <div class=\"profile-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"profile-square\">\n            <h4 class=\"brand-heading\">Hi Mr. ADMIN\n              <span ng-bind=\"$ctrl.user.userName\"></span>\n            </h4>\n            <p class=\"profile-text\">A free, responsive, one page Bootstrap theme.\n              <br>Created by Start Bootstrap.</p>\n            <a href=\"#/\" class=\"btn btn-circle page-scroll\">\n              <i class=\"fa fa-angle-double-down animated\"></i>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+
+/***/ },
+/* 327 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classCallCheck2 = __webpack_require__(176);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(177);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var AdminController = function () {
+	  AdminController.$inject = ["UserService"];
+	  function AdminController(UserService) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, AdminController);
+	    this.UserService = UserService;
+	  }
+	
+	  (0, _createClass3.default)(AdminController, [{
+	    key: '$onInit',
+	    value: function $onInit() {
+	      this.user = this.UserService.getAuthUser();
+	    }
+	  }]);
+	  return AdminController;
+	}();
+	
+	exports.default = AdminController;
+
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-1ede3e39dff2b7f79cd7.js.map
+//# sourceMappingURL=bundle-2e570357145c23a3130e.js.map

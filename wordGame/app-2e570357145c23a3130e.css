@@ -9224,7 +9224,7 @@ signin {
   background: white;
   border: 1px solid black;
   height: 40px;
-  overflow: hidden;
+  overflow: auto;
 }
 .view-animate {
   padding: 10px;
@@ -9485,6 +9485,7 @@ signin {
   -ms-background-size: 100%;
   -khtml-background-size: 100%;
   background-size: 100%;
+  overflow: scroll;
 }
 .connect .connect-body {
   display: table-cell;
@@ -9619,6 +9620,9 @@ player .list-group-item a {
   color: red;
   text-decoration: underline;
 }
+.list-group-item > .badge {
+  float: right;
+}
 h3.modal-title {
   color: #464242;
 }
@@ -9638,7 +9642,7 @@ h3.modal-title {
   position: relative;
 }
 .input-group {
-  padding: 7px 0px;
+  padding: 7px 0;
 }
 label {
   margin: 5px;
@@ -9809,4 +9813,4 @@ label {
 }
 
 
-/*# sourceMappingURL=app-1ede3e39dff2b7f79cd7.css.map*/
+/*# sourceMappingURL=app-2e570357145c23a3130e.css.map*/

@@ -51061,7 +51061,7 @@
 /* 223 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- Intro Header -->\n<div class=\"signin\">\n  <div class=\"signin-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignIn page</h1>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you password</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid\" class=\"btn btn-success btn-block\">\n                Sign In\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n              <!-- ng-click=\"$ctrl.closeWin()\". -->\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- Intro Header -->\n<div class=\"signin\">\n  <div class=\"signin-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignIn page</h1>\n          <h2 ng-bind=\"$ctrl.message\" style=\"color:red;\"></h2>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you password</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid\" class=\"btn btn-success btn-block\">\n                Sign In\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n              <!-- ng-click=\"$ctrl.closeWin()\". -->\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 224 */
@@ -51118,6 +51118,7 @@
 	          });
 	        } catch (e) {
 	          console.log(e);
+	          _this.message = 'You\'r login or password is wrong. Please try again';
 	          _this.location.path('#/signup');
 	        }
 	      }
@@ -71995,4 +71996,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-ee2743aceebdc6418301.js.map
+//# sourceMappingURL=bundle-90c49733a6adec2a1492.js.map

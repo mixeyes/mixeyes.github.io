@@ -9238,7 +9238,7 @@ signin {
   overflow: auto;
 }
 .view-animate {
-  padding: 10px;
+  padding: 0;
 }
 .view-animate.ng-enter,
 .view-animate.ng-leave {
@@ -9551,6 +9551,11 @@ signin {
 }
 .signin .signin-body .signin-text {
   font-size: 18px;
+}
+.signin .signin-body .signin-square {
+  height: 75%;
+  background-color: rgba(105, 105, 105, 0.7);
+  padding: 25px;
 }
 @media (min-width: 768px) {
   .signin {
@@ -9968,4 +9973,4 @@ label {
 }
 
 
-/*# sourceMappingURL=app-7eb8242249774662c0dc.css.map*/
+/*# sourceMappingURL=app-d7f604797a3df20155ca.css.map*/

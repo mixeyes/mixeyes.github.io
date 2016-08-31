@@ -51228,7 +51228,7 @@
 	    key: 'list',
 	    value: function list() {
 	      var _this = this;
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games').then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51238,7 +51238,7 @@
 	    key: 'create',
 	    value: function create(game) {
 	      var _this = this;
-	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51248,7 +51248,7 @@
 	    key: 'detail',
 	    value: function detail(id) {
 	      var _this = this;
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/' + id).then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51258,7 +51258,7 @@
 	    key: 'update',
 	    value: function update(game) {
 	      var _this = this;
-	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51269,7 +51269,7 @@
 	    value: function save(game) {
 	      var _this = this;
 	      console.log((0, _stringify2.default)(game, null, 2));
-	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51279,7 +51279,7 @@
 	    key: 'addWord',
 	    value: function addWord(gameID, words, playerID) {
 	      var _this = this;
-	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
 	        var obj = response.data;
 	        return obj;
 	      }).catch(function () {
@@ -51289,14 +51289,14 @@
 	  }, {
 	    key: 'finishGame',
 	    value: function finishGame(id) {
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/' + id + '/finalize').then(function (res) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id + '/finalize').then(function (res) {
 	        return res.data;
 	      });
 	    }
 	  }, {
 	    key: 'finishedList',
 	    value: function finishedList() {
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/finished').then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/finished').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51369,7 +51369,7 @@
 	    key: 'create',
 	    value: function create(user) {
 	      console.log(user);
-	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
 	        return resp.data;
 	      });
 	    }
@@ -51382,7 +51382,7 @@
 	        username: user.userName.$modelValue,
 	        password: user.password.$modelValue
 	      };
-	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
 	        _this.userInfo = {
 	          userID: response.data._id,
 	          userName: response.data.username,
@@ -51400,7 +51400,7 @@
 	    value: function logout() {
 	      var _this = this;
 	      var deferred = this.q.defer();
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/user/logout').then(function (result) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/user/logout').then(function (result) {
 	        _this.deleteAuthUser();
 	        deferred.resolve(result);
 	      }, function (error) {
@@ -51486,7 +51486,7 @@
 	              case 0:
 	                _context.prev = 0;
 	                _context.next = 3;
-	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/player');
+	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player');
 	
 	              case 3:
 	                response = _context.sent;
@@ -51526,7 +51526,7 @@
 	              case 0:
 	                _context2.prev = 0;
 	                _context2.next = 3;
-	                return this.$http.post(("https://wgbackend.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
+	                return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
 	
 	              case 3:
 	                response = _context2.sent;
@@ -51562,7 +51562,7 @@
 	              case 0:
 	                _context3.prev = 0;
 	                _context3.next = 3;
-	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/player/' + id);
+	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player/' + id);
 	
 	              case 3:
 	                response = _context3.sent;
@@ -53737,7 +53737,7 @@
 	    key: 'list',
 	    value: function list() {
 	      var _this = this;
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/dictionary').then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53747,7 +53747,7 @@
 	    key: 'create',
 	    value: function create(word) {
 	      var _this = this;
-	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53757,7 +53757,7 @@
 	    key: 'detail',
 	    value: function detail(word) {
 	      var _this = this;
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/dictionary/' + word).then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/' + word).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53767,7 +53767,7 @@
 	    key: 'update',
 	    value: function update(word) {
 	      var _this = this;
-	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53780,7 +53780,7 @@
 	      var collection = {
 	        words: words
 	      };
-	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -71999,4 +71999,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-d7f604797a3df20155ca.js.map
+//# sourceMappingURL=bundle-4f940d2107afc82b19a7.js.map

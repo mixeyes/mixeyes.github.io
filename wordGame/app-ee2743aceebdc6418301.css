@@ -9107,7 +9107,7 @@ a:hover {
   width: 100%;
   padding: 50px 0;
   color: white;
-  background: url(img/downloads-bg.jpg) no-repeat center center scroll;
+  background: url(img/853250.jpg) no-repeat center center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -9140,8 +9140,8 @@ a:hover {
   transition: all 0.3s ease-in-out;
   border-radius: 10;
 }
-.btn-success,
-.btn-danger {
+.btn-danger,
+.btn-success {
   font-size: 20px;
 }
 .btn-default {
@@ -9180,6 +9180,7 @@ footer {
   bottom: 0;
   position: absolute;
   background-color: black;
+  z-index: 2;
 }
 footer p {
   margin: 0;
@@ -9202,6 +9203,16 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+}
+#loading-bar .bar {
+  position: relative;
+}
+.loading-bar {
+  height: 100px;
+  background-color: rgba(167, 62, 64, 0.6);
+  font-size: 75px;
+  text-align: center;
+  vertical-align: middle;
 }
 .signup-link {
   padding-top: 15px;
@@ -9250,6 +9261,89 @@ signin {
 }
 .view-animate.ng-leave.ng-leave-active {
   left: -100%;
+}
+/* скрываем чекбоксы и блоки с содержанием */
+.hide,
+.hide + label ~ div {
+  display: none;
+}
+/* вид текста label */
+.hide + label {
+  padding: 0;
+  color: palegreen;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+}
+/* вид текста label активном переключателе */
+.hide:checked + label {
+  color: red;
+  border-bottom: 0;
+  font-size: 15px;
+}
+/* когда чекбокс активен показываем блоки с содержанием  */
+.hide:checked + label + div {
+  display: block;
+  background: #808080;
+  -moz-box-shadow: inset 3px 3px 10px #7d8e8f;
+  -webkit-box-shadow: inset 3px 3px 10px #7d8e8f;
+  box-shadow: inset 3px 3px 10px #7d8e8f;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 10px;
+  /* чуточку анимации при появлении */
+  -webkit-animation: fade ease-in 0.5s;
+  -moz-animation: fade ease-in 0.5s;
+  animation: fade ease-in 0.5s;
+}
+/* анимация при появлении скрытых блоков */
+@-moz-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hide + label:before {
+  background-color: #1e90ff;
+  color: #fff;
+  content: "+";
+  display: block;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  height: 16px;
+  line-height: 16px;
+  margin: 0 5px;
+  text-align: center;
+  width: 16px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.hide:checked + label:before {
+  content: "\2212";
+}
+/* demo box position */
+.demo {
+  margin: 5% 10%;
 }
 .profile {
   display: table;
@@ -9611,6 +9705,67 @@ signin {
     padding: 5px;
   }
 }
+.admin {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  background: url(img/24350_900.jpg) no-repeat center;
+  background-color: black;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+  -o-background-size: 100%;
+}
+.admin .admin-body {
+  display: table-cell;
+  vertical-align: middle;
+}
+.admin .admin-body .brand-heading {
+  font-size: 40px;
+}
+.admin .admin-body .admin-text {
+  font-size: 18px;
+}
+.admin .admin-body .admin-text span {
+  font-size: 25px;
+  color: chartreuse;
+}
+.admin .admin-body .admin-square {
+  height: 75%;
+  background-color: rgba(105, 105, 105, 0.3);
+  padding: 25px;
+}
+.admin .admin-body .admin-square .discription {
+  border-top: 5px solid black;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+.admin .admin-body .admin-square .discription .discription-btn {
+  text-align: -webkit-center;
+  padding-top: 15px;
+}
+.admin .admin-body .admin-square .discription .discription-text {
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  .admin {
+    height: 100%;
+    padding: 50px;
+  }
+  .admin .admin-body .brand-heading {
+    font-size: 100px;
+  }
+  .admin .admin-body .admin-text {
+    font-size: 30px;
+  }
+  .admin .admin-body .admin-text span {
+    font-size: 40px;
+    color: chartreuse;
+  }
+}
 player .list-group-item {
   background-color: rgba(83, 255, 91, 0.2);
   color: whitesmoke;
@@ -9813,4 +9968,4 @@ label {
 }
 
 
-/*# sourceMappingURL=app-2e570357145c23a3130e.css.map*/
+/*# sourceMappingURL=app-ee2743aceebdc6418301.css.map*/

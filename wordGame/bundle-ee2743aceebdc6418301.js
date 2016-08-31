@@ -172,54 +172,55 @@
 	
 	__webpack_require__(110);
 	
-	__webpack_require__(120);
+	__webpack_require__(121);
 	
-	__webpack_require__(134);
+	__webpack_require__(135);
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _angularAnimate = __webpack_require__(159);
+	var _angularAnimate = __webpack_require__(160);
 	
 	var _angularAnimate2 = _interopRequireDefault(_angularAnimate);
 	
-	__webpack_require__(161);
+	__webpack_require__(162);
 	
-	__webpack_require__(163);
+	__webpack_require__(164);
 	
-	var _angularUiRouter = __webpack_require__(165);
+	var _angularUiRouter = __webpack_require__(166);
 	
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
 	
-	var _router = __webpack_require__(166);
+	var _router = __webpack_require__(167);
 	
 	var _router2 = _interopRequireDefault(_router);
 	
-	var _angularCookies = __webpack_require__(167);
+	var _angularCookies = __webpack_require__(168);
 	
 	var _angularCookies2 = _interopRequireDefault(_angularCookies);
 	
-	var _angularLoadingBar = __webpack_require__(169);
+	var _angularLoadingBar = __webpack_require__(170);
 	
 	var _angularLoadingBar2 = _interopRequireDefault(_angularLoadingBar);
 	
-	var _components = __webpack_require__(171);
+	var _components = __webpack_require__(172);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_angular2.default.module('app', [_components2.default, _angularUiRouter2.default, _angularCookies2.default, _angularAnimate2.default, 'ui.bootstrap', _angularLoadingBar2.default])
+	_angular2.default.module('app', [_components2.default, _angularUiRouter2.default, _angularCookies2.default, _angularAnimate2.default, 'ui.bootstrap', 'angular-loading-bar'])
 	// .factory('authFactory', authFactory)
 	.config(_router2.default).config(['$httpProvider', function ($httpProvider) {
 	  $httpProvider.defaults.withCredentials = true;
 	}]).config(['$httpProvider', function ($httpProvider) {
 	  $httpProvider.interceptors.push('ErrorHandler');
 	}]).config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
-	  cfpLoadingBarProvider.includeSpinner = false;
-	  cfpLoadingBarProvider.includeBar = false;
-	  cfpLoadingBarProvider.spinnerTemplate = '<div><span class="fa fa-spinner">Loading...</div>';
+	  // cfpLoadingBarProvider.includeSpinner = false;
+	  // cfpLoadingBarProvider.includeBar = false;
+	  cfpLoadingBarProvider.parentSelector = '#loading-bar-container';
+	  cfpLoadingBarProvider.spinnerTemplate = '<div class="loading-bar"><span class="fa fa-spinner">Loading...</div>';
 	}]).run(['$rootScope', '$location', function ($rootScope, $window) {
 	
 	  $rootScope.$on('$routeChangeSuccess', function (userInfo) {
@@ -281,9 +282,9 @@
 /* 117 */,
 /* 118 */,
 /* 119 */,
-/* 120 */
+/* 120 */,
+/* 121 */
 86,
-/* 121 */,
 /* 122 */,
 /* 123 */,
 /* 124 */,
@@ -296,9 +297,9 @@
 /* 131 */,
 /* 132 */,
 /* 133 */,
-/* 134 */
+/* 134 */,
+/* 135 */
 86,
-/* 135 */,
 /* 136 */,
 /* 137 */,
 /* 138 */,
@@ -320,15 +321,16 @@
 /* 154 */,
 /* 155 */,
 /* 156 */,
-/* 157 */
+/* 157 */,
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(158);
+	__webpack_require__(159);
 	module.exports = angular;
 
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports) {
 
 	/**
@@ -32101,15 +32103,15 @@
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(160);
+	__webpack_require__(161);
 	module.exports = 'ngAnimate';
 
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports) {
 
 	/**
@@ -36254,15 +36256,15 @@
 
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(162);
+	__webpack_require__(163);
 	module.exports = 'ngTouch';
 
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports) {
 
 	/**
@@ -37003,16 +37005,16 @@
 
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(164);
+	__webpack_require__(165);
 	
 	module.exports = 'ui.bootstrap';
 
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports) {
 
 	/*
@@ -44554,7 +44556,7 @@
 	angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTypeaheadCss && angular.element(document).find('head').prepend('<style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style>'); angular.$$uibTypeaheadCss = true; });
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports) {
 
 	/**
@@ -49135,7 +49137,7 @@
 	})(window, window.angular);
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49198,12 +49200,6 @@
 	    resolve: {
 	      auth: ['$q', 'UserService', isAuthorize]
 	    }
-	  }).state('updateDictionary', {
-	    url: '/updateDictionary',
-	    template: '<update-dictionary></update-dictionary>',
-	    resolve: {
-	      auth: ['$q', 'UserService', isAuthorize]
-	    }
 	  }).state('firstResults', {
 	    url: '/firstResults',
 	    template: '<first-results></first-results>',
@@ -49226,15 +49222,15 @@
 	}];
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(168);
+	__webpack_require__(169);
 	module.exports = 'ngCookies';
 
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports) {
 
 	/**
@@ -49562,15 +49558,15 @@
 
 
 /***/ },
-/* 169 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(170);
+	__webpack_require__(171);
 	module.exports = 'angular-loading-bar';
 
 
 /***/ },
-/* 170 */
+/* 171 */
 /***/ function(module, exports) {
 
 	/*! 
@@ -49917,7 +49913,7 @@
 
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49926,108 +49922,82 @@
 		value: true
 	});
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _navbarSection = __webpack_require__(172);
+	var _navbarSection = __webpack_require__(173);
 	
 	var _navbarSection2 = _interopRequireDefault(_navbarSection);
 	
-	var _app = __webpack_require__(196);
+	var _app = __webpack_require__(197);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _mainSection = __webpack_require__(199);
+	var _mainSection = __webpack_require__(200);
 	
 	var _mainSection2 = _interopRequireDefault(_mainSection);
 	
-	var _gameCreateRuleSection = __webpack_require__(203);
+	var _gameCreateRuleSection = __webpack_require__(204);
 	
 	var _gameCreateRuleSection2 = _interopRequireDefault(_gameCreateRuleSection);
 	
-	var _profileSection = __webpack_require__(206);
+	var _profileSection = __webpack_require__(207);
 	
 	var _profileSection2 = _interopRequireDefault(_profileSection);
 	
-	var _signUpSection = __webpack_require__(210);
+	var _signUpSection = __webpack_require__(211);
 	
 	var _signUpSection2 = _interopRequireDefault(_signUpSection);
 	
-	var _footerBlock = __webpack_require__(214);
+	var _footerBlock = __webpack_require__(215);
 	
 	var _footerBlock2 = _interopRequireDefault(_footerBlock);
 	
-	var _matchPassDir = __webpack_require__(217);
+	var _matchPassDir = __webpack_require__(218);
 	
 	var _matchPassDir2 = _interopRequireDefault(_matchPassDir);
 	
-	var _signinSection = __webpack_require__(220);
+	var _signinSection = __webpack_require__(221);
 	
 	var _signinSection2 = _interopRequireDefault(_signinSection);
 	
-	var _service = __webpack_require__(224);
+	var _service = __webpack_require__(225);
 	
 	var _service2 = _interopRequireDefault(_service);
 	
-	var _connectExistingGameSection = __webpack_require__(292);
+	var _connectExistingGameSection = __webpack_require__(293);
 	
 	var _connectExistingGameSection2 = _interopRequireDefault(_connectExistingGameSection);
 	
-	var _createNewGameSection = __webpack_require__(296);
+	var _createNewGameSection = __webpack_require__(297);
 	
 	var _createNewGameSection2 = _interopRequireDefault(_createNewGameSection);
 	
-	var _gamePlaySection = __webpack_require__(300);
+	var _gamePlaySection = __webpack_require__(301);
 	
 	var _gamePlaySection2 = _interopRequireDefault(_gamePlaySection);
 	
-	var _updateDictionarySection = __webpack_require__(304);
-	
-	var _updateDictionarySection2 = _interopRequireDefault(_updateDictionarySection);
-	
-	var _firstResultsSection = __webpack_require__(308);
+	var _firstResultsSection = __webpack_require__(305);
 	
 	var _firstResultsSection2 = _interopRequireDefault(_firstResultsSection);
 	
-	var _playerSection = __webpack_require__(312);
+	var _playerSection = __webpack_require__(309);
 	
 	var _playerSection2 = _interopRequireDefault(_playerSection);
 	
-	var _finalSection = __webpack_require__(320);
+	var _finalSection = __webpack_require__(317);
 	
 	var _finalSection2 = _interopRequireDefault(_finalSection);
 	
-	var _adminSection = __webpack_require__(324);
+	var _adminSection = __webpack_require__(321);
 	
 	var _adminSection2 = _interopRequireDefault(_adminSection);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	exports.default = _angular2.default.module('app.components', [_app2.default, _navbarSection2.default, _mainSection2.default, _gameCreateRuleSection2.default, _profileSection2.default, _signUpSection2.default, _footerBlock2.default, _matchPassDir2.default, _signinSection2.default, _service2.default, _connectExistingGameSection2.default, _createNewGameSection2.default, _gamePlaySection2.default, _firstResultsSection2.default, _playerSection2.default, _finalSection2.default, _adminSection2.default]).name;
 	// import './dashboard.css';
-	exports.default = _angular2.default.module('app.components', [_app2.default, _navbarSection2.default, _mainSection2.default, _gameCreateRuleSection2.default, _profileSection2.default, _signUpSection2.default, _footerBlock2.default, _matchPassDir2.default, _signinSection2.default, _service2.default, _connectExistingGameSection2.default, _createNewGameSection2.default, _gamePlaySection2.default, _updateDictionarySection2.default, _firstResultsSection2.default, _playerSection2.default, _finalSection2.default, _adminSection2.default]).name;
-
-/***/ },
-/* 172 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _navbarComponent = __webpack_require__(173);
-	
-	var _navbarComponent2 = _interopRequireDefault(_navbarComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.navbar', []).component('navbar', _navbarComponent2.default).name;
 
 /***/ },
 /* 173 */
@@ -50039,11 +50009,33 @@
 	  value: true
 	});
 	
-	var _navbarTmpl = __webpack_require__(174);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _navbarComponent = __webpack_require__(174);
+	
+	var _navbarComponent2 = _interopRequireDefault(_navbarComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.navbar', []).component('navbar', _navbarComponent2.default).name;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _navbarTmpl = __webpack_require__(175);
 	
 	var _navbarTmpl2 = _interopRequireDefault(_navbarTmpl);
 	
-	var _navbarController = __webpack_require__(175);
+	var _navbarController = __webpack_require__(176);
 	
 	var _navbarController2 = _interopRequireDefault(_navbarController);
 	
@@ -50058,13 +50050,13 @@
 	};
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-custom navbar-fixed-top navbar-item\" role=\"navigation\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-main-collapse\">\n        Menu\n        <i class=\"fa fa-bars\"></i>\n      </button>\n      <a class=\"navbar-brand page-scroll\" href=\"#/\">\n        <i class=\"fa fa-play-circle\"></i>\n        <span class=\"light\">Start</span>\n        Word Game\n      </a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse navbar-right navbar-main-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->\n        <li class=\"hidden\">\n          <a href=\"#page-top\"></a>\n        </li>\n        <li>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"page-scroll\" href=\"#/profile\">Profile\n            <span ng-bind=\"$ctrl.UserService.getAuthUser().userName\"></span>\n          </a>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"login-link\" href=\"#/signin\">Sign In</a>\n        </li>\n        <li>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"signup-link\" href=\"#/signup\">Sign Up</a>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"logout-link\" href=\"#\" ng-click=\"$ctrl.logout()\">LogOut</a>\n        </li>\n      </ul>\n    </div>\n    <!-- /.navbar-collapse -->\n  </div>\n  <!-- /.container -->\n</nav>\n";
+	module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-custom navbar-fixed-top navbar-item\" role=\"navigation\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-main-collapse\">\n        Menu\n        <i class=\"fa fa-bars\"></i>\n      </button>\n      <a class=\"navbar-brand page-scroll\" href=\"#/\">\n        <i class=\"fa fa-play-circle\"></i>\n        <span class=\"light\">Start</span>\n        Word Game\n      </a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse navbar-right navbar-main-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->\n        <li class=\"hidden\">\n          <a href=\"#page-top\"></a>\n        </li>\n        <li>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"page-scroll\" href=\"#/profile\">Profile\n            <span ng-bind=\"$ctrl.UserService.getAuthUser().userName\"></span>\n          </a>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"login-link\" href=\"#/signin\">Sign In</a>\n        </li>\n        <li>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"signup-link\" href=\"#/signup\">Sign Up</a>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"logout-link\" href=\"#\" ng-click=\"$ctrl.logout()\">LogOut</a>\n        </li>\n      </ul>\n    </div>\n    <!-- /.navbar-collapse -->\n  </div>\n  <div id=\"loading-bar-container\"></div>\n  <!-- /.container -->\n</nav>\n";
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50073,15 +50065,15 @@
 	  value: true
 	});
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
@@ -50118,7 +50110,7 @@
 	exports.default = NavbarController;
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -50132,14 +50124,14 @@
 	};
 
 /***/ },
-/* 177 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _defineProperty = __webpack_require__(178);
+	var _defineProperty = __webpack_require__(179);
 	
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 	
@@ -50164,37 +50156,37 @@
 	}();
 
 /***/ },
-/* 178 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(179), __esModule: true };
-
-/***/ },
 /* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(180);
-	var $Object = __webpack_require__(183).Object;
-	module.exports = function defineProperty(it, key, desc){
-	  return $Object.defineProperty(it, key, desc);
-	};
+	module.exports = { "default": __webpack_require__(180), __esModule: true };
 
 /***/ },
 /* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $export = __webpack_require__(181);
-	// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-	$export($export.S + $export.F * !__webpack_require__(191), 'Object', {defineProperty: __webpack_require__(187).f});
+	__webpack_require__(181);
+	var $Object = __webpack_require__(184).Object;
+	module.exports = function defineProperty(it, key, desc){
+	  return $Object.defineProperty(it, key, desc);
+	};
 
 /***/ },
 /* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global    = __webpack_require__(182)
-	  , core      = __webpack_require__(183)
-	  , ctx       = __webpack_require__(184)
-	  , hide      = __webpack_require__(186)
+	var $export = __webpack_require__(182);
+	// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+	$export($export.S + $export.F * !__webpack_require__(192), 'Object', {defineProperty: __webpack_require__(188).f});
+
+/***/ },
+/* 182 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(183)
+	  , core      = __webpack_require__(184)
+	  , ctx       = __webpack_require__(185)
+	  , hide      = __webpack_require__(187)
 	  , PROTOTYPE = 'prototype';
 	
 	var $export = function(type, name, source){
@@ -50254,7 +50246,7 @@
 	module.exports = $export;
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports) {
 
 	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -50263,18 +50255,18 @@
 	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports) {
 
 	var core = module.exports = {version: '2.4.0'};
 	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(185);
+	var aFunction = __webpack_require__(186);
 	module.exports = function(fn, that, length){
 	  aFunction(fn);
 	  if(that === undefined)return fn;
@@ -50295,7 +50287,7 @@
 	};
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -50304,12 +50296,12 @@
 	};
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dP         = __webpack_require__(187)
-	  , createDesc = __webpack_require__(195);
-	module.exports = __webpack_require__(191) ? function(object, key, value){
+	var dP         = __webpack_require__(188)
+	  , createDesc = __webpack_require__(196);
+	module.exports = __webpack_require__(192) ? function(object, key, value){
 	  return dP.f(object, key, createDesc(1, value));
 	} : function(object, key, value){
 	  object[key] = value;
@@ -50317,15 +50309,15 @@
 	};
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var anObject       = __webpack_require__(188)
-	  , IE8_DOM_DEFINE = __webpack_require__(190)
-	  , toPrimitive    = __webpack_require__(194)
+	var anObject       = __webpack_require__(189)
+	  , IE8_DOM_DEFINE = __webpack_require__(191)
+	  , toPrimitive    = __webpack_require__(195)
 	  , dP             = Object.defineProperty;
 	
-	exports.f = __webpack_require__(191) ? Object.defineProperty : function defineProperty(O, P, Attributes){
+	exports.f = __webpack_require__(192) ? Object.defineProperty : function defineProperty(O, P, Attributes){
 	  anObject(O);
 	  P = toPrimitive(P, true);
 	  anObject(Attributes);
@@ -50338,17 +50330,17 @@
 	};
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(189);
+	var isObject = __webpack_require__(190);
 	module.exports = function(it){
 	  if(!isObject(it))throw TypeError(it + ' is not an object!');
 	  return it;
 	};
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -50356,24 +50348,24 @@
 	};
 
 /***/ },
-/* 190 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = !__webpack_require__(191) && !__webpack_require__(192)(function(){
-	  return Object.defineProperty(__webpack_require__(193)('div'), 'a', {get: function(){ return 7; }}).a != 7;
-	});
-
-/***/ },
 /* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// Thank's IE8 for his funny defineProperty
-	module.exports = !__webpack_require__(192)(function(){
-	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+	module.exports = !__webpack_require__(192) && !__webpack_require__(193)(function(){
+	  return Object.defineProperty(__webpack_require__(194)('div'), 'a', {get: function(){ return 7; }}).a != 7;
 	});
 
 /***/ },
 /* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Thank's IE8 for his funny defineProperty
+	module.exports = !__webpack_require__(193)(function(){
+	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+	});
+
+/***/ },
+/* 193 */
 /***/ function(module, exports) {
 
 	module.exports = function(exec){
@@ -50385,11 +50377,11 @@
 	};
 
 /***/ },
-/* 193 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(189)
-	  , document = __webpack_require__(182).document
+	var isObject = __webpack_require__(190)
+	  , document = __webpack_require__(183).document
 	  // in old IE typeof document.createElement is 'object'
 	  , is = isObject(document) && isObject(document.createElement);
 	module.exports = function(it){
@@ -50397,11 +50389,11 @@
 	};
 
 /***/ },
-/* 194 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.1 ToPrimitive(input [, PreferredType])
-	var isObject = __webpack_require__(189);
+	var isObject = __webpack_require__(190);
 	// instead of the ES6 spec version, we didn't implement @@toPrimitive case
 	// and the second argument - flag - preferred type is a string
 	module.exports = function(it, S){
@@ -50414,7 +50406,7 @@
 	};
 
 /***/ },
-/* 195 */
+/* 196 */
 /***/ function(module, exports) {
 
 	module.exports = function(bitmap, value){
@@ -50427,28 +50419,6 @@
 	};
 
 /***/ },
-/* 196 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _appComponent = __webpack_require__(197);
-	
-	var _appComponent2 = _interopRequireDefault(_appComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.app', []).component('app', _appComponent2.default).name;
-
-/***/ },
 /* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -50458,7 +50428,29 @@
 	  value: true
 	});
 	
-	var _appTmpl = __webpack_require__(198);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _appComponent = __webpack_require__(198);
+	
+	var _appComponent2 = _interopRequireDefault(_appComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.app', []).component('app', _appComponent2.default).name;
+
+/***/ },
+/* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _appTmpl = __webpack_require__(199);
 	
 	var _appTmpl2 = _interopRequireDefault(_appTmpl);
 	
@@ -50469,32 +50461,10 @@
 	};
 
 /***/ },
-/* 198 */
+/* 199 */
 /***/ function(module, exports) {
 
 	module.exports = "<ui-view class=\"view-animate\"></ui-view>\n<!-- <div ui-view></div> -->\n<!-- <create-new-section></create-new-section>\n<about-section></about-section> -->\n";
-
-/***/ },
-/* 199 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _mainComponent = __webpack_require__(200);
-	
-	var _mainComponent2 = _interopRequireDefault(_mainComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.header', []).component('mainBlock', _mainComponent2.default).name;
 
 /***/ },
 /* 200 */
@@ -50506,11 +50476,33 @@
 	  value: true
 	});
 	
-	var _mainTmpl = __webpack_require__(201);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _mainComponent = __webpack_require__(201);
+	
+	var _mainComponent2 = _interopRequireDefault(_mainComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.header', []).component('mainBlock', _mainComponent2.default).name;
+
+/***/ },
+/* 201 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _mainTmpl = __webpack_require__(202);
 	
 	var _mainTmpl2 = _interopRequireDefault(_mainTmpl);
 	
-	var _mainController = __webpack_require__(202);
+	var _mainController = __webpack_require__(203);
 	
 	var _mainController2 = _interopRequireDefault(_mainController);
 	
@@ -50522,13 +50514,13 @@
 	};
 
 /***/ },
-/* 201 */
+/* 202 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- main Header -->\n<div class=\"main\">\n  <div class=\"main-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"main-square\">\n            <div id=\"allert\" ng-show=\"$ctrl.UserService.getAuthUser()&& !$ctrl.used\" class=\"alert alert-success\" ng-init=\"$ctrl.hideMessage()\">\n              Wellcome\n              <span ng-bind=\"$ctrl.UserService.getAuthUser().userName\"></span>\n              . You're logged in successfully\n            </div>\n            <br>\n            <h1 class=\"brand-heading\">WORD GAME</h1>\n            <p class=\"main-text\">Try free.\n              <br>WELLCOME <span ng-bind = \"$ctrl.UserService.getAuthUser().userName\"></span>.</p>\n            <br><br>\n            <p>\n              To continue click here\n            </p>\n            <a ng-hide=\"$ctrl.UserService.getAuthUser()\" href=\"#/signin\" class=\"btn btn-circle page-scroll\">\n              <i class=\"fa fa-play-circle animated\"></i>\n            </a>\n\n            <a ng-show=\"$ctrl.UserService.getAuthUser()\" href=\"#/gameCreateRule\" class=\"btn btn-circle page-scroll\">\n              <i class=\"fa fa-play-circle animated\"></i>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 202 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50537,15 +50529,15 @@
 	  value: true
 	});
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
@@ -50578,28 +50570,6 @@
 	exports.default = MainController;
 
 /***/ },
-/* 203 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _gameCreateRuleComponent = __webpack_require__(204);
-	
-	var _gameCreateRuleComponent2 = _interopRequireDefault(_gameCreateRuleComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.gameCreateRule', []).component('gameCreateRule', _gameCreateRuleComponent2.default).name;
-
-/***/ },
 /* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -50609,7 +50579,29 @@
 	  value: true
 	});
 	
-	var _gameCreateRuleTmpl = __webpack_require__(205);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _gameCreateRuleComponent = __webpack_require__(205);
+	
+	var _gameCreateRuleComponent2 = _interopRequireDefault(_gameCreateRuleComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.gameCreateRule', []).component('gameCreateRule', _gameCreateRuleComponent2.default).name;
+
+/***/ },
+/* 205 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _gameCreateRuleTmpl = __webpack_require__(206);
 	
 	var _gameCreateRuleTmpl2 = _interopRequireDefault(_gameCreateRuleTmpl);
 	
@@ -50620,32 +50612,10 @@
 	};
 
 /***/ },
-/* 205 */
+/* 206 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- About Section -->\n<div class=\"rule\">\n  <div class=\"rule-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"rule-square\">\n            <br><br><br>\n            <h2 class=\"brand-heading\">Create new game</h2>\n            <p>\n              To create new game you should select:\n              <ul>\n                <li>\n                  <h4>\n                    duration of the game\n                  </h4>\n                </li>\n                <li>\n                  <h4>\n                    enter some long word\n                  </h4>\n                </li>\n                <li>\n                  <h4>\n                    invite any players or select game with AI\n                  </h4>\n                </li>\n              </ul>\n              <div class=\"signup-link\">\n                <a class=\"btn btn-success btn-block\" href=\"#/createNewGame\">Create new Game</a>\n              </div>\n              <br><br>\n              <div class=\"signup-link\">\n                <a class=\"btn btn-success btn-block\" href=\"#/connectExistingGame\">Connect to existing game</a>\n              </div>\n            </p>\n          </p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
-
-/***/ },
-/* 206 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _profileComponent = __webpack_require__(207);
-	
-	var _profileComponent2 = _interopRequireDefault(_profileComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.aboutSection', []).component('profileSection', _profileComponent2.default).name;
 
 /***/ },
 /* 207 */
@@ -50657,11 +50627,33 @@
 	  value: true
 	});
 	
-	var _profileTmpl = __webpack_require__(208);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _profileComponent = __webpack_require__(208);
+	
+	var _profileComponent2 = _interopRequireDefault(_profileComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.aboutSection', []).component('profileSection', _profileComponent2.default).name;
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _profileTmpl = __webpack_require__(209);
 	
 	var _profileTmpl2 = _interopRequireDefault(_profileTmpl);
 	
-	var _profileController = __webpack_require__(209);
+	var _profileController = __webpack_require__(210);
 	
 	var _profileController2 = _interopRequireDefault(_profileController);
 	
@@ -50676,13 +50668,13 @@
 	};
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- About Section -->\n<div class=\"profile\">\n  <div class=\"profile-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"profile-square\">\n            <h4 class=\"brand-heading\">Hi\n              <span ng-bind=\"$ctrl.user.userName\"></span>\n            </h4>\n            <p class=\"profile-text\">A free, responsive, one page Bootstrap theme.\n              <br>Created by Start Bootstrap.</p>\n            <a href=\"#/\" class=\"btn btn-circle page-scroll\">\n              <i class=\"fa fa-angle-double-down animated\"></i>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50691,11 +50683,11 @@
 	  value: true
 	});
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
@@ -50722,7 +50714,7 @@
 	exports.default = ProfileController;
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50731,11 +50723,11 @@
 	  value: true
 	});
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _signUpComponent = __webpack_require__(211);
+	var _signUpComponent = __webpack_require__(212);
 	
 	var _signUpComponent2 = _interopRequireDefault(_signUpComponent);
 	
@@ -50746,7 +50738,7 @@
 	.component('signup', _signUpComponent2.default).name;
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50755,11 +50747,11 @@
 	  value: true
 	});
 	
-	var _signupTmpl = __webpack_require__(212);
+	var _signupTmpl = __webpack_require__(213);
 	
 	var _signupTmpl2 = _interopRequireDefault(_signupTmpl);
 	
-	var _signUpController = __webpack_require__(213);
+	var _signUpController = __webpack_require__(214);
 	
 	var _signUpController2 = _interopRequireDefault(_signUpController);
 	
@@ -50774,13 +50766,13 @@
 	};
 
 /***/ },
-/* 212 */
+/* 213 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- signup Header -->\n<div class=\"signup\">\n  <div class=\"signup-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignUp page</h1>\n\t\t\t\t\t<h3 ng-bind=\"$ctrl.message\"style=\"color: red;\"></h3>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }\">\n              <label for=\"basic-url\">Enter you last name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"lastName\" ng-model=\"$ctrl.user.lastName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.firstName.$invalid && !user.firstName.$pristine }\">\n              <label for=\"basic-url\">Enter you first name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivan</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"firstName\" ng-model=\"$ctrl.user.firstName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.email.$invalid && !user.email.$pristine }\">\n              <label for=\"basic-url\">Enter you email</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948@gmail.com</span>\n                <input type=\"email\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"email\" ng-model=\"$ctrl.user.email\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div class=\"\">\n              <label for=\"basic-url\">Enter you password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.confPassword.$invalid && !user.confPassword.$pristine }\">\n              <label for=\"basic-url\">Confirm password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"confPassword\" ng-model=\"$ctrl.user.confPassword\" equals=\"{{$ctrl.user.password}}\">\n                <!-- ng-change=\"$ctrl.confirmPassword()\" -->\n              </div>\n              <div class=\"text-error\">\n                <span ng-show=\"user.confPassword.$error.equals\">Must be equal!</span>\n              </div>\n\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid && !user.confPassword.$pristine\" class=\"btn btn-success btn-block\">\n                Create Account\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\" >CANCEL</a>\n\t\t\t\t\t\t\t<!-- ng-click=\"$ctrl.closeWin()\" -->\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 213 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50789,19 +50781,19 @@
 	  value: true
 	});
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _ = __webpack_require__(172);
+	var _ = __webpack_require__(173);
 	
 	var _2 = _interopRequireDefault(_);
 	
@@ -50845,28 +50837,6 @@
 	exports.default = SignUpController;
 
 /***/ },
-/* 214 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _component = __webpack_require__(215);
-	
-	var _component2 = _interopRequireDefault(_component);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.footer', []).component('footerBlock', _component2.default).name;
-
-/***/ },
 /* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -50876,7 +50846,29 @@
 	  value: true
 	});
 	
-	var _footerBlockTmpl = __webpack_require__(216);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _component = __webpack_require__(216);
+	
+	var _component2 = _interopRequireDefault(_component);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.footer', []).component('footerBlock', _component2.default).name;
+
+/***/ },
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _footerBlockTmpl = __webpack_require__(217);
 	
 	var _footerBlockTmpl2 = _interopRequireDefault(_footerBlockTmpl);
 	
@@ -50887,13 +50879,13 @@
 	};
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- Footer -->\n<footer>\n  <div class=\"container text-center\">\n    <p>Copyright &copy; Your Website 2016</p>\n  </div>\n</footer>\n";
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50902,15 +50894,15 @@
 	  value: true
 	});
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _matchPassDirective = __webpack_require__(218);
+	var _matchPassDirective = __webpack_require__(219);
 	
 	var _matchPassDirective2 = _interopRequireDefault(_matchPassDirective);
 	
-	var _commonFactory = __webpack_require__(219);
+	var _commonFactory = __webpack_require__(220);
 	
 	var _commonFactory2 = _interopRequireDefault(_commonFactory);
 	
@@ -50919,7 +50911,7 @@
 	exports.default = _angular2.default.module('app.components.matchPass', []).directive('equals', _matchPassDirective2.default).factory('commonFactory', _commonFactory2.default).name;
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -50957,7 +50949,7 @@
 	};
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50966,7 +50958,7 @@
 	  value: true
 	});
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
@@ -51016,28 +51008,6 @@
 	};
 
 /***/ },
-/* 220 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _signinComponent = __webpack_require__(221);
-	
-	var _signinComponent2 = _interopRequireDefault(_signinComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.navbar.signin', []).component('signin', _signinComponent2.default).name;
-
-/***/ },
 /* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -51047,11 +51017,33 @@
 	  value: true
 	});
 	
-	var _signinTmpl = __webpack_require__(222);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _signinComponent = __webpack_require__(222);
+	
+	var _signinComponent2 = _interopRequireDefault(_signinComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.navbar.signin', []).component('signin', _signinComponent2.default).name;
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _signinTmpl = __webpack_require__(223);
 	
 	var _signinTmpl2 = _interopRequireDefault(_signinTmpl);
 	
-	var _signinController = __webpack_require__(223);
+	var _signinController = __webpack_require__(224);
 	
 	var _signinController2 = _interopRequireDefault(_signinController);
 	
@@ -51066,13 +51058,13 @@
 	};
 
 /***/ },
-/* 222 */
+/* 223 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- Intro Header -->\n<div class=\"signin\">\n  <div class=\"signin-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignIn page</h1>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you password</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid\" class=\"btn btn-success btn-block\">\n                Sign In\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n              <!-- ng-click=\"$ctrl.closeWin()\". -->\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51081,15 +51073,15 @@
 	  value: true
 	});
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
@@ -51148,52 +51140,6 @@
 	exports.default = SignInController;
 
 /***/ },
-/* 224 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _gameService = __webpack_require__(225);
-	
-	var _gameService2 = _interopRequireDefault(_gameService);
-	
-	var _userService = __webpack_require__(228);
-	
-	var _userService2 = _interopRequireDefault(_userService);
-	
-	var _playerService = __webpack_require__(229);
-	
-	var _playerService2 = _interopRequireDefault(_playerService);
-	
-	var _wordService = __webpack_require__(285);
-	
-	var _wordService2 = _interopRequireDefault(_wordService);
-	
-	var _customerFactory = __webpack_require__(286);
-	
-	var _customerFactory2 = _interopRequireDefault(_customerFactory);
-	
-	var _gameFactory = __webpack_require__(287);
-	
-	var _gameFactory2 = _interopRequireDefault(_gameFactory);
-	
-	var _errorHandlerFactory = __webpack_require__(291);
-	
-	var _errorHandlerFactory2 = _interopRequireDefault(_errorHandlerFactory);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.service', []).service('GameService', _gameService2.default).service('UserService', _userService2.default).service('PlayerService', _playerService2.default).service('WordService', _wordService2.default).factory('CustomerFactory', ['UserService', 'PlayerService', _customerFactory2.default]).factory('GameFactory', ['GameService', 'PlayerService', _gameFactory2.default]).factory('ErrorHandler', ['$q', '$injector', '$window', _errorHandlerFactory2.default]).name;
-
-/***/ },
 /* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -51203,15 +51149,61 @@
 	  value: true
 	});
 	
-	var _stringify = __webpack_require__(226);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _gameService = __webpack_require__(226);
+	
+	var _gameService2 = _interopRequireDefault(_gameService);
+	
+	var _userService = __webpack_require__(229);
+	
+	var _userService2 = _interopRequireDefault(_userService);
+	
+	var _playerService = __webpack_require__(230);
+	
+	var _playerService2 = _interopRequireDefault(_playerService);
+	
+	var _wordService = __webpack_require__(286);
+	
+	var _wordService2 = _interopRequireDefault(_wordService);
+	
+	var _customerFactory = __webpack_require__(287);
+	
+	var _customerFactory2 = _interopRequireDefault(_customerFactory);
+	
+	var _gameFactory = __webpack_require__(288);
+	
+	var _gameFactory2 = _interopRequireDefault(_gameFactory);
+	
+	var _errorHandlerFactory = __webpack_require__(292);
+	
+	var _errorHandlerFactory2 = _interopRequireDefault(_errorHandlerFactory);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.service', []).service('GameService', _gameService2.default).service('UserService', _userService2.default).service('PlayerService', _playerService2.default).service('WordService', _wordService2.default).factory('CustomerFactory', ['UserService', 'PlayerService', _customerFactory2.default]).factory('GameFactory', ['GameService', 'PlayerService', _gameFactory2.default]).factory('ErrorHandler', ['$q', '$injector', '$window', _errorHandlerFactory2.default]).name;
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _stringify = __webpack_require__(227);
 	
 	var _stringify2 = _interopRequireDefault(_stringify);
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
@@ -51232,7 +51224,7 @@
 	    key: 'list',
 	    value: function list() {
 	      var _this = this;
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games').then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51242,7 +51234,7 @@
 	    key: 'create',
 	    value: function create(game) {
 	      var _this = this;
-	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51252,7 +51244,7 @@
 	    key: 'detail',
 	    value: function detail(id) {
 	      var _this = this;
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/' + id).then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51262,7 +51254,7 @@
 	    key: 'update',
 	    value: function update(game) {
 	      var _this = this;
-	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51272,7 +51264,8 @@
 	    key: 'save',
 	    value: function save(game) {
 	      var _this = this;
-	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
+	      console.log((0, _stringify2.default)(game, null, 2));
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51282,7 +51275,7 @@
 	    key: 'addWord',
 	    value: function addWord(gameID, words, playerID) {
 	      var _this = this;
-	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
 	        var obj = response.data;
 	        return obj;
 	      }).catch(function () {
@@ -51292,8 +51285,17 @@
 	  }, {
 	    key: 'finishGame',
 	    value: function finishGame(id) {
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/' + id + '/finalize').then(function (res) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id + '/finalize').then(function (res) {
 	        return res.data;
+	      });
+	    }
+	  }, {
+	    key: 'finishedList',
+	    value: function finishedList() {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/finished').then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
 	      });
 	    }
 	  }]);
@@ -51303,23 +51305,23 @@
 	exports.default = GameService;
 
 /***/ },
-/* 226 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(227), __esModule: true };
-
-/***/ },
 /* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core  = __webpack_require__(183)
+	module.exports = { "default": __webpack_require__(228), __esModule: true };
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(184)
 	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
 	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
 	  return $JSON.stringify.apply($JSON, arguments);
 	};
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51328,15 +51330,15 @@
 	  value: true
 	});
 	
-	var _stringify = __webpack_require__(226);
+	var _stringify = __webpack_require__(227);
 	
 	var _stringify2 = _interopRequireDefault(_stringify);
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
@@ -51363,7 +51365,7 @@
 	    key: 'create',
 	    value: function create(user) {
 	      console.log(user);
-	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
 	        return resp.data;
 	      });
 	    }
@@ -51376,7 +51378,7 @@
 	        username: user.userName.$modelValue,
 	        password: user.password.$modelValue
 	      };
-	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
 	        _this.userInfo = {
 	          userID: response.data._id,
 	          userName: response.data.username,
@@ -51394,7 +51396,7 @@
 	    value: function logout() {
 	      var _this = this;
 	      var deferred = this.q.defer();
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/user/logout').then(function (result) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/user/logout').then(function (result) {
 	        _this.deleteAuthUser();
 	        deferred.resolve(result);
 	      }, function (error) {
@@ -51421,7 +51423,7 @@
 	exports.default = UserService;
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51430,23 +51432,23 @@
 	  value: true
 	});
 	
-	var _stringify = __webpack_require__(226);
+	var _stringify = __webpack_require__(227);
 	
 	var _stringify2 = _interopRequireDefault(_stringify);
 	
-	var _regenerator = __webpack_require__(230);
+	var _regenerator = __webpack_require__(231);
 	
 	var _regenerator2 = _interopRequireDefault(_regenerator);
 	
-	var _asyncToGenerator2 = __webpack_require__(234);
+	var _asyncToGenerator2 = __webpack_require__(235);
 	
 	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
@@ -51478,32 +51480,29 @@
 	          while (1) {
 	            switch (_context.prev = _context.next) {
 	              case 0:
-	                console.log(this);
-	                _context.prev = 1;
-	                _context.next = 4;
-	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/player');
+	                _context.prev = 0;
+	                _context.next = 3;
+	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player');
 	
-	              case 4:
+	              case 3:
 	                response = _context.sent;
-	
-	                console.log(response);
-	                _context.next = 8;
+	                _context.next = 6;
 	                return response.data;
 	
-	              case 8:
+	              case 6:
 	                return _context.abrupt('return', _context.sent);
 	
-	              case 11:
-	                _context.prev = 11;
-	                _context.t0 = _context['catch'](1);
+	              case 9:
+	                _context.prev = 9;
+	                _context.t0 = _context['catch'](0);
 	                throw _context.t0;
 	
-	              case 14:
+	              case 12:
 	              case 'end':
 	                return _context.stop();
 	            }
 	          }
-	        }, _callee, this, [[1, 11]]);
+	        }, _callee, this, [[0, 9]]);
 	      }));
 	
 	      function list() {
@@ -51523,7 +51522,7 @@
 	              case 0:
 	                _context2.prev = 0;
 	                _context2.next = 3;
-	                return this.$http.post(("https://wgbackend.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
+	                return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
 	
 	              case 3:
 	                response = _context2.sent;
@@ -51559,7 +51558,7 @@
 	              case 0:
 	                _context3.prev = 0;
 	                _context3.next = 3;
-	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/player/' + id);
+	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player/' + id);
 	
 	              case 3:
 	                response = _context3.sent;
@@ -51591,14 +51590,14 @@
 	exports.default = PlayerService;
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(231);
+	module.exports = __webpack_require__(232);
 
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {// This method of obtaining a reference to the global object needs to be
@@ -51619,7 +51618,7 @@
 	// Force reevalutation of runtime.js.
 	g.regeneratorRuntime = undefined;
 	
-	module.exports = __webpack_require__(232);
+	module.exports = __webpack_require__(233);
 	
 	if (hadRuntime) {
 	  // Restore the original runtime.
@@ -51636,7 +51635,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {/**
@@ -52308,10 +52307,10 @@
 	  typeof self === "object" ? self : this
 	);
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(233)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(234)))
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -52436,14 +52435,14 @@
 
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _promise = __webpack_require__(235);
+	var _promise = __webpack_require__(236);
 	
 	var _promise2 = _interopRequireDefault(_promise);
 	
@@ -52479,36 +52478,36 @@
 	};
 
 /***/ },
-/* 235 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(236), __esModule: true };
-
-/***/ },
 /* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(237);
-	__webpack_require__(238);
-	__webpack_require__(267);
-	__webpack_require__(271);
-	module.exports = __webpack_require__(183).Promise;
+	module.exports = { "default": __webpack_require__(237), __esModule: true };
 
 /***/ },
 /* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(238);
+	__webpack_require__(239);
+	__webpack_require__(268);
+	__webpack_require__(272);
+	module.exports = __webpack_require__(184).Promise;
+
+/***/ },
+/* 238 */
 /***/ function(module, exports) {
 
 
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var $at  = __webpack_require__(239)(true);
+	var $at  = __webpack_require__(240)(true);
 	
 	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(242)(String, 'String', function(iterated){
+	__webpack_require__(243)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
 	  this._i = 0;                // next index
 	// 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -52523,11 +52522,11 @@
 	});
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(240)
-	  , defined   = __webpack_require__(241);
+	var toInteger = __webpack_require__(241)
+	  , defined   = __webpack_require__(242);
 	// true  -> String#at
 	// false -> String#codePointAt
 	module.exports = function(TO_STRING){
@@ -52545,7 +52544,7 @@
 	};
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports) {
 
 	// 7.1.4 ToInteger
@@ -52556,7 +52555,7 @@
 	};
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -52566,20 +52565,20 @@
 	};
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY        = __webpack_require__(243)
-	  , $export        = __webpack_require__(181)
-	  , redefine       = __webpack_require__(244)
-	  , hide           = __webpack_require__(186)
-	  , has            = __webpack_require__(245)
-	  , Iterators      = __webpack_require__(246)
-	  , $iterCreate    = __webpack_require__(247)
-	  , setToStringTag = __webpack_require__(263)
-	  , getPrototypeOf = __webpack_require__(265)
-	  , ITERATOR       = __webpack_require__(264)('iterator')
+	var LIBRARY        = __webpack_require__(244)
+	  , $export        = __webpack_require__(182)
+	  , redefine       = __webpack_require__(245)
+	  , hide           = __webpack_require__(187)
+	  , has            = __webpack_require__(246)
+	  , Iterators      = __webpack_require__(247)
+	  , $iterCreate    = __webpack_require__(248)
+	  , setToStringTag = __webpack_require__(264)
+	  , getPrototypeOf = __webpack_require__(266)
+	  , ITERATOR       = __webpack_require__(265)('iterator')
 	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
 	  , FF_ITERATOR    = '@@iterator'
 	  , KEYS           = 'keys'
@@ -52641,19 +52640,19 @@
 	};
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports) {
 
 	module.exports = true;
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(186);
+	module.exports = __webpack_require__(187);
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports) {
 
 	var hasOwnProperty = {}.hasOwnProperty;
@@ -52662,23 +52661,23 @@
 	};
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports) {
 
 	module.exports = {};
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var create         = __webpack_require__(248)
-	  , descriptor     = __webpack_require__(195)
-	  , setToStringTag = __webpack_require__(263)
+	var create         = __webpack_require__(249)
+	  , descriptor     = __webpack_require__(196)
+	  , setToStringTag = __webpack_require__(264)
 	  , IteratorPrototype = {};
 	
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-	__webpack_require__(186)(IteratorPrototype, __webpack_require__(264)('iterator'), function(){ return this; });
+	__webpack_require__(187)(IteratorPrototype, __webpack_require__(265)('iterator'), function(){ return this; });
 	
 	module.exports = function(Constructor, NAME, next){
 	  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
@@ -52686,27 +52685,27 @@
 	};
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-	var anObject    = __webpack_require__(188)
-	  , dPs         = __webpack_require__(249)
-	  , enumBugKeys = __webpack_require__(261)
-	  , IE_PROTO    = __webpack_require__(258)('IE_PROTO')
+	var anObject    = __webpack_require__(189)
+	  , dPs         = __webpack_require__(250)
+	  , enumBugKeys = __webpack_require__(262)
+	  , IE_PROTO    = __webpack_require__(259)('IE_PROTO')
 	  , Empty       = function(){ /* empty */ }
 	  , PROTOTYPE   = 'prototype';
 	
 	// Create object with fake `null` prototype: use iframe Object with cleared prototype
 	var createDict = function(){
 	  // Thrash, waste and sodomy: IE GC bug
-	  var iframe = __webpack_require__(193)('iframe')
+	  var iframe = __webpack_require__(194)('iframe')
 	    , i      = enumBugKeys.length
 	    , lt     = '<'
 	    , gt     = '>'
 	    , iframeDocument;
 	  iframe.style.display = 'none';
-	  __webpack_require__(262).appendChild(iframe);
+	  __webpack_require__(263).appendChild(iframe);
 	  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
 	  // createDict = iframe.contentWindow.Object;
 	  // html.removeChild(iframe);
@@ -52733,14 +52732,14 @@
 
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dP       = __webpack_require__(187)
-	  , anObject = __webpack_require__(188)
-	  , getKeys  = __webpack_require__(250);
+	var dP       = __webpack_require__(188)
+	  , anObject = __webpack_require__(189)
+	  , getKeys  = __webpack_require__(251);
 	
-	module.exports = __webpack_require__(191) ? Object.defineProperties : function defineProperties(O, Properties){
+	module.exports = __webpack_require__(192) ? Object.defineProperties : function defineProperties(O, Properties){
 	  anObject(O);
 	  var keys   = getKeys(Properties)
 	    , length = keys.length
@@ -52751,25 +52750,25 @@
 	};
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-	var $keys       = __webpack_require__(251)
-	  , enumBugKeys = __webpack_require__(261);
+	var $keys       = __webpack_require__(252)
+	  , enumBugKeys = __webpack_require__(262);
 	
 	module.exports = Object.keys || function keys(O){
 	  return $keys(O, enumBugKeys);
 	};
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var has          = __webpack_require__(245)
-	  , toIObject    = __webpack_require__(252)
-	  , arrayIndexOf = __webpack_require__(255)(false)
-	  , IE_PROTO     = __webpack_require__(258)('IE_PROTO');
+	var has          = __webpack_require__(246)
+	  , toIObject    = __webpack_require__(253)
+	  , arrayIndexOf = __webpack_require__(256)(false)
+	  , IE_PROTO     = __webpack_require__(259)('IE_PROTO');
 	
 	module.exports = function(object, names){
 	  var O      = toIObject(object)
@@ -52785,28 +52784,28 @@
 	};
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// to indexed object, toObject with fallback for non-array-like ES3 strings
-	var IObject = __webpack_require__(253)
-	  , defined = __webpack_require__(241);
+	var IObject = __webpack_require__(254)
+	  , defined = __webpack_require__(242);
 	module.exports = function(it){
 	  return IObject(defined(it));
 	};
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(254);
+	var cof = __webpack_require__(255);
 	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 	  return cof(it) == 'String' ? it.split('') : Object(it);
 	};
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -52816,14 +52815,14 @@
 	};
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// false -> Array#indexOf
 	// true  -> Array#includes
-	var toIObject = __webpack_require__(252)
-	  , toLength  = __webpack_require__(256)
-	  , toIndex   = __webpack_require__(257);
+	var toIObject = __webpack_require__(253)
+	  , toLength  = __webpack_require__(257)
+	  , toIndex   = __webpack_require__(258);
 	module.exports = function(IS_INCLUDES){
 	  return function($this, el, fromIndex){
 	    var O      = toIObject($this)
@@ -52842,21 +52841,21 @@
 	};
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(240)
+	var toInteger = __webpack_require__(241)
 	  , min       = Math.min;
 	module.exports = function(it){
 	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 	};
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(240)
+	var toInteger = __webpack_require__(241)
 	  , max       = Math.max
 	  , min       = Math.min;
 	module.exports = function(index, length){
@@ -52865,20 +52864,20 @@
 	};
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var shared = __webpack_require__(259)('keys')
-	  , uid    = __webpack_require__(260);
+	var shared = __webpack_require__(260)('keys')
+	  , uid    = __webpack_require__(261);
 	module.exports = function(key){
 	  return shared[key] || (shared[key] = uid(key));
 	};
 
 /***/ },
-/* 259 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global = __webpack_require__(182)
+	var global = __webpack_require__(183)
 	  , SHARED = '__core-js_shared__'
 	  , store  = global[SHARED] || (global[SHARED] = {});
 	module.exports = function(key){
@@ -52886,7 +52885,7 @@
 	};
 
 /***/ },
-/* 260 */
+/* 261 */
 /***/ function(module, exports) {
 
 	var id = 0
@@ -52896,7 +52895,7 @@
 	};
 
 /***/ },
-/* 261 */
+/* 262 */
 /***/ function(module, exports) {
 
 	// IE 8- don't enum bug keys
@@ -52905,30 +52904,30 @@
 	).split(',');
 
 /***/ },
-/* 262 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(182).document && document.documentElement;
-
-/***/ },
 /* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var def = __webpack_require__(187).f
-	  , has = __webpack_require__(245)
-	  , TAG = __webpack_require__(264)('toStringTag');
+	module.exports = __webpack_require__(183).document && document.documentElement;
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var def = __webpack_require__(188).f
+	  , has = __webpack_require__(246)
+	  , TAG = __webpack_require__(265)('toStringTag');
 	
 	module.exports = function(it, tag, stat){
 	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 	};
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var store      = __webpack_require__(259)('wks')
-	  , uid        = __webpack_require__(260)
-	  , Symbol     = __webpack_require__(182).Symbol
+	var store      = __webpack_require__(260)('wks')
+	  , uid        = __webpack_require__(261)
+	  , Symbol     = __webpack_require__(183).Symbol
 	  , USE_SYMBOL = typeof Symbol == 'function';
 	
 	var $exports = module.exports = function(name){
@@ -52939,13 +52938,13 @@
 	$exports.store = store;
 
 /***/ },
-/* 265 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-	var has         = __webpack_require__(245)
-	  , toObject    = __webpack_require__(266)
-	  , IE_PROTO    = __webpack_require__(258)('IE_PROTO')
+	var has         = __webpack_require__(246)
+	  , toObject    = __webpack_require__(267)
+	  , IE_PROTO    = __webpack_require__(259)('IE_PROTO')
 	  , ObjectProto = Object.prototype;
 	
 	module.exports = Object.getPrototypeOf || function(O){
@@ -52957,24 +52956,24 @@
 	};
 
 /***/ },
-/* 266 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(241);
+	var defined = __webpack_require__(242);
 	module.exports = function(it){
 	  return Object(defined(it));
 	};
 
 /***/ },
-/* 267 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(268);
-	var global        = __webpack_require__(182)
-	  , hide          = __webpack_require__(186)
-	  , Iterators     = __webpack_require__(246)
-	  , TO_STRING_TAG = __webpack_require__(264)('toStringTag');
+	__webpack_require__(269);
+	var global        = __webpack_require__(183)
+	  , hide          = __webpack_require__(187)
+	  , Iterators     = __webpack_require__(247)
+	  , TO_STRING_TAG = __webpack_require__(265)('toStringTag');
 	
 	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
 	  var NAME       = collections[i]
@@ -52985,20 +52984,20 @@
 	}
 
 /***/ },
-/* 268 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(269)
-	  , step             = __webpack_require__(270)
-	  , Iterators        = __webpack_require__(246)
-	  , toIObject        = __webpack_require__(252);
+	var addToUnscopables = __webpack_require__(270)
+	  , step             = __webpack_require__(271)
+	  , Iterators        = __webpack_require__(247)
+	  , toIObject        = __webpack_require__(253);
 	
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
 	// 22.1.3.30 Array.prototype[@@iterator]()
-	module.exports = __webpack_require__(242)(Array, 'Array', function(iterated, kind){
+	module.exports = __webpack_require__(243)(Array, 'Array', function(iterated, kind){
 	  this._t = toIObject(iterated); // target
 	  this._i = 0;                   // next index
 	  this._k = kind;                // kind
@@ -53024,13 +53023,13 @@
 	addToUnscopables('entries');
 
 /***/ },
-/* 269 */
+/* 270 */
 /***/ function(module, exports) {
 
 	module.exports = function(){ /* empty */ };
 
 /***/ },
-/* 270 */
+/* 271 */
 /***/ function(module, exports) {
 
 	module.exports = function(done, value){
@@ -53038,22 +53037,22 @@
 	};
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY            = __webpack_require__(243)
-	  , global             = __webpack_require__(182)
-	  , ctx                = __webpack_require__(184)
-	  , classof            = __webpack_require__(272)
-	  , $export            = __webpack_require__(181)
-	  , isObject           = __webpack_require__(189)
-	  , aFunction          = __webpack_require__(185)
-	  , anInstance         = __webpack_require__(273)
-	  , forOf              = __webpack_require__(274)
-	  , speciesConstructor = __webpack_require__(278)
-	  , task               = __webpack_require__(279).set
-	  , microtask          = __webpack_require__(281)()
+	var LIBRARY            = __webpack_require__(244)
+	  , global             = __webpack_require__(183)
+	  , ctx                = __webpack_require__(185)
+	  , classof            = __webpack_require__(273)
+	  , $export            = __webpack_require__(182)
+	  , isObject           = __webpack_require__(190)
+	  , aFunction          = __webpack_require__(186)
+	  , anInstance         = __webpack_require__(274)
+	  , forOf              = __webpack_require__(275)
+	  , speciesConstructor = __webpack_require__(279)
+	  , task               = __webpack_require__(280).set
+	  , microtask          = __webpack_require__(282)()
 	  , PROMISE            = 'Promise'
 	  , TypeError          = global.TypeError
 	  , process            = global.process
@@ -53067,7 +53066,7 @@
 	  try {
 	    // correct subclassing with @@species support
 	    var promise     = $Promise.resolve(1)
-	      , FakePromise = (promise.constructor = {})[__webpack_require__(264)('species')] = function(exec){ exec(empty, empty); };
+	      , FakePromise = (promise.constructor = {})[__webpack_require__(265)('species')] = function(exec){ exec(empty, empty); };
 	    // unhandled rejections tracking support, NodeJS Promise without it fails @@species test
 	    return (isNode || typeof PromiseRejectionEvent == 'function') && promise.then(empty) instanceof FakePromise;
 	  } catch(e){ /* empty */ }
@@ -53245,7 +53244,7 @@
 	    this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
 	    this._n = false;          // <- notify
 	  };
-	  Internal.prototype = __webpack_require__(282)($Promise.prototype, {
+	  Internal.prototype = __webpack_require__(283)($Promise.prototype, {
 	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
 	    then: function then(onFulfilled, onRejected){
 	      var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -53271,9 +53270,9 @@
 	}
 	
 	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
-	__webpack_require__(263)($Promise, PROMISE);
-	__webpack_require__(283)(PROMISE);
-	Wrapper = __webpack_require__(183)[PROMISE];
+	__webpack_require__(264)($Promise, PROMISE);
+	__webpack_require__(284)(PROMISE);
+	Wrapper = __webpack_require__(184)[PROMISE];
 	
 	// statics
 	$export($export.S + $export.F * !USE_NATIVE, PROMISE, {
@@ -53296,7 +53295,7 @@
 	    return capability.promise;
 	  }
 	});
-	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(284)(function(iter){
+	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(285)(function(iter){
 	  $Promise.all(iter)['catch'](empty);
 	})), PROMISE, {
 	  // 25.4.4.1 Promise.all(iterable)
@@ -53342,12 +53341,12 @@
 	});
 
 /***/ },
-/* 272 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
-	var cof = __webpack_require__(254)
-	  , TAG = __webpack_require__(264)('toStringTag')
+	var cof = __webpack_require__(255)
+	  , TAG = __webpack_require__(265)('toStringTag')
 	  // ES3 wrong here
 	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
 	
@@ -53370,7 +53369,7 @@
 	};
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports) {
 
 	module.exports = function(it, Constructor, name, forbiddenField){
@@ -53380,15 +53379,15 @@
 	};
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ctx         = __webpack_require__(184)
-	  , call        = __webpack_require__(275)
-	  , isArrayIter = __webpack_require__(276)
-	  , anObject    = __webpack_require__(188)
-	  , toLength    = __webpack_require__(256)
-	  , getIterFn   = __webpack_require__(277)
+	var ctx         = __webpack_require__(185)
+	  , call        = __webpack_require__(276)
+	  , isArrayIter = __webpack_require__(277)
+	  , anObject    = __webpack_require__(189)
+	  , toLength    = __webpack_require__(257)
+	  , getIterFn   = __webpack_require__(278)
 	  , BREAK       = {}
 	  , RETURN      = {};
 	var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -53410,11 +53409,11 @@
 	exports.RETURN = RETURN;
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
-	var anObject = __webpack_require__(188);
+	var anObject = __webpack_require__(189);
 	module.exports = function(iterator, fn, value, entries){
 	  try {
 	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
@@ -53427,12 +53426,12 @@
 	};
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
-	var Iterators  = __webpack_require__(246)
-	  , ITERATOR   = __webpack_require__(264)('iterator')
+	var Iterators  = __webpack_require__(247)
+	  , ITERATOR   = __webpack_require__(265)('iterator')
 	  , ArrayProto = Array.prototype;
 	
 	module.exports = function(it){
@@ -53440,40 +53439,40 @@
 	};
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(272)
-	  , ITERATOR  = __webpack_require__(264)('iterator')
-	  , Iterators = __webpack_require__(246);
-	module.exports = __webpack_require__(183).getIteratorMethod = function(it){
+	var classof   = __webpack_require__(273)
+	  , ITERATOR  = __webpack_require__(265)('iterator')
+	  , Iterators = __webpack_require__(247);
+	module.exports = __webpack_require__(184).getIteratorMethod = function(it){
 	  if(it != undefined)return it[ITERATOR]
 	    || it['@@iterator']
 	    || Iterators[classof(it)];
 	};
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
-	var anObject  = __webpack_require__(188)
-	  , aFunction = __webpack_require__(185)
-	  , SPECIES   = __webpack_require__(264)('species');
+	var anObject  = __webpack_require__(189)
+	  , aFunction = __webpack_require__(186)
+	  , SPECIES   = __webpack_require__(265)('species');
 	module.exports = function(O, D){
 	  var C = anObject(O).constructor, S;
 	  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
 	};
 
 /***/ },
-/* 279 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ctx                = __webpack_require__(184)
-	  , invoke             = __webpack_require__(280)
-	  , html               = __webpack_require__(262)
-	  , cel                = __webpack_require__(193)
-	  , global             = __webpack_require__(182)
+	var ctx                = __webpack_require__(185)
+	  , invoke             = __webpack_require__(281)
+	  , html               = __webpack_require__(263)
+	  , cel                = __webpack_require__(194)
+	  , global             = __webpack_require__(183)
 	  , process            = global.process
 	  , setTask            = global.setImmediate
 	  , clearTask          = global.clearImmediate
@@ -53508,7 +53507,7 @@
 	    delete queue[id];
 	  };
 	  // Node.js 0.8-
-	  if(__webpack_require__(254)(process) == 'process'){
+	  if(__webpack_require__(255)(process) == 'process'){
 	    defer = function(id){
 	      process.nextTick(ctx(run, id, 1));
 	    };
@@ -53546,7 +53545,7 @@
 	};
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports) {
 
 	// fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -53567,15 +53566,15 @@
 	};
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global    = __webpack_require__(182)
-	  , macrotask = __webpack_require__(279).set
+	var global    = __webpack_require__(183)
+	  , macrotask = __webpack_require__(280).set
 	  , Observer  = global.MutationObserver || global.WebKitMutationObserver
 	  , process   = global.process
 	  , Promise   = global.Promise
-	  , isNode    = __webpack_require__(254)(process) == 'process';
+	  , isNode    = __webpack_require__(255)(process) == 'process';
 	
 	module.exports = function(){
 	  var head, last, notify;
@@ -53640,10 +53639,10 @@
 	};
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var hide = __webpack_require__(186);
+	var hide = __webpack_require__(187);
 	module.exports = function(target, src, safe){
 	  for(var key in src){
 	    if(safe && target[key])target[key] = src[key];
@@ -53652,15 +53651,15 @@
 	};
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var global      = __webpack_require__(182)
-	  , core        = __webpack_require__(183)
-	  , dP          = __webpack_require__(187)
-	  , DESCRIPTORS = __webpack_require__(191)
-	  , SPECIES     = __webpack_require__(264)('species');
+	var global      = __webpack_require__(183)
+	  , core        = __webpack_require__(184)
+	  , dP          = __webpack_require__(188)
+	  , DESCRIPTORS = __webpack_require__(192)
+	  , SPECIES     = __webpack_require__(265)('species');
 	
 	module.exports = function(KEY){
 	  var C = typeof core[KEY] == 'function' ? core[KEY] : global[KEY];
@@ -53671,10 +53670,10 @@
 	};
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ITERATOR     = __webpack_require__(264)('iterator')
+	var ITERATOR     = __webpack_require__(265)('iterator')
 	  , SAFE_CLOSING = false;
 	
 	try {
@@ -53697,7 +53696,7 @@
 	};
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53706,15 +53705,15 @@
 	  value: true
 	});
 	
-	var _stringify = __webpack_require__(226);
+	var _stringify = __webpack_require__(227);
 	
 	var _stringify2 = _interopRequireDefault(_stringify);
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
@@ -53734,7 +53733,7 @@
 	    key: 'list',
 	    value: function list() {
 	      var _this = this;
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/dictionary').then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53744,7 +53743,7 @@
 	    key: 'create',
 	    value: function create(word) {
 	      var _this = this;
-	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53754,7 +53753,7 @@
 	    key: 'detail',
 	    value: function detail(word) {
 	      var _this = this;
-	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/dictionary/' + word).then(function (response) {
+	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/' + word).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53764,7 +53763,7 @@
 	    key: 'update',
 	    value: function update(word) {
 	      var _this = this;
-	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
+	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53777,7 +53776,7 @@
 	      var collection = {
 	        words: words
 	      };
-	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
+	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53790,7 +53789,7 @@
 	exports.default = WordService;
 
 /***/ },
-/* 286 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53799,7 +53798,7 @@
 	  value: true
 	});
 	
-	var _stringify = __webpack_require__(226);
+	var _stringify = __webpack_require__(227);
 	
 	var _stringify2 = _interopRequireDefault(_stringify);
 	
@@ -53833,7 +53832,7 @@
 	};
 
 /***/ },
-/* 287 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53842,11 +53841,11 @@
 	  value: true
 	});
 	
-	var _promise = __webpack_require__(235);
+	var _promise = __webpack_require__(236);
 	
 	var _promise2 = _interopRequireDefault(_promise);
 	
-	var _getIterator2 = __webpack_require__(288);
+	var _getIterator2 = __webpack_require__(289);
 	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 	
@@ -53902,33 +53901,33 @@
 	};
 
 /***/ },
-/* 288 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(289), __esModule: true };
-
-/***/ },
 /* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(267);
-	__webpack_require__(238);
-	module.exports = __webpack_require__(290);
+	module.exports = { "default": __webpack_require__(290), __esModule: true };
 
 /***/ },
 /* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var anObject = __webpack_require__(188)
-	  , get      = __webpack_require__(277);
-	module.exports = __webpack_require__(183).getIterator = function(it){
+	__webpack_require__(268);
+	__webpack_require__(239);
+	module.exports = __webpack_require__(291);
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var anObject = __webpack_require__(189)
+	  , get      = __webpack_require__(278);
+	module.exports = __webpack_require__(184).getIterator = function(it){
 	  var iterFn = get(it);
 	  if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
 	  return anObject(iterFn.call(it));
 	};
 
 /***/ },
-/* 291 */
+/* 292 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53983,28 +53982,6 @@
 	};
 
 /***/ },
-/* 292 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _connectComponent = __webpack_require__(293);
-	
-	var _connectComponent2 = _interopRequireDefault(_connectComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.connectSection', []).component('connectExistingGame', _connectComponent2.default).name;
-
-/***/ },
 /* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -54014,11 +53991,33 @@
 	  value: true
 	});
 	
-	var _connectTmpl = __webpack_require__(294);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _connectComponent = __webpack_require__(294);
+	
+	var _connectComponent2 = _interopRequireDefault(_connectComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.connectSection', []).component('connectExistingGame', _connectComponent2.default).name;
+
+/***/ },
+/* 294 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _connectTmpl = __webpack_require__(295);
 	
 	var _connectTmpl2 = _interopRequireDefault(_connectTmpl);
 	
-	var _connectController = __webpack_require__(295);
+	var _connectController = __webpack_require__(296);
 	
 	var _connectController2 = _interopRequireDefault(_connectController);
 	
@@ -54033,13 +54032,13 @@
 	};
 
 /***/ },
-/* 294 */
+/* 295 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"connect-square\">\n            <h4 class=\"brand-heading\">connect to the existing game</h4>\n            <h3 ng-show=\"!$ctrl.emptyList\">List of the actual games:</h3>\n            <h3 ng-show=\"$ctrl.emptyList\">Have no active game</h3>\n            <a ng-show=\"$ctrl.emptyList\" href=\"#/createNewGame\">\n              <h4>Back to create new game page</h4>\n            </a>\n            <table ng-show=\"!$ctrl.emptyList\" class=\"table table-hover\">\n              <tbody>\n                <tr>\n                  <th>\n                    <span class=\"connect-text\">Game word</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Player count</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Game Duration</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Connect</span>\n                  </th>\n                </tr>\n                <tr ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n                  <td>\n                    <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                      {{game.word}}\n                    </div>\n                  </td>\n                  <td>\n                    <span>Now\n                      {{game.players.length}}\n                      players</span>\n                  </div>\n                </td>\n                <td>\n                  <div id=\"{{game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </td>\n                <td>\n                  <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                    Connect\n                  </button>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n          <!-- <ul ng-show=\"!$ctrl.emptyList\">\n            <li>\n              <div class=\"row\">\n                <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                  <span class=\"connect-text\">Game word</span>\n                </div>\n                <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                  <span class=\"connect-text\">Player count</span>\n                </div>\n                <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                  <span class=\"connect-text\">Game Duration</span>\n                </div>\n                <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                  <span class=\"connect-text\">Connect</span>\n                </div>\n              </div>\n            </li>\n            <li ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n              <div class=\"row\">\n                <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                  {{game.word}}\n                </div>\n                <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                  <span>Now\n                    {{game.players.length}}\n                    players</span>\n                </div>\n                <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                  <div id=\"{{game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </div>\n                <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                  <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                    Connect\n                  </button>\n                </div>\n              </div>\n            </li>\n          </ul> -->\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"connect-square\">\n            <h4 class=\"brand-heading\">connect to the existing game</h4>\n            <h3 ng-show=\"!$ctrl.emptyList\">List of the actual games:</h3>\n            <h3 ng-show=\"$ctrl.emptyList\">Have no active game</h3>\n            <a ng-show=\"$ctrl.emptyList\" href=\"#/createNewGame\">\n              <h4>Back to create new game page</h4>\n            </a>\n            <table ng-show=\"!$ctrl.emptyList\" class=\"table table-hover\">\n              <tbody>\n                <tr>\n                  <th>\n                    <span class=\"connect-text\">Game word</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Player count</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Game Duration</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Connect</span>\n                  </th>\n                </tr>\n                <tr ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n                  <td>\n                    <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                      {{game.word}}\n                    </div>\n                  </td>\n                  <td>\n                    <span>Now\n                      {{game.players.length}}\n                      players</span>\n                  </div>\n                </td>\n                <td>\n                  <div id=\"{{game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </td>\n                <td>\n                  <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                    Connect\n                  </button>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 295 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54048,15 +54047,15 @@
 	  value: true
 	});
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
@@ -54127,28 +54126,6 @@
 	exports.default = ConnectController;
 
 /***/ },
-/* 296 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _createComponent = __webpack_require__(297);
-	
-	var _createComponent2 = _interopRequireDefault(_createComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.createSection', []).component('createNewGame', _createComponent2.default).name;
-
-/***/ },
 /* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -54158,11 +54135,33 @@
 	  value: true
 	});
 	
-	var _createTmpl = __webpack_require__(298);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _createComponent = __webpack_require__(298);
+	
+	var _createComponent2 = _interopRequireDefault(_createComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.createSection', []).component('createNewGame', _createComponent2.default).name;
+
+/***/ },
+/* 298 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createTmpl = __webpack_require__(299);
 	
 	var _createTmpl2 = _interopRequireDefault(_createTmpl);
 	
-	var _createController = __webpack_require__(299);
+	var _createController = __webpack_require__(300);
 	
 	var _createController2 = _interopRequireDefault(_createController);
 	
@@ -54177,13 +54176,13 @@
 	};
 
 /***/ },
-/* 298 */
+/* 299 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">create new game</span>\n        </h4>\n        <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"game\" name=\"game\" ng-validator>\n          <div ng-class=\"{ 'has-error' : game.word.$invalid && !game.word.$pristine }\">\n            <label for=\"basic-url\">Enter your main word</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: otorhinolaryngological</span>\n              <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"word\" ng-model=\"$ctrl.game.word\">\n            </div>\n          </div>\n          <div ng-class=\"{ 'has-error' : game.duration.$invalid && !game.duration.$pristine }\">\n            <label for=\"basic-url\">Select game duration</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: 30 min</span>\n              <!-- <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"firstName\" ng-model=\"$ctrl.user.firstName\"> -->\n              <select class=\"form-control form-control-lg\" name=\"duration\" ng-model=\"$ctrl.game.duration\" aria-describedby=\"basic-addon3\">\n                <option selected>\n                  ------------------Select game duration-------------------\n                </option>\n                <option ng-repeat=\"duration in $ctrl.durations track by $index\" ng-value=\"duration\">{{duration}}\n                  min.</option>\n              </select>\n            </div>\n          </div>\n          <div ng-class=\"{ 'has-error' : game.players.$invalid && !game.players.$pristine }\">\n            <label for=\"basic-url\">Select one or more players</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov Ivan</span>\n              <select class=\"form-control form-control-lg\" name=\"players\" ng-model=\"$ctrl.game.players\" aria-describedby=\"basic-addon3\" multiple>\n                <option selected disabled>\n                  ------------------Select players-------------------\n                </option>\n                <option ng-repeat=\"player in $ctrl.players track by $index\" ng-value=\"player._id\">{{player.name}}</option>\n              </select>\n            </div>\n          </div>\n          <div class=\"signup-link\">\n            <button type=\"submit\" class=\"btn btn-success btn-block\">\n              Create new game\n            </button>\n          </div>\n          <div class=\"signup-link\">\n            <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n            <!-- ng-click=\"$ctrl.closeWin()\" -->\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n";
 
 /***/ },
-/* 299 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54192,15 +54191,15 @@
 	  value: true
 	});
 	
-	var _getIterator2 = __webpack_require__(288);
+	var _getIterator2 = __webpack_require__(289);
 	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
@@ -54227,7 +54226,6 @@
 	      var _this = this;
 	      this.PlayerService.list().then(function (list) {
 	        _this.players = list;
-	        console.log(_this.players);
 	      });
 	    }
 	  }, {
@@ -54284,28 +54282,6 @@
 	exports.default = CreateController;
 
 /***/ },
-/* 300 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _gamePlayComponent = __webpack_require__(301);
-	
-	var _gamePlayComponent2 = _interopRequireDefault(_gamePlayComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.gamePlay', []).component('gamePlay', _gamePlayComponent2.default).name;
-
-/***/ },
 /* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -54315,11 +54291,33 @@
 	  value: true
 	});
 	
-	var _gamePlayTmpl = __webpack_require__(302);
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _gamePlayComponent = __webpack_require__(302);
+	
+	var _gamePlayComponent2 = _interopRequireDefault(_gamePlayComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.gamePlay', []).component('gamePlay', _gamePlayComponent2.default).name;
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _gamePlayTmpl = __webpack_require__(303);
 	
 	var _gamePlayTmpl2 = _interopRequireDefault(_gamePlayTmpl);
 	
-	var _gamePlayController = __webpack_require__(303);
+	var _gamePlayController = __webpack_require__(304);
 	
 	var _gamePlayController2 = _interopRequireDefault(_gamePlayController);
 	
@@ -54331,13 +54329,13 @@
 	};
 
 /***/ },
-/* 302 */
+/* 303 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\" ng-init=\"$ctrl.checkTimer()\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <!-- <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\"> -->\n\n              <div class=\"input-group\">\n                <input type=\"text\" class=\"form-control\" placeholder=\"Enter next word...\" name = \"word\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n                <span class=\"input-group-btn\">\n                  <button class=\"btn btn-default\" type=\"button\" ng-click=\"$ctrl.addWord($event)\">Approve</button>\n                </span>\n              </div>\n              <!-- /input-group -->\n\n              <br>\n              <a type=\"submit\" class=\"btn btn-success btn-block\" ng-href=\"#/firstResults\">\n                Finish\n              </a>\n            </div>\n          </div>\n          <div class=\"col-md-2 col-xs-2 col-sm-2 col-lg-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\">\n              <li ng-repeat=\"word in $ctrl.userWords track by $index\" ng-bind=\"word\">\n              </li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 303 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54346,15 +54344,15 @@
 	  value: true
 	});
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
@@ -54494,28 +54492,6 @@
 	exports.default = PlayGameController;
 
 /***/ },
-/* 304 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _updateDictionaryComponent = __webpack_require__(305);
-	
-	var _updateDictionaryComponent2 = _interopRequireDefault(_updateDictionaryComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.updateDictionary', []).component('updateDictionary', _updateDictionaryComponent2.default).name;
-
-/***/ },
 /* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -54525,167 +54501,11 @@
 	  value: true
 	});
 	
-	var _updateDictionaryTmpl = __webpack_require__(306);
-	
-	var _updateDictionaryTmpl2 = _interopRequireDefault(_updateDictionaryTmpl);
-	
-	var _updateDictionaryController = __webpack_require__(307);
-	
-	var _updateDictionaryController2 = _interopRequireDefault(_updateDictionaryController);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  template: _updateDictionaryTmpl2.default,
-	  controller: _updateDictionaryController2.default
-	};
-
-/***/ },
-/* 306 */
-/***/ function(module, exports) {
-
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">UPDATE DICTIONARY</h1>\n            </div>\n            <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n            <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n            <br>\n          </div>\n          <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.finishGame()\">\n            Finish\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
-
-/***/ },
-/* 307 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _classCallCheck2 = __webpack_require__(176);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(177);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var UpdateDictionaryController = function () {
-	  UpdateDictionaryController.$inject = ["GameService", "UserService", "$scope", "commonFactory"];
-	  function UpdateDictionaryController(GameService, UserService, $scope, commonFactory) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, UpdateDictionaryController);
-	    this.GameService = GameService;
-	    this.UserService = UserService;
-	    this.scope = $scope;
-	    this.game = {};
-	    this.commonFactory = commonFactory;
-	    // this.userWords = [];
-	  }
-	
-	  (0, _createClass3.default)(UpdateDictionaryController, [{
-	    key: '$onInit',
-	    value: function $onInit() {
-	      var _this2 = this;
-	
-	      this.getGame().then(function (result) {
-	        _this2.game = result;
-	        _this2.player = _this2.UserService.getAuthUser().playerID;
-	        _this2.getUserWords();
-	      });
-	    }
-	  }, {
-	    key: 'getUserWords',
-	    value: function getUserWords() {
-	      for (var i = 0; i < this.game.players.length; i++) {
-	        if (this.game.players[i].playerID == this.player) {
-	          this.userWords = [];
-	          for (var j = 0; j < this.game.players[i].words.length; j++) {
-	            this.userWords.push(this.game.players[i].words[j]);
-	          }
-	        }
-	      }
-	    }
-	  }, {
-	    key: 'getGame',
-	    value: function getGame() {
-	      return this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
-	        return result;
-	      });
-	    }
-	  }, {
-	    key: 'addWord',
-	    value: function addWord(event) {
-	      var _this = this;
-	      // for (let i = 0; i < this.game.players.length; i++) {
-	      //   if (this.game.players[i].playerID == this.player) {
-	      //     this.game.players[i].words.push(event.target.value);
-	      //   }
-	      // }
-	      this.userWords.push(event.target.value);
-	      var words = {
-	        words: event.target.value
-	      };
-	      event.target.value = '';
-	      return this.GameService.addWord(this.UserService.getAuthUser().gameID, words, this.player).then(function (result) {
-	        _this.game = result;
-	        return _this.game;
-	      }).catch(function () {
-	        throw new Error('Your time expired');
-	      });
-	    }
-	  }, {
-	    key: 'gTimer',
-	    value: function gTimer() {
-	      var _this3 = this;
-	
-	      _angular2.default.element(document).ready(function () {
-	        _this3.getGame().then(function (result) {
-	          var duration = Number(result.duration);
-	          var deadline = new Date(Date.parse(result.startTime) + duration * 60 * 1000);
-	          var actualTime = new Date();
-	          _this3.commonFactory.initializeClock(result._id, deadline);
-	        });
-	      });
-	    }
-	  }, {
-	    key: 'checkTimer',
-	    value: function checkTimer() {
-	      var duration = Number(this.game.duration);
-	      var deadline = new Date(Date.parse(this.game.startTime) + duration * 60 * 1000);
-	      var actualTime = new Date();
-	      if (deadline < actualTime) {
-	        var timer = _angular2.default.element(document.getElementById('game'));
-	        timer.remove();
-	        var element = _angular2.default.element('<p class="game-text">Your time expired</p>');
-	        _angular2.default.element(document.getElementById('gameHeader')).append(element);
-	        //clearTimeout(this.timeinterval);
-	        return;
-	      }
-	      setTimeout(this.checkTimer.bind(this), 1000);
-	    }
-	  }]);
-	  return UpdateDictionaryController;
-	}();
-	
-	exports.default = UpdateDictionaryController;
-
-/***/ },
-/* 308 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(157);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _firstResultsComponent = __webpack_require__(309);
+	var _firstResultsComponent = __webpack_require__(306);
 	
 	var _firstResultsComponent2 = _interopRequireDefault(_firstResultsComponent);
 	
@@ -54694,7 +54514,7 @@
 	exports.default = _angular2.default.module('app.components.firstResults', []).component('firstResults', _firstResultsComponent2.default).name;
 
 /***/ },
-/* 309 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54703,11 +54523,11 @@
 	  value: true
 	});
 	
-	var _firstResultsTmpl = __webpack_require__(310);
+	var _firstResultsTmpl = __webpack_require__(307);
 	
 	var _firstResultsTmpl2 = _interopRequireDefault(_firstResultsTmpl);
 	
-	var _firstResultsController = __webpack_require__(311);
+	var _firstResultsController = __webpack_require__(308);
 	
 	var _firstResultsController2 = _interopRequireDefault(_firstResultsController);
 	
@@ -54719,13 +54539,13 @@
 	};
 
 /***/ },
-/* 310 */
+/* 307 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- game Header -->\n<div class=\"f-res\">\n  <div class=\"f-res-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 f-res-square\">\n            <br>\n            <h1 class=\"brand-heading\">FIRST RESULTS</h1>\n            <h3>Play word was\n              <h2 ng-bind=\"$ctrl.game.word\"></h2>\n            </h3>\n            <div class=\"f-res-text\">\n              <span ng-show=\"!isDraw\">\n                <span ng-bind=\"$ctrl.winner.name\"></span>\n                WINS</span>\n              <span ng-show=\"isDraw\">A DRAW RESULT</span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div ng-class=\"$ctrl.colClass\" ng-repeat=\"player in $ctrl.game.players track by player.playerID\">\n            <div class=\"row\">\n              <player player=\"player\"></player>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\" style=\"padding-bottom: 10px;\">\n        <a href=\"#/\" class=\"btn btn-success btn-block\">Back to main page</a>\n\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 311 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54734,19 +54554,19 @@
 	  value: true
 	});
 	
-	var _stringify = __webpack_require__(226);
+	var _stringify = __webpack_require__(227);
 	
 	var _stringify2 = _interopRequireDefault(_stringify);
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
@@ -54775,16 +54595,13 @@
 	
 	      this.getGame().then(function (result) {
 	        _this.game = result;
-	        console.log(_this.game);
 	        var plCount = _this.game.players.length;
 	        var index = Math.floor(12 / plCount) || 1;
 	        _this.colClass = 'col-md-' + index + ' col-xs-' + index + ' col-sm-' + index + ' col-lg-' + index + ' game-square game-words';
 	        if (!_this.isDrawResult(_this.game)) {
-	          console.log(_this.scope.isDraw);
 	          var id = _this.findWinner(_this.game);
 	          _this.getPlayer(id).then(function (res) {
 	            _this.winner = res;
-	            console.log('winner -' + (0, _stringify2.default)(_this.winner));
 	          });
 	        }
 	        _this.checkWords(_this.game);
@@ -54847,14 +54664,17 @@
 	        if (this.game.players[i].playerID == this.UserService.getAuthUser().playerID) {
 	          this.game.players[i].isCertain = true;
 	          for (var j = 0; j < this.game.players[i].words.length; j++) {
-	            if (!this.game.players[i].words[j].discription) {
+	            if (this.game.players[i].words[j].discription == '') {
 	              this.game.players[i].isCertain = false;
 	              break;
 	            }
 	          }
 	          if (this.game.players[i].isCertain) {
+	            console.log((0, _stringify2.default)(this.game, null, 2));
 	            this.GameService.save(this.game);
+	            this.timeout.cancel(this.checker);
 	            this.timeout(navi.bind(this), 3000);
+	            return;
 	          }
 	        }
 	      }
@@ -54862,7 +54682,7 @@
 	      function navi() {
 	        this.state.go('final');
 	      }
-	      setTimeout(this.checkWords.bind(this), 2000);
+	      this.checker = this.timeout(this.checkWords.bind(this), 2000);
 	
 	      // this.GameService.detail(this.UserService.getAuthUser().gameID).then(res => {
 	      //   this.game = res;
@@ -54888,7 +54708,7 @@
 	exports.default = FirstResultsController;
 
 /***/ },
-/* 312 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54897,15 +54717,15 @@
 	  value: true
 	});
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _playerComponent = __webpack_require__(313);
+	var _playerComponent = __webpack_require__(310);
 	
 	var _playerComponent2 = _interopRequireDefault(_playerComponent);
 	
-	var _discriptionController = __webpack_require__(318);
+	var _discriptionController = __webpack_require__(315);
 	
 	var _discriptionController2 = _interopRequireDefault(_discriptionController);
 	
@@ -54914,7 +54734,7 @@
 	exports.default = _angular2.default.module('app.components.player', []).component('player', _playerComponent2.default).controller('AddDiscriptionController', _discriptionController2.default).name;
 
 /***/ },
-/* 313 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54923,11 +54743,11 @@
 	  value: true
 	});
 	
-	var _playerTmpl = __webpack_require__(314);
+	var _playerTmpl = __webpack_require__(311);
 	
 	var _playerTmpl2 = _interopRequireDefault(_playerTmpl);
 	
-	var _playerController = __webpack_require__(315);
+	var _playerController = __webpack_require__(312);
 	
 	var _playerController2 = _interopRequireDefault(_playerController);
 	
@@ -54942,13 +54762,13 @@
 	};
 
 /***/ },
-/* 314 */
+/* 311 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- player Header -->\n<div>\n  <ol class=\"list-group\">\n    <li class=\"f-res-text list-group-item disabled\">\n      <span ng-bind=\"$ctrl.plName\"></span>\n      <span class=\"badge\" ng-class=\"counterClass\" ng-bind=\"$ctrl.counter\"></span>\n    </li>\n    <li ng-repeat=\"word in $ctrl.player.words track by $index\" class=\"list-group-item\">\n      <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n        <a class=\"f-res-words\" ng-show=\"!word.discription\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word.word, word.discription)\"></a>\n        <span class=\"f-res-words\" ng-show=\"word.discription\">\n          <span  ng-bind=\"word.word\"></span>\n          <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n        </span>\n      </div>\n    </li>\n  </ol>\n\n  <ol ng-show=\"$ctrl.player.wrongWords.length>0\" class=\"list-group\">\n    <li class=\"f-res-text list-group-itllem disabled\" style=\"background-color: rgba(255, 71, 69, 1);color: white;\">\n      <span>WRONG WORDS</span>\n      <span class=\"badge\" ng-bind=\"$ctrl.player.wrongWords.length\"></span>\n    </li>\n    <li ng-repeat=\"wrWord in $ctrl.player.wrongWords\" class=\"list-group-item\" style=\"background-color: rgba(255, 0, 0, 0.2);\">\n      {{wrWord.word}}\n      <span class=\"f-res-words\" ng-bind=\"wrWord\">\n        <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n      </span>\n    </li>\n  </ol>\n</div>\n";
 
 /***/ },
-/* 315 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54957,31 +54777,27 @@
 	  value: true
 	});
 	
-	var _stringify = __webpack_require__(226);
-	
-	var _stringify2 = _interopRequireDefault(_stringify);
-	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _lodash = __webpack_require__(316);
+	var _lodash = __webpack_require__(313);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
-	var _discriptionController = __webpack_require__(318);
+	var _discriptionController = __webpack_require__(315);
 	
 	var _discriptionController2 = _interopRequireDefault(_discriptionController);
 	
-	var _discriptionTmpl = __webpack_require__(319);
+	var _discriptionTmpl = __webpack_require__(316);
 	
 	var _discriptionTmpl2 = _interopRequireDefault(_discriptionTmpl);
 	
@@ -55053,22 +54869,15 @@
 	
 	      modalInstance.result.then(function (result) {
 	        // console.log(`this.player.words = ${JSON.stringify(_this.player.words,null,2)}`);
+	        _this.counter = 0;
 	        for (var i = 0; i < _this.player.words.length; i++) {
 	          if (_this.player.words[i].word == result.word) {
 	            _this.player.words[i].discription = result.discription;
 	          }
+	          if (_this.player.words[i].discription != '') {
+	            _this.counter++;
+	          }
 	        }
-	        // this.WordService.create(result).then(() => {
-	        //   this.getWords().then(res => {
-	        //     this.words = res;
-	        //     for (let i = 0; i < this.words.length; i++) {
-	        //       if (this.words[i].discription) {
-	        //         this.counter++;
-	        //       }
-	        //     }
-	        //   });
-	        // })
-	        console.log((0, _stringify2.default)(_this.player.words, null, 2));
 	      }, function () {
 	        console.log('Modal dismissed at: ' + new Date());
 	      });
@@ -55080,7 +54889,7 @@
 	exports.default = PlayerController;
 
 /***/ },
-/* 316 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -71817,10 +71626,10 @@
 	  }
 	}.call(this));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(317)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(314)(module)))
 
 /***/ },
-/* 317 */
+/* 314 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -71836,7 +71645,7 @@
 
 
 /***/ },
-/* 318 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71845,19 +71654,19 @@
 	  value: true
 	});
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _lodash = __webpack_require__(316);
+	var _lodash = __webpack_require__(313);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
@@ -71891,13 +71700,13 @@
 	exports.default = AddDiscriptionController;
 
 /***/ },
-/* 319 */
+/* 316 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"modal-header\">\n  <!-- <strong ng-bind=\"$ctrl.word.word\"> </strong> -->\n  <h3 class=\"modal-title\">Enter discription for\n    <strong ng-bind=\"vm.word.word\"></strong>\n  </h3>\n</div>\n<div class=\"modal-body\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Discription\" aria-describedby=\"sizing-addon1\" ng-model=\"vm.word.discription\">\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" type=\"button\" ng-click=\"vm.ok()\">OK</button>\n  <button class=\"btn btn-warning\" type=\"button\" ng-click=\"vm.cancel()\">Cancel</button>\n</div>\n";
 
 /***/ },
-/* 320 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71906,11 +71715,11 @@
 	  value: true
 	});
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _finalComponent = __webpack_require__(321);
+	var _finalComponent = __webpack_require__(318);
 	
 	var _finalComponent2 = _interopRequireDefault(_finalComponent);
 	
@@ -71919,7 +71728,7 @@
 	exports.default = _angular2.default.module('app.components.finalSection', []).component('finalSection', _finalComponent2.default).name;
 
 /***/ },
-/* 321 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71928,11 +71737,11 @@
 	  value: true
 	});
 	
-	var _finalTmpl = __webpack_require__(322);
+	var _finalTmpl = __webpack_require__(319);
 	
 	var _finalTmpl2 = _interopRequireDefault(_finalTmpl);
 	
-	var _finalController = __webpack_require__(323);
+	var _finalController = __webpack_require__(320);
 	
 	var _finalController2 = _interopRequireDefault(_finalController);
 	
@@ -71947,13 +71756,13 @@
 	};
 
 /***/ },
-/* 322 */
+/* 319 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- game Header -->\n<div class=\"f-res\">\n  <div class=\"f-res-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 f-res-square\">\n            <br>\n            <h1 class=\"brand-heading\" ng-init=\"$ctrl.checkWords()\">YOU'r winner</h1>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\" style=\"padding-bottom: 10px;\">\n        <a href=\"#/\" class=\"btn btn-success btn-block\">Back to main page</a>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 323 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71962,11 +71771,11 @@
 	  value: true
 	});
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
@@ -71993,7 +71802,7 @@
 	exports.default = FinalController;
 
 /***/ },
-/* 324 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -72002,11 +71811,11 @@
 	  value: true
 	});
 	
-	var _angular = __webpack_require__(157);
+	var _angular = __webpack_require__(158);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _adminComponent = __webpack_require__(325);
+	var _adminComponent = __webpack_require__(322);
 	
 	var _adminComponent2 = _interopRequireDefault(_adminComponent);
 	
@@ -72015,7 +71824,7 @@
 	exports.default = _angular2.default.module('app.components.admin', []).component('admin', _adminComponent2.default).name;
 
 /***/ },
-/* 325 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -72024,11 +71833,11 @@
 	  value: true
 	});
 	
-	var _adminTmpl = __webpack_require__(326);
+	var _adminTmpl = __webpack_require__(323);
 	
 	var _adminTmpl2 = _interopRequireDefault(_adminTmpl);
 	
-	var _adminController = __webpack_require__(327);
+	var _adminController = __webpack_require__(324);
 	
 	var _adminController2 = _interopRequireDefault(_adminController);
 	
@@ -72043,13 +71852,13 @@
 	};
 
 /***/ },
-/* 326 */
+/* 323 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- About Section -->\n<div class=\"profile\">\n  <div class=\"profile-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"profile-square\">\n            <h4 class=\"brand-heading\">Hi Mr. ADMIN\n              <span ng-bind=\"$ctrl.user.userName\"></span>\n            </h4>\n            <p class=\"profile-text\">A free, responsive, one page Bootstrap theme.\n              <br>Created by Start Bootstrap.</p>\n            <a href=\"#/\" class=\"btn btn-circle page-scroll\">\n              <i class=\"fa fa-angle-double-down animated\"></i>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- About Section -->\n<div class=\"admin\">\n  <div class=\"admin-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"admin-square\">\n            <h4 class=\"brand-heading\">Hi Mr. ADMIN\n              <span ng-bind=\"$ctrl.user.userName\"></span>\n            </h4>\n            <div ng-show=\"$ctrl.words.length>0\">\n              <div ng-repeat=\"word in $ctrl.words track by $index\">\n                <a class=\"admin-text\" ng-click=\"$ctrl.open(word.word)\">\n                  Discriptions for\n                  <span ng-bind=\"word.word\"></span>\n                </a>\n                <div ng-show=\"$ctrl.openWord==word.word\">\n                  <div ng-repeat=\"discription in word.discriptions track by $index\">\n                    <div class=\"row\">\n                      <div class=\"discription\">\n                        <div class=\"col-md-9\">\n                          <div class=\"discription-text\">\n                            <span ng-bind=\"discription.discription\"></span>\n                          </div>\n                        </div>\n                        <div class=\"col-md-3\">\n                          <div class=\"discription-btn\">\n                            <button class=\"btn btn-default\" type=\"button\" ng-click=\"$ctrl.save(word, discription.discription)\">save</button>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <br/>\n              </div>\n            </div>\n            <div class=\"admin-text\" ng-show=\"$ctrl.words.length==0\">\n              <h2>Congrtulations!!!</h2>\n              <h3>All words are in the dictionary</h3>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 327 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -72058,29 +71867,125 @@
 	  value: true
 	});
 	
-	var _classCallCheck2 = __webpack_require__(176);
+	var _classCallCheck2 = __webpack_require__(177);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _createClass2 = __webpack_require__(177);
+	var _createClass2 = __webpack_require__(178);
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _lodash = __webpack_require__(313);
+	
+	var _lodash2 = _interopRequireDefault(_lodash);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var AdminController = function () {
-	  AdminController.$inject = ["UserService"];
-	  function AdminController(UserService) {
+	  AdminController.$inject = ["GameService", "WordService"];
+	  function AdminController(GameService, WordService) {
 	    'ngInject';
 	
 	    (0, _classCallCheck3.default)(this, AdminController);
-	    this.UserService = UserService;
+	    this.GameService = GameService;
+	    this.WordService = WordService;
 	  }
 	
 	  (0, _createClass3.default)(AdminController, [{
 	    key: '$onInit',
 	    value: function $onInit() {
-	      this.user = this.UserService.getAuthUser();
+	      this.generateWordList();
+	    }
+	  }, {
+	    key: 'generateWordList',
+	    value: function generateWordList() {
+	      var _this2 = this;
+	
+	      this.GameService.finishedList().then(function (res) {
+	        _this2.words = [];
+	
+	        var _loop = function _loop(i) {
+	          var _loop2 = function _loop2(j) {
+	            var _loop3 = function _loop3(k) {
+	              if (!res[i].players[j].words[k].isInDictionary && res[i].players[j].words[k].discription != '') {
+	                var index = _lodash2.default.findIndex(_this2.words, function (object) {
+	                  return object.word == res[i].players[j].words[k].word;
+	                });
+	                if (!!~index) {
+	                  if (_this2.words.length > 0) {
+	                    _this2.words[index].discriptions.push({
+	                      discription: res[i].players[j].words[k].discription,
+	                      gameID: res[i]._id
+	                    });
+	                  } else {
+	                    var newWord = {
+	                      word: res[i].players[j].words[k].word,
+	                      discriptions: [{
+	                        discription: res[i].players[j].words[k].discription,
+	                        gameID: res[i]._id
+	                      }]
+	                    };
+	                    _this2.words.push(newWord);
+	                  }
+	                } else {
+	                  var _newWord = {
+	                    word: res[i].players[j].words[k].word,
+	                    discriptions: [{
+	                      discription: res[i].players[j].words[k].discription,
+	                      gameID: res[i]._id
+	                    }]
+	                  };
+	                  _this2.words.push(_newWord);
+	                }
+	              }
+	            };
+	
+	            for (var k = 0; k < res[i].players[j].words.length; k++) {
+	              _loop3(k);
+	            }
+	          };
+	
+	          for (var j = 0; j < res[i].players.length; j++) {
+	            _loop2(j);
+	          }
+	        };
+	
+	        for (var i = 0; i < res.length; i++) {
+	          _loop(i);
+	        }
+	      });
+	    }
+	  }, {
+	    key: 'open',
+	    value: function open(word) {
+	      if (this.openWord == word) this.openWord = '';else this.openWord = word;
+	    }
+	  }, {
+	    key: 'save',
+	    value: function save(word, discription) {
+	      var _this3 = this;
+	
+	      var _this = this;
+	
+	      this.WordService.create({
+	        word: word.word,
+	        discription: discription
+	      }).then(function () {
+	        for (var k = 0; k < word.discriptions.length; k++) {
+	          console.log(word.discriptions[k].gameID);
+	          _this.GameService.detail(word.discriptions[k].gameID).then(function (game) {
+	            for (var i = 0; i < game.players.length; i++) {
+	              for (var j = 0; j < game.players[i].words.length; j++) {
+	                if (game.players[i].words[j].word == word.word) {
+	                  game.players[i].words[j].isInDictionary = true;
+	                }
+	              }
+	            }
+	            _this3.GameService.save(game);
+	            _this3.generateWordList();
+	          });
+	        }
+	      });
 	    }
 	  }]);
 	  return AdminController;
@@ -72090,4 +71995,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-2e570357145c23a3130e.js.map
+//# sourceMappingURL=bundle-ee2743aceebdc6418301.js.map

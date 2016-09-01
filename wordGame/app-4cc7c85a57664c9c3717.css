@@ -8924,7 +8924,6 @@ body {
   width: 100%;
   height: 100%;
   font-family: "TypoPRO-Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: white;
   background-color: black;
   line-height: 1;
 }
@@ -9208,14 +9207,18 @@ body {
   position: relative;
 }
 .loading-bar {
-  height: 100px;
-  background-color: rgba(167, 62, 64, 0.6);
-  font-size: 75px;
+  height: 100%;
+  width: 50px;
+  font-size: 40px;
+  color: #71ff32;
   text-align: center;
   vertical-align: middle;
 }
+.spinner {
+  float: left;
+}
 .signup-link {
-  padding-top: 15px;
+  padding: 5px 0px 5px;
 }
 .login-link {
   content: 'Sign In';
@@ -9232,7 +9235,7 @@ signin {
 .view-animate-container {
   position: relative;
   height: 100%!important;
-  background: white;
+  background: black;
   border: 1px solid black;
   height: 40px;
   overflow: auto;
@@ -9251,7 +9254,6 @@ signin {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 10px;
 }
 .view-animate.ng-enter {
   left: 100%;
@@ -9290,7 +9292,6 @@ signin {
   box-shadow: inset 3px 3px 10px #7d8e8f;
   margin-top: 10px;
   margin-left: 20px;
-  padding: 10px;
   /* чуточку анимации при появлении */
   -webkit-animation: fade ease-in 0.5s;
   -moz-animation: fade ease-in 0.5s;
@@ -9323,7 +9324,6 @@ signin {
 }
 .hide + label:before {
   background-color: #1e90ff;
-  color: #fff;
   content: "+";
   display: block;
   float: left;
@@ -9358,6 +9358,7 @@ signin {
   -moz-background-size: 100%;
   background-size: 100%;
   -o-background-size: 100%;
+  margin-bottom: 50px;
 }
 .profile .profile-body {
   display: table-cell;
@@ -9399,6 +9400,7 @@ signin {
   -moz-background-size: 100%;
   background-size: 100%;
   -o-background-size: 100%;
+  margin-bottom: 50px;
 }
 .main .main-body {
   display: table-cell;
@@ -9445,6 +9447,7 @@ signin {
   -moz-background-size: 100%;
   background-size: 100%;
   -o-background-size: 100%;
+  margin-bottom: 50px;
 }
 .game .game-body {
   display: table-cell;
@@ -9463,6 +9466,9 @@ signin {
   height: 75%;
   background-color: rgba(105, 105, 105, 0.5);
   padding-bottom: 15px;
+}
+.game .game-body .game-square .word-list {
+  padding-top: 50px;
 }
 .game .game-body .game-words {
   display: inline-block;
@@ -9495,6 +9501,7 @@ signin {
   -moz-background-size: 100%;
   background-size: 100%;
   -o-background-size: 100%;
+  margin-bottom: 50px;
 }
 .signup .signup-body {
   display: table-cell;
@@ -9541,6 +9548,7 @@ signin {
   -moz-background-size: 100%;
   background-size: 100%;
   -o-background-size: 100%;
+  margin-bottom: 50px;
 }
 .signin .signin-body {
   display: table-cell;
@@ -9585,6 +9593,7 @@ signin {
   -khtml-background-size: 100%;
   background-size: 100%;
   overflow: scroll;
+  margin-bottom: 50px;
 }
 .connect .connect-body {
   display: table-cell;
@@ -9631,6 +9640,7 @@ signin {
   -moz-background-size: 100%;
   background-size: 100%;
   -o-background-size: 100%;
+  margin-bottom: 50px;
 }
 .f-res .f-res-body {
   display: table-cell;
@@ -9680,6 +9690,7 @@ signin {
   -moz-background-size: 100%;
   background-size: 100%;
   -o-background-size: 100%;
+  margin-bottom: 50px;
 }
 .rule .rule-body {
   display: table-cell;
@@ -9723,6 +9734,7 @@ signin {
   -moz-background-size: 100%;
   background-size: 100%;
   -o-background-size: 100%;
+  margin-bottom: 50px;
 }
 .admin .admin-body {
   display: table-cell;
@@ -9973,4 +9985,4 @@ label {
 }
 
 
-/*# sourceMappingURL=app-d36390786ba3b0ec8ada.css.map*/
+/*# sourceMappingURL=app-4cc7c85a57664c9c3717.css.map*/

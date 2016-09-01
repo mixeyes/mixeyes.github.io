@@ -50053,7 +50053,7 @@
 /* 175 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-custom navbar-fixed-top navbar-item\" role=\"navigation\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-main-collapse\">\n        Menu\n        <i class=\"fa fa-bars\"></i>\n      </button>\n      <a class=\"navbar-brand page-scroll\" href=\"#/\">\n        <i class=\"fa fa-play-circle\"></i>\n        <span class=\"light\">Start</span>\n        Word Game\n      </a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse navbar-right navbar-main-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->\n        <li class=\"hidden\">\n          <a href=\"#page-top\"></a>\n        </li>\n        <li>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"page-scroll\" href=\"#/profile\">Profile\n            <span ng-bind=\"$ctrl.UserService.getAuthUser().userName\"></span>\n          </a>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"login-link\" href=\"#/signin\">Sign In</a>\n        </li>\n        <li>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"signup-link\" href=\"#/signup\">Sign Up</a>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"logout-link\" href=\"#\" ng-click=\"$ctrl.logout()\">LogOut</a>\n        </li>\n      </ul>\n    </div>\n    <!-- /.navbar-collapse -->\n  </div>\n  <div id=\"loading-bar-container\"></div>\n  <!-- /.container -->\n</nav>\n";
+	module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-custom navbar-fixed-top navbar-item\" role=\"navigation\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-main-collapse\">\n        Menu\n        <i class=\"fa fa-bars\"></i>\n      </button>\n      <a class=\"navbar-brand page-scroll\" href=\"#/\">\n        <i class=\"fa fa-play-circle\"></i>\n        <span class=\"light\">Start</span>\n        Word Game\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse navbar-right navbar-main-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"hidden\">\n          <a href=\"#page-top\"></a>\n        </li>\n        <li>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"page-scroll\" href=\"#/profile\">Profile\n            <span ng-bind=\"$ctrl.UserService.getAuthUser().userName\"></span>\n          </a>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"login-link\" href=\"#/signin\">Sign In</a>\n        </li>\n        <li>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"signup-link\" href=\"#/signup\">Sign Up</a>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"logout-link\" href=\"#\" ng-click=\"$ctrl.logout()\">LogOut</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n  <div id=\"loading-bar-container\"></div>\n</nav>\n";
 
 /***/ },
 /* 176 */
@@ -50464,7 +50464,7 @@
 /* 199 */
 /***/ function(module, exports) {
 
-	module.exports = "<ui-view class=\"view-animate\"></ui-view>\n<!-- <div ui-view></div> -->\n<!-- <create-new-section></create-new-section>\n<about-section></about-section> -->\n";
+	module.exports = "<ui-view class=\"view-animate\"></ui-view>\n";
 
 /***/ },
 /* 200 */
@@ -50517,7 +50517,7 @@
 /* 202 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- main Header -->\n<div class=\"main\">\n  <div class=\"main-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"main-square\">\n            <div id=\"allert\" ng-show=\"$ctrl.UserService.getAuthUser()&& !$ctrl.used\" class=\"alert alert-success\" ng-init=\"$ctrl.hideMessage()\">\n              Welcome\n              <span ng-bind=\"$ctrl.UserService.getAuthUser().userName\"></span>\n              . You're logged in successfully\n            </div>\n            <br>\n            <h1 class=\"brand-heading\">WORD GAME</h1>\n            <p class=\"main-text\">Try free.\n              <br>WELCOME <span ng-bind = \"$ctrl.UserService.getAuthUser().userName\"></span>.</p>\n            <br><br>\n            <p>\n              To continue click here\n            </p>\n            <a ng-hide=\"$ctrl.UserService.getAuthUser()\" href=\"#/signin\" class=\"btn btn-circle page-scroll\">\n              <i class=\"fa fa-play-circle animated\"></i>\n            </a>\n\n            <a ng-show=\"$ctrl.UserService.getAuthUser()\" href=\"#/gameCreateRule\" class=\"btn btn-circle page-scroll\">\n              <i class=\"fa fa-play-circle animated\"></i>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- main Header -->\n<div class=\"main\">\n  <div class=\"main-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"main-square\">\n            <div id=\"allert\" ng-show=\"$ctrl.UserService.getAuthUser()&& !$ctrl.used\" class=\"alert alert-success\" ng-init=\"$ctrl.hideMessage()\">\n              Welcome\n              <span ng-bind=\"$ctrl.UserService.getAuthUser().userName\"></span>\n              . You're logged in successfully!!!\n            </div>\n            <br>\n            <h1 class=\"brand-heading\">WORD GAME</h1>\n            <p class=\"main-text\">Try free.\n              <br>WELCOME\n              <span ng-bind=\"$ctrl.UserService.getAuthUser().userName\"></span>.</p>\n            <br><br>\n            <p>\n              To continue click here\n            </p>\n            <a ng-hide=\"$ctrl.UserService.getAuthUser()\" href=\"#/signin\" class=\"btn btn-circle page-scroll\">\n              <i class=\"fa fa-play-circle animated\"></i>\n            </a>\n            <a ng-show=\"$ctrl.UserService.getAuthUser()\" href=\"#/gameCreateRule\" class=\"btn btn-circle page-scroll\">\n              <i class=\"fa fa-play-circle animated\"></i>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 203 */
@@ -50615,7 +50615,7 @@
 /* 206 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- About Section -->\n<div class=\"rule\">\n  <div class=\"rule-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"rule-square\">\n            <br><br><br>\n            <h2 class=\"brand-heading\">Create new game</h2>\n            <p>\n              To create new game you should select:\n              <ul>\n                <li>\n                  <h4>\n                    duration of the game\n                  </h4>\n                </li>\n                <li>\n                  <h4>\n                    enter some long word\n                  </h4>\n                </li>\n                <li>\n                  <h4>\n                    invite any players or select game with AI\n                  </h4>\n                </li>\n              </ul>\n              <div class=\"signup-link\">\n                <a class=\"btn btn-success btn-block\" href=\"#/createNewGame\">Create new Game</a>\n              </div>\n              <br><br>\n              <div class=\"signup-link\">\n                <a class=\"btn btn-success btn-block\" href=\"#/connectExistingGame\">Connect to existing game</a>\n              </div>\n            </p>\n          </p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<div class=\"rule\">\n  <div class=\"rule-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"rule-square\">\n            <br><br><br>\n            <h2 class=\"brand-heading\">Create new game</h2>\n            <p>\n              To create new game you should select:\n              <ul>\n                <li>\n                  <h4>\n                    duration of the game\n                  </h4>\n                </li>\n                <li>\n                  <h4>\n                    enter some long word\n                  </h4>\n                </li>\n                <li>\n                  <h4>\n                    invite any players or select game with AI\n                  </h4>\n                </li>\n              </ul>\n              <div class=\"signup-link\">\n                <a class=\"btn btn-success btn-block\" href=\"#/createNewGame\">Create new Game</a>\n              </div>\n              <br><br>\n              <div class=\"signup-link\">\n                <a class=\"btn btn-success btn-block\" href=\"#/connectExistingGame\">Connect to existing game</a>\n              </div>\n            </p>\n          </p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 207 */
@@ -50769,7 +50769,7 @@
 /* 213 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- signup Header -->\n<div class=\"signup\">\n  <div class=\"signup-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignUp page</h1>\n\t\t\t\t\t<h3 ng-bind=\"$ctrl.message\"style=\"color: red;\"></h3>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }\">\n              <label for=\"basic-url\">Enter you last name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"lastName\" ng-model=\"$ctrl.user.lastName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.firstName.$invalid && !user.firstName.$pristine }\">\n              <label for=\"basic-url\">Enter you first name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivan</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"firstName\" ng-model=\"$ctrl.user.firstName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.email.$invalid && !user.email.$pristine }\">\n              <label for=\"basic-url\">Enter you email</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948@gmail.com</span>\n                <input type=\"email\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"email\" ng-model=\"$ctrl.user.email\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div class=\"\">\n              <label for=\"basic-url\">Enter you password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.confPassword.$invalid && !user.confPassword.$pristine }\">\n              <label for=\"basic-url\">Confirm password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"confPassword\" ng-model=\"$ctrl.user.confPassword\" equals=\"{{$ctrl.user.password}}\">\n                <!-- ng-change=\"$ctrl.confirmPassword()\" -->\n              </div>\n              <div class=\"text-error\">\n                <span ng-show=\"user.confPassword.$error.equals\">Must be equal!</span>\n              </div>\n\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid && !user.confPassword.$pristine\" class=\"btn btn-success btn-block\">\n                Create Account\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\" >CANCEL</a>\n\t\t\t\t\t\t\t<!-- ng-click=\"$ctrl.closeWin()\" -->\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- signup Header -->\n<div class=\"signup\">\n  <div class=\"signup-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignUp page</h1>\n\t\t\t\t\t<h3 ng-bind=\"$ctrl.message\"style=\"color: red;\"></h3>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }\">\n              <label for=\"basic-url\">Enter you last name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"lastName\" ng-model=\"$ctrl.user.lastName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.firstName.$invalid && !user.firstName.$pristine }\">\n              <label for=\"basic-url\">Enter you first name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivan</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"firstName\" ng-model=\"$ctrl.user.firstName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.email.$invalid && !user.email.$pristine }\">\n              <label for=\"basic-url\">Enter you email</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948@gmail.com</span>\n                <input type=\"email\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"email\" ng-model=\"$ctrl.user.email\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div class=\"\">\n              <label for=\"basic-url\">Enter you password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.confPassword.$invalid && !user.confPassword.$pristine }\">\n              <label for=\"basic-url\">Confirm password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"confPassword\" ng-model=\"$ctrl.user.confPassword\" equals=\"{{$ctrl.user.password}}\">\n              </div>\n              <div class=\"text-error\">\n                <span ng-show=\"user.confPassword.$error.equals\">Must be equal!</span>\n              </div>\n\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid && !user.confPassword.$pristine\" class=\"btn btn-success btn-block\">\n                Create Account\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\" >CANCEL</a>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 214 */
@@ -51061,7 +51061,7 @@
 /* 223 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- Intro Header -->\n<div class=\"signin\">\n  <div class=\"signin-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignIn page</h1>\n          <div ng-show=\"$ctrl.message\" class=\"signin-square\">\n            <h2 ng-bind=\"$ctrl.message\" style=\"color:darkred;\"></h2>\n          </div>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you password</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid\" class=\"btn btn-success btn-block\">\n                Sign In\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n              <!-- ng-click=\"$ctrl.closeWin()\". -->\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<div class=\"signin\">\n  <div class=\"signin-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignIn page</h1>\n          <div ng-show=\"$ctrl.message\" class=\"signin-square\">\n            <h2 ng-bind=\"$ctrl.message\" style=\"color:darkred;\"></h2>\n          </div>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you password</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid\" class=\"btn btn-success btn-block\">\n                Sign In\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 224 */
@@ -51228,7 +51228,7 @@
 	    key: 'list',
 	    value: function list() {
 	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games').then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51238,7 +51238,7 @@
 	    key: 'create',
 	    value: function create(game) {
 	      var _this = this;
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51248,7 +51248,7 @@
 	    key: 'detail',
 	    value: function detail(id) {
 	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id).then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/' + id).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51258,7 +51258,7 @@
 	    key: 'update',
 	    value: function update(game) {
 	      var _this = this;
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51269,7 +51269,7 @@
 	    value: function save(game) {
 	      var _this = this;
 	      console.log((0, _stringify2.default)(game, null, 2));
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51279,7 +51279,7 @@
 	    key: 'addWord',
 	    value: function addWord(gameID, words, playerID) {
 	      var _this = this;
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
 	        var obj = response.data;
 	        return obj;
 	      }).catch(function () {
@@ -51289,14 +51289,14 @@
 	  }, {
 	    key: 'finishGame',
 	    value: function finishGame(id) {
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id + '/finalize').then(function (res) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/' + id + '/finalize').then(function (res) {
 	        return res.data;
 	      });
 	    }
 	  }, {
 	    key: 'finishedList',
 	    value: function finishedList() {
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/finished').then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/finished').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -51369,7 +51369,7 @@
 	    key: 'create',
 	    value: function create(user) {
 	      console.log(user);
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
 	        return resp.data;
 	      });
 	    }
@@ -51382,7 +51382,7 @@
 	        username: user.userName.$modelValue,
 	        password: user.password.$modelValue
 	      };
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
 	        _this.userInfo = {
 	          userID: response.data._id,
 	          userName: response.data.username,
@@ -51400,7 +51400,7 @@
 	    value: function logout() {
 	      var _this = this;
 	      var deferred = this.q.defer();
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/user/logout').then(function (result) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/user/logout').then(function (result) {
 	        _this.deleteAuthUser();
 	        deferred.resolve(result);
 	      }, function (error) {
@@ -51486,7 +51486,7 @@
 	              case 0:
 	                _context.prev = 0;
 	                _context.next = 3;
-	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player');
+	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/player');
 	
 	              case 3:
 	                response = _context.sent;
@@ -51526,7 +51526,7 @@
 	              case 0:
 	                _context2.prev = 0;
 	                _context2.next = 3;
-	                return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
+	                return this.$http.post(("https://wgbackend.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
 	
 	              case 3:
 	                response = _context2.sent;
@@ -51562,7 +51562,7 @@
 	              case 0:
 	                _context3.prev = 0;
 	                _context3.next = 3;
-	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player/' + id);
+	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/player/' + id);
 	
 	              case 3:
 	                response = _context3.sent;
@@ -53737,7 +53737,7 @@
 	    key: 'list',
 	    value: function list() {
 	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary').then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/dictionary').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53747,7 +53747,7 @@
 	    key: 'create',
 	    value: function create(word) {
 	      var _this = this;
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53757,7 +53757,7 @@
 	    key: 'detail',
 	    value: function detail(word) {
 	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/' + word).then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/dictionary/' + word).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53767,7 +53767,7 @@
 	    key: 'update',
 	    value: function update(word) {
 	      var _this = this;
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -53780,7 +53780,7 @@
 	      var collection = {
 	        words: words
 	      };
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -54183,7 +54183,7 @@
 /* 299 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">create new game</span>\n        </h4>\n        <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"game\" name=\"game\" ng-validator>\n          <div ng-class=\"{ 'has-error' : game.word.$invalid && !game.word.$pristine }\">\n            <label for=\"basic-url\">Enter your main word</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: otorhinolaryngological</span>\n              <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"word\" ng-model=\"$ctrl.game.word\">\n            </div>\n          </div>\n          <div ng-class=\"{ 'has-error' : game.duration.$invalid && !game.duration.$pristine }\">\n            <label for=\"basic-url\">Select game duration</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: 30 min</span>\n              <!-- <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"firstName\" ng-model=\"$ctrl.user.firstName\"> -->\n              <select class=\"form-control form-control-lg\" name=\"duration\" ng-model=\"$ctrl.game.duration\" aria-describedby=\"basic-addon3\">\n                <option selected>\n                  ------------------Select game duration-------------------\n                </option>\n                <option ng-repeat=\"duration in $ctrl.durations track by $index\" ng-value=\"duration\">{{duration}}\n                  min.</option>\n              </select>\n            </div>\n          </div>\n          <div ng-class=\"{ 'has-error' : game.players.$invalid && !game.players.$pristine }\">\n            <label for=\"basic-url\">Select one or more players</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov Ivan</span>\n              <select class=\"form-control form-control-lg\" name=\"players\" ng-model=\"$ctrl.game.players\" aria-describedby=\"basic-addon3\" multiple>\n                <option selected disabled>\n                  ------------------Select players-------------------\n                </option>\n                <option ng-repeat=\"player in $ctrl.players track by $index\" ng-value=\"player._id\">{{player.name}}</option>\n              </select>\n            </div>\n          </div>\n          <div class=\"signup-link\">\n            <button type=\"submit\" class=\"btn btn-success btn-block\">\n              Create new game\n            </button>\n          </div>\n          <div class=\"signup-link\">\n            <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n            <!-- ng-click=\"$ctrl.closeWin()\" -->\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n";
+	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">create new game</span>\n        </h4>\n        <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"game\" name=\"game\" ng-validator>\n          <div ng-class=\"{ 'has-error' : game.word.$invalid && !game.word.$pristine }\">\n            <label for=\"basic-url\">Enter your main word</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: otorhinolaryngological</span>\n              <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"word\" ng-model=\"$ctrl.game.word\">\n            </div>\n          </div>\n          <div ng-class=\"{ 'has-error' : game.duration.$invalid && !game.duration.$pristine }\">\n            <label for=\"basic-url\">Select game duration</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: 30 min</span>\n              <select class=\"form-control form-control-lg\" name=\"duration\" ng-model=\"$ctrl.game.duration\" aria-describedby=\"basic-addon3\">\n                <option selected>\n                  ------------------Select game duration-------------------\n                </option>\n                <option ng-repeat=\"duration in $ctrl.durations track by $index\" ng-value=\"duration\">{{duration}}\n                  min.</option>\n              </select>\n            </div>\n          </div>\n          <div ng-class=\"{ 'has-error' : game.players.$invalid && !game.players.$pristine }\">\n            <label for=\"basic-url\">Select one or more players</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov Ivan</span>\n              <select class=\"form-control form-control-lg\" name=\"players\" ng-model=\"$ctrl.game.players\" aria-describedby=\"basic-addon3\" multiple>\n                <option selected disabled>\n                  ------------------Select players-------------------\n                </option>\n                <option ng-repeat=\"player in $ctrl.players track by $index\" ng-value=\"player._id\">{{player.name}}</option>\n              </select>\n            </div>\n          </div>\n          <div class=\"signup-link\">\n            <button type=\"submit\" class=\"btn btn-success btn-block\">\n              Create new game\n            </button>\n          </div>\n          <div class=\"signup-link\">\n            <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n";
 
 /***/ },
 /* 300 */
@@ -54336,7 +54336,7 @@
 /* 303 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\" ng-init=\"$ctrl.checkTimer()\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <!-- <input type=\"text\" class=\"form-control\" name=\"offer\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\"> -->\n\n              <div class=\"input-group\">\n                <input type=\"text\" class=\"form-control\" placeholder=\"Enter next word...\" name = \"word\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n                <span class=\"input-group-btn\">\n                  <button class=\"btn btn-default\" type=\"button\" ng-click=\"$ctrl.addWord($event)\">Approve</button>\n                </span>\n              </div>\n              <!-- /input-group -->\n\n              <br>\n              <a type=\"submit\" class=\"btn btn-success btn-block\" ng-href=\"#/firstResults\">\n                Finish\n              </a>\n            </div>\n          </div>\n          <div class=\"col-md-2 col-xs-2 col-sm-2 col-lg-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\">\n              <li ng-repeat=\"word in $ctrl.userWords track by $index\" ng-bind=\"word\">\n              </li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\" ng-init=\"$ctrl.checkTimer()\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <div class=\"input-group\">\n                <input type=\"text\" class=\"form-control\" placeholder=\"Enter next word...\" name=\"word\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n                <span class=\"input-group-btn\">\n                  <button class=\"btn btn-default\" type=\"button\" ng-click=\"$ctrl.addWord($event)\">Approve</button>\n                </span>\n              </div>\n              <br>\n              <a type=\"submit\" class=\"btn btn-success btn-block\" ng-href=\"#/firstResults\">\n                Finish\n              </a>\n            </div>\n          </div>\n          <div class=\"col-md-2 col-xs-2 col-sm-2 col-lg-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\">\n              <li ng-repeat=\"word in $ctrl.userWords track by $index\" ng-bind=\"word\"></li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 304 */
@@ -54546,7 +54546,7 @@
 /* 307 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- game Header -->\n<div class=\"f-res\">\n  <div class=\"f-res-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 f-res-square\">\n            <br>\n            <h1 class=\"brand-heading\">FIRST RESULTS</h1>\n            <h3>Play word was\n              <h2 ng-bind=\"$ctrl.game.word\"></h2>\n            </h3>\n            <div class=\"f-res-text\">\n              <span ng-show=\"!isDraw\">\n                <span ng-bind=\"$ctrl.winner.name\"></span>\n                WINS</span>\n              <span ng-show=\"isDraw\">A DRAW RESULT</span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div ng-class=\"$ctrl.colClass\" ng-repeat=\"player in $ctrl.game.players track by player.playerID\">\n            <div class=\"row\">\n              <player player=\"player\"></player>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\" style=\"padding-bottom: 10px;\">\n        <a href=\"#/\" class=\"btn btn-success btn-block\">Back to main page</a>\n\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- game Header -->\n<div class=\"f-res\">\n  <div class=\"f-res-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 f-res-square\">\n            <br>\n            <h1 class=\"brand-heading\">FIRST RESULTS</h1>\n            <h3>Play word was\n              <h2 ng-bind=\"$ctrl.game.word\"></h2>\n            </h3>\n            <div class=\"f-res-text\">\n              <span ng-show=\"!isDraw\">\n                <span ng-bind=\"$ctrl.winner.name\"></span>\n                WINS</span>\n              <span ng-show=\"isDraw\">A DRAW RESULT</span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div ng-class=\"$ctrl.colClass\" ng-repeat=\"player in $ctrl.game.players track by player.playerID\">\n            <div class=\"row\">\n              <player player=\"player\"></player>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\" style=\"padding-bottom: 10px;\">\n        <a href=\"#/\" class=\"btn btn-success btn-block\">Back to main page</a>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 308 */
@@ -54769,7 +54769,7 @@
 /* 311 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- player Header -->\n<div>\n  <ol class=\"list-group\">\n    <li class=\"f-res-text list-group-item disabled\">\n      <span ng-bind=\"$ctrl.plName\"></span>\n      <span class=\"badge\" ng-class=\"counterClass\" ng-bind=\"$ctrl.counter\"></span>\n    </li>\n    <li ng-repeat=\"word in $ctrl.player.words track by $index\" class=\"list-group-item\">\n      <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n        <a class=\"f-res-words\" ng-show=\"!word.discription\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word.word, word.discription)\"></a>\n        <span class=\"f-res-words\" ng-show=\"word.discription\">\n          <span  ng-bind=\"word.word\"></span>\n          <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n        </span>\n      </div>\n    </li>\n  </ol>\n\n  <ol ng-show=\"$ctrl.player.wrongWords.length>0\" class=\"list-group\">\n    <li class=\"f-res-text list-group-itllem disabled\" style=\"background-color: rgba(255, 71, 69, 1);color: white;\">\n      <span>WRONG WORDS</span>\n      <span class=\"badge\" ng-bind=\"$ctrl.player.wrongWords.length\"></span>\n    </li>\n    <li ng-repeat=\"wrWord in $ctrl.player.wrongWords\" class=\"list-group-item\" style=\"background-color: rgba(255, 0, 0, 0.2);\">\n      {{wrWord.word}}\n      <span class=\"f-res-words\" ng-bind=\"wrWord\">\n        <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n      </span>\n    </li>\n  </ol>\n</div>\n";
+	module.exports = "<!-- player Header -->\n<div>\n  <ol class=\"list-group\">\n    <li class=\"f-res-text list-group-item disabled\">\n      <span ng-bind=\"$ctrl.plName\"></span>\n      <span class=\"badge\" ng-class=\"counterClass\" ng-bind=\"$ctrl.counter\"></span>\n    </li>\n    <li ng-repeat=\"word in $ctrl.player.words track by $index\" class=\"list-group-item\">\n      <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n        <a class=\"f-res-words\" ng-show=\"!word.discription\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word.word, word.discription)\"></a>\n        <span class=\"f-res-words\" ng-show=\"word.discription\">\n          <span  ng-bind=\"word.word\"></span>\n          <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n        </span>\n      </div>\n    </li>\n  </ol>\n  <ol ng-show=\"$ctrl.player.wrongWords.length>0\" class=\"list-group\">\n    <li class=\"f-res-text list-group-itllem disabled\" style=\"background-color: rgba(255, 71, 69, 1);color: white;\">\n      <span>WRONG WORDS</span>\n      <span class=\"badge\" ng-bind=\"$ctrl.player.wrongWords.length\"></span>\n    </li>\n    <li ng-repeat=\"wrWord in $ctrl.player.wrongWords\" class=\"list-group-item\" style=\"background-color: rgba(255, 0, 0, 0.2);\">\n      {{wrWord.word}}\n      <span class=\"f-res-words\" ng-bind=\"wrWord\">\n        <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n      </span>\n    </li>\n  </ol>\n</div>\n";
 
 /***/ },
 /* 312 */
@@ -71707,7 +71707,7 @@
 /* 316 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"modal-header\">\n  <!-- <strong ng-bind=\"$ctrl.word.word\"> </strong> -->\n  <h3 class=\"modal-title\">Enter discription for\n    <strong ng-bind=\"vm.word.word\"></strong>\n  </h3>\n</div>\n<div class=\"modal-body\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Discription\" aria-describedby=\"sizing-addon1\" ng-model=\"vm.word.discription\">\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" type=\"button\" ng-click=\"vm.ok()\">OK</button>\n  <button class=\"btn btn-warning\" type=\"button\" ng-click=\"vm.cancel()\">Cancel</button>\n</div>\n";
+	module.exports = "<div class=\"modal-header\">\n  <h3 class=\"modal-title\">Enter discription for\n    <strong ng-bind=\"vm.word.word\"></strong>\n  </h3>\n</div>\n<div class=\"modal-body\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Discription\" aria-describedby=\"sizing-addon1\" ng-model=\"vm.word.discription\">\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" type=\"button\" ng-click=\"vm.ok()\">OK</button>\n  <button class=\"btn btn-warning\" type=\"button\" ng-click=\"vm.cancel()\">Cancel</button>\n</div>\n";
 
 /***/ },
 /* 317 */
@@ -71999,4 +71999,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-4f940d2107afc82b19a7.js.map
+//# sourceMappingURL=bundle-215f89f1841436f7a1c5.js.map

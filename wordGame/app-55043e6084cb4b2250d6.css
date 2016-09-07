@@ -9479,7 +9479,8 @@ signin {
   display: inline-block;
   font-size: 20px;
   color: yellow;
-  overflow: auto;
+  white-space: pre-line;
+  word-wrap: break-word;
 }
 @media (min-width: 768px) {
   .game {
@@ -9990,4 +9991,4 @@ label {
 }
 
 
-/*# sourceMappingURL=app-d519a23cf64740ddf789.css.map*/
+/*# sourceMappingURL=app-55043e6084cb4b2250d6.css.map*/

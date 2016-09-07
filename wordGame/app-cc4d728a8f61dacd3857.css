@@ -9372,8 +9372,13 @@ signin {
 }
 .profile .profile-body .profile-square {
   height: 75%;
-  background-color: rgba(105, 105, 105, 0.3);
+  background-color: rgba(105, 105, 105, 0.75);
   padding: 25px;
+}
+.profile .profile-body .profile-square .row .profile-words {
+  background-color: rgba(71, 148, 19, 0.44);
+  margin-left: 5px;
+  margin-right: 5px;
 }
 @media (min-width: 768px) {
   .profile {
@@ -9562,7 +9567,7 @@ signin {
 }
 .signin .signin-body .signin-square {
   height: 75%;
-  background-color: rgba(105, 105, 105, 0.7);
+  background-color: rgba(195, 163, 130, 0.7);
   padding: 25px;
 }
 @media (min-width: 768px) {
@@ -9985,4 +9990,4 @@ label {
 }
 
 
-/*# sourceMappingURL=app-4cc7c85a57664c9c3717.css.map*/
+/*# sourceMappingURL=app-cc4d728a8f61dacd3857.css.map*/

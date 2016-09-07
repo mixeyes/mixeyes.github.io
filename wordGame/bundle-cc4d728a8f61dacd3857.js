@@ -49946,51 +49946,51 @@
 	
 	var _profileSection2 = _interopRequireDefault(_profileSection);
 	
-	var _signUpSection = __webpack_require__(211);
+	var _signUpSection = __webpack_require__(213);
 	
 	var _signUpSection2 = _interopRequireDefault(_signUpSection);
 	
-	var _footerBlock = __webpack_require__(215);
+	var _footerBlock = __webpack_require__(217);
 	
 	var _footerBlock2 = _interopRequireDefault(_footerBlock);
 	
-	var _matchPassDir = __webpack_require__(218);
+	var _matchPassDir = __webpack_require__(220);
 	
 	var _matchPassDir2 = _interopRequireDefault(_matchPassDir);
 	
-	var _signinSection = __webpack_require__(221);
+	var _signinSection = __webpack_require__(223);
 	
 	var _signinSection2 = _interopRequireDefault(_signinSection);
 	
-	var _service = __webpack_require__(225);
+	var _service = __webpack_require__(227);
 	
 	var _service2 = _interopRequireDefault(_service);
 	
-	var _connectExistingGameSection = __webpack_require__(293);
+	var _connectExistingGameSection = __webpack_require__(296);
 	
 	var _connectExistingGameSection2 = _interopRequireDefault(_connectExistingGameSection);
 	
-	var _createNewGameSection = __webpack_require__(297);
+	var _createNewGameSection = __webpack_require__(300);
 	
 	var _createNewGameSection2 = _interopRequireDefault(_createNewGameSection);
 	
-	var _gamePlaySection = __webpack_require__(301);
+	var _gamePlaySection = __webpack_require__(304);
 	
 	var _gamePlaySection2 = _interopRequireDefault(_gamePlaySection);
 	
-	var _firstResultsSection = __webpack_require__(305);
+	var _firstResultsSection = __webpack_require__(308);
 	
 	var _firstResultsSection2 = _interopRequireDefault(_firstResultsSection);
 	
-	var _playerSection = __webpack_require__(309);
+	var _playerSection = __webpack_require__(312);
 	
 	var _playerSection2 = _interopRequireDefault(_playerSection);
 	
-	var _finalSection = __webpack_require__(317);
+	var _finalSection = __webpack_require__(318);
 	
 	var _finalSection2 = _interopRequireDefault(_finalSection);
 	
-	var _adminSection = __webpack_require__(321);
+	var _adminSection = __webpack_require__(322);
 	
 	var _adminSection2 = _interopRequireDefault(_adminSection);
 	
@@ -50053,7 +50053,7 @@
 /* 175 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-custom navbar-fixed-top navbar-item\" role=\"navigation\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-main-collapse\">\n        Menu\n        <i class=\"fa fa-bars\"></i>\n      </button>\n      <a class=\"navbar-brand page-scroll\" href=\"#/\">\n        <i class=\"fa fa-play-circle\"></i>\n        <span class=\"light\">Start</span>\n        Word Game\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse navbar-right navbar-main-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"hidden\">\n          <a href=\"#page-top\"></a>\n        </li>\n        <li>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"page-scroll\" href=\"#/profile\">Profile\n            <span ng-bind=\"$ctrl.UserService.getAuthUser().userName\"></span>\n          </a>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"login-link\" href=\"#/signin\">Sign In</a>\n        </li>\n        <li>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"signup-link\" href=\"#/signup\">Sign Up</a>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"logout-link\" href=\"#\" ng-click=\"$ctrl.logout()\">LogOut</a>\n        </li>\n        <li>\n          <div id=\"loading-bar-container\"></div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n";
+	module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-custom navbar-fixed-top navbar-item\" role=\"navigation\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-main-collapse\">\n        Menu\n        <i class=\"fa fa-bars\"></i>\n      </button>\n      <a class=\"navbar-brand page-scroll\" href=\"#/\">\n        <i class=\"fa fa-play-circle\"></i>\n        <span class=\"light\">Start</span>\n        Word Game\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse navbar-right navbar-main-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li>\n          <div id=\"loading-bar-container\"></div>\n        </li>\n        <li class=\"hidden\">\n          <a href=\"#page-top\"></a>\n        </li>\n        <li>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"page-scroll\" href=\"#/profile\">Profile\n            <span ng-bind=\"$ctrl.UserService.getAuthUser().userName\"></span>\n          </a>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"login-link\" href=\"#/signin\">Sign In</a>\n        </li>\n        <li>\n          <a ng-if=\"!$ctrl.UserService.getAuthUser()\" class=\"signup-link\" href=\"#/signup\">Sign Up</a>\n          <a ng-if=\"$ctrl.UserService.getAuthUser()\" class=\"logout-link\" href=\"#\" ng-click=\"$ctrl.logout()\">LogOut</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n";
 
 /***/ },
 /* 176 */
@@ -50671,7 +50671,7 @@
 /* 209 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- About Section -->\n<div class=\"profile\">\n  <div class=\"profile-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"profile-square\">\n            <h4 class=\"brand-heading\">Hi\n              <span ng-bind=\"$ctrl.user.userName\"></span>\n            </h4>\n            <p class=\"profile-text\">A free, responsive, one page Bootstrap theme.\n              <br>Created by Start Bootstrap.</p>\n            <a href=\"#/\" class=\"btn btn-circle page-scroll\">\n              <i class=\"fa fa-angle-double-down animated\"></i>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- About Section -->\n<div class=\"profile\">\n  <div class=\"profile-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"profile-square\">\n            <h4 class=\"brand-heading\">Hi\n              <span ng-bind=\"$ctrl.user.userName\"></span>\n            </h4>\n            <div class=\"row\">\n              <h3>Games statistic</h3>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Total game count:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.gamesCount\"></h5>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Players won:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.playersWon\"></h5>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Bot won:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.botWon\"></h5>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Draw games:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.drawCount\"></h5>\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <h3>Players chart</h3>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>player name</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5>count of won games</h5>\n                </div>\n              </div>\n              <div class=\"row\" ng-repeat=\"winner in $ctrl.players | orderBy : '-count'\">\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"winner.name\"></h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"winner.count\"></h5>\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <h3>Player games history</h3>\n              <div class=\"row\">\n                <div class=\"col-md-4\">\n                  <h4>##</h4>\n                </div>\n                <div class=\"col-md-4\">\n                  <h4>game word</h4>\n                </div>\n                <div class=\"col-md-4\">\n                  <h4>date of the game</h4>\n                </div>\n              </div>\n\n              <div class=\"row\" ng-click=\"$ctrl.open(game._id)\" ng-repeat=\"game in $ctrl.history track by $index\">\n                <div class=\"row\">\n                  <div class=\"col-md-4\">\n                    <h5 ng-bind=\"$index\"></h5>\n                  </div>\n                  <div class=\"col-md-4\">\n                    <h5 ng-bind=\"game.word\"></h5>\n                  </div>\n                  <div class=\"col-md-4\">\n                    <h5 ng-bind=\"game.startTime\"></h5>\n                  </div>\n                </div>\n                <div class=\"row profile-words\" ng-show=\"$ctrl.openedGame==game._id\">\n                  <div ng-class=\"$ctrl.colClass\" ng-repeat=\"player in game.players track by player.playerID\">\n                    <div class=\"row\">\n                      <player player=\"player\"></player>\n                    </div>\n                  </div>\n                </div>\n                <br/>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 210 */
@@ -50691,21 +50691,52 @@
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
+	var _lodash = __webpack_require__(211);
+	
+	var _lodash2 = _interopRequireDefault(_lodash);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var ProfileController = function () {
-	  ProfileController.$inject = ["UserService"];
-	  function ProfileController(UserService) {
+	  ProfileController.$inject = ["StatisticService", "UserService"];
+	  function ProfileController(StatisticService, UserService) {
 	    'ngInject';
 	
 	    (0, _classCallCheck3.default)(this, ProfileController);
+	    this.StatisticService = StatisticService;
 	    this.UserService = UserService;
+	    this.openedGame = '';
 	  }
 	
 	  (0, _createClass3.default)(ProfileController, [{
 	    key: '$onInit',
 	    value: function $onInit() {
-	      this.user = this.UserService.getAuthUser();
+	      var _this = this;
+	
+	      this.StatisticService.games().then(function (games) {
+	        _this.games = games;
+	        _this.StatisticService.players().then(function (players) {
+	          _this.players = players;
+	          _this.StatisticService.playerHistory(_this.UserService.getAuthUser().playerID).then(function (plGames) {
+	            _this.history = plGames;
+	          });
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'open',
+	    value: function open(gameID) {
+	      if (this.openedGame == gameID) {
+	        this.openedGame = '';
+	      } else {
+	        this.openedGame = gameID;
+	        var indexArr = _lodash2.default.findIndex(this.history, function (object) {
+	          return object._id.toString() == gameID;
+	        });
+	        var plCount = this.history[indexArr].players.length;
+	        var index = Math.floor(12 / plCount) || 1;
+	        this.colClass = 'col-md-' + index + ' col-xs-' + index + ' col-sm-' + index + ' col-lg-' + index + ' game-square game-words';
+	      }
 	    }
 	  }]);
 	  return ProfileController;
@@ -50715,4185 +50746,6 @@
 
 /***/ },
 /* 211 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _signUpComponent = __webpack_require__(212);
-	
-	var _signUpComponent2 = _interopRequireDefault(_signUpComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.navbar.signup', [])
-	// .directive('validator', validatorDirective)
-	.component('signup', _signUpComponent2.default).name;
-
-/***/ },
-/* 212 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _signupTmpl = __webpack_require__(213);
-	
-	var _signupTmpl2 = _interopRequireDefault(_signupTmpl);
-	
-	var _signUpController = __webpack_require__(214);
-	
-	var _signUpController2 = _interopRequireDefault(_signUpController);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  template: _signupTmpl2.default,
-	  controller: _signUpController2.default,
-	  scope: {
-	    user: '='
-	  }
-	};
-
-/***/ },
-/* 213 */
-/***/ function(module, exports) {
-
-	module.exports = "<!-- signup Header -->\n<div class=\"signup\">\n  <div class=\"signup-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignUp page</h1>\n\t\t\t\t\t<h3 ng-bind=\"$ctrl.message\"style=\"color: red;\"></h3>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }\">\n              <label for=\"basic-url\">Enter you last name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"lastName\" ng-model=\"$ctrl.user.lastName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.firstName.$invalid && !user.firstName.$pristine }\">\n              <label for=\"basic-url\">Enter you first name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivan</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"firstName\" ng-model=\"$ctrl.user.firstName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.email.$invalid && !user.email.$pristine }\">\n              <label for=\"basic-url\">Enter you email</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948@gmail.com</span>\n                <input type=\"email\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"email\" ng-model=\"$ctrl.user.email\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div class=\"\">\n              <label for=\"basic-url\">Enter you password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.confPassword.$invalid && !user.confPassword.$pristine }\">\n              <label for=\"basic-url\">Confirm password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"confPassword\" ng-model=\"$ctrl.user.confPassword\" equals=\"{{$ctrl.user.password}}\">\n              </div>\n              <div class=\"text-error\">\n                <span ng-show=\"user.confPassword.$error.equals\">Must be equal!</span>\n              </div>\n\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid && !user.confPassword.$pristine\" class=\"btn btn-success btn-block\">\n                Create Account\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\" >CANCEL</a>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
-
-/***/ },
-/* 214 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _ = __webpack_require__(173);
-	
-	var _2 = _interopRequireDefault(_);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var SignUpController = function () {
-	  SignUpController.$inject = ["CustomerFactory", "$window", "$scope"];
-	  function SignUpController(CustomerFactory, $window, $scope) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, SignUpController);
-	    this.window = $window;
-	    this.CustomerFactory = CustomerFactory;
-	    this.scope = $scope;
-	  }
-	
-	  // closeWin() {
-	  //   ng.element(document.querySelector('signup')).remove();
-	  //   const win = document.createElement('header-block');
-	  //   document.body.insertBefore(win, document.body.childNodes[0]);
-	  //   this.compile(win)(this.scope);
-	  // }
-	
-	  (0, _createClass3.default)(SignUpController, [{
-	    key: 'submitForm',
-	    value: function submitForm() {
-	      var valid = this.scope.user.userName.$modelValue && this.scope.user.password.$modelValue && this.scope.user.firstName.$modelValue && this.scope.user.lastName.$modelValue;
-	      // for (var variable in this.scope.user) {
-	      //   if (variable.$modelValue == '' || variable === undefined) {
-	      //     valid = false;
-	      //   }
-	      // }
-	      if (this.scope.user.$valid && !this.scope.user.$pristine && valid) {
-	        this.CustomerFactory.createCustomer(this.scope.user).then(this.window.location.href = '#/signin');
-	      }
-	    }
-	  }]);
-	  return SignUpController;
-	}();
-	
-	exports.default = SignUpController;
-
-/***/ },
-/* 215 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _component = __webpack_require__(216);
-	
-	var _component2 = _interopRequireDefault(_component);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.footer', []).component('footerBlock', _component2.default).name;
-
-/***/ },
-/* 216 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _footerBlockTmpl = __webpack_require__(217);
-	
-	var _footerBlockTmpl2 = _interopRequireDefault(_footerBlockTmpl);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  template: _footerBlockTmpl2.default
-	};
-
-/***/ },
-/* 217 */
-/***/ function(module, exports) {
-
-	module.exports = "<!-- Footer -->\n<footer>\n  <div class=\"container text-center\">\n    <p>Copyright &copy; Your Website 2016</p>\n  </div>\n</footer>\n";
-
-/***/ },
-/* 218 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _matchPassDirective = __webpack_require__(219);
-	
-	var _matchPassDirective2 = _interopRequireDefault(_matchPassDirective);
-	
-	var _commonFactory = __webpack_require__(220);
-	
-	var _commonFactory2 = _interopRequireDefault(_commonFactory);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.matchPass', []).directive('equals', _matchPassDirective2.default).factory('commonFactory', _commonFactory2.default).name;
-
-/***/ },
-/* 219 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	exports.default = function () {
-	  return {
-	    restrict: 'A', // only activate on element attribute
-	    require: '?ngModel', // get a hold of NgModelController
-	    link: function link(scope, elem, attrs, ngModel) {
-	      if (!ngModel) return; // do nothing if no ng-model
-	
-	      var validate = function validate() {
-	        // values
-	        var val1 = ngModel.$viewValue;
-	        var val2 = attrs.equals;
-	        // set validity
-	        ngModel.$setValidity('equals', !val1 || !val2 || val1 === val2);
-	      };
-	
-	      // watch own value and re-validate on change
-	      scope.$watch(attrs.ngModel, function () {
-	        validate();
-	      });
-	
-	      // observe the other value and re-validate on change
-	      attrs.$observe('equals', function (val) {
-	        validate();
-	      });
-	    }
-	  };
-	};
-
-/***/ },
-/* 220 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = function () {
-	  return {
-	    initializeClock: initializeClock
-	  };
-	
-	  function getTimeRemaining(endtime) {
-	    var duration = Date.parse(endtime) - Date.parse(new Date());
-	    var seconds = Math.floor(duration / 1000 % 60);
-	    var minutes = Math.floor(duration / 1000 / 60 % 60);
-	    var hours = Math.floor(duration / (1000 * 60 * 60) % 24);
-	    var days = Math.floor(duration / (1000 * 60 * 60 * 24));
-	    return {
-	      total: duration,
-	      days: days,
-	      hours: hours,
-	      minutes: minutes,
-	      seconds: seconds
-	    };
-	  }
-	
-	  function initializeClock(id, endtime) {
-	    var clock = document.getElementById(id);
-	    var hoursSpan = clock.querySelector('.hours');
-	    var minutesSpan = clock.querySelector('.minutes');
-	    var secondsSpan = clock.querySelector('.seconds');
-	
-	    function updateClock() {
-	      var duration = getTimeRemaining(endtime);
-	
-	      hoursSpan.innerHTML = ('0' + duration.hours).slice(-2);
-	      minutesSpan.innerHTML = ('0' + duration.minutes).slice(-2);
-	      secondsSpan.innerHTML = ('0' + duration.seconds).slice(-2);
-	
-	      if (duration.total <= 0) {
-	        clearInterval(timeinterval);
-	      }
-	    }
-	
-	    updateClock();
-	    var timeinterval = setInterval(updateClock, 1000);
-	  }
-	};
-
-/***/ },
-/* 221 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _signinComponent = __webpack_require__(222);
-	
-	var _signinComponent2 = _interopRequireDefault(_signinComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.navbar.signin', []).component('signin', _signinComponent2.default).name;
-
-/***/ },
-/* 222 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _signinTmpl = __webpack_require__(223);
-	
-	var _signinTmpl2 = _interopRequireDefault(_signinTmpl);
-	
-	var _signinController = __webpack_require__(224);
-	
-	var _signinController2 = _interopRequireDefault(_signinController);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  template: _signinTmpl2.default,
-	  controller: _signinController2.default,
-	  scope: {
-	    user: '='
-	  }
-	};
-
-/***/ },
-/* 223 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"signin\">\n  <div class=\"signin-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignIn page</h1>\n          <div ng-show=\"$ctrl.message\" class=\"signin-square\">\n            <h2 ng-bind=\"$ctrl.message\" style=\"color:darkred;\"></h2>\n          </div>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you password</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid\" class=\"btn btn-success btn-block\">\n                Sign In\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n";
-
-/***/ },
-/* 224 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var SignInController = function () {
-	  SignInController.$inject = ["UserService", "$location", "$scope"];
-	  function SignInController(UserService, $location, $scope) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, SignInController);
-	    this.location = $location;
-	    this.UserService = UserService;
-	    // this.AuthService = AuthService;
-	    this.scope = $scope;
-	  }
-	
-	  // closeWin() {
-	  //   ng.element(document.querySelector('signin')).remove();
-	  //   const win = document.createElement('header-block');
-	  //   document.body.insertBefore(win, document.body.childNodes[0]);
-	  //   this.compile(win)(this.scope);
-	  // }
-	
-	  (0, _createClass3.default)(SignInController, [{
-	    key: 'submitForm',
-	    value: function submitForm() {
-	      var _this = this;
-	      if (this.scope.user.$valid) {
-	        try {
-	          this.UserService.login(this.scope.user).then(function (result) {
-	            _this.scope.userInfo = result;
-	            _this.location.path('#/gameCreateRule');
-	          }).catch(function (e) {
-	            _this.message = 'You\'r login or password is wrong. Please try again';
-	          });
-	        } catch (e) {
-	          console.log(e);
-	          _this.message = 'You\'r login or password is wrong. Please try again';
-	          console.log(_this.message);
-	          _this.location.path('#/signup');
-	        }
-	      }
-	    }
-	  }, {
-	    key: 'logout',
-	    value: function logout() {
-	      var _this = this;
-	      this.UserService.logout().then(function () {
-	        _this.scope.userInfo = null;
-	        _this.location.path('/signin');
-	      }, function (error) {
-	        console.log(error);
-	      });
-	    }
-	  }]);
-	  return SignInController;
-	}();
-	
-	exports.default = SignInController;
-
-/***/ },
-/* 225 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _gameService = __webpack_require__(226);
-	
-	var _gameService2 = _interopRequireDefault(_gameService);
-	
-	var _userService = __webpack_require__(229);
-	
-	var _userService2 = _interopRequireDefault(_userService);
-	
-	var _playerService = __webpack_require__(230);
-	
-	var _playerService2 = _interopRequireDefault(_playerService);
-	
-	var _wordService = __webpack_require__(286);
-	
-	var _wordService2 = _interopRequireDefault(_wordService);
-	
-	var _customerFactory = __webpack_require__(287);
-	
-	var _customerFactory2 = _interopRequireDefault(_customerFactory);
-	
-	var _gameFactory = __webpack_require__(288);
-	
-	var _gameFactory2 = _interopRequireDefault(_gameFactory);
-	
-	var _errorHandlerFactory = __webpack_require__(292);
-	
-	var _errorHandlerFactory2 = _interopRequireDefault(_errorHandlerFactory);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.service', []).service('GameService', _gameService2.default).service('UserService', _userService2.default).service('PlayerService', _playerService2.default).service('WordService', _wordService2.default).factory('CustomerFactory', ['UserService', 'PlayerService', _customerFactory2.default]).factory('GameFactory', ['GameService', 'PlayerService', _gameFactory2.default]).factory('ErrorHandler', ['$q', '$injector', '$window', _errorHandlerFactory2.default]).name;
-
-/***/ },
-/* 226 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _stringify = __webpack_require__(227);
-	
-	var _stringify2 = _interopRequireDefault(_stringify);
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/* global API */
-	var GameService = function () {
-	  GameService.$inject = ["$http", "$window"];
-	  function GameService($http, $window) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, GameService);
-	    this.$http = $http;
-	    this.window = $window;
-	  }
-	
-	  (0, _createClass3.default)(GameService, [{
-	    key: 'list',
-	    value: function list() {
-	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games').then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }, {
-	    key: 'create',
-	    value: function create(game) {
-	      var _this = this;
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }, {
-	    key: 'detail',
-	    value: function detail(id) {
-	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id).then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }, {
-	    key: 'update',
-	    value: function update(game) {
-	      var _this = this;
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }, {
-	    key: 'save',
-	    value: function save(game) {
-	      var _this = this;
-	      console.log((0, _stringify2.default)(game, null, 2));
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }, {
-	    key: 'addWord',
-	    value: function addWord(gameID, words, playerID) {
-	      var _this = this;
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
-	        var obj = response.data;
-	        return obj;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }, {
-	    key: 'finishGame',
-	    value: function finishGame(id) {
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/' + id + '/finalize').then(function (res) {
-	        return res.data;
-	      });
-	    }
-	  }, {
-	    key: 'finishedList',
-	    value: function finishedList() {
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/games/finished').then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }]);
-	  return GameService;
-	}();
-	
-	exports.default = GameService;
-
-/***/ },
-/* 227 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(228), __esModule: true };
-
-/***/ },
-/* 228 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var core  = __webpack_require__(184)
-	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-	  return $JSON.stringify.apply($JSON, arguments);
-	};
-
-/***/ },
-/* 229 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _stringify = __webpack_require__(227);
-	
-	var _stringify2 = _interopRequireDefault(_stringify);
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/* global API */
-	var UserService = function () {
-	  UserService.$inject = ["$http", "$q", "$window", "$cookies"];
-	  function UserService($http, $q, $window, $cookies) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, UserService);
-	    this.$http = $http;
-	    this.cookies = $cookies;
-	    this.q = $q;
-	    this.window = $window;
-	    this.userInfo = null;
-	    if (this.window.sessionStorage.userInfo) {
-	      this.userInfo = JSON.parse(this.window.sessionStorage.userInfo);
-	    }
-	  }
-	
-	  (0, _createClass3.default)(UserService, [{
-	    key: 'create',
-	    value: function create(user) {
-	      console.log(user);
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
-	        return resp.data;
-	      });
-	    }
-	  }, {
-	    key: 'login',
-	    value: function login(user) {
-	      var _this = this;
-	      // const deferred = this.q.defer();
-	      var userdb = {
-	        username: user.userName.$modelValue,
-	        password: user.password.$modelValue
-	      };
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
-	        _this.userInfo = {
-	          userID: response.data._id,
-	          userName: response.data.username,
-	          playerID: response.data.playerID
-	        };
-	        _this.window.sessionStorage.userInfo = (0, _stringify2.default)(_this.userInfo);
-	        return _this.userInfo;
-	      }).catch(function (error) {
-	        _this.deleteAuthUser();
-	        throw error;
-	      });
-	    }
-	  }, {
-	    key: 'logout',
-	    value: function logout() {
-	      var _this = this;
-	      var deferred = this.q.defer();
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/user/logout').then(function (result) {
-	        _this.deleteAuthUser();
-	        deferred.resolve(result);
-	      }, function (error) {
-	        _this.deleteAuthUser();
-	        deferred.reject(error);
-	      });
-	      return deferred.promise;
-	    }
-	  }, {
-	    key: 'getAuthUser',
-	    value: function getAuthUser() {
-	      return this.userInfo;
-	    }
-	  }, {
-	    key: 'deleteAuthUser',
-	    value: function deleteAuthUser() {
-	      this.userInfo = null;
-	      this.window.sessionStorage.userInfo = null;
-	    }
-	  }]);
-	  return UserService;
-	}();
-	
-	exports.default = UserService;
-
-/***/ },
-/* 230 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _stringify = __webpack_require__(227);
-	
-	var _stringify2 = _interopRequireDefault(_stringify);
-	
-	var _regenerator = __webpack_require__(231);
-	
-	var _regenerator2 = _interopRequireDefault(_regenerator);
-	
-	var _asyncToGenerator2 = __webpack_require__(235);
-	
-	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/* global API */
-	var PlayerService = function () {
-	  PlayerService.$inject = ["$http", "$q", "$window", "$cookies"];
-	  function PlayerService($http, $q, $window, $cookies) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, PlayerService);
-	    this.$http = $http;
-	    // this.cookies = $cookies;
-	    // this.q = $q;
-	    this.window = $window;
-	    // this.userInfo = {};
-	    // if (this.window.sessionStorage.userInfo) {
-	    //   this.userInfo = JSON.parse(this.window.sessionStorage.userInfo);
-	    // }
-	  }
-	
-	  (0, _createClass3.default)(PlayerService, [{
-	    key: 'list',
-	    value: function () {
-	      var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
-	        var response;
-	        return _regenerator2.default.wrap(function _callee$(_context) {
-	          while (1) {
-	            switch (_context.prev = _context.next) {
-	              case 0:
-	                _context.prev = 0;
-	                _context.next = 3;
-	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player');
-	
-	              case 3:
-	                response = _context.sent;
-	                _context.next = 6;
-	                return response.data;
-	
-	              case 6:
-	                return _context.abrupt('return', _context.sent);
-	
-	              case 9:
-	                _context.prev = 9;
-	                _context.t0 = _context['catch'](0);
-	                throw _context.t0;
-	
-	              case 12:
-	              case 'end':
-	                return _context.stop();
-	            }
-	          }
-	        }, _callee, this, [[0, 9]]);
-	      }));
-	
-	      function list() {
-	        return _ref.apply(this, arguments);
-	      }
-	
-	      return list;
-	    }()
-	  }, {
-	    key: 'create',
-	    value: function () {
-	      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(player) {
-	        var response;
-	        return _regenerator2.default.wrap(function _callee2$(_context2) {
-	          while (1) {
-	            switch (_context2.prev = _context2.next) {
-	              case 0:
-	                _context2.prev = 0;
-	                _context2.next = 3;
-	                return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
-	
-	              case 3:
-	                response = _context2.sent;
-	                return _context2.abrupt('return', response.data);
-	
-	              case 7:
-	                _context2.prev = 7;
-	                _context2.t0 = _context2['catch'](0);
-	                throw _context2.t0;
-	
-	              case 10:
-	              case 'end':
-	                return _context2.stop();
-	            }
-	          }
-	        }, _callee2, this, [[0, 7]]);
-	      }));
-	
-	      function create(_x) {
-	        return _ref2.apply(this, arguments);
-	      }
-	
-	      return create;
-	    }()
-	  }, {
-	    key: 'getByID',
-	    value: function () {
-	      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(id) {
-	        var response;
-	        return _regenerator2.default.wrap(function _callee3$(_context3) {
-	          while (1) {
-	            switch (_context3.prev = _context3.next) {
-	              case 0:
-	                _context3.prev = 0;
-	                _context3.next = 3;
-	                return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/player/' + id);
-	
-	              case 3:
-	                response = _context3.sent;
-	                return _context3.abrupt('return', response.data);
-	
-	              case 7:
-	                _context3.prev = 7;
-	                _context3.t0 = _context3['catch'](0);
-	                throw _context3.t0;
-	
-	              case 10:
-	              case 'end':
-	                return _context3.stop();
-	            }
-	          }
-	        }, _callee3, this, [[0, 7]]);
-	      }));
-	
-	      function getByID(_x2) {
-	        return _ref3.apply(this, arguments);
-	      }
-	
-	      return getByID;
-	    }()
-	  }]);
-	  return PlayerService;
-	}();
-	
-	exports.default = PlayerService;
-
-/***/ },
-/* 231 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(232);
-
-
-/***/ },
-/* 232 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {// This method of obtaining a reference to the global object needs to be
-	// kept identical to the way it is obtained in runtime.js
-	var g =
-	  typeof global === "object" ? global :
-	  typeof window === "object" ? window :
-	  typeof self === "object" ? self : this;
-	
-	// Use `getOwnPropertyNames` because not all browsers support calling
-	// `hasOwnProperty` on the global `self` object in a worker. See #183.
-	var hadRuntime = g.regeneratorRuntime &&
-	  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
-	
-	// Save the old regeneratorRuntime in case it needs to be restored later.
-	var oldRuntime = hadRuntime && g.regeneratorRuntime;
-	
-	// Force reevalutation of runtime.js.
-	g.regeneratorRuntime = undefined;
-	
-	module.exports = __webpack_require__(233);
-	
-	if (hadRuntime) {
-	  // Restore the original runtime.
-	  g.regeneratorRuntime = oldRuntime;
-	} else {
-	  // Remove the global property added by runtime.js.
-	  try {
-	    delete g.regeneratorRuntime;
-	  } catch(e) {
-	    g.regeneratorRuntime = undefined;
-	  }
-	}
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 233 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global, process) {/**
-	 * Copyright (c) 2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * https://raw.github.com/facebook/regenerator/master/LICENSE file. An
-	 * additional grant of patent rights can be found in the PATENTS file in
-	 * the same directory.
-	 */
-	
-	!(function(global) {
-	  "use strict";
-	
-	  var hasOwn = Object.prototype.hasOwnProperty;
-	  var undefined; // More compressible than void 0.
-	  var $Symbol = typeof Symbol === "function" ? Symbol : {};
-	  var iteratorSymbol = $Symbol.iterator || "@@iterator";
-	  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
-	
-	  var inModule = typeof module === "object";
-	  var runtime = global.regeneratorRuntime;
-	  if (runtime) {
-	    if (inModule) {
-	      // If regeneratorRuntime is defined globally and we're in a module,
-	      // make the exports object identical to regeneratorRuntime.
-	      module.exports = runtime;
-	    }
-	    // Don't bother evaluating the rest of this file if the runtime was
-	    // already defined globally.
-	    return;
-	  }
-	
-	  // Define the runtime globally (as expected by generated code) as either
-	  // module.exports (if we're in a module) or a new, empty object.
-	  runtime = global.regeneratorRuntime = inModule ? module.exports : {};
-	
-	  function wrap(innerFn, outerFn, self, tryLocsList) {
-	    // If outerFn provided, then outerFn.prototype instanceof Generator.
-	    var generator = Object.create((outerFn || Generator).prototype);
-	    var context = new Context(tryLocsList || []);
-	
-	    // The ._invoke method unifies the implementations of the .next,
-	    // .throw, and .return methods.
-	    generator._invoke = makeInvokeMethod(innerFn, self, context);
-	
-	    return generator;
-	  }
-	  runtime.wrap = wrap;
-	
-	  // Try/catch helper to minimize deoptimizations. Returns a completion
-	  // record like context.tryEntries[i].completion. This interface could
-	  // have been (and was previously) designed to take a closure to be
-	  // invoked without arguments, but in all the cases we care about we
-	  // already have an existing method we want to call, so there's no need
-	  // to create a new function object. We can even get away with assuming
-	  // the method takes exactly one argument, since that happens to be true
-	  // in every case, so we don't have to touch the arguments object. The
-	  // only additional allocation required is the completion record, which
-	  // has a stable shape and so hopefully should be cheap to allocate.
-	  function tryCatch(fn, obj, arg) {
-	    try {
-	      return { type: "normal", arg: fn.call(obj, arg) };
-	    } catch (err) {
-	      return { type: "throw", arg: err };
-	    }
-	  }
-	
-	  var GenStateSuspendedStart = "suspendedStart";
-	  var GenStateSuspendedYield = "suspendedYield";
-	  var GenStateExecuting = "executing";
-	  var GenStateCompleted = "completed";
-	
-	  // Returning this object from the innerFn has the same effect as
-	  // breaking out of the dispatch switch statement.
-	  var ContinueSentinel = {};
-	
-	  // Dummy constructor functions that we use as the .constructor and
-	  // .constructor.prototype properties for functions that return Generator
-	  // objects. For full spec compliance, you may wish to configure your
-	  // minifier not to mangle the names of these two functions.
-	  function Generator() {}
-	  function GeneratorFunction() {}
-	  function GeneratorFunctionPrototype() {}
-	
-	  var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype;
-	  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
-	  GeneratorFunctionPrototype.constructor = GeneratorFunction;
-	  GeneratorFunctionPrototype[toStringTagSymbol] = GeneratorFunction.displayName = "GeneratorFunction";
-	
-	  // Helper for defining the .next, .throw, and .return methods of the
-	  // Iterator interface in terms of a single ._invoke method.
-	  function defineIteratorMethods(prototype) {
-	    ["next", "throw", "return"].forEach(function(method) {
-	      prototype[method] = function(arg) {
-	        return this._invoke(method, arg);
-	      };
-	    });
-	  }
-	
-	  runtime.isGeneratorFunction = function(genFun) {
-	    var ctor = typeof genFun === "function" && genFun.constructor;
-	    return ctor
-	      ? ctor === GeneratorFunction ||
-	        // For the native GeneratorFunction constructor, the best we can
-	        // do is to check its .name property.
-	        (ctor.displayName || ctor.name) === "GeneratorFunction"
-	      : false;
-	  };
-	
-	  runtime.mark = function(genFun) {
-	    if (Object.setPrototypeOf) {
-	      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
-	    } else {
-	      genFun.__proto__ = GeneratorFunctionPrototype;
-	      if (!(toStringTagSymbol in genFun)) {
-	        genFun[toStringTagSymbol] = "GeneratorFunction";
-	      }
-	    }
-	    genFun.prototype = Object.create(Gp);
-	    return genFun;
-	  };
-	
-	  // Within the body of any async function, `await x` is transformed to
-	  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
-	  // `value instanceof AwaitArgument` to determine if the yielded value is
-	  // meant to be awaited. Some may consider the name of this method too
-	  // cutesy, but they are curmudgeons.
-	  runtime.awrap = function(arg) {
-	    return new AwaitArgument(arg);
-	  };
-	
-	  function AwaitArgument(arg) {
-	    this.arg = arg;
-	  }
-	
-	  function AsyncIterator(generator) {
-	    function invoke(method, arg, resolve, reject) {
-	      var record = tryCatch(generator[method], generator, arg);
-	      if (record.type === "throw") {
-	        reject(record.arg);
-	      } else {
-	        var result = record.arg;
-	        var value = result.value;
-	        if (value instanceof AwaitArgument) {
-	          return Promise.resolve(value.arg).then(function(value) {
-	            invoke("next", value, resolve, reject);
-	          }, function(err) {
-	            invoke("throw", err, resolve, reject);
-	          });
-	        }
-	
-	        return Promise.resolve(value).then(function(unwrapped) {
-	          // When a yielded Promise is resolved, its final value becomes
-	          // the .value of the Promise<{value,done}> result for the
-	          // current iteration. If the Promise is rejected, however, the
-	          // result for this iteration will be rejected with the same
-	          // reason. Note that rejections of yielded Promises are not
-	          // thrown back into the generator function, as is the case
-	          // when an awaited Promise is rejected. This difference in
-	          // behavior between yield and await is important, because it
-	          // allows the consumer to decide what to do with the yielded
-	          // rejection (swallow it and continue, manually .throw it back
-	          // into the generator, abandon iteration, whatever). With
-	          // await, by contrast, there is no opportunity to examine the
-	          // rejection reason outside the generator function, so the
-	          // only option is to throw it from the await expression, and
-	          // let the generator function handle the exception.
-	          result.value = unwrapped;
-	          resolve(result);
-	        }, reject);
-	      }
-	    }
-	
-	    if (typeof process === "object" && process.domain) {
-	      invoke = process.domain.bind(invoke);
-	    }
-	
-	    var previousPromise;
-	
-	    function enqueue(method, arg) {
-	      function callInvokeWithMethodAndArg() {
-	        return new Promise(function(resolve, reject) {
-	          invoke(method, arg, resolve, reject);
-	        });
-	      }
-	
-	      return previousPromise =
-	        // If enqueue has been called before, then we want to wait until
-	        // all previous Promises have been resolved before calling invoke,
-	        // so that results are always delivered in the correct order. If
-	        // enqueue has not been called before, then it is important to
-	        // call invoke immediately, without waiting on a callback to fire,
-	        // so that the async generator function has the opportunity to do
-	        // any necessary setup in a predictable way. This predictability
-	        // is why the Promise constructor synchronously invokes its
-	        // executor callback, and why async functions synchronously
-	        // execute code before the first await. Since we implement simple
-	        // async functions in terms of async generators, it is especially
-	        // important to get this right, even though it requires care.
-	        previousPromise ? previousPromise.then(
-	          callInvokeWithMethodAndArg,
-	          // Avoid propagating failures to Promises returned by later
-	          // invocations of the iterator.
-	          callInvokeWithMethodAndArg
-	        ) : callInvokeWithMethodAndArg();
-	    }
-	
-	    // Define the unified helper method that is used to implement .next,
-	    // .throw, and .return (see defineIteratorMethods).
-	    this._invoke = enqueue;
-	  }
-	
-	  defineIteratorMethods(AsyncIterator.prototype);
-	
-	  // Note that simple async functions are implemented on top of
-	  // AsyncIterator objects; they just return a Promise for the value of
-	  // the final result produced by the iterator.
-	  runtime.async = function(innerFn, outerFn, self, tryLocsList) {
-	    var iter = new AsyncIterator(
-	      wrap(innerFn, outerFn, self, tryLocsList)
-	    );
-	
-	    return runtime.isGeneratorFunction(outerFn)
-	      ? iter // If outerFn is a generator, return the full iterator.
-	      : iter.next().then(function(result) {
-	          return result.done ? result.value : iter.next();
-	        });
-	  };
-	
-	  function makeInvokeMethod(innerFn, self, context) {
-	    var state = GenStateSuspendedStart;
-	
-	    return function invoke(method, arg) {
-	      if (state === GenStateExecuting) {
-	        throw new Error("Generator is already running");
-	      }
-	
-	      if (state === GenStateCompleted) {
-	        if (method === "throw") {
-	          throw arg;
-	        }
-	
-	        // Be forgiving, per 25.3.3.3.3 of the spec:
-	        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
-	        return doneResult();
-	      }
-	
-	      while (true) {
-	        var delegate = context.delegate;
-	        if (delegate) {
-	          if (method === "return" ||
-	              (method === "throw" && delegate.iterator[method] === undefined)) {
-	            // A return or throw (when the delegate iterator has no throw
-	            // method) always terminates the yield* loop.
-	            context.delegate = null;
-	
-	            // If the delegate iterator has a return method, give it a
-	            // chance to clean up.
-	            var returnMethod = delegate.iterator["return"];
-	            if (returnMethod) {
-	              var record = tryCatch(returnMethod, delegate.iterator, arg);
-	              if (record.type === "throw") {
-	                // If the return method threw an exception, let that
-	                // exception prevail over the original return or throw.
-	                method = "throw";
-	                arg = record.arg;
-	                continue;
-	              }
-	            }
-	
-	            if (method === "return") {
-	              // Continue with the outer return, now that the delegate
-	              // iterator has been terminated.
-	              continue;
-	            }
-	          }
-	
-	          var record = tryCatch(
-	            delegate.iterator[method],
-	            delegate.iterator,
-	            arg
-	          );
-	
-	          if (record.type === "throw") {
-	            context.delegate = null;
-	
-	            // Like returning generator.throw(uncaught), but without the
-	            // overhead of an extra function call.
-	            method = "throw";
-	            arg = record.arg;
-	            continue;
-	          }
-	
-	          // Delegate generator ran and handled its own exceptions so
-	          // regardless of what the method was, we continue as if it is
-	          // "next" with an undefined arg.
-	          method = "next";
-	          arg = undefined;
-	
-	          var info = record.arg;
-	          if (info.done) {
-	            context[delegate.resultName] = info.value;
-	            context.next = delegate.nextLoc;
-	          } else {
-	            state = GenStateSuspendedYield;
-	            return info;
-	          }
-	
-	          context.delegate = null;
-	        }
-	
-	        if (method === "next") {
-	          // Setting context._sent for legacy support of Babel's
-	          // function.sent implementation.
-	          context.sent = context._sent = arg;
-	
-	        } else if (method === "throw") {
-	          if (state === GenStateSuspendedStart) {
-	            state = GenStateCompleted;
-	            throw arg;
-	          }
-	
-	          if (context.dispatchException(arg)) {
-	            // If the dispatched exception was caught by a catch block,
-	            // then let that catch block handle the exception normally.
-	            method = "next";
-	            arg = undefined;
-	          }
-	
-	        } else if (method === "return") {
-	          context.abrupt("return", arg);
-	        }
-	
-	        state = GenStateExecuting;
-	
-	        var record = tryCatch(innerFn, self, context);
-	        if (record.type === "normal") {
-	          // If an exception is thrown from innerFn, we leave state ===
-	          // GenStateExecuting and loop back for another invocation.
-	          state = context.done
-	            ? GenStateCompleted
-	            : GenStateSuspendedYield;
-	
-	          var info = {
-	            value: record.arg,
-	            done: context.done
-	          };
-	
-	          if (record.arg === ContinueSentinel) {
-	            if (context.delegate && method === "next") {
-	              // Deliberately forget the last sent value so that we don't
-	              // accidentally pass it on to the delegate.
-	              arg = undefined;
-	            }
-	          } else {
-	            return info;
-	          }
-	
-	        } else if (record.type === "throw") {
-	          state = GenStateCompleted;
-	          // Dispatch the exception by looping back around to the
-	          // context.dispatchException(arg) call above.
-	          method = "throw";
-	          arg = record.arg;
-	        }
-	      }
-	    };
-	  }
-	
-	  // Define Generator.prototype.{next,throw,return} in terms of the
-	  // unified ._invoke helper method.
-	  defineIteratorMethods(Gp);
-	
-	  Gp[iteratorSymbol] = function() {
-	    return this;
-	  };
-	
-	  Gp[toStringTagSymbol] = "Generator";
-	
-	  Gp.toString = function() {
-	    return "[object Generator]";
-	  };
-	
-	  function pushTryEntry(locs) {
-	    var entry = { tryLoc: locs[0] };
-	
-	    if (1 in locs) {
-	      entry.catchLoc = locs[1];
-	    }
-	
-	    if (2 in locs) {
-	      entry.finallyLoc = locs[2];
-	      entry.afterLoc = locs[3];
-	    }
-	
-	    this.tryEntries.push(entry);
-	  }
-	
-	  function resetTryEntry(entry) {
-	    var record = entry.completion || {};
-	    record.type = "normal";
-	    delete record.arg;
-	    entry.completion = record;
-	  }
-	
-	  function Context(tryLocsList) {
-	    // The root entry object (effectively a try statement without a catch
-	    // or a finally block) gives us a place to store values thrown from
-	    // locations where there is no enclosing try statement.
-	    this.tryEntries = [{ tryLoc: "root" }];
-	    tryLocsList.forEach(pushTryEntry, this);
-	    this.reset(true);
-	  }
-	
-	  runtime.keys = function(object) {
-	    var keys = [];
-	    for (var key in object) {
-	      keys.push(key);
-	    }
-	    keys.reverse();
-	
-	    // Rather than returning an object with a next method, we keep
-	    // things simple and return the next function itself.
-	    return function next() {
-	      while (keys.length) {
-	        var key = keys.pop();
-	        if (key in object) {
-	          next.value = key;
-	          next.done = false;
-	          return next;
-	        }
-	      }
-	
-	      // To avoid creating an additional object, we just hang the .value
-	      // and .done properties off the next function object itself. This
-	      // also ensures that the minifier will not anonymize the function.
-	      next.done = true;
-	      return next;
-	    };
-	  };
-	
-	  function values(iterable) {
-	    if (iterable) {
-	      var iteratorMethod = iterable[iteratorSymbol];
-	      if (iteratorMethod) {
-	        return iteratorMethod.call(iterable);
-	      }
-	
-	      if (typeof iterable.next === "function") {
-	        return iterable;
-	      }
-	
-	      if (!isNaN(iterable.length)) {
-	        var i = -1, next = function next() {
-	          while (++i < iterable.length) {
-	            if (hasOwn.call(iterable, i)) {
-	              next.value = iterable[i];
-	              next.done = false;
-	              return next;
-	            }
-	          }
-	
-	          next.value = undefined;
-	          next.done = true;
-	
-	          return next;
-	        };
-	
-	        return next.next = next;
-	      }
-	    }
-	
-	    // Return an iterator with no values.
-	    return { next: doneResult };
-	  }
-	  runtime.values = values;
-	
-	  function doneResult() {
-	    return { value: undefined, done: true };
-	  }
-	
-	  Context.prototype = {
-	    constructor: Context,
-	
-	    reset: function(skipTempReset) {
-	      this.prev = 0;
-	      this.next = 0;
-	      // Resetting context._sent for legacy support of Babel's
-	      // function.sent implementation.
-	      this.sent = this._sent = undefined;
-	      this.done = false;
-	      this.delegate = null;
-	
-	      this.tryEntries.forEach(resetTryEntry);
-	
-	      if (!skipTempReset) {
-	        for (var name in this) {
-	          // Not sure about the optimal order of these conditions:
-	          if (name.charAt(0) === "t" &&
-	              hasOwn.call(this, name) &&
-	              !isNaN(+name.slice(1))) {
-	            this[name] = undefined;
-	          }
-	        }
-	      }
-	    },
-	
-	    stop: function() {
-	      this.done = true;
-	
-	      var rootEntry = this.tryEntries[0];
-	      var rootRecord = rootEntry.completion;
-	      if (rootRecord.type === "throw") {
-	        throw rootRecord.arg;
-	      }
-	
-	      return this.rval;
-	    },
-	
-	    dispatchException: function(exception) {
-	      if (this.done) {
-	        throw exception;
-	      }
-	
-	      var context = this;
-	      function handle(loc, caught) {
-	        record.type = "throw";
-	        record.arg = exception;
-	        context.next = loc;
-	        return !!caught;
-	      }
-	
-	      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-	        var entry = this.tryEntries[i];
-	        var record = entry.completion;
-	
-	        if (entry.tryLoc === "root") {
-	          // Exception thrown outside of any try block that could handle
-	          // it, so set the completion value of the entire function to
-	          // throw the exception.
-	          return handle("end");
-	        }
-	
-	        if (entry.tryLoc <= this.prev) {
-	          var hasCatch = hasOwn.call(entry, "catchLoc");
-	          var hasFinally = hasOwn.call(entry, "finallyLoc");
-	
-	          if (hasCatch && hasFinally) {
-	            if (this.prev < entry.catchLoc) {
-	              return handle(entry.catchLoc, true);
-	            } else if (this.prev < entry.finallyLoc) {
-	              return handle(entry.finallyLoc);
-	            }
-	
-	          } else if (hasCatch) {
-	            if (this.prev < entry.catchLoc) {
-	              return handle(entry.catchLoc, true);
-	            }
-	
-	          } else if (hasFinally) {
-	            if (this.prev < entry.finallyLoc) {
-	              return handle(entry.finallyLoc);
-	            }
-	
-	          } else {
-	            throw new Error("try statement without catch or finally");
-	          }
-	        }
-	      }
-	    },
-	
-	    abrupt: function(type, arg) {
-	      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-	        var entry = this.tryEntries[i];
-	        if (entry.tryLoc <= this.prev &&
-	            hasOwn.call(entry, "finallyLoc") &&
-	            this.prev < entry.finallyLoc) {
-	          var finallyEntry = entry;
-	          break;
-	        }
-	      }
-	
-	      if (finallyEntry &&
-	          (type === "break" ||
-	           type === "continue") &&
-	          finallyEntry.tryLoc <= arg &&
-	          arg <= finallyEntry.finallyLoc) {
-	        // Ignore the finally entry if control is not jumping to a
-	        // location outside the try/catch block.
-	        finallyEntry = null;
-	      }
-	
-	      var record = finallyEntry ? finallyEntry.completion : {};
-	      record.type = type;
-	      record.arg = arg;
-	
-	      if (finallyEntry) {
-	        this.next = finallyEntry.finallyLoc;
-	      } else {
-	        this.complete(record);
-	      }
-	
-	      return ContinueSentinel;
-	    },
-	
-	    complete: function(record, afterLoc) {
-	      if (record.type === "throw") {
-	        throw record.arg;
-	      }
-	
-	      if (record.type === "break" ||
-	          record.type === "continue") {
-	        this.next = record.arg;
-	      } else if (record.type === "return") {
-	        this.rval = record.arg;
-	        this.next = "end";
-	      } else if (record.type === "normal" && afterLoc) {
-	        this.next = afterLoc;
-	      }
-	    },
-	
-	    finish: function(finallyLoc) {
-	      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-	        var entry = this.tryEntries[i];
-	        if (entry.finallyLoc === finallyLoc) {
-	          this.complete(entry.completion, entry.afterLoc);
-	          resetTryEntry(entry);
-	          return ContinueSentinel;
-	        }
-	      }
-	    },
-	
-	    "catch": function(tryLoc) {
-	      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-	        var entry = this.tryEntries[i];
-	        if (entry.tryLoc === tryLoc) {
-	          var record = entry.completion;
-	          if (record.type === "throw") {
-	            var thrown = record.arg;
-	            resetTryEntry(entry);
-	          }
-	          return thrown;
-	        }
-	      }
-	
-	      // The context.catch method must only be called with a location
-	      // argument that corresponds to a known catch block.
-	      throw new Error("illegal catch attempt");
-	    },
-	
-	    delegateYield: function(iterable, resultName, nextLoc) {
-	      this.delegate = {
-	        iterator: values(iterable),
-	        resultName: resultName,
-	        nextLoc: nextLoc
-	      };
-	
-	      return ContinueSentinel;
-	    }
-	  };
-	})(
-	  // Among the various tricks for obtaining a reference to the global
-	  // object, this seems to be the most reliable technique that does not
-	  // use indirect eval (which violates Content Security Policy).
-	  typeof global === "object" ? global :
-	  typeof window === "object" ? window :
-	  typeof self === "object" ? self : this
-	);
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(234)))
-
-/***/ },
-/* 234 */
-/***/ function(module, exports) {
-
-	// shim for using process in browser
-	
-	var process = module.exports = {};
-	
-	// cached from whatever global is present so that test runners that stub it
-	// don't break things.  But we need to wrap it in a try catch in case it is
-	// wrapped in strict mode code which doesn't define any globals.  It's inside a
-	// function because try/catches deoptimize in certain engines.
-	
-	var cachedSetTimeout;
-	var cachedClearTimeout;
-	
-	(function () {
-	  try {
-	    cachedSetTimeout = setTimeout;
-	  } catch (e) {
-	    cachedSetTimeout = function () {
-	      throw new Error('setTimeout is not defined');
-	    }
-	  }
-	  try {
-	    cachedClearTimeout = clearTimeout;
-	  } catch (e) {
-	    cachedClearTimeout = function () {
-	      throw new Error('clearTimeout is not defined');
-	    }
-	  }
-	} ())
-	var queue = [];
-	var draining = false;
-	var currentQueue;
-	var queueIndex = -1;
-	
-	function cleanUpNextTick() {
-	    if (!draining || !currentQueue) {
-	        return;
-	    }
-	    draining = false;
-	    if (currentQueue.length) {
-	        queue = currentQueue.concat(queue);
-	    } else {
-	        queueIndex = -1;
-	    }
-	    if (queue.length) {
-	        drainQueue();
-	    }
-	}
-	
-	function drainQueue() {
-	    if (draining) {
-	        return;
-	    }
-	    var timeout = cachedSetTimeout.call(null, cleanUpNextTick);
-	    draining = true;
-	
-	    var len = queue.length;
-	    while(len) {
-	        currentQueue = queue;
-	        queue = [];
-	        while (++queueIndex < len) {
-	            if (currentQueue) {
-	                currentQueue[queueIndex].run();
-	            }
-	        }
-	        queueIndex = -1;
-	        len = queue.length;
-	    }
-	    currentQueue = null;
-	    draining = false;
-	    cachedClearTimeout.call(null, timeout);
-	}
-	
-	process.nextTick = function (fun) {
-	    var args = new Array(arguments.length - 1);
-	    if (arguments.length > 1) {
-	        for (var i = 1; i < arguments.length; i++) {
-	            args[i - 1] = arguments[i];
-	        }
-	    }
-	    queue.push(new Item(fun, args));
-	    if (queue.length === 1 && !draining) {
-	        cachedSetTimeout.call(null, drainQueue, 0);
-	    }
-	};
-	
-	// v8 likes predictible objects
-	function Item(fun, array) {
-	    this.fun = fun;
-	    this.array = array;
-	}
-	Item.prototype.run = function () {
-	    this.fun.apply(null, this.array);
-	};
-	process.title = 'browser';
-	process.browser = true;
-	process.env = {};
-	process.argv = [];
-	process.version = ''; // empty string to avoid regexp issues
-	process.versions = {};
-	
-	function noop() {}
-	
-	process.on = noop;
-	process.addListener = noop;
-	process.once = noop;
-	process.off = noop;
-	process.removeListener = noop;
-	process.removeAllListeners = noop;
-	process.emit = noop;
-	
-	process.binding = function (name) {
-	    throw new Error('process.binding is not supported');
-	};
-	
-	process.cwd = function () { return '/' };
-	process.chdir = function (dir) {
-	    throw new Error('process.chdir is not supported');
-	};
-	process.umask = function() { return 0; };
-
-
-/***/ },
-/* 235 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	exports.__esModule = true;
-	
-	var _promise = __webpack_require__(236);
-	
-	var _promise2 = _interopRequireDefault(_promise);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = function (fn) {
-	  return function () {
-	    var gen = fn.apply(this, arguments);
-	    return new _promise2.default(function (resolve, reject) {
-	      function step(key, arg) {
-	        try {
-	          var info = gen[key](arg);
-	          var value = info.value;
-	        } catch (error) {
-	          reject(error);
-	          return;
-	        }
-	
-	        if (info.done) {
-	          resolve(value);
-	        } else {
-	          return _promise2.default.resolve(value).then(function (value) {
-	            return step("next", value);
-	          }, function (err) {
-	            return step("throw", err);
-	          });
-	        }
-	      }
-	
-	      return step("next");
-	    });
-	  };
-	};
-
-/***/ },
-/* 236 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(237), __esModule: true };
-
-/***/ },
-/* 237 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(238);
-	__webpack_require__(239);
-	__webpack_require__(268);
-	__webpack_require__(272);
-	module.exports = __webpack_require__(184).Promise;
-
-/***/ },
-/* 238 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 239 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var $at  = __webpack_require__(240)(true);
-	
-	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(243)(String, 'String', function(iterated){
-	  this._t = String(iterated); // target
-	  this._i = 0;                // next index
-	// 21.1.5.2.1 %StringIteratorPrototype%.next()
-	}, function(){
-	  var O     = this._t
-	    , index = this._i
-	    , point;
-	  if(index >= O.length)return {value: undefined, done: true};
-	  point = $at(O, index);
-	  this._i += point.length;
-	  return {value: point, done: false};
-	});
-
-/***/ },
-/* 240 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var toInteger = __webpack_require__(241)
-	  , defined   = __webpack_require__(242);
-	// true  -> String#at
-	// false -> String#codePointAt
-	module.exports = function(TO_STRING){
-	  return function(that, pos){
-	    var s = String(defined(that))
-	      , i = toInteger(pos)
-	      , l = s.length
-	      , a, b;
-	    if(i < 0 || i >= l)return TO_STRING ? '' : undefined;
-	    a = s.charCodeAt(i);
-	    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
-	      ? TO_STRING ? s.charAt(i) : a
-	      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
-	  };
-	};
-
-/***/ },
-/* 241 */
-/***/ function(module, exports) {
-
-	// 7.1.4 ToInteger
-	var ceil  = Math.ceil
-	  , floor = Math.floor;
-	module.exports = function(it){
-	  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
-	};
-
-/***/ },
-/* 242 */
-/***/ function(module, exports) {
-
-	// 7.2.1 RequireObjectCoercible(argument)
-	module.exports = function(it){
-	  if(it == undefined)throw TypeError("Can't call method on  " + it);
-	  return it;
-	};
-
-/***/ },
-/* 243 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var LIBRARY        = __webpack_require__(244)
-	  , $export        = __webpack_require__(182)
-	  , redefine       = __webpack_require__(245)
-	  , hide           = __webpack_require__(187)
-	  , has            = __webpack_require__(246)
-	  , Iterators      = __webpack_require__(247)
-	  , $iterCreate    = __webpack_require__(248)
-	  , setToStringTag = __webpack_require__(264)
-	  , getPrototypeOf = __webpack_require__(266)
-	  , ITERATOR       = __webpack_require__(265)('iterator')
-	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
-	  , FF_ITERATOR    = '@@iterator'
-	  , KEYS           = 'keys'
-	  , VALUES         = 'values';
-	
-	var returnThis = function(){ return this; };
-	
-	module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
-	  $iterCreate(Constructor, NAME, next);
-	  var getMethod = function(kind){
-	    if(!BUGGY && kind in proto)return proto[kind];
-	    switch(kind){
-	      case KEYS: return function keys(){ return new Constructor(this, kind); };
-	      case VALUES: return function values(){ return new Constructor(this, kind); };
-	    } return function entries(){ return new Constructor(this, kind); };
-	  };
-	  var TAG        = NAME + ' Iterator'
-	    , DEF_VALUES = DEFAULT == VALUES
-	    , VALUES_BUG = false
-	    , proto      = Base.prototype
-	    , $native    = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT]
-	    , $default   = $native || getMethod(DEFAULT)
-	    , $entries   = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined
-	    , $anyNative = NAME == 'Array' ? proto.entries || $native : $native
-	    , methods, key, IteratorPrototype;
-	  // Fix native
-	  if($anyNative){
-	    IteratorPrototype = getPrototypeOf($anyNative.call(new Base));
-	    if(IteratorPrototype !== Object.prototype){
-	      // Set @@toStringTag to native iterators
-	      setToStringTag(IteratorPrototype, TAG, true);
-	      // fix for some old engines
-	      if(!LIBRARY && !has(IteratorPrototype, ITERATOR))hide(IteratorPrototype, ITERATOR, returnThis);
-	    }
-	  }
-	  // fix Array#{values, @@iterator}.name in V8 / FF
-	  if(DEF_VALUES && $native && $native.name !== VALUES){
-	    VALUES_BUG = true;
-	    $default = function values(){ return $native.call(this); };
-	  }
-	  // Define iterator
-	  if((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])){
-	    hide(proto, ITERATOR, $default);
-	  }
-	  // Plug for library
-	  Iterators[NAME] = $default;
-	  Iterators[TAG]  = returnThis;
-	  if(DEFAULT){
-	    methods = {
-	      values:  DEF_VALUES ? $default : getMethod(VALUES),
-	      keys:    IS_SET     ? $default : getMethod(KEYS),
-	      entries: $entries
-	    };
-	    if(FORCED)for(key in methods){
-	      if(!(key in proto))redefine(proto, key, methods[key]);
-	    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
-	  }
-	  return methods;
-	};
-
-/***/ },
-/* 244 */
-/***/ function(module, exports) {
-
-	module.exports = true;
-
-/***/ },
-/* 245 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(187);
-
-/***/ },
-/* 246 */
-/***/ function(module, exports) {
-
-	var hasOwnProperty = {}.hasOwnProperty;
-	module.exports = function(it, key){
-	  return hasOwnProperty.call(it, key);
-	};
-
-/***/ },
-/* 247 */
-/***/ function(module, exports) {
-
-	module.exports = {};
-
-/***/ },
-/* 248 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var create         = __webpack_require__(249)
-	  , descriptor     = __webpack_require__(196)
-	  , setToStringTag = __webpack_require__(264)
-	  , IteratorPrototype = {};
-	
-	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-	__webpack_require__(187)(IteratorPrototype, __webpack_require__(265)('iterator'), function(){ return this; });
-	
-	module.exports = function(Constructor, NAME, next){
-	  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
-	  setToStringTag(Constructor, NAME + ' Iterator');
-	};
-
-/***/ },
-/* 249 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-	var anObject    = __webpack_require__(189)
-	  , dPs         = __webpack_require__(250)
-	  , enumBugKeys = __webpack_require__(262)
-	  , IE_PROTO    = __webpack_require__(259)('IE_PROTO')
-	  , Empty       = function(){ /* empty */ }
-	  , PROTOTYPE   = 'prototype';
-	
-	// Create object with fake `null` prototype: use iframe Object with cleared prototype
-	var createDict = function(){
-	  // Thrash, waste and sodomy: IE GC bug
-	  var iframe = __webpack_require__(194)('iframe')
-	    , i      = enumBugKeys.length
-	    , lt     = '<'
-	    , gt     = '>'
-	    , iframeDocument;
-	  iframe.style.display = 'none';
-	  __webpack_require__(263).appendChild(iframe);
-	  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
-	  // createDict = iframe.contentWindow.Object;
-	  // html.removeChild(iframe);
-	  iframeDocument = iframe.contentWindow.document;
-	  iframeDocument.open();
-	  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
-	  iframeDocument.close();
-	  createDict = iframeDocument.F;
-	  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
-	  return createDict();
-	};
-	
-	module.exports = Object.create || function create(O, Properties){
-	  var result;
-	  if(O !== null){
-	    Empty[PROTOTYPE] = anObject(O);
-	    result = new Empty;
-	    Empty[PROTOTYPE] = null;
-	    // add "__proto__" for Object.getPrototypeOf polyfill
-	    result[IE_PROTO] = O;
-	  } else result = createDict();
-	  return Properties === undefined ? result : dPs(result, Properties);
-	};
-
-
-/***/ },
-/* 250 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var dP       = __webpack_require__(188)
-	  , anObject = __webpack_require__(189)
-	  , getKeys  = __webpack_require__(251);
-	
-	module.exports = __webpack_require__(192) ? Object.defineProperties : function defineProperties(O, Properties){
-	  anObject(O);
-	  var keys   = getKeys(Properties)
-	    , length = keys.length
-	    , i = 0
-	    , P;
-	  while(length > i)dP.f(O, P = keys[i++], Properties[P]);
-	  return O;
-	};
-
-/***/ },
-/* 251 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-	var $keys       = __webpack_require__(252)
-	  , enumBugKeys = __webpack_require__(262);
-	
-	module.exports = Object.keys || function keys(O){
-	  return $keys(O, enumBugKeys);
-	};
-
-/***/ },
-/* 252 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var has          = __webpack_require__(246)
-	  , toIObject    = __webpack_require__(253)
-	  , arrayIndexOf = __webpack_require__(256)(false)
-	  , IE_PROTO     = __webpack_require__(259)('IE_PROTO');
-	
-	module.exports = function(object, names){
-	  var O      = toIObject(object)
-	    , i      = 0
-	    , result = []
-	    , key;
-	  for(key in O)if(key != IE_PROTO)has(O, key) && result.push(key);
-	  // Don't enum bug & hidden keys
-	  while(names.length > i)if(has(O, key = names[i++])){
-	    ~arrayIndexOf(result, key) || result.push(key);
-	  }
-	  return result;
-	};
-
-/***/ },
-/* 253 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// to indexed object, toObject with fallback for non-array-like ES3 strings
-	var IObject = __webpack_require__(254)
-	  , defined = __webpack_require__(242);
-	module.exports = function(it){
-	  return IObject(defined(it));
-	};
-
-/***/ },
-/* 254 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(255);
-	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
-	  return cof(it) == 'String' ? it.split('') : Object(it);
-	};
-
-/***/ },
-/* 255 */
-/***/ function(module, exports) {
-
-	var toString = {}.toString;
-	
-	module.exports = function(it){
-	  return toString.call(it).slice(8, -1);
-	};
-
-/***/ },
-/* 256 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// false -> Array#indexOf
-	// true  -> Array#includes
-	var toIObject = __webpack_require__(253)
-	  , toLength  = __webpack_require__(257)
-	  , toIndex   = __webpack_require__(258);
-	module.exports = function(IS_INCLUDES){
-	  return function($this, el, fromIndex){
-	    var O      = toIObject($this)
-	      , length = toLength(O.length)
-	      , index  = toIndex(fromIndex, length)
-	      , value;
-	    // Array#includes uses SameValueZero equality algorithm
-	    if(IS_INCLUDES && el != el)while(length > index){
-	      value = O[index++];
-	      if(value != value)return true;
-	    // Array#toIndex ignores holes, Array#includes - not
-	    } else for(;length > index; index++)if(IS_INCLUDES || index in O){
-	      if(O[index] === el)return IS_INCLUDES || index || 0;
-	    } return !IS_INCLUDES && -1;
-	  };
-	};
-
-/***/ },
-/* 257 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(241)
-	  , min       = Math.min;
-	module.exports = function(it){
-	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
-	};
-
-/***/ },
-/* 258 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var toInteger = __webpack_require__(241)
-	  , max       = Math.max
-	  , min       = Math.min;
-	module.exports = function(index, length){
-	  index = toInteger(index);
-	  return index < 0 ? max(index + length, 0) : min(index, length);
-	};
-
-/***/ },
-/* 259 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var shared = __webpack_require__(260)('keys')
-	  , uid    = __webpack_require__(261);
-	module.exports = function(key){
-	  return shared[key] || (shared[key] = uid(key));
-	};
-
-/***/ },
-/* 260 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var global = __webpack_require__(183)
-	  , SHARED = '__core-js_shared__'
-	  , store  = global[SHARED] || (global[SHARED] = {});
-	module.exports = function(key){
-	  return store[key] || (store[key] = {});
-	};
-
-/***/ },
-/* 261 */
-/***/ function(module, exports) {
-
-	var id = 0
-	  , px = Math.random();
-	module.exports = function(key){
-	  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-	};
-
-/***/ },
-/* 262 */
-/***/ function(module, exports) {
-
-	// IE 8- don't enum bug keys
-	module.exports = (
-	  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
-	).split(',');
-
-/***/ },
-/* 263 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(183).document && document.documentElement;
-
-/***/ },
-/* 264 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var def = __webpack_require__(188).f
-	  , has = __webpack_require__(246)
-	  , TAG = __webpack_require__(265)('toStringTag');
-	
-	module.exports = function(it, tag, stat){
-	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
-	};
-
-/***/ },
-/* 265 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var store      = __webpack_require__(260)('wks')
-	  , uid        = __webpack_require__(261)
-	  , Symbol     = __webpack_require__(183).Symbol
-	  , USE_SYMBOL = typeof Symbol == 'function';
-	
-	var $exports = module.exports = function(name){
-	  return store[name] || (store[name] =
-	    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
-	};
-	
-	$exports.store = store;
-
-/***/ },
-/* 266 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-	var has         = __webpack_require__(246)
-	  , toObject    = __webpack_require__(267)
-	  , IE_PROTO    = __webpack_require__(259)('IE_PROTO')
-	  , ObjectProto = Object.prototype;
-	
-	module.exports = Object.getPrototypeOf || function(O){
-	  O = toObject(O);
-	  if(has(O, IE_PROTO))return O[IE_PROTO];
-	  if(typeof O.constructor == 'function' && O instanceof O.constructor){
-	    return O.constructor.prototype;
-	  } return O instanceof Object ? ObjectProto : null;
-	};
-
-/***/ },
-/* 267 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(242);
-	module.exports = function(it){
-	  return Object(defined(it));
-	};
-
-/***/ },
-/* 268 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(269);
-	var global        = __webpack_require__(183)
-	  , hide          = __webpack_require__(187)
-	  , Iterators     = __webpack_require__(247)
-	  , TO_STRING_TAG = __webpack_require__(265)('toStringTag');
-	
-	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
-	  var NAME       = collections[i]
-	    , Collection = global[NAME]
-	    , proto      = Collection && Collection.prototype;
-	  if(proto && !proto[TO_STRING_TAG])hide(proto, TO_STRING_TAG, NAME);
-	  Iterators[NAME] = Iterators.Array;
-	}
-
-/***/ },
-/* 269 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var addToUnscopables = __webpack_require__(270)
-	  , step             = __webpack_require__(271)
-	  , Iterators        = __webpack_require__(247)
-	  , toIObject        = __webpack_require__(253);
-	
-	// 22.1.3.4 Array.prototype.entries()
-	// 22.1.3.13 Array.prototype.keys()
-	// 22.1.3.29 Array.prototype.values()
-	// 22.1.3.30 Array.prototype[@@iterator]()
-	module.exports = __webpack_require__(243)(Array, 'Array', function(iterated, kind){
-	  this._t = toIObject(iterated); // target
-	  this._i = 0;                   // next index
-	  this._k = kind;                // kind
-	// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
-	}, function(){
-	  var O     = this._t
-	    , kind  = this._k
-	    , index = this._i++;
-	  if(!O || index >= O.length){
-	    this._t = undefined;
-	    return step(1);
-	  }
-	  if(kind == 'keys'  )return step(0, index);
-	  if(kind == 'values')return step(0, O[index]);
-	  return step(0, [index, O[index]]);
-	}, 'values');
-	
-	// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
-	Iterators.Arguments = Iterators.Array;
-	
-	addToUnscopables('keys');
-	addToUnscopables('values');
-	addToUnscopables('entries');
-
-/***/ },
-/* 270 */
-/***/ function(module, exports) {
-
-	module.exports = function(){ /* empty */ };
-
-/***/ },
-/* 271 */
-/***/ function(module, exports) {
-
-	module.exports = function(done, value){
-	  return {value: value, done: !!done};
-	};
-
-/***/ },
-/* 272 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var LIBRARY            = __webpack_require__(244)
-	  , global             = __webpack_require__(183)
-	  , ctx                = __webpack_require__(185)
-	  , classof            = __webpack_require__(273)
-	  , $export            = __webpack_require__(182)
-	  , isObject           = __webpack_require__(190)
-	  , aFunction          = __webpack_require__(186)
-	  , anInstance         = __webpack_require__(274)
-	  , forOf              = __webpack_require__(275)
-	  , speciesConstructor = __webpack_require__(279)
-	  , task               = __webpack_require__(280).set
-	  , microtask          = __webpack_require__(282)()
-	  , PROMISE            = 'Promise'
-	  , TypeError          = global.TypeError
-	  , process            = global.process
-	  , $Promise           = global[PROMISE]
-	  , process            = global.process
-	  , isNode             = classof(process) == 'process'
-	  , empty              = function(){ /* empty */ }
-	  , Internal, GenericPromiseCapability, Wrapper;
-	
-	var USE_NATIVE = !!function(){
-	  try {
-	    // correct subclassing with @@species support
-	    var promise     = $Promise.resolve(1)
-	      , FakePromise = (promise.constructor = {})[__webpack_require__(265)('species')] = function(exec){ exec(empty, empty); };
-	    // unhandled rejections tracking support, NodeJS Promise without it fails @@species test
-	    return (isNode || typeof PromiseRejectionEvent == 'function') && promise.then(empty) instanceof FakePromise;
-	  } catch(e){ /* empty */ }
-	}();
-	
-	// helpers
-	var sameConstructor = function(a, b){
-	  // with library wrapper special case
-	  return a === b || a === $Promise && b === Wrapper;
-	};
-	var isThenable = function(it){
-	  var then;
-	  return isObject(it) && typeof (then = it.then) == 'function' ? then : false;
-	};
-	var newPromiseCapability = function(C){
-	  return sameConstructor($Promise, C)
-	    ? new PromiseCapability(C)
-	    : new GenericPromiseCapability(C);
-	};
-	var PromiseCapability = GenericPromiseCapability = function(C){
-	  var resolve, reject;
-	  this.promise = new C(function($$resolve, $$reject){
-	    if(resolve !== undefined || reject !== undefined)throw TypeError('Bad Promise constructor');
-	    resolve = $$resolve;
-	    reject  = $$reject;
-	  });
-	  this.resolve = aFunction(resolve);
-	  this.reject  = aFunction(reject);
-	};
-	var perform = function(exec){
-	  try {
-	    exec();
-	  } catch(e){
-	    return {error: e};
-	  }
-	};
-	var notify = function(promise, isReject){
-	  if(promise._n)return;
-	  promise._n = true;
-	  var chain = promise._c;
-	  microtask(function(){
-	    var value = promise._v
-	      , ok    = promise._s == 1
-	      , i     = 0;
-	    var run = function(reaction){
-	      var handler = ok ? reaction.ok : reaction.fail
-	        , resolve = reaction.resolve
-	        , reject  = reaction.reject
-	        , domain  = reaction.domain
-	        , result, then;
-	      try {
-	        if(handler){
-	          if(!ok){
-	            if(promise._h == 2)onHandleUnhandled(promise);
-	            promise._h = 1;
-	          }
-	          if(handler === true)result = value;
-	          else {
-	            if(domain)domain.enter();
-	            result = handler(value);
-	            if(domain)domain.exit();
-	          }
-	          if(result === reaction.promise){
-	            reject(TypeError('Promise-chain cycle'));
-	          } else if(then = isThenable(result)){
-	            then.call(result, resolve, reject);
-	          } else resolve(result);
-	        } else reject(value);
-	      } catch(e){
-	        reject(e);
-	      }
-	    };
-	    while(chain.length > i)run(chain[i++]); // variable length - can't use forEach
-	    promise._c = [];
-	    promise._n = false;
-	    if(isReject && !promise._h)onUnhandled(promise);
-	  });
-	};
-	var onUnhandled = function(promise){
-	  task.call(global, function(){
-	    var value = promise._v
-	      , abrupt, handler, console;
-	    if(isUnhandled(promise)){
-	      abrupt = perform(function(){
-	        if(isNode){
-	          process.emit('unhandledRejection', value, promise);
-	        } else if(handler = global.onunhandledrejection){
-	          handler({promise: promise, reason: value});
-	        } else if((console = global.console) && console.error){
-	          console.error('Unhandled promise rejection', value);
-	        }
-	      });
-	      // Browsers should not trigger `rejectionHandled` event if it was handled here, NodeJS - should
-	      promise._h = isNode || isUnhandled(promise) ? 2 : 1;
-	    } promise._a = undefined;
-	    if(abrupt)throw abrupt.error;
-	  });
-	};
-	var isUnhandled = function(promise){
-	  if(promise._h == 1)return false;
-	  var chain = promise._a || promise._c
-	    , i     = 0
-	    , reaction;
-	  while(chain.length > i){
-	    reaction = chain[i++];
-	    if(reaction.fail || !isUnhandled(reaction.promise))return false;
-	  } return true;
-	};
-	var onHandleUnhandled = function(promise){
-	  task.call(global, function(){
-	    var handler;
-	    if(isNode){
-	      process.emit('rejectionHandled', promise);
-	    } else if(handler = global.onrejectionhandled){
-	      handler({promise: promise, reason: promise._v});
-	    }
-	  });
-	};
-	var $reject = function(value){
-	  var promise = this;
-	  if(promise._d)return;
-	  promise._d = true;
-	  promise = promise._w || promise; // unwrap
-	  promise._v = value;
-	  promise._s = 2;
-	  if(!promise._a)promise._a = promise._c.slice();
-	  notify(promise, true);
-	};
-	var $resolve = function(value){
-	  var promise = this
-	    , then;
-	  if(promise._d)return;
-	  promise._d = true;
-	  promise = promise._w || promise; // unwrap
-	  try {
-	    if(promise === value)throw TypeError("Promise can't be resolved itself");
-	    if(then = isThenable(value)){
-	      microtask(function(){
-	        var wrapper = {_w: promise, _d: false}; // wrap
-	        try {
-	          then.call(value, ctx($resolve, wrapper, 1), ctx($reject, wrapper, 1));
-	        } catch(e){
-	          $reject.call(wrapper, e);
-	        }
-	      });
-	    } else {
-	      promise._v = value;
-	      promise._s = 1;
-	      notify(promise, false);
-	    }
-	  } catch(e){
-	    $reject.call({_w: promise, _d: false}, e); // wrap
-	  }
-	};
-	
-	// constructor polyfill
-	if(!USE_NATIVE){
-	  // 25.4.3.1 Promise(executor)
-	  $Promise = function Promise(executor){
-	    anInstance(this, $Promise, PROMISE, '_h');
-	    aFunction(executor);
-	    Internal.call(this);
-	    try {
-	      executor(ctx($resolve, this, 1), ctx($reject, this, 1));
-	    } catch(err){
-	      $reject.call(this, err);
-	    }
-	  };
-	  Internal = function Promise(executor){
-	    this._c = [];             // <- awaiting reactions
-	    this._a = undefined;      // <- checked in isUnhandled reactions
-	    this._s = 0;              // <- state
-	    this._d = false;          // <- done
-	    this._v = undefined;      // <- value
-	    this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
-	    this._n = false;          // <- notify
-	  };
-	  Internal.prototype = __webpack_require__(283)($Promise.prototype, {
-	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
-	    then: function then(onFulfilled, onRejected){
-	      var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
-	      reaction.ok     = typeof onFulfilled == 'function' ? onFulfilled : true;
-	      reaction.fail   = typeof onRejected == 'function' && onRejected;
-	      reaction.domain = isNode ? process.domain : undefined;
-	      this._c.push(reaction);
-	      if(this._a)this._a.push(reaction);
-	      if(this._s)notify(this, false);
-	      return reaction.promise;
-	    },
-	    // 25.4.5.1 Promise.prototype.catch(onRejected)
-	    'catch': function(onRejected){
-	      return this.then(undefined, onRejected);
-	    }
-	  });
-	  PromiseCapability = function(){
-	    var promise  = new Internal;
-	    this.promise = promise;
-	    this.resolve = ctx($resolve, promise, 1);
-	    this.reject  = ctx($reject, promise, 1);
-	  };
-	}
-	
-	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
-	__webpack_require__(264)($Promise, PROMISE);
-	__webpack_require__(284)(PROMISE);
-	Wrapper = __webpack_require__(184)[PROMISE];
-	
-	// statics
-	$export($export.S + $export.F * !USE_NATIVE, PROMISE, {
-	  // 25.4.4.5 Promise.reject(r)
-	  reject: function reject(r){
-	    var capability = newPromiseCapability(this)
-	      , $$reject   = capability.reject;
-	    $$reject(r);
-	    return capability.promise;
-	  }
-	});
-	$export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
-	  // 25.4.4.6 Promise.resolve(x)
-	  resolve: function resolve(x){
-	    // instanceof instead of internal slot check because we should fix it without replacement native Promise core
-	    if(x instanceof $Promise && sameConstructor(x.constructor, this))return x;
-	    var capability = newPromiseCapability(this)
-	      , $$resolve  = capability.resolve;
-	    $$resolve(x);
-	    return capability.promise;
-	  }
-	});
-	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(285)(function(iter){
-	  $Promise.all(iter)['catch'](empty);
-	})), PROMISE, {
-	  // 25.4.4.1 Promise.all(iterable)
-	  all: function all(iterable){
-	    var C          = this
-	      , capability = newPromiseCapability(C)
-	      , resolve    = capability.resolve
-	      , reject     = capability.reject;
-	    var abrupt = perform(function(){
-	      var values    = []
-	        , index     = 0
-	        , remaining = 1;
-	      forOf(iterable, false, function(promise){
-	        var $index        = index++
-	          , alreadyCalled = false;
-	        values.push(undefined);
-	        remaining++;
-	        C.resolve(promise).then(function(value){
-	          if(alreadyCalled)return;
-	          alreadyCalled  = true;
-	          values[$index] = value;
-	          --remaining || resolve(values);
-	        }, reject);
-	      });
-	      --remaining || resolve(values);
-	    });
-	    if(abrupt)reject(abrupt.error);
-	    return capability.promise;
-	  },
-	  // 25.4.4.4 Promise.race(iterable)
-	  race: function race(iterable){
-	    var C          = this
-	      , capability = newPromiseCapability(C)
-	      , reject     = capability.reject;
-	    var abrupt = perform(function(){
-	      forOf(iterable, false, function(promise){
-	        C.resolve(promise).then(capability.resolve, reject);
-	      });
-	    });
-	    if(abrupt)reject(abrupt.error);
-	    return capability.promise;
-	  }
-	});
-
-/***/ },
-/* 273 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// getting tag from 19.1.3.6 Object.prototype.toString()
-	var cof = __webpack_require__(255)
-	  , TAG = __webpack_require__(265)('toStringTag')
-	  // ES3 wrong here
-	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
-	
-	// fallback for IE11 Script Access Denied error
-	var tryGet = function(it, key){
-	  try {
-	    return it[key];
-	  } catch(e){ /* empty */ }
-	};
-	
-	module.exports = function(it){
-	  var O, T, B;
-	  return it === undefined ? 'Undefined' : it === null ? 'Null'
-	    // @@toStringTag case
-	    : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
-	    // builtinTag case
-	    : ARG ? cof(O)
-	    // ES3 arguments fallback
-	    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
-	};
-
-/***/ },
-/* 274 */
-/***/ function(module, exports) {
-
-	module.exports = function(it, Constructor, name, forbiddenField){
-	  if(!(it instanceof Constructor) || (forbiddenField !== undefined && forbiddenField in it)){
-	    throw TypeError(name + ': incorrect invocation!');
-	  } return it;
-	};
-
-/***/ },
-/* 275 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var ctx         = __webpack_require__(185)
-	  , call        = __webpack_require__(276)
-	  , isArrayIter = __webpack_require__(277)
-	  , anObject    = __webpack_require__(189)
-	  , toLength    = __webpack_require__(257)
-	  , getIterFn   = __webpack_require__(278)
-	  , BREAK       = {}
-	  , RETURN      = {};
-	var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
-	  var iterFn = ITERATOR ? function(){ return iterable; } : getIterFn(iterable)
-	    , f      = ctx(fn, that, entries ? 2 : 1)
-	    , index  = 0
-	    , length, step, iterator, result;
-	  if(typeof iterFn != 'function')throw TypeError(iterable + ' is not iterable!');
-	  // fast case for arrays with default iterator
-	  if(isArrayIter(iterFn))for(length = toLength(iterable.length); length > index; index++){
-	    result = entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
-	    if(result === BREAK || result === RETURN)return result;
-	  } else for(iterator = iterFn.call(iterable); !(step = iterator.next()).done; ){
-	    result = call(iterator, f, step.value, entries);
-	    if(result === BREAK || result === RETURN)return result;
-	  }
-	};
-	exports.BREAK  = BREAK;
-	exports.RETURN = RETURN;
-
-/***/ },
-/* 276 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// call something on iterator step with safe closing on error
-	var anObject = __webpack_require__(189);
-	module.exports = function(iterator, fn, value, entries){
-	  try {
-	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
-	  // 7.4.6 IteratorClose(iterator, completion)
-	  } catch(e){
-	    var ret = iterator['return'];
-	    if(ret !== undefined)anObject(ret.call(iterator));
-	    throw e;
-	  }
-	};
-
-/***/ },
-/* 277 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// check on default Array iterator
-	var Iterators  = __webpack_require__(247)
-	  , ITERATOR   = __webpack_require__(265)('iterator')
-	  , ArrayProto = Array.prototype;
-	
-	module.exports = function(it){
-	  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
-	};
-
-/***/ },
-/* 278 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var classof   = __webpack_require__(273)
-	  , ITERATOR  = __webpack_require__(265)('iterator')
-	  , Iterators = __webpack_require__(247);
-	module.exports = __webpack_require__(184).getIteratorMethod = function(it){
-	  if(it != undefined)return it[ITERATOR]
-	    || it['@@iterator']
-	    || Iterators[classof(it)];
-	};
-
-/***/ },
-/* 279 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
-	var anObject  = __webpack_require__(189)
-	  , aFunction = __webpack_require__(186)
-	  , SPECIES   = __webpack_require__(265)('species');
-	module.exports = function(O, D){
-	  var C = anObject(O).constructor, S;
-	  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
-	};
-
-/***/ },
-/* 280 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var ctx                = __webpack_require__(185)
-	  , invoke             = __webpack_require__(281)
-	  , html               = __webpack_require__(263)
-	  , cel                = __webpack_require__(194)
-	  , global             = __webpack_require__(183)
-	  , process            = global.process
-	  , setTask            = global.setImmediate
-	  , clearTask          = global.clearImmediate
-	  , MessageChannel     = global.MessageChannel
-	  , counter            = 0
-	  , queue              = {}
-	  , ONREADYSTATECHANGE = 'onreadystatechange'
-	  , defer, channel, port;
-	var run = function(){
-	  var id = +this;
-	  if(queue.hasOwnProperty(id)){
-	    var fn = queue[id];
-	    delete queue[id];
-	    fn();
-	  }
-	};
-	var listener = function(event){
-	  run.call(event.data);
-	};
-	// Node.js 0.9+ & IE10+ has setImmediate, otherwise:
-	if(!setTask || !clearTask){
-	  setTask = function setImmediate(fn){
-	    var args = [], i = 1;
-	    while(arguments.length > i)args.push(arguments[i++]);
-	    queue[++counter] = function(){
-	      invoke(typeof fn == 'function' ? fn : Function(fn), args);
-	    };
-	    defer(counter);
-	    return counter;
-	  };
-	  clearTask = function clearImmediate(id){
-	    delete queue[id];
-	  };
-	  // Node.js 0.8-
-	  if(__webpack_require__(255)(process) == 'process'){
-	    defer = function(id){
-	      process.nextTick(ctx(run, id, 1));
-	    };
-	  // Browsers with MessageChannel, includes WebWorkers
-	  } else if(MessageChannel){
-	    channel = new MessageChannel;
-	    port    = channel.port2;
-	    channel.port1.onmessage = listener;
-	    defer = ctx(port.postMessage, port, 1);
-	  // Browsers with postMessage, skip WebWorkers
-	  // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
-	  } else if(global.addEventListener && typeof postMessage == 'function' && !global.importScripts){
-	    defer = function(id){
-	      global.postMessage(id + '', '*');
-	    };
-	    global.addEventListener('message', listener, false);
-	  // IE8-
-	  } else if(ONREADYSTATECHANGE in cel('script')){
-	    defer = function(id){
-	      html.appendChild(cel('script'))[ONREADYSTATECHANGE] = function(){
-	        html.removeChild(this);
-	        run.call(id);
-	      };
-	    };
-	  // Rest old browsers
-	  } else {
-	    defer = function(id){
-	      setTimeout(ctx(run, id, 1), 0);
-	    };
-	  }
-	}
-	module.exports = {
-	  set:   setTask,
-	  clear: clearTask
-	};
-
-/***/ },
-/* 281 */
-/***/ function(module, exports) {
-
-	// fast apply, http://jsperf.lnkit.com/fast-apply/5
-	module.exports = function(fn, args, that){
-	  var un = that === undefined;
-	  switch(args.length){
-	    case 0: return un ? fn()
-	                      : fn.call(that);
-	    case 1: return un ? fn(args[0])
-	                      : fn.call(that, args[0]);
-	    case 2: return un ? fn(args[0], args[1])
-	                      : fn.call(that, args[0], args[1]);
-	    case 3: return un ? fn(args[0], args[1], args[2])
-	                      : fn.call(that, args[0], args[1], args[2]);
-	    case 4: return un ? fn(args[0], args[1], args[2], args[3])
-	                      : fn.call(that, args[0], args[1], args[2], args[3]);
-	  } return              fn.apply(that, args);
-	};
-
-/***/ },
-/* 282 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var global    = __webpack_require__(183)
-	  , macrotask = __webpack_require__(280).set
-	  , Observer  = global.MutationObserver || global.WebKitMutationObserver
-	  , process   = global.process
-	  , Promise   = global.Promise
-	  , isNode    = __webpack_require__(255)(process) == 'process';
-	
-	module.exports = function(){
-	  var head, last, notify;
-	
-	  var flush = function(){
-	    var parent, fn;
-	    if(isNode && (parent = process.domain))parent.exit();
-	    while(head){
-	      fn   = head.fn;
-	      head = head.next;
-	      try {
-	        fn();
-	      } catch(e){
-	        if(head)notify();
-	        else last = undefined;
-	        throw e;
-	      }
-	    } last = undefined;
-	    if(parent)parent.enter();
-	  };
-	
-	  // Node.js
-	  if(isNode){
-	    notify = function(){
-	      process.nextTick(flush);
-	    };
-	  // browsers with MutationObserver
-	  } else if(Observer){
-	    var toggle = true
-	      , node   = document.createTextNode('');
-	    new Observer(flush).observe(node, {characterData: true}); // eslint-disable-line no-new
-	    notify = function(){
-	      node.data = toggle = !toggle;
-	    };
-	  // environments with maybe non-completely correct, but existent Promise
-	  } else if(Promise && Promise.resolve){
-	    var promise = Promise.resolve();
-	    notify = function(){
-	      promise.then(flush);
-	    };
-	  // for other environments - macrotask based on:
-	  // - setImmediate
-	  // - MessageChannel
-	  // - window.postMessag
-	  // - onreadystatechange
-	  // - setTimeout
-	  } else {
-	    notify = function(){
-	      // strange IE + webpack dev server bug - use .call(global)
-	      macrotask.call(global, flush);
-	    };
-	  }
-	
-	  return function(fn){
-	    var task = {fn: fn, next: undefined};
-	    if(last)last.next = task;
-	    if(!head){
-	      head = task;
-	      notify();
-	    } last = task;
-	  };
-	};
-
-/***/ },
-/* 283 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var hide = __webpack_require__(187);
-	module.exports = function(target, src, safe){
-	  for(var key in src){
-	    if(safe && target[key])target[key] = src[key];
-	    else hide(target, key, src[key]);
-	  } return target;
-	};
-
-/***/ },
-/* 284 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var global      = __webpack_require__(183)
-	  , core        = __webpack_require__(184)
-	  , dP          = __webpack_require__(188)
-	  , DESCRIPTORS = __webpack_require__(192)
-	  , SPECIES     = __webpack_require__(265)('species');
-	
-	module.exports = function(KEY){
-	  var C = typeof core[KEY] == 'function' ? core[KEY] : global[KEY];
-	  if(DESCRIPTORS && C && !C[SPECIES])dP.f(C, SPECIES, {
-	    configurable: true,
-	    get: function(){ return this; }
-	  });
-	};
-
-/***/ },
-/* 285 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var ITERATOR     = __webpack_require__(265)('iterator')
-	  , SAFE_CLOSING = false;
-	
-	try {
-	  var riter = [7][ITERATOR]();
-	  riter['return'] = function(){ SAFE_CLOSING = true; };
-	  Array.from(riter, function(){ throw 2; });
-	} catch(e){ /* empty */ }
-	
-	module.exports = function(exec, skipClosing){
-	  if(!skipClosing && !SAFE_CLOSING)return false;
-	  var safe = false;
-	  try {
-	    var arr  = [7]
-	      , iter = arr[ITERATOR]();
-	    iter.next = function(){ return {done: safe = true}; };
-	    arr[ITERATOR] = function(){ return iter; };
-	    exec(arr);
-	  } catch(e){ /* empty */ }
-	  return safe;
-	};
-
-/***/ },
-/* 286 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _stringify = __webpack_require__(227);
-	
-	var _stringify2 = _interopRequireDefault(_stringify);
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/* global API */
-	var WordService = function () {
-	  WordService.$inject = ["$http"];
-	  function WordService($http) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, WordService);
-	    this.$http = $http;
-	  }
-	
-	  (0, _createClass3.default)(WordService, [{
-	    key: 'list',
-	    value: function list() {
-	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary').then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }, {
-	    key: 'create',
-	    value: function create(word) {
-	      var _this = this;
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }, {
-	    key: 'detail',
-	    value: function detail(word) {
-	      var _this = this;
-	      return this.$http.get(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/' + word).then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }, {
-	    key: 'update',
-	    value: function update(word) {
-	      var _this = this;
-	      return this.$http.put(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }, {
-	    key: 'checkIsExist',
-	    value: function checkIsExist(words) {
-	      var _this = this;
-	      var collection = {
-	        words: words
-	      };
-	      return this.$http.post(("https://blooming-scrubland-77103.herokuapp.com") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
-	        return response.data;
-	      }).catch(function () {
-	        return null;
-	      });
-	    }
-	  }]);
-	  return WordService;
-	}();
-	
-	exports.default = WordService;
-
-/***/ },
-/* 287 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _stringify = __webpack_require__(227);
-	
-	var _stringify2 = _interopRequireDefault(_stringify);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = function (UserService, PlayerService) {
-	  return {
-	    createCustomer: createCustomer
-	  };
-	
-	  function createCustomer(user) {
-	    var player = {
-	      name: user.firstName.$modelValue + ' ' + user.lastName.$modelValue,
-	      status: 'new user'
-	    };
-	    var userdb = {
-	      username: user.userName.$modelValue,
-	      password: user.password.$modelValue
-	    };
-	    return PlayerService.create(player).then(function (res) {
-	      player = res;
-	      console.log('db - ' + (0, _stringify2.default)(userdb));
-	      return player;
-	    }).then(function (pl) {
-	      console.log('pl - ' + (0, _stringify2.default)(pl));
-	      userdb.playerID = pl._id;
-	      console.log('db - ' + (0, _stringify2.default)(userdb));
-	      return UserService.create(userdb);
-	    });
-	  }
-	};
-
-/***/ },
-/* 288 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _promise = __webpack_require__(236);
-	
-	var _promise2 = _interopRequireDefault(_promise);
-	
-	var _getIterator2 = __webpack_require__(289);
-	
-	var _getIterator3 = _interopRequireDefault(_getIterator2);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = function (GameService, PlayerService) {
-	  return {
-	    connectNewUser: connectNewUser
-	  };
-	
-	  function connectNewUser(playerID, gameID) {
-	    return GameService.detail(gameID).then(function (result) {
-	      var game = result;
-	      var _iteratorNormalCompletion = true;
-	      var _didIteratorError = false;
-	      var _iteratorError = undefined;
-	
-	      try {
-	        for (var _iterator = (0, _getIterator3.default)(game.players), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	          var player = _step.value;
-	
-	          if (player.playerID === playerID) {
-	            return new _promise2.default(function (resolve, reject) {
-	              return resolve(game);
-	            });
-	          }
-	        }
-	      } catch (err) {
-	        _didIteratorError = true;
-	        _iteratorError = err;
-	      } finally {
-	        try {
-	          if (!_iteratorNormalCompletion && _iterator.return) {
-	            _iterator.return();
-	          }
-	        } finally {
-	          if (_didIteratorError) {
-	            throw _iteratorError;
-	          }
-	        }
-	      }
-	
-	      var newPlayer = {
-	        playerID: playerID,
-	        words: []
-	      };
-	      game.players.push(newPlayer);
-	      return GameService.update(game).then(function (obj) {
-	        return obj;
-	      });
-	    });
-	  }
-	};
-
-/***/ },
-/* 289 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(290), __esModule: true };
-
-/***/ },
-/* 290 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(268);
-	__webpack_require__(239);
-	module.exports = __webpack_require__(291);
-
-/***/ },
-/* 291 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var anObject = __webpack_require__(189)
-	  , get      = __webpack_require__(278);
-	module.exports = __webpack_require__(184).getIterator = function(it){
-	  var iterFn = get(it);
-	  if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
-	  return anObject(iterFn.call(it));
-	};
-
-/***/ },
-/* 292 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	exports.default = function ($q, $injector, $window) {
-	  return {
-	
-	    // All the following methods are optional
-	
-	    request: function request(config) {
-	      // Called before send a new XHR request.
-	      // This is a good place where manipulate the
-	      // request parameters.
-	
-	      return config || $q.when(config);
-	    },
-	
-	    requestError: function requestError(rejection) {
-	      // Called when another request fails.
-	
-	      // I am still searching a good use case for this.
-	      // If you are aware of it, please write a comment
-	
-	      return $q.reject(rejection);
-	    },
-	
-	    response: function response(_response) {
-	      // Called before a promise is resolved.
-	
-	      return _response || $q.when(_response);
-	    },
-	
-	    responseError: function responseError(rejection) {
-	      // Called when another XHR request returns with
-	      // an error status code.
-	      if ((rejection.status == 401 || rejection.status == -1) && rejection.config.url !== '/signin/') {
-	        $window.sessionStorage.userInfo = null;
-	        // const $window = $injector.get('$window');
-	        // $window.location.href = '#/signin';
-	
-	        var $state = $injector.get('$state');
-	        $state.go('signin');
-	      }
-	      return $q.reject(rejection);
-	    }
-	
-	  };
-	};
-
-/***/ },
-/* 293 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _connectComponent = __webpack_require__(294);
-	
-	var _connectComponent2 = _interopRequireDefault(_connectComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.connectSection', []).component('connectExistingGame', _connectComponent2.default).name;
-
-/***/ },
-/* 294 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _connectTmpl = __webpack_require__(295);
-	
-	var _connectTmpl2 = _interopRequireDefault(_connectTmpl);
-	
-	var _connectController = __webpack_require__(296);
-	
-	var _connectController2 = _interopRequireDefault(_connectController);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  template: _connectTmpl2.default,
-	  controller: _connectController2.default,
-	  bind: {
-	    user: '='
-	  }
-	};
-
-/***/ },
-/* 295 */
-/***/ function(module, exports) {
-
-	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"connect-square\">\n            <h4 class=\"brand-heading\">connect to the existing game</h4>\n            <h3 ng-show=\"!$ctrl.emptyList\">List of the actual games:</h3>\n            <h3 ng-show=\"$ctrl.emptyList\">Have no active game</h3>\n            <a ng-show=\"$ctrl.emptyList\" href=\"#/createNewGame\">\n              <h4>Back to create new game page</h4>\n            </a>\n            <table ng-show=\"!$ctrl.emptyList\" class=\"table table-hover\">\n              <tbody>\n                <tr>\n                  <th>\n                    <span class=\"connect-text\">Game word</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Player count</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Game Duration</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Connect</span>\n                  </th>\n                </tr>\n                <tr ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n                  <td>\n                    <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                      {{game.word}}\n                    </div>\n                  </td>\n                  <td>\n                    <span>Now\n                      {{game.players.length}}\n                      players</span>\n                  </div>\n                </td>\n                <td>\n                  <div id=\"{{game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </td>\n                <td>\n                  <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                    Connect\n                  </button>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
-
-/***/ },
-/* 296 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var ConnectController = function () {
-	  ConnectController.$inject = ["GameService", "UserService", "GameFactory", "$location", "$scope", "commonFactory", "$window"];
-	  function ConnectController(GameService, UserService, GameFactory, $location, $scope, commonFactory, $window) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, ConnectController);
-	    this.GameService = GameService;
-	    this.UserService = UserService;
-	    this.GameFactory = GameFactory;
-	    this.location = $location;
-	    this.window = $window;
-	    this.scope = $scope;
-	    this.commonFactory = commonFactory;
-	    this.emptyList = false;
-	  }
-	
-	  (0, _createClass3.default)(ConnectController, [{
-	    key: '$onInit',
-	    value: function $onInit() {
-	      var _this2 = this;
-	
-	      this.GameService.list().then(function (res) {
-	        _this2.list = res;
-	        if (_this2.list.length === 0) {
-	          _this2.emptyList = true;
-	        }
-	      }).catch(function () {
-	        _this2.emptyList = false;
-	      });
-	    }
-	  }, {
-	    key: 'connect',
-	    value: function connect(gameID) {
-	      var _this = this;
-	      var user = this.UserService.getAuthUser();
-	      console.log(user);
-	      this.GameFactory.connectNewUser(user.playerID, gameID).then(function (response) {
-	        _this.UserService.userInfo.gameID = response._id;
-	        _this.window.location.href = '#/gamePlay';
-	        // _this.location.path('#/gamePlay');
-	        // _this.location.path('#/gameCreateRule');
-	      });
-	    }
-	  }, {
-	    key: 'gTimer',
-	    value: function gTimer(game) {
-	      var _this3 = this;
-	
-	      _angular2.default.element(document).ready(function () {
-	        var duration = Number(game.duration);
-	        var deadline = new Date(Date.parse(game.startTime) + duration * 60 * 1000);
-	        _this3.commonFactory.initializeClock(game._id, deadline);
-	      });
-	    }
-	    // this.scope.$on('$viewContentLoaded', function () {
-	    //   //call it here
-	    // });
-	
-	  }]);
-	  return ConnectController;
-	}();
-	
-	exports.default = ConnectController;
-
-/***/ },
-/* 297 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _createComponent = __webpack_require__(298);
-	
-	var _createComponent2 = _interopRequireDefault(_createComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.createSection', []).component('createNewGame', _createComponent2.default).name;
-
-/***/ },
-/* 298 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createTmpl = __webpack_require__(299);
-	
-	var _createTmpl2 = _interopRequireDefault(_createTmpl);
-	
-	var _createController = __webpack_require__(300);
-	
-	var _createController2 = _interopRequireDefault(_createController);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  template: _createTmpl2.default,
-	  controller: _createController2.default,
-	  scope: {
-	    game: '='
-	  }
-	};
-
-/***/ },
-/* 299 */
-/***/ function(module, exports) {
-
-	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">create new game</span>\n        </h4>\n        <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"game\" name=\"game\" ng-validator>\n          <div ng-class=\"{ 'has-error' : game.word.$invalid && !game.word.$pristine }\">\n            <label for=\"basic-url\">Enter your main word</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: otorhinolaryngological</span>\n              <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"word\" ng-model=\"$ctrl.game.word\">\n            </div>\n          </div>\n          <div ng-class=\"{ 'has-error' : game.duration.$invalid && !game.duration.$pristine }\">\n            <label for=\"basic-url\">Select game duration</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: 30 min</span>\n              <select class=\"form-control form-control-lg\" name=\"duration\" ng-model=\"$ctrl.game.duration\" aria-describedby=\"basic-addon3\">\n                <option selected>\n                  ------------------Select game duration-------------------\n                </option>\n                <option ng-repeat=\"duration in $ctrl.durations track by $index\" ng-value=\"duration\">{{duration}}\n                  min.</option>\n              </select>\n            </div>\n          </div>\n          <div ng-class=\"{ 'has-error' : game.players.$invalid && !game.players.$pristine }\">\n            <label for=\"basic-url\">Select one or more players</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov Ivan</span>\n              <select class=\"form-control form-control-lg\" name=\"players\" ng-model=\"$ctrl.game.players\" aria-describedby=\"basic-addon3\" multiple>\n                <option selected disabled>\n                  ------------------Select players-------------------\n                </option>\n                <option ng-repeat=\"player in $ctrl.players track by $index\" ng-value=\"player._id\">{{player.name}}</option>\n              </select>\n            </div>\n          </div>\n          <div class=\"signup-link\">\n            <button type=\"submit\" class=\"btn btn-success btn-block\">\n              Create new game\n            </button>\n          </div>\n          <div class=\"signup-link\">\n            <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n";
-
-/***/ },
-/* 300 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _getIterator2 = __webpack_require__(289);
-	
-	var _getIterator3 = _interopRequireDefault(_getIterator2);
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var CreateController = function () {
-	  CreateController.$inject = ["GameService", "PlayerService", "UserService", "$window", "$scope"];
-	  function CreateController(GameService, PlayerService, UserService, $window, $scope) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, CreateController);
-	    this.GameService = GameService;
-	    this.PlayerService = PlayerService;
-	    this.UserService = UserService;
-	    this.durations = [1, 2, 5, 10, 15, 20, 25, 30, 45, 60];
-	    this.players = [];
-	    this.window = $window;
-	    this.scope = $scope;
-	  }
-	
-	  (0, _createClass3.default)(CreateController, [{
-	    key: '$onInit',
-	    value: function $onInit() {
-	      var _this = this;
-	      this.PlayerService.list().then(function (list) {
-	        _this.players = list;
-	      });
-	    }
-	  }, {
-	    key: 'submitForm',
-	    value: function submitForm() {
-	      var _this2 = this;
-	
-	      if (this.scope.game.word.$viewValue && this.scope.game.duration.$viewValue && this.scope.game.players.$viewValue.length > 0) {
-	        (function () {
-	          var game = {
-	            word: _this2.scope.game.word.$viewValue,
-	            duration: _this2.scope.game.duration.$viewValue
-	          };
-	          game.playerIDs = [];
-	          var _iteratorNormalCompletion = true;
-	          var _didIteratorError = false;
-	          var _iteratorError = undefined;
-	
-	          try {
-	            for (var _iterator = (0, _getIterator3.default)(_this2.scope.game.players.$viewValue), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	              var playerID = _step.value;
-	
-	              game.playerIDs.push(playerID);
-	            }
-	          } catch (err) {
-	            _didIteratorError = true;
-	            _iteratorError = err;
-	          } finally {
-	            try {
-	              if (!_iteratorNormalCompletion && _iterator.return) {
-	                _iterator.return();
-	              }
-	            } finally {
-	              if (_didIteratorError) {
-	                throw _iteratorError;
-	              }
-	            }
-	          }
-	
-	          game.playerIDs.push(_this2.UserService.getAuthUser().playerID);
-	          var _this = _this2;
-	          _this2.GameService.create(game).then(function (response) {
-	            _this.UserService.userInfo.gameID = response._id;
-	            _this.window.location.href = '#/gamePlay';
-	            // _this.location.path('#/gamePlay');
-	          });
-	        })();
-	      }
-	    }
-	  }]);
-	  return CreateController;
-	}();
-	
-	exports.default = CreateController;
-
-/***/ },
-/* 301 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _gamePlayComponent = __webpack_require__(302);
-	
-	var _gamePlayComponent2 = _interopRequireDefault(_gamePlayComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.gamePlay', []).component('gamePlay', _gamePlayComponent2.default).name;
-
-/***/ },
-/* 302 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _gamePlayTmpl = __webpack_require__(303);
-	
-	var _gamePlayTmpl2 = _interopRequireDefault(_gamePlayTmpl);
-	
-	var _gamePlayController = __webpack_require__(304);
-	
-	var _gamePlayController2 = _interopRequireDefault(_gamePlayController);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  template: _gamePlayTmpl2.default,
-	  controller: _gamePlayController2.default
-	};
-
-/***/ },
-/* 303 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\" ng-init=\"$ctrl.checkTimer()\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <div class=\"input-group\">\n                <input type=\"text\" class=\"form-control\" placeholder=\"Enter next word...\" name=\"word\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n                <span class=\"input-group-btn\">\n                  <button class=\"btn btn-default\" type=\"button\" ng-click=\"$ctrl.addWord($event)\">Approve</button>\n                </span>\n              </div>\n              <br>\n              <a type=\"submit\" class=\"btn btn-success btn-block\" ng-href=\"#/firstResults\">\n                Finish\n              </a>\n            </div>\n          </div>\n          <div class=\"col-md-2 col-xs-2 col-sm-2 col-lg-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\" class=\"word-list\">\n              <li ng-repeat=\"word in $ctrl.userWords track by $index\" ng-bind=\"word\"></li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
-
-/***/ },
-/* 304 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var PlayGameController = function () {
-	  PlayGameController.$inject = ["GameService", "UserService", "$scope", "commonFactory", "$state", "$timeout"];
-	  function PlayGameController(GameService, UserService, $scope, commonFactory, $state, $timeout) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, PlayGameController);
-	    this.GameService = GameService;
-	    this.UserService = UserService;
-	    this.scope = $scope;
-	    this.game = {};
-	    this.commonFactory = commonFactory;
-	    this.state = $state;
-	    this.timeout = $timeout;
-	  }
-	
-	  (0, _createClass3.default)(PlayGameController, [{
-	    key: '$onInit',
-	    value: function $onInit() {
-	      var _this2 = this;
-	
-	      this.getGame().then(function (result) {
-	        _this2.game = result;
-	        _this2.player = _this2.UserService.getAuthUser().playerID;
-	        _this2.getUserWords();
-	      });
-	    }
-	  }, {
-	    key: 'getUserWords',
-	    value: function getUserWords() {
-	      for (var i = 0; i < this.game.players.length; i++) {
-	        if (this.game.players[i].playerID == this.player) {
-	          this.userWords = [];
-	          for (var j = 0; j < this.game.players[i].words.length; j++) {
-	            this.userWords.push(this.game.players[i].words[j]);
-	          }
-	        }
-	      }
-	    }
-	  }, {
-	    key: 'getGame',
-	    value: function getGame() {
-	      return this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
-	        return result;
-	      });
-	    }
-	  }, {
-	    key: 'addWord',
-	    value: function addWord(event) {
-	      var _this = this;
-	      // for (let i = 0; i < this.game.players.length; i++) {
-	      //   if (this.game.players[i].playerID == this.player) {
-	      //     this.game.players[i].words.push(event.target.value);
-	      //   }
-	      // }
-	      //
-	      var value = '';
-	      var input = _angular2.default.element(event.target).parent().parent().find('input');
-	      if (event.target.value) {
-	        value = event.target.value;
-	        event.target.value = '';
-	      } else {
-	        value = input.val();
-	        document.querySelector('.form-control').value = '';
-	      }
-	
-	      if (value) {
-	        try {
-	          this.userWords.push(value);
-	          var words = {
-	            words: value
-	          };
-	          event.target.value = '';
-	          return this.GameService.addWord(this.UserService.getAuthUser().gameID, words, this.player).then(function (result) {
-	            _this.game = result;
-	            return _this.game;
-	          }).catch(function () {
-	            throw new Error('Your time expired');
-	          });
-	        } catch (e) {
-	          this.message = e.message;
-	        }
-	      }
-	      return this.game;
-	    }
-	  }, {
-	    key: 'gTimer',
-	    value: function gTimer() {
-	      var _this3 = this;
-	
-	      _angular2.default.element(document).ready(function () {
-	        _this3.getGame().then(function (result) {
-	          var duration = Number(result.duration);
-	          var deadline = new Date(Date.parse(result.startTime) + duration * 60 * 1000);
-	          _this3.commonFactory.initializeClock(result._id, deadline);
-	        });
-	      });
-	    }
-	  }, {
-	    key: 'checkTimer',
-	    value: function checkTimer() {
-	      var _this4 = this;
-	
-	      var duration = Number(this.game.duration);
-	      var deadline = new Date(Date.parse(this.game.startTime) + duration * 60 * 1000);
-	      var actualTime = new Date();
-	      if (deadline < actualTime) {
-	        // update DOM
-	        var timer = _angular2.default.element(document.getElementById('game'));
-	        timer.remove();
-	        var element = _angular2.default.element('<p class="game-text">Your time expired</p>');
-	        _angular2.default.element(document.getElementById('gameHeader')).append(element);
-	
-	        var navi = function navi() {
-	          _this4.state.go('firstResults');
-	        };
-	        this.timeout(navi.bind(this), 3000);
-	        return;
-	      }
-	      this.timer = this.timeout(this.checkTimer.bind(this), 1000);
-	      this.scope.$on('$locationChangeStart', function () {
-	        _this4.timeout.cancel(_this4.timer);
-	      });
-	      var deregister = this.scope.$on('$destroy', function () {
-	        _this4.timeout.cancel(_this4.timer);
-	      });
-	      this.timer.then(deregister, deregister);
-	    }
-	  }]);
-	  return PlayGameController;
-	}();
-	
-	exports.default = PlayGameController;
-
-/***/ },
-/* 305 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _firstResultsComponent = __webpack_require__(306);
-	
-	var _firstResultsComponent2 = _interopRequireDefault(_firstResultsComponent);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.firstResults', []).component('firstResults', _firstResultsComponent2.default).name;
-
-/***/ },
-/* 306 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _firstResultsTmpl = __webpack_require__(307);
-	
-	var _firstResultsTmpl2 = _interopRequireDefault(_firstResultsTmpl);
-	
-	var _firstResultsController = __webpack_require__(308);
-	
-	var _firstResultsController2 = _interopRequireDefault(_firstResultsController);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  template: _firstResultsTmpl2.default,
-	  controller: _firstResultsController2.default
-	};
-
-/***/ },
-/* 307 */
-/***/ function(module, exports) {
-
-	module.exports = "<!-- game Header -->\n<div class=\"f-res\">\n  <div class=\"f-res-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 f-res-square\">\n            <br>\n            <h1 class=\"brand-heading\">FIRST RESULTS</h1>\n            <h3>Play word was\n              <h2 ng-bind=\"$ctrl.game.word\"></h2>\n            </h3>\n            <div class=\"f-res-text\">\n              <span ng-show=\"!isDraw\">\n                <span ng-bind=\"$ctrl.winner.name\"></span>\n                WINS</span>\n              <span ng-show=\"isDraw\">A DRAW RESULT</span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div ng-class=\"$ctrl.colClass\" ng-repeat=\"player in $ctrl.game.players track by player.playerID\">\n            <div class=\"row\">\n              <player player=\"player\"></player>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\" style=\"padding-bottom: 10px;\">\n        <a href=\"#/\" class=\"btn btn-success btn-block\">Back to main page</a>\n      </div>\n    </div>\n  </div>\n</div>\n";
-
-/***/ },
-/* 308 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _stringify = __webpack_require__(227);
-	
-	var _stringify2 = _interopRequireDefault(_stringify);
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var FirstResultsController = function () {
-	  FirstResultsController.$inject = ["GameService", "PlayerService", "UserService", "$scope", "commonFactory", "$q", "$timeout", "$state"];
-	  function FirstResultsController(GameService, PlayerService, UserService, $scope, commonFactory, $q, $timeout, $state) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, FirstResultsController);
-	    this.GameService = GameService;
-	    this.PlayerService = PlayerService;
-	    this.scope = $scope;
-	    this.commonFactory = commonFactory;
-	    this.UserService = UserService;
-	    this.$q = $q;
-	    this.timeout = $timeout;
-	    this.state = $state;
-	  }
-	
-	  (0, _createClass3.default)(FirstResultsController, [{
-	    key: '$onInit',
-	    value: function $onInit() {
-	      var _this = this;
-	
-	      this.getGame().then(function (result) {
-	        _this.game = result;
-	        var plCount = _this.game.players.length;
-	        var index = Math.floor(12 / plCount) || 1;
-	        _this.colClass = 'col-md-' + index + ' col-xs-' + index + ' col-sm-' + index + ' col-lg-' + index + ' game-square game-words';
-	        if (!_this.isDrawResult(_this.game)) {
-	          var id = _this.findWinner(_this.game);
-	          _this.getPlayer(id).then(function (res) {
-	            _this.winner = res;
-	          });
-	        }
-	        _this.checkWords(_this.game);
-	      });
-	    }
-	  }, {
-	    key: 'isDrawResult',
-	    value: function isDrawResult(game) {
-	      this.scope.isDraw = false;
-	      for (var i = 0; i < game.players.length; i++) {
-	        if (game.players[i].words.length === game.players[0].words.length) {
-	          this.scope.isDraw = true;
-	        } else {
-	          this.scope.isDraw = false;
-	          return false;
-	        }
-	      }
-	      return this.scope.isDraw;
-	    }
-	  }, {
-	    key: 'findWinner',
-	    value: function findWinner(game) {
-	      var id = '';
-	      var count = 0;
-	      for (var i = 0; i < game.players.length; i++) {
-	        if (game.players[i].words.length > count) {
-	          id = game.players[i].playerID;
-	          count = game.players[i].words.length;
-	        }
-	      }
-	      return id;
-	    }
-	  }, {
-	    key: 'getPlayer',
-	    value: function getPlayer(id) {
-	      return this.PlayerService.getByID(id).then(function (result) {
-	        return result;
-	      });
-	    }
-	  }, {
-	    key: 'getGame',
-	    value: function getGame() {
-	      return this.GameService.finishGame(this.UserService.getAuthUser().gameID).then(function (result) {
-	        return result;
-	      });
-	    }
-	  }, {
-	    key: 'getPlayerName',
-	    value: function getPlayerName(id) {
-	      var _this2 = this;
-	
-	      this.getPlayer(id).then(function (result) {
-	        _this2.scope.player.name = result.name;
-	      });
-	    }
-	  }, {
-	    key: 'checkWords',
-	    value: function checkWords() {
-	      for (var i = 0; i < this.game.players.length; i++) {
-	        if (this.game.players[i].playerID == this.UserService.getAuthUser().playerID) {
-	          this.game.players[i].isCertain = true;
-	          for (var j = 0; j < this.game.players[i].words.length; j++) {
-	            if (this.game.players[i].words[j].discription == '') {
-	              this.game.players[i].isCertain = false;
-	              break;
-	            }
-	          }
-	          if (this.game.players[i].isCertain) {
-	            console.log((0, _stringify2.default)(this.game, null, 2));
-	            this.GameService.save(this.game);
-	            this.timeout.cancel(this.checker);
-	            this.timeout(navi.bind(this), 3000);
-	            return;
-	          }
-	        }
-	      }
-	
-	      function navi() {
-	        this.state.go('final');
-	      }
-	      this.checker = this.timeout(this.checkWords.bind(this), 2000);
-	
-	      // this.GameService.detail(this.UserService.getAuthUser().gameID).then(res => {
-	      //   this.game = res;
-	      //   for (let i = 0; i <= res.players.length; i++) {
-	      //     if (res.players[i].playerID ==
-	      //       this.UserService.getAuthUser().playerID) {
-	      //       if (res.players[i].isCertain) {
-	      //         this.timeout(navi.bind(this), 3000);
-	      //       }
-	      //     }
-	      //   }
-	      //
-	      //   function navi() {
-	      //     this.state.go('finalSection');
-	      //   }
-	      //   setTimeout(this.checkWords.bind(this), 2000);
-	      // });
-	    }
-	  }]);
-	  return FirstResultsController;
-	}();
-	
-	exports.default = FirstResultsController;
-
-/***/ },
-/* 309 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _playerComponent = __webpack_require__(310);
-	
-	var _playerComponent2 = _interopRequireDefault(_playerComponent);
-	
-	var _discriptionController = __webpack_require__(315);
-	
-	var _discriptionController2 = _interopRequireDefault(_discriptionController);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _angular2.default.module('app.components.player', []).component('player', _playerComponent2.default).controller('AddDiscriptionController', _discriptionController2.default).name;
-
-/***/ },
-/* 310 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _playerTmpl = __webpack_require__(311);
-	
-	var _playerTmpl2 = _interopRequireDefault(_playerTmpl);
-	
-	var _playerController = __webpack_require__(312);
-	
-	var _playerController2 = _interopRequireDefault(_playerController);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  template: _playerTmpl2.default,
-	  controller: _playerController2.default,
-	  bindings: {
-	    player: '='
-	  }
-	};
-
-/***/ },
-/* 311 */
-/***/ function(module, exports) {
-
-	module.exports = "<!-- player Header -->\n<div>\n  <ol class=\"list-group\">\n    <li class=\"f-res-text list-group-item disabled\">\n      <span ng-bind=\"$ctrl.plName\"></span>\n      <span class=\"badge\" ng-class=\"counterClass\" ng-bind=\"$ctrl.counter\"></span>\n    </li>\n    <li ng-repeat=\"word in $ctrl.player.words track by $index\" class=\"list-group-item\">\n      <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n        <a class=\"f-res-words\" ng-show=\"!word.discription\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word.word, word.discription)\"></a>\n        <span class=\"f-res-words\" ng-show=\"word.discription\">\n          <span  ng-bind=\"word.word\"></span>\n          <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n        </span>\n      </div>\n    </li>\n  </ol>\n  <ol ng-show=\"$ctrl.player.wrongWords.length>0\" class=\"list-group\">\n    <li class=\"f-res-text list-group-itllem disabled\" style=\"background-color: rgba(255, 71, 69, 1);color: white;\">\n      <span>WRONG WORDS</span>\n      <span class=\"badge\" ng-bind=\"$ctrl.player.wrongWords.length\"></span>\n    </li>\n    <li ng-repeat=\"wrWord in $ctrl.player.wrongWords\" class=\"list-group-item\" style=\"background-color: rgba(255, 0, 0, 0.2);\">\n      {{wrWord.word}}\n      <span class=\"f-res-words\" ng-bind=\"wrWord\">\n        <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n      </span>\n    </li>\n  </ol>\n</div>\n";
-
-/***/ },
-/* 312 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _classCallCheck2 = __webpack_require__(177);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(178);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _angular = __webpack_require__(158);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _lodash = __webpack_require__(313);
-	
-	var _lodash2 = _interopRequireDefault(_lodash);
-	
-	var _discriptionController = __webpack_require__(315);
-	
-	var _discriptionController2 = _interopRequireDefault(_discriptionController);
-	
-	var _discriptionTmpl = __webpack_require__(316);
-	
-	var _discriptionTmpl2 = _interopRequireDefault(_discriptionTmpl);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var PlayerController = function () {
-	  PlayerController.$inject = ["PlayerService", "GameService", "$q", "$uibModal", "$scope", "UserService"];
-	  function PlayerController(PlayerService, GameService, $q, $uibModal, $scope, UserService) {
-	    'ngInject';
-	
-	    (0, _classCallCheck3.default)(this, PlayerController);
-	    this.PlayerService = PlayerService;
-	    this.GameService = GameService;
-	    this.$q = $q;
-	    this.$uibModal = $uibModal;
-	    this.scope = $scope;
-	    this.counter = 0;
-	    this.UserService = UserService;
-	  }
-	
-	  (0, _createClass3.default)(PlayerController, [{
-	    key: '$onInit',
-	    value: function $onInit() {
-	      var _this2 = this;
-	
-	      this.getPlayer(this.player.playerID).then(function (result) {
-	        _this2.plName = result.name;
-	        if (_this2.player.words.length > 0) {
-	          for (var i = 0; i < _this2.player.words.length; i++) {
-	            if (_this2.player.words[i].discription) {
-	              _this2.counter++;
-	            }
-	          }
-	          if (_this2.counter < _this2.player.words.length) {
-	            _this2.scope.counterClass = 'counter-fail';
-	          } else {
-	            _this2.scope.counterClass = 'counter-pass';
-	          }
-	        }
-	      });
-	    }
-	  }, {
-	    key: 'getPlayer',
-	    value: function getPlayer(id) {
-	      return this.PlayerService.getByID(id).then(function (result) {
-	        return result;
-	      });
-	    }
-	  }, {
-	    key: 'open',
-	    value: function open(word, discription) {
-	      var _this = this;
-	      var newWord = {
-	        word: word,
-	        discription: discription
-	      };
-	      var modalInstance = this.$uibModal.open({
-	        animation: true,
-	        template: _discriptionTmpl2.default,
-	        controller: _discriptionController2.default,
-	        controllerAs: 'vm',
-	        size: 'lg',
-	        resolve: {
-	          word: function word() {
-	            return newWord;
-	          }
-	        }
-	      });
-	
-	      modalInstance.result.then(function (result) {
-	        // console.log(`this.player.words = ${JSON.stringify(_this.player.words,null,2)}`);
-	        _this.counter = 0;
-	        for (var i = 0; i < _this.player.words.length; i++) {
-	          if (_this.player.words[i].word == result.word) {
-	            _this.player.words[i].discription = result.discription;
-	          }
-	          if (_this.player.words[i].discription != '') {
-	            _this.counter++;
-	          }
-	        }
-	      }, function () {
-	        console.log('Modal dismissed at: ' + new Date());
-	      });
-	    }
-	  }]);
-	  return PlayerController;
-	}();
-	
-	exports.default = PlayerController;
-
-/***/ },
-/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -71630,10 +67482,10 @@
 	  }
 	}.call(this));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(314)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(212)(module)))
 
 /***/ },
-/* 314 */
+/* 212 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -71647,6 +67499,4233 @@
 		return module;
 	}
 
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _signUpComponent = __webpack_require__(214);
+	
+	var _signUpComponent2 = _interopRequireDefault(_signUpComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.navbar.signup', [])
+	// .directive('validator', validatorDirective)
+	.component('signup', _signUpComponent2.default).name;
+
+/***/ },
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _signupTmpl = __webpack_require__(215);
+	
+	var _signupTmpl2 = _interopRequireDefault(_signupTmpl);
+	
+	var _signUpController = __webpack_require__(216);
+	
+	var _signUpController2 = _interopRequireDefault(_signUpController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _signupTmpl2.default,
+	  controller: _signUpController2.default,
+	  scope: {
+	    user: '='
+	  }
+	};
+
+/***/ },
+/* 215 */
+/***/ function(module, exports) {
+
+	module.exports = "<!-- signup Header -->\n<div class=\"signup\">\n  <div class=\"signup-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignUp page</h1>\n\t\t\t\t\t<h3 ng-bind=\"$ctrl.message\"style=\"color: red;\"></h3>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }\">\n              <label for=\"basic-url\">Enter you last name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"lastName\" ng-model=\"$ctrl.user.lastName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.firstName.$invalid && !user.firstName.$pristine }\">\n              <label for=\"basic-url\">Enter you first name</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivan</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"firstName\" ng-model=\"$ctrl.user.firstName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.email.$invalid && !user.email.$pristine }\">\n              <label for=\"basic-url\">Enter you email</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948@gmail.com</span>\n                <input type=\"email\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"email\" ng-model=\"$ctrl.user.email\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div class=\"\">\n              <label for=\"basic-url\">Enter you password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.confPassword.$invalid && !user.confPassword.$pristine }\">\n              <label for=\"basic-url\">Confirm password</label>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"confPassword\" ng-model=\"$ctrl.user.confPassword\" equals=\"{{$ctrl.user.password}}\">\n              </div>\n              <div class=\"text-error\">\n                <span ng-show=\"user.confPassword.$error.equals\">Must be equal!</span>\n              </div>\n\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid && !user.confPassword.$pristine\" class=\"btn btn-success btn-block\">\n                Create Account\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\" >CANCEL</a>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+
+/***/ },
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _ = __webpack_require__(173);
+	
+	var _2 = _interopRequireDefault(_);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var SignUpController = function () {
+	  SignUpController.$inject = ["CustomerFactory", "$window", "$scope"];
+	  function SignUpController(CustomerFactory, $window, $scope) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, SignUpController);
+	    this.window = $window;
+	    this.CustomerFactory = CustomerFactory;
+	    this.scope = $scope;
+	  }
+	
+	  // closeWin() {
+	  //   ng.element(document.querySelector('signup')).remove();
+	  //   const win = document.createElement('header-block');
+	  //   document.body.insertBefore(win, document.body.childNodes[0]);
+	  //   this.compile(win)(this.scope);
+	  // }
+	
+	  (0, _createClass3.default)(SignUpController, [{
+	    key: 'submitForm',
+	    value: function submitForm() {
+	      var valid = this.scope.user.userName.$modelValue && this.scope.user.password.$modelValue && this.scope.user.firstName.$modelValue && this.scope.user.lastName.$modelValue;
+	      // for (var variable in this.scope.user) {
+	      //   if (variable.$modelValue == '' || variable === undefined) {
+	      //     valid = false;
+	      //   }
+	      // }
+	      if (this.scope.user.$valid && !this.scope.user.$pristine && valid) {
+	        this.CustomerFactory.createCustomer(this.scope.user).then(this.window.location.href = '#/signin');
+	      }
+	    }
+	  }]);
+	  return SignUpController;
+	}();
+	
+	exports.default = SignUpController;
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _component = __webpack_require__(218);
+	
+	var _component2 = _interopRequireDefault(_component);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.footer', []).component('footerBlock', _component2.default).name;
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _footerBlockTmpl = __webpack_require__(219);
+	
+	var _footerBlockTmpl2 = _interopRequireDefault(_footerBlockTmpl);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _footerBlockTmpl2.default
+	};
+
+/***/ },
+/* 219 */
+/***/ function(module, exports) {
+
+	module.exports = "<!-- Footer -->\n<footer>\n  <div class=\"container text-center\">\n    <p>Copyright &copy; Your Website 2016</p>\n  </div>\n</footer>\n";
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _matchPassDirective = __webpack_require__(221);
+	
+	var _matchPassDirective2 = _interopRequireDefault(_matchPassDirective);
+	
+	var _commonFactory = __webpack_require__(222);
+	
+	var _commonFactory2 = _interopRequireDefault(_commonFactory);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.matchPass', []).directive('equals', _matchPassDirective2.default).factory('commonFactory', _commonFactory2.default).name;
+
+/***/ },
+/* 221 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function () {
+	  return {
+	    restrict: 'A', // only activate on element attribute
+	    require: '?ngModel', // get a hold of NgModelController
+	    link: function link(scope, elem, attrs, ngModel) {
+	      if (!ngModel) return; // do nothing if no ng-model
+	
+	      var validate = function validate() {
+	        // values
+	        var val1 = ngModel.$viewValue;
+	        var val2 = attrs.equals;
+	        // set validity
+	        ngModel.$setValidity('equals', !val1 || !val2 || val1 === val2);
+	      };
+	
+	      // watch own value and re-validate on change
+	      scope.$watch(attrs.ngModel, function () {
+	        validate();
+	      });
+	
+	      // observe the other value and re-validate on change
+	      attrs.$observe('equals', function (val) {
+	        validate();
+	      });
+	    }
+	  };
+	};
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function () {
+	  return {
+	    initializeClock: initializeClock
+	  };
+	
+	  function getTimeRemaining(endtime) {
+	    var duration = Date.parse(endtime) - Date.parse(new Date());
+	    var seconds = Math.floor(duration / 1000 % 60);
+	    var minutes = Math.floor(duration / 1000 / 60 % 60);
+	    var hours = Math.floor(duration / (1000 * 60 * 60) % 24);
+	    var days = Math.floor(duration / (1000 * 60 * 60 * 24));
+	    return {
+	      total: duration,
+	      days: days,
+	      hours: hours,
+	      minutes: minutes,
+	      seconds: seconds
+	    };
+	  }
+	
+	  function initializeClock(id, endtime) {
+	    var clock = document.getElementById(id);
+	    var hoursSpan = clock.querySelector('.hours');
+	    var minutesSpan = clock.querySelector('.minutes');
+	    var secondsSpan = clock.querySelector('.seconds');
+	
+	    function updateClock() {
+	      var duration = getTimeRemaining(endtime);
+	
+	      hoursSpan.innerHTML = ('0' + duration.hours).slice(-2);
+	      minutesSpan.innerHTML = ('0' + duration.minutes).slice(-2);
+	      secondsSpan.innerHTML = ('0' + duration.seconds).slice(-2);
+	
+	      if (duration.total <= 0) {
+	        clearInterval(timeinterval);
+	      }
+	    }
+	
+	    updateClock();
+	    var timeinterval = setInterval(updateClock, 1000);
+	  }
+	};
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _signinComponent = __webpack_require__(224);
+	
+	var _signinComponent2 = _interopRequireDefault(_signinComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.navbar.signin', []).component('signin', _signinComponent2.default).name;
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _signinTmpl = __webpack_require__(225);
+	
+	var _signinTmpl2 = _interopRequireDefault(_signinTmpl);
+	
+	var _signinController = __webpack_require__(226);
+	
+	var _signinController2 = _interopRequireDefault(_signinController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _signinTmpl2.default,
+	  controller: _signinController2.default,
+	  scope: {
+	    user: '='
+	  }
+	};
+
+/***/ },
+/* 225 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"signin\">\n  <div class=\"signin-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <br>\n          <h1 class=\"brand-heading\">SignIn page</h1>\n          <div ng-show=\"$ctrl.message\" class=\"signin-square\">\n            <h2 ng-bind=\"$ctrl.message\" style=\"color:rgb(230, 0, 50);\"></h2>\n          </div>\n          <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"user\" name=\"user\" ng-validator>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you username</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: ivan38948</span>\n                <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"userName\" ng-model=\"$ctrl.user.userName\">\n              </div>\n            </div>\n            <div ng-class=\"{ 'has-error' : user.userName.$invalid && !user.userName.$pristine }\">\n              <label for=\"basic-url\">Enter you password</label>\n              <br>\n              <div class=\"input-group\">\n                <span class=\"input-group-addon\" id=\"basic-addon3\">Example: pas%$@#GBJDDS2314</span>\n                <input type=\"password\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" ng-required name=\"password\" ng-model=\"$ctrl.user.password\">\n              </div>\n            </div>\n            <div class=\"signup-link\">\n              <button type=\"submit\" ng-disabled=\"user.$invalid\" class=\"btn btn-success btn-block\">\n                Sign In\n              </button>\n            </div>\n            <div class=\"signup-link\">\n              <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n";
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var SignInController = function () {
+	  SignInController.$inject = ["UserService", "$location", "$scope"];
+	  function SignInController(UserService, $location, $scope) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, SignInController);
+	    this.location = $location;
+	    this.UserService = UserService;
+	    // this.AuthService = AuthService;
+	    this.scope = $scope;
+	  }
+	
+	  // closeWin() {
+	  //   ng.element(document.querySelector('signin')).remove();
+	  //   const win = document.createElement('header-block');
+	  //   document.body.insertBefore(win, document.body.childNodes[0]);
+	  //   this.compile(win)(this.scope);
+	  // }
+	
+	  (0, _createClass3.default)(SignInController, [{
+	    key: 'submitForm',
+	    value: function submitForm() {
+	      var _this = this;
+	      if (this.scope.user.$valid) {
+	        try {
+	          this.UserService.login(this.scope.user).then(function (result) {
+	            _this.scope.userInfo = result;
+	            _this.location.path('#/gameCreateRule');
+	          }).catch(function (e) {
+	            _this.message = 'You\'r login or password is wrong. Please try again';
+	          });
+	        } catch (e) {
+	          console.log(e);
+	          _this.message = 'You\'r login or password is wrong. Please try again';
+	          console.log(_this.message);
+	          _this.location.path('#/signup');
+	        }
+	      }
+	    }
+	  }, {
+	    key: 'logout',
+	    value: function logout() {
+	      var _this = this;
+	      this.UserService.logout().then(function () {
+	        _this.scope.userInfo = null;
+	        _this.location.path('/signin');
+	      }, function (error) {
+	        console.log(error);
+	      });
+	    }
+	  }]);
+	  return SignInController;
+	}();
+	
+	exports.default = SignInController;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _gameService = __webpack_require__(228);
+	
+	var _gameService2 = _interopRequireDefault(_gameService);
+	
+	var _userService = __webpack_require__(231);
+	
+	var _userService2 = _interopRequireDefault(_userService);
+	
+	var _playerService = __webpack_require__(232);
+	
+	var _playerService2 = _interopRequireDefault(_playerService);
+	
+	var _wordService = __webpack_require__(288);
+	
+	var _wordService2 = _interopRequireDefault(_wordService);
+	
+	var _statisticService = __webpack_require__(289);
+	
+	var _statisticService2 = _interopRequireDefault(_statisticService);
+	
+	var _customerFactory = __webpack_require__(290);
+	
+	var _customerFactory2 = _interopRequireDefault(_customerFactory);
+	
+	var _gameFactory = __webpack_require__(291);
+	
+	var _gameFactory2 = _interopRequireDefault(_gameFactory);
+	
+	var _errorHandlerFactory = __webpack_require__(295);
+	
+	var _errorHandlerFactory2 = _interopRequireDefault(_errorHandlerFactory);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.service', []).service('GameService', _gameService2.default).service('UserService', _userService2.default).service('PlayerService', _playerService2.default).service('WordService', _wordService2.default).service('StatisticService', _statisticService2.default).factory('CustomerFactory', ['UserService', 'PlayerService', _customerFactory2.default]).factory('GameFactory', ['GameService', 'PlayerService', _gameFactory2.default]).factory('ErrorHandler', ['$q', '$injector', '$window', _errorHandlerFactory2.default]).name;
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _stringify = __webpack_require__(229);
+	
+	var _stringify2 = _interopRequireDefault(_stringify);
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* global API */
+	var GameService = function () {
+	  GameService.$inject = ["$http", "$window"];
+	  function GameService($http, $window) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, GameService);
+	    this.$http = $http;
+	    this.window = $window;
+	  }
+	
+	  (0, _createClass3.default)(GameService, [{
+	    key: 'list',
+	    value: function list() {
+	      var _this = this;
+	      return this.$http.get(("http://127.0.0.1:3000") + '/games').then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'create',
+	    value: function create(game) {
+	      var _this = this;
+	      return this.$http.post(("http://127.0.0.1:3000") + '/games', (0, _stringify2.default)(game)).then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'detail',
+	    value: function detail(id) {
+	      var _this = this;
+	      return this.$http.get(("http://127.0.0.1:3000") + '/games/' + id).then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'update',
+	    value: function update(game) {
+	      var _this = this;
+	      return this.$http.put(("http://127.0.0.1:3000") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'save',
+	    value: function save(game) {
+	      var _this = this;
+	      console.log((0, _stringify2.default)(game, null, 2));
+	      return this.$http.put(("http://127.0.0.1:3000") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'addWord',
+	    value: function addWord(gameID, words, playerID) {
+	      var _this = this;
+	      return this.$http.put(("http://127.0.0.1:3000") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
+	        var obj = response.data;
+	        return obj;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'finishGame',
+	    value: function finishGame(id) {
+	      return this.$http.get(("http://127.0.0.1:3000") + '/games/' + id + '/finalize').then(function (res) {
+	        return res.data;
+	      });
+	    }
+	  }, {
+	    key: 'finishedList',
+	    value: function finishedList() {
+	      return this.$http.get(("http://127.0.0.1:3000") + '/games/finished').then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }]);
+	  return GameService;
+	}();
+	
+	exports.default = GameService;
+
+/***/ },
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(230), __esModule: true };
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(184)
+	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return $JSON.stringify.apply($JSON, arguments);
+	};
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _stringify = __webpack_require__(229);
+	
+	var _stringify2 = _interopRequireDefault(_stringify);
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* global API */
+	var UserService = function () {
+	  UserService.$inject = ["$http", "$q", "$window", "$cookies"];
+	  function UserService($http, $q, $window, $cookies) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, UserService);
+	    this.$http = $http;
+	    this.cookies = $cookies;
+	    this.q = $q;
+	    this.window = $window;
+	    this.userInfo = null;
+	    if (this.window.sessionStorage.userInfo) {
+	      this.userInfo = JSON.parse(this.window.sessionStorage.userInfo);
+	    }
+	  }
+	
+	  (0, _createClass3.default)(UserService, [{
+	    key: 'create',
+	    value: function create(user) {
+	      console.log(user);
+	      return this.$http.post(("http://127.0.0.1:3000") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
+	        return resp.data;
+	      });
+	    }
+	  }, {
+	    key: 'login',
+	    value: function login(user) {
+	      var _this = this;
+	      // const deferred = this.q.defer();
+	      var userdb = {
+	        username: user.userName.$modelValue,
+	        password: user.password.$modelValue
+	      };
+	      return this.$http.post(("http://127.0.0.1:3000") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
+	        _this.userInfo = {
+	          userID: response.data._id,
+	          userName: response.data.username,
+	          playerID: response.data.playerID
+	        };
+	        _this.window.sessionStorage.userInfo = (0, _stringify2.default)(_this.userInfo);
+	        return _this.userInfo;
+	      }).catch(function (error) {
+	        _this.deleteAuthUser();
+	        throw error;
+	      });
+	    }
+	  }, {
+	    key: 'logout',
+	    value: function logout() {
+	      var _this = this;
+	      var deferred = this.q.defer();
+	      return this.$http.get(("http://127.0.0.1:3000") + '/user/logout').then(function (result) {
+	        _this.deleteAuthUser();
+	        deferred.resolve(result);
+	      }, function (error) {
+	        _this.deleteAuthUser();
+	        deferred.reject(error);
+	      });
+	      return deferred.promise;
+	    }
+	  }, {
+	    key: 'getAuthUser',
+	    value: function getAuthUser() {
+	      return this.userInfo;
+	    }
+	  }, {
+	    key: 'deleteAuthUser',
+	    value: function deleteAuthUser() {
+	      this.userInfo = null;
+	      this.window.sessionStorage.userInfo = null;
+	    }
+	  }]);
+	  return UserService;
+	}();
+	
+	exports.default = UserService;
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _stringify = __webpack_require__(229);
+	
+	var _stringify2 = _interopRequireDefault(_stringify);
+	
+	var _regenerator = __webpack_require__(233);
+	
+	var _regenerator2 = _interopRequireDefault(_regenerator);
+	
+	var _asyncToGenerator2 = __webpack_require__(237);
+	
+	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* global API */
+	var PlayerService = function () {
+	  PlayerService.$inject = ["$http", "$q", "$window", "$cookies"];
+	  function PlayerService($http, $q, $window, $cookies) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, PlayerService);
+	    this.$http = $http;
+	    // this.cookies = $cookies;
+	    // this.q = $q;
+	    this.window = $window;
+	    // this.userInfo = {};
+	    // if (this.window.sessionStorage.userInfo) {
+	    //   this.userInfo = JSON.parse(this.window.sessionStorage.userInfo);
+	    // }
+	  }
+	
+	  (0, _createClass3.default)(PlayerService, [{
+	    key: 'list',
+	    value: function () {
+	      var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+	        var response;
+	        return _regenerator2.default.wrap(function _callee$(_context) {
+	          while (1) {
+	            switch (_context.prev = _context.next) {
+	              case 0:
+	                _context.prev = 0;
+	                _context.next = 3;
+	                return this.$http.get(("http://127.0.0.1:3000") + '/player');
+	
+	              case 3:
+	                response = _context.sent;
+	                _context.next = 6;
+	                return response.data;
+	
+	              case 6:
+	                return _context.abrupt('return', _context.sent);
+	
+	              case 9:
+	                _context.prev = 9;
+	                _context.t0 = _context['catch'](0);
+	                throw _context.t0;
+	
+	              case 12:
+	              case 'end':
+	                return _context.stop();
+	            }
+	          }
+	        }, _callee, this, [[0, 9]]);
+	      }));
+	
+	      function list() {
+	        return _ref.apply(this, arguments);
+	      }
+	
+	      return list;
+	    }()
+	  }, {
+	    key: 'create',
+	    value: function () {
+	      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(player) {
+	        var response;
+	        return _regenerator2.default.wrap(function _callee2$(_context2) {
+	          while (1) {
+	            switch (_context2.prev = _context2.next) {
+	              case 0:
+	                _context2.prev = 0;
+	                _context2.next = 3;
+	                return this.$http.post(("http://127.0.0.1:3000") + '/player/', (0, _stringify2.default)(player));
+	
+	              case 3:
+	                response = _context2.sent;
+	                return _context2.abrupt('return', response.data);
+	
+	              case 7:
+	                _context2.prev = 7;
+	                _context2.t0 = _context2['catch'](0);
+	                throw _context2.t0;
+	
+	              case 10:
+	              case 'end':
+	                return _context2.stop();
+	            }
+	          }
+	        }, _callee2, this, [[0, 7]]);
+	      }));
+	
+	      function create(_x) {
+	        return _ref2.apply(this, arguments);
+	      }
+	
+	      return create;
+	    }()
+	  }, {
+	    key: 'getByID',
+	    value: function () {
+	      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(id) {
+	        var response;
+	        return _regenerator2.default.wrap(function _callee3$(_context3) {
+	          while (1) {
+	            switch (_context3.prev = _context3.next) {
+	              case 0:
+	                _context3.prev = 0;
+	                _context3.next = 3;
+	                return this.$http.get(("http://127.0.0.1:3000") + '/player/' + id);
+	
+	              case 3:
+	                response = _context3.sent;
+	                return _context3.abrupt('return', response.data);
+	
+	              case 7:
+	                _context3.prev = 7;
+	                _context3.t0 = _context3['catch'](0);
+	                throw _context3.t0;
+	
+	              case 10:
+	              case 'end':
+	                return _context3.stop();
+	            }
+	          }
+	        }, _callee3, this, [[0, 7]]);
+	      }));
+	
+	      function getByID(_x2) {
+	        return _ref3.apply(this, arguments);
+	      }
+	
+	      return getByID;
+	    }()
+	  }]);
+	  return PlayerService;
+	}();
+	
+	exports.default = PlayerService;
+
+/***/ },
+/* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(234);
+
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {// This method of obtaining a reference to the global object needs to be
+	// kept identical to the way it is obtained in runtime.js
+	var g =
+	  typeof global === "object" ? global :
+	  typeof window === "object" ? window :
+	  typeof self === "object" ? self : this;
+	
+	// Use `getOwnPropertyNames` because not all browsers support calling
+	// `hasOwnProperty` on the global `self` object in a worker. See #183.
+	var hadRuntime = g.regeneratorRuntime &&
+	  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
+	
+	// Save the old regeneratorRuntime in case it needs to be restored later.
+	var oldRuntime = hadRuntime && g.regeneratorRuntime;
+	
+	// Force reevalutation of runtime.js.
+	g.regeneratorRuntime = undefined;
+	
+	module.exports = __webpack_require__(235);
+	
+	if (hadRuntime) {
+	  // Restore the original runtime.
+	  g.regeneratorRuntime = oldRuntime;
+	} else {
+	  // Remove the global property added by runtime.js.
+	  try {
+	    delete g.regeneratorRuntime;
+	  } catch(e) {
+	    g.regeneratorRuntime = undefined;
+	  }
+	}
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global, process) {/**
+	 * Copyright (c) 2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * https://raw.github.com/facebook/regenerator/master/LICENSE file. An
+	 * additional grant of patent rights can be found in the PATENTS file in
+	 * the same directory.
+	 */
+	
+	!(function(global) {
+	  "use strict";
+	
+	  var hasOwn = Object.prototype.hasOwnProperty;
+	  var undefined; // More compressible than void 0.
+	  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+	  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+	  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+	
+	  var inModule = typeof module === "object";
+	  var runtime = global.regeneratorRuntime;
+	  if (runtime) {
+	    if (inModule) {
+	      // If regeneratorRuntime is defined globally and we're in a module,
+	      // make the exports object identical to regeneratorRuntime.
+	      module.exports = runtime;
+	    }
+	    // Don't bother evaluating the rest of this file if the runtime was
+	    // already defined globally.
+	    return;
+	  }
+	
+	  // Define the runtime globally (as expected by generated code) as either
+	  // module.exports (if we're in a module) or a new, empty object.
+	  runtime = global.regeneratorRuntime = inModule ? module.exports : {};
+	
+	  function wrap(innerFn, outerFn, self, tryLocsList) {
+	    // If outerFn provided, then outerFn.prototype instanceof Generator.
+	    var generator = Object.create((outerFn || Generator).prototype);
+	    var context = new Context(tryLocsList || []);
+	
+	    // The ._invoke method unifies the implementations of the .next,
+	    // .throw, and .return methods.
+	    generator._invoke = makeInvokeMethod(innerFn, self, context);
+	
+	    return generator;
+	  }
+	  runtime.wrap = wrap;
+	
+	  // Try/catch helper to minimize deoptimizations. Returns a completion
+	  // record like context.tryEntries[i].completion. This interface could
+	  // have been (and was previously) designed to take a closure to be
+	  // invoked without arguments, but in all the cases we care about we
+	  // already have an existing method we want to call, so there's no need
+	  // to create a new function object. We can even get away with assuming
+	  // the method takes exactly one argument, since that happens to be true
+	  // in every case, so we don't have to touch the arguments object. The
+	  // only additional allocation required is the completion record, which
+	  // has a stable shape and so hopefully should be cheap to allocate.
+	  function tryCatch(fn, obj, arg) {
+	    try {
+	      return { type: "normal", arg: fn.call(obj, arg) };
+	    } catch (err) {
+	      return { type: "throw", arg: err };
+	    }
+	  }
+	
+	  var GenStateSuspendedStart = "suspendedStart";
+	  var GenStateSuspendedYield = "suspendedYield";
+	  var GenStateExecuting = "executing";
+	  var GenStateCompleted = "completed";
+	
+	  // Returning this object from the innerFn has the same effect as
+	  // breaking out of the dispatch switch statement.
+	  var ContinueSentinel = {};
+	
+	  // Dummy constructor functions that we use as the .constructor and
+	  // .constructor.prototype properties for functions that return Generator
+	  // objects. For full spec compliance, you may wish to configure your
+	  // minifier not to mangle the names of these two functions.
+	  function Generator() {}
+	  function GeneratorFunction() {}
+	  function GeneratorFunctionPrototype() {}
+	
+	  var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype;
+	  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+	  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+	  GeneratorFunctionPrototype[toStringTagSymbol] = GeneratorFunction.displayName = "GeneratorFunction";
+	
+	  // Helper for defining the .next, .throw, and .return methods of the
+	  // Iterator interface in terms of a single ._invoke method.
+	  function defineIteratorMethods(prototype) {
+	    ["next", "throw", "return"].forEach(function(method) {
+	      prototype[method] = function(arg) {
+	        return this._invoke(method, arg);
+	      };
+	    });
+	  }
+	
+	  runtime.isGeneratorFunction = function(genFun) {
+	    var ctor = typeof genFun === "function" && genFun.constructor;
+	    return ctor
+	      ? ctor === GeneratorFunction ||
+	        // For the native GeneratorFunction constructor, the best we can
+	        // do is to check its .name property.
+	        (ctor.displayName || ctor.name) === "GeneratorFunction"
+	      : false;
+	  };
+	
+	  runtime.mark = function(genFun) {
+	    if (Object.setPrototypeOf) {
+	      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+	    } else {
+	      genFun.__proto__ = GeneratorFunctionPrototype;
+	      if (!(toStringTagSymbol in genFun)) {
+	        genFun[toStringTagSymbol] = "GeneratorFunction";
+	      }
+	    }
+	    genFun.prototype = Object.create(Gp);
+	    return genFun;
+	  };
+	
+	  // Within the body of any async function, `await x` is transformed to
+	  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+	  // `value instanceof AwaitArgument` to determine if the yielded value is
+	  // meant to be awaited. Some may consider the name of this method too
+	  // cutesy, but they are curmudgeons.
+	  runtime.awrap = function(arg) {
+	    return new AwaitArgument(arg);
+	  };
+	
+	  function AwaitArgument(arg) {
+	    this.arg = arg;
+	  }
+	
+	  function AsyncIterator(generator) {
+	    function invoke(method, arg, resolve, reject) {
+	      var record = tryCatch(generator[method], generator, arg);
+	      if (record.type === "throw") {
+	        reject(record.arg);
+	      } else {
+	        var result = record.arg;
+	        var value = result.value;
+	        if (value instanceof AwaitArgument) {
+	          return Promise.resolve(value.arg).then(function(value) {
+	            invoke("next", value, resolve, reject);
+	          }, function(err) {
+	            invoke("throw", err, resolve, reject);
+	          });
+	        }
+	
+	        return Promise.resolve(value).then(function(unwrapped) {
+	          // When a yielded Promise is resolved, its final value becomes
+	          // the .value of the Promise<{value,done}> result for the
+	          // current iteration. If the Promise is rejected, however, the
+	          // result for this iteration will be rejected with the same
+	          // reason. Note that rejections of yielded Promises are not
+	          // thrown back into the generator function, as is the case
+	          // when an awaited Promise is rejected. This difference in
+	          // behavior between yield and await is important, because it
+	          // allows the consumer to decide what to do with the yielded
+	          // rejection (swallow it and continue, manually .throw it back
+	          // into the generator, abandon iteration, whatever). With
+	          // await, by contrast, there is no opportunity to examine the
+	          // rejection reason outside the generator function, so the
+	          // only option is to throw it from the await expression, and
+	          // let the generator function handle the exception.
+	          result.value = unwrapped;
+	          resolve(result);
+	        }, reject);
+	      }
+	    }
+	
+	    if (typeof process === "object" && process.domain) {
+	      invoke = process.domain.bind(invoke);
+	    }
+	
+	    var previousPromise;
+	
+	    function enqueue(method, arg) {
+	      function callInvokeWithMethodAndArg() {
+	        return new Promise(function(resolve, reject) {
+	          invoke(method, arg, resolve, reject);
+	        });
+	      }
+	
+	      return previousPromise =
+	        // If enqueue has been called before, then we want to wait until
+	        // all previous Promises have been resolved before calling invoke,
+	        // so that results are always delivered in the correct order. If
+	        // enqueue has not been called before, then it is important to
+	        // call invoke immediately, without waiting on a callback to fire,
+	        // so that the async generator function has the opportunity to do
+	        // any necessary setup in a predictable way. This predictability
+	        // is why the Promise constructor synchronously invokes its
+	        // executor callback, and why async functions synchronously
+	        // execute code before the first await. Since we implement simple
+	        // async functions in terms of async generators, it is especially
+	        // important to get this right, even though it requires care.
+	        previousPromise ? previousPromise.then(
+	          callInvokeWithMethodAndArg,
+	          // Avoid propagating failures to Promises returned by later
+	          // invocations of the iterator.
+	          callInvokeWithMethodAndArg
+	        ) : callInvokeWithMethodAndArg();
+	    }
+	
+	    // Define the unified helper method that is used to implement .next,
+	    // .throw, and .return (see defineIteratorMethods).
+	    this._invoke = enqueue;
+	  }
+	
+	  defineIteratorMethods(AsyncIterator.prototype);
+	
+	  // Note that simple async functions are implemented on top of
+	  // AsyncIterator objects; they just return a Promise for the value of
+	  // the final result produced by the iterator.
+	  runtime.async = function(innerFn, outerFn, self, tryLocsList) {
+	    var iter = new AsyncIterator(
+	      wrap(innerFn, outerFn, self, tryLocsList)
+	    );
+	
+	    return runtime.isGeneratorFunction(outerFn)
+	      ? iter // If outerFn is a generator, return the full iterator.
+	      : iter.next().then(function(result) {
+	          return result.done ? result.value : iter.next();
+	        });
+	  };
+	
+	  function makeInvokeMethod(innerFn, self, context) {
+	    var state = GenStateSuspendedStart;
+	
+	    return function invoke(method, arg) {
+	      if (state === GenStateExecuting) {
+	        throw new Error("Generator is already running");
+	      }
+	
+	      if (state === GenStateCompleted) {
+	        if (method === "throw") {
+	          throw arg;
+	        }
+	
+	        // Be forgiving, per 25.3.3.3.3 of the spec:
+	        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+	        return doneResult();
+	      }
+	
+	      while (true) {
+	        var delegate = context.delegate;
+	        if (delegate) {
+	          if (method === "return" ||
+	              (method === "throw" && delegate.iterator[method] === undefined)) {
+	            // A return or throw (when the delegate iterator has no throw
+	            // method) always terminates the yield* loop.
+	            context.delegate = null;
+	
+	            // If the delegate iterator has a return method, give it a
+	            // chance to clean up.
+	            var returnMethod = delegate.iterator["return"];
+	            if (returnMethod) {
+	              var record = tryCatch(returnMethod, delegate.iterator, arg);
+	              if (record.type === "throw") {
+	                // If the return method threw an exception, let that
+	                // exception prevail over the original return or throw.
+	                method = "throw";
+	                arg = record.arg;
+	                continue;
+	              }
+	            }
+	
+	            if (method === "return") {
+	              // Continue with the outer return, now that the delegate
+	              // iterator has been terminated.
+	              continue;
+	            }
+	          }
+	
+	          var record = tryCatch(
+	            delegate.iterator[method],
+	            delegate.iterator,
+	            arg
+	          );
+	
+	          if (record.type === "throw") {
+	            context.delegate = null;
+	
+	            // Like returning generator.throw(uncaught), but without the
+	            // overhead of an extra function call.
+	            method = "throw";
+	            arg = record.arg;
+	            continue;
+	          }
+	
+	          // Delegate generator ran and handled its own exceptions so
+	          // regardless of what the method was, we continue as if it is
+	          // "next" with an undefined arg.
+	          method = "next";
+	          arg = undefined;
+	
+	          var info = record.arg;
+	          if (info.done) {
+	            context[delegate.resultName] = info.value;
+	            context.next = delegate.nextLoc;
+	          } else {
+	            state = GenStateSuspendedYield;
+	            return info;
+	          }
+	
+	          context.delegate = null;
+	        }
+	
+	        if (method === "next") {
+	          // Setting context._sent for legacy support of Babel's
+	          // function.sent implementation.
+	          context.sent = context._sent = arg;
+	
+	        } else if (method === "throw") {
+	          if (state === GenStateSuspendedStart) {
+	            state = GenStateCompleted;
+	            throw arg;
+	          }
+	
+	          if (context.dispatchException(arg)) {
+	            // If the dispatched exception was caught by a catch block,
+	            // then let that catch block handle the exception normally.
+	            method = "next";
+	            arg = undefined;
+	          }
+	
+	        } else if (method === "return") {
+	          context.abrupt("return", arg);
+	        }
+	
+	        state = GenStateExecuting;
+	
+	        var record = tryCatch(innerFn, self, context);
+	        if (record.type === "normal") {
+	          // If an exception is thrown from innerFn, we leave state ===
+	          // GenStateExecuting and loop back for another invocation.
+	          state = context.done
+	            ? GenStateCompleted
+	            : GenStateSuspendedYield;
+	
+	          var info = {
+	            value: record.arg,
+	            done: context.done
+	          };
+	
+	          if (record.arg === ContinueSentinel) {
+	            if (context.delegate && method === "next") {
+	              // Deliberately forget the last sent value so that we don't
+	              // accidentally pass it on to the delegate.
+	              arg = undefined;
+	            }
+	          } else {
+	            return info;
+	          }
+	
+	        } else if (record.type === "throw") {
+	          state = GenStateCompleted;
+	          // Dispatch the exception by looping back around to the
+	          // context.dispatchException(arg) call above.
+	          method = "throw";
+	          arg = record.arg;
+	        }
+	      }
+	    };
+	  }
+	
+	  // Define Generator.prototype.{next,throw,return} in terms of the
+	  // unified ._invoke helper method.
+	  defineIteratorMethods(Gp);
+	
+	  Gp[iteratorSymbol] = function() {
+	    return this;
+	  };
+	
+	  Gp[toStringTagSymbol] = "Generator";
+	
+	  Gp.toString = function() {
+	    return "[object Generator]";
+	  };
+	
+	  function pushTryEntry(locs) {
+	    var entry = { tryLoc: locs[0] };
+	
+	    if (1 in locs) {
+	      entry.catchLoc = locs[1];
+	    }
+	
+	    if (2 in locs) {
+	      entry.finallyLoc = locs[2];
+	      entry.afterLoc = locs[3];
+	    }
+	
+	    this.tryEntries.push(entry);
+	  }
+	
+	  function resetTryEntry(entry) {
+	    var record = entry.completion || {};
+	    record.type = "normal";
+	    delete record.arg;
+	    entry.completion = record;
+	  }
+	
+	  function Context(tryLocsList) {
+	    // The root entry object (effectively a try statement without a catch
+	    // or a finally block) gives us a place to store values thrown from
+	    // locations where there is no enclosing try statement.
+	    this.tryEntries = [{ tryLoc: "root" }];
+	    tryLocsList.forEach(pushTryEntry, this);
+	    this.reset(true);
+	  }
+	
+	  runtime.keys = function(object) {
+	    var keys = [];
+	    for (var key in object) {
+	      keys.push(key);
+	    }
+	    keys.reverse();
+	
+	    // Rather than returning an object with a next method, we keep
+	    // things simple and return the next function itself.
+	    return function next() {
+	      while (keys.length) {
+	        var key = keys.pop();
+	        if (key in object) {
+	          next.value = key;
+	          next.done = false;
+	          return next;
+	        }
+	      }
+	
+	      // To avoid creating an additional object, we just hang the .value
+	      // and .done properties off the next function object itself. This
+	      // also ensures that the minifier will not anonymize the function.
+	      next.done = true;
+	      return next;
+	    };
+	  };
+	
+	  function values(iterable) {
+	    if (iterable) {
+	      var iteratorMethod = iterable[iteratorSymbol];
+	      if (iteratorMethod) {
+	        return iteratorMethod.call(iterable);
+	      }
+	
+	      if (typeof iterable.next === "function") {
+	        return iterable;
+	      }
+	
+	      if (!isNaN(iterable.length)) {
+	        var i = -1, next = function next() {
+	          while (++i < iterable.length) {
+	            if (hasOwn.call(iterable, i)) {
+	              next.value = iterable[i];
+	              next.done = false;
+	              return next;
+	            }
+	          }
+	
+	          next.value = undefined;
+	          next.done = true;
+	
+	          return next;
+	        };
+	
+	        return next.next = next;
+	      }
+	    }
+	
+	    // Return an iterator with no values.
+	    return { next: doneResult };
+	  }
+	  runtime.values = values;
+	
+	  function doneResult() {
+	    return { value: undefined, done: true };
+	  }
+	
+	  Context.prototype = {
+	    constructor: Context,
+	
+	    reset: function(skipTempReset) {
+	      this.prev = 0;
+	      this.next = 0;
+	      // Resetting context._sent for legacy support of Babel's
+	      // function.sent implementation.
+	      this.sent = this._sent = undefined;
+	      this.done = false;
+	      this.delegate = null;
+	
+	      this.tryEntries.forEach(resetTryEntry);
+	
+	      if (!skipTempReset) {
+	        for (var name in this) {
+	          // Not sure about the optimal order of these conditions:
+	          if (name.charAt(0) === "t" &&
+	              hasOwn.call(this, name) &&
+	              !isNaN(+name.slice(1))) {
+	            this[name] = undefined;
+	          }
+	        }
+	      }
+	    },
+	
+	    stop: function() {
+	      this.done = true;
+	
+	      var rootEntry = this.tryEntries[0];
+	      var rootRecord = rootEntry.completion;
+	      if (rootRecord.type === "throw") {
+	        throw rootRecord.arg;
+	      }
+	
+	      return this.rval;
+	    },
+	
+	    dispatchException: function(exception) {
+	      if (this.done) {
+	        throw exception;
+	      }
+	
+	      var context = this;
+	      function handle(loc, caught) {
+	        record.type = "throw";
+	        record.arg = exception;
+	        context.next = loc;
+	        return !!caught;
+	      }
+	
+	      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+	        var entry = this.tryEntries[i];
+	        var record = entry.completion;
+	
+	        if (entry.tryLoc === "root") {
+	          // Exception thrown outside of any try block that could handle
+	          // it, so set the completion value of the entire function to
+	          // throw the exception.
+	          return handle("end");
+	        }
+	
+	        if (entry.tryLoc <= this.prev) {
+	          var hasCatch = hasOwn.call(entry, "catchLoc");
+	          var hasFinally = hasOwn.call(entry, "finallyLoc");
+	
+	          if (hasCatch && hasFinally) {
+	            if (this.prev < entry.catchLoc) {
+	              return handle(entry.catchLoc, true);
+	            } else if (this.prev < entry.finallyLoc) {
+	              return handle(entry.finallyLoc);
+	            }
+	
+	          } else if (hasCatch) {
+	            if (this.prev < entry.catchLoc) {
+	              return handle(entry.catchLoc, true);
+	            }
+	
+	          } else if (hasFinally) {
+	            if (this.prev < entry.finallyLoc) {
+	              return handle(entry.finallyLoc);
+	            }
+	
+	          } else {
+	            throw new Error("try statement without catch or finally");
+	          }
+	        }
+	      }
+	    },
+	
+	    abrupt: function(type, arg) {
+	      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+	        var entry = this.tryEntries[i];
+	        if (entry.tryLoc <= this.prev &&
+	            hasOwn.call(entry, "finallyLoc") &&
+	            this.prev < entry.finallyLoc) {
+	          var finallyEntry = entry;
+	          break;
+	        }
+	      }
+	
+	      if (finallyEntry &&
+	          (type === "break" ||
+	           type === "continue") &&
+	          finallyEntry.tryLoc <= arg &&
+	          arg <= finallyEntry.finallyLoc) {
+	        // Ignore the finally entry if control is not jumping to a
+	        // location outside the try/catch block.
+	        finallyEntry = null;
+	      }
+	
+	      var record = finallyEntry ? finallyEntry.completion : {};
+	      record.type = type;
+	      record.arg = arg;
+	
+	      if (finallyEntry) {
+	        this.next = finallyEntry.finallyLoc;
+	      } else {
+	        this.complete(record);
+	      }
+	
+	      return ContinueSentinel;
+	    },
+	
+	    complete: function(record, afterLoc) {
+	      if (record.type === "throw") {
+	        throw record.arg;
+	      }
+	
+	      if (record.type === "break" ||
+	          record.type === "continue") {
+	        this.next = record.arg;
+	      } else if (record.type === "return") {
+	        this.rval = record.arg;
+	        this.next = "end";
+	      } else if (record.type === "normal" && afterLoc) {
+	        this.next = afterLoc;
+	      }
+	    },
+	
+	    finish: function(finallyLoc) {
+	      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+	        var entry = this.tryEntries[i];
+	        if (entry.finallyLoc === finallyLoc) {
+	          this.complete(entry.completion, entry.afterLoc);
+	          resetTryEntry(entry);
+	          return ContinueSentinel;
+	        }
+	      }
+	    },
+	
+	    "catch": function(tryLoc) {
+	      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+	        var entry = this.tryEntries[i];
+	        if (entry.tryLoc === tryLoc) {
+	          var record = entry.completion;
+	          if (record.type === "throw") {
+	            var thrown = record.arg;
+	            resetTryEntry(entry);
+	          }
+	          return thrown;
+	        }
+	      }
+	
+	      // The context.catch method must only be called with a location
+	      // argument that corresponds to a known catch block.
+	      throw new Error("illegal catch attempt");
+	    },
+	
+	    delegateYield: function(iterable, resultName, nextLoc) {
+	      this.delegate = {
+	        iterator: values(iterable),
+	        resultName: resultName,
+	        nextLoc: nextLoc
+	      };
+	
+	      return ContinueSentinel;
+	    }
+	  };
+	})(
+	  // Among the various tricks for obtaining a reference to the global
+	  // object, this seems to be the most reliable technique that does not
+	  // use indirect eval (which violates Content Security Policy).
+	  typeof global === "object" ? global :
+	  typeof window === "object" ? window :
+	  typeof self === "object" ? self : this
+	);
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(236)))
+
+/***/ },
+/* 236 */
+/***/ function(module, exports) {
+
+	// shim for using process in browser
+	
+	var process = module.exports = {};
+	
+	// cached from whatever global is present so that test runners that stub it
+	// don't break things.  But we need to wrap it in a try catch in case it is
+	// wrapped in strict mode code which doesn't define any globals.  It's inside a
+	// function because try/catches deoptimize in certain engines.
+	
+	var cachedSetTimeout;
+	var cachedClearTimeout;
+	
+	(function () {
+	  try {
+	    cachedSetTimeout = setTimeout;
+	  } catch (e) {
+	    cachedSetTimeout = function () {
+	      throw new Error('setTimeout is not defined');
+	    }
+	  }
+	  try {
+	    cachedClearTimeout = clearTimeout;
+	  } catch (e) {
+	    cachedClearTimeout = function () {
+	      throw new Error('clearTimeout is not defined');
+	    }
+	  }
+	} ())
+	var queue = [];
+	var draining = false;
+	var currentQueue;
+	var queueIndex = -1;
+	
+	function cleanUpNextTick() {
+	    if (!draining || !currentQueue) {
+	        return;
+	    }
+	    draining = false;
+	    if (currentQueue.length) {
+	        queue = currentQueue.concat(queue);
+	    } else {
+	        queueIndex = -1;
+	    }
+	    if (queue.length) {
+	        drainQueue();
+	    }
+	}
+	
+	function drainQueue() {
+	    if (draining) {
+	        return;
+	    }
+	    var timeout = cachedSetTimeout.call(null, cleanUpNextTick);
+	    draining = true;
+	
+	    var len = queue.length;
+	    while(len) {
+	        currentQueue = queue;
+	        queue = [];
+	        while (++queueIndex < len) {
+	            if (currentQueue) {
+	                currentQueue[queueIndex].run();
+	            }
+	        }
+	        queueIndex = -1;
+	        len = queue.length;
+	    }
+	    currentQueue = null;
+	    draining = false;
+	    cachedClearTimeout.call(null, timeout);
+	}
+	
+	process.nextTick = function (fun) {
+	    var args = new Array(arguments.length - 1);
+	    if (arguments.length > 1) {
+	        for (var i = 1; i < arguments.length; i++) {
+	            args[i - 1] = arguments[i];
+	        }
+	    }
+	    queue.push(new Item(fun, args));
+	    if (queue.length === 1 && !draining) {
+	        cachedSetTimeout.call(null, drainQueue, 0);
+	    }
+	};
+	
+	// v8 likes predictible objects
+	function Item(fun, array) {
+	    this.fun = fun;
+	    this.array = array;
+	}
+	Item.prototype.run = function () {
+	    this.fun.apply(null, this.array);
+	};
+	process.title = 'browser';
+	process.browser = true;
+	process.env = {};
+	process.argv = [];
+	process.version = ''; // empty string to avoid regexp issues
+	process.versions = {};
+	
+	function noop() {}
+	
+	process.on = noop;
+	process.addListener = noop;
+	process.once = noop;
+	process.off = noop;
+	process.removeListener = noop;
+	process.removeAllListeners = noop;
+	process.emit = noop;
+	
+	process.binding = function (name) {
+	    throw new Error('process.binding is not supported');
+	};
+	
+	process.cwd = function () { return '/' };
+	process.chdir = function (dir) {
+	    throw new Error('process.chdir is not supported');
+	};
+	process.umask = function() { return 0; };
+
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	exports.__esModule = true;
+	
+	var _promise = __webpack_require__(238);
+	
+	var _promise2 = _interopRequireDefault(_promise);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (fn) {
+	  return function () {
+	    var gen = fn.apply(this, arguments);
+	    return new _promise2.default(function (resolve, reject) {
+	      function step(key, arg) {
+	        try {
+	          var info = gen[key](arg);
+	          var value = info.value;
+	        } catch (error) {
+	          reject(error);
+	          return;
+	        }
+	
+	        if (info.done) {
+	          resolve(value);
+	        } else {
+	          return _promise2.default.resolve(value).then(function (value) {
+	            return step("next", value);
+	          }, function (err) {
+	            return step("throw", err);
+	          });
+	        }
+	      }
+	
+	      return step("next");
+	    });
+	  };
+	};
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(239), __esModule: true };
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(240);
+	__webpack_require__(241);
+	__webpack_require__(270);
+	__webpack_require__(274);
+	module.exports = __webpack_require__(184).Promise;
+
+/***/ },
+/* 240 */
+/***/ function(module, exports) {
+
+
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var $at  = __webpack_require__(242)(true);
+	
+	// 21.1.3.27 String.prototype[@@iterator]()
+	__webpack_require__(245)(String, 'String', function(iterated){
+	  this._t = String(iterated); // target
+	  this._i = 0;                // next index
+	// 21.1.5.2.1 %StringIteratorPrototype%.next()
+	}, function(){
+	  var O     = this._t
+	    , index = this._i
+	    , point;
+	  if(index >= O.length)return {value: undefined, done: true};
+	  point = $at(O, index);
+	  this._i += point.length;
+	  return {value: point, done: false};
+	});
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var toInteger = __webpack_require__(243)
+	  , defined   = __webpack_require__(244);
+	// true  -> String#at
+	// false -> String#codePointAt
+	module.exports = function(TO_STRING){
+	  return function(that, pos){
+	    var s = String(defined(that))
+	      , i = toInteger(pos)
+	      , l = s.length
+	      , a, b;
+	    if(i < 0 || i >= l)return TO_STRING ? '' : undefined;
+	    a = s.charCodeAt(i);
+	    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
+	      ? TO_STRING ? s.charAt(i) : a
+	      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
+	  };
+	};
+
+/***/ },
+/* 243 */
+/***/ function(module, exports) {
+
+	// 7.1.4 ToInteger
+	var ceil  = Math.ceil
+	  , floor = Math.floor;
+	module.exports = function(it){
+	  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+	};
+
+/***/ },
+/* 244 */
+/***/ function(module, exports) {
+
+	// 7.2.1 RequireObjectCoercible(argument)
+	module.exports = function(it){
+	  if(it == undefined)throw TypeError("Can't call method on  " + it);
+	  return it;
+	};
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var LIBRARY        = __webpack_require__(246)
+	  , $export        = __webpack_require__(182)
+	  , redefine       = __webpack_require__(247)
+	  , hide           = __webpack_require__(187)
+	  , has            = __webpack_require__(248)
+	  , Iterators      = __webpack_require__(249)
+	  , $iterCreate    = __webpack_require__(250)
+	  , setToStringTag = __webpack_require__(266)
+	  , getPrototypeOf = __webpack_require__(268)
+	  , ITERATOR       = __webpack_require__(267)('iterator')
+	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
+	  , FF_ITERATOR    = '@@iterator'
+	  , KEYS           = 'keys'
+	  , VALUES         = 'values';
+	
+	var returnThis = function(){ return this; };
+	
+	module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
+	  $iterCreate(Constructor, NAME, next);
+	  var getMethod = function(kind){
+	    if(!BUGGY && kind in proto)return proto[kind];
+	    switch(kind){
+	      case KEYS: return function keys(){ return new Constructor(this, kind); };
+	      case VALUES: return function values(){ return new Constructor(this, kind); };
+	    } return function entries(){ return new Constructor(this, kind); };
+	  };
+	  var TAG        = NAME + ' Iterator'
+	    , DEF_VALUES = DEFAULT == VALUES
+	    , VALUES_BUG = false
+	    , proto      = Base.prototype
+	    , $native    = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT]
+	    , $default   = $native || getMethod(DEFAULT)
+	    , $entries   = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined
+	    , $anyNative = NAME == 'Array' ? proto.entries || $native : $native
+	    , methods, key, IteratorPrototype;
+	  // Fix native
+	  if($anyNative){
+	    IteratorPrototype = getPrototypeOf($anyNative.call(new Base));
+	    if(IteratorPrototype !== Object.prototype){
+	      // Set @@toStringTag to native iterators
+	      setToStringTag(IteratorPrototype, TAG, true);
+	      // fix for some old engines
+	      if(!LIBRARY && !has(IteratorPrototype, ITERATOR))hide(IteratorPrototype, ITERATOR, returnThis);
+	    }
+	  }
+	  // fix Array#{values, @@iterator}.name in V8 / FF
+	  if(DEF_VALUES && $native && $native.name !== VALUES){
+	    VALUES_BUG = true;
+	    $default = function values(){ return $native.call(this); };
+	  }
+	  // Define iterator
+	  if((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])){
+	    hide(proto, ITERATOR, $default);
+	  }
+	  // Plug for library
+	  Iterators[NAME] = $default;
+	  Iterators[TAG]  = returnThis;
+	  if(DEFAULT){
+	    methods = {
+	      values:  DEF_VALUES ? $default : getMethod(VALUES),
+	      keys:    IS_SET     ? $default : getMethod(KEYS),
+	      entries: $entries
+	    };
+	    if(FORCED)for(key in methods){
+	      if(!(key in proto))redefine(proto, key, methods[key]);
+	    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
+	  }
+	  return methods;
+	};
+
+/***/ },
+/* 246 */
+/***/ function(module, exports) {
+
+	module.exports = true;
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(187);
+
+/***/ },
+/* 248 */
+/***/ function(module, exports) {
+
+	var hasOwnProperty = {}.hasOwnProperty;
+	module.exports = function(it, key){
+	  return hasOwnProperty.call(it, key);
+	};
+
+/***/ },
+/* 249 */
+/***/ function(module, exports) {
+
+	module.exports = {};
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var create         = __webpack_require__(251)
+	  , descriptor     = __webpack_require__(196)
+	  , setToStringTag = __webpack_require__(266)
+	  , IteratorPrototype = {};
+	
+	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
+	__webpack_require__(187)(IteratorPrototype, __webpack_require__(267)('iterator'), function(){ return this; });
+	
+	module.exports = function(Constructor, NAME, next){
+	  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
+	  setToStringTag(Constructor, NAME + ' Iterator');
+	};
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+	var anObject    = __webpack_require__(189)
+	  , dPs         = __webpack_require__(252)
+	  , enumBugKeys = __webpack_require__(264)
+	  , IE_PROTO    = __webpack_require__(261)('IE_PROTO')
+	  , Empty       = function(){ /* empty */ }
+	  , PROTOTYPE   = 'prototype';
+	
+	// Create object with fake `null` prototype: use iframe Object with cleared prototype
+	var createDict = function(){
+	  // Thrash, waste and sodomy: IE GC bug
+	  var iframe = __webpack_require__(194)('iframe')
+	    , i      = enumBugKeys.length
+	    , lt     = '<'
+	    , gt     = '>'
+	    , iframeDocument;
+	  iframe.style.display = 'none';
+	  __webpack_require__(265).appendChild(iframe);
+	  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
+	  // createDict = iframe.contentWindow.Object;
+	  // html.removeChild(iframe);
+	  iframeDocument = iframe.contentWindow.document;
+	  iframeDocument.open();
+	  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
+	  iframeDocument.close();
+	  createDict = iframeDocument.F;
+	  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
+	  return createDict();
+	};
+	
+	module.exports = Object.create || function create(O, Properties){
+	  var result;
+	  if(O !== null){
+	    Empty[PROTOTYPE] = anObject(O);
+	    result = new Empty;
+	    Empty[PROTOTYPE] = null;
+	    // add "__proto__" for Object.getPrototypeOf polyfill
+	    result[IE_PROTO] = O;
+	  } else result = createDict();
+	  return Properties === undefined ? result : dPs(result, Properties);
+	};
+
+
+/***/ },
+/* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var dP       = __webpack_require__(188)
+	  , anObject = __webpack_require__(189)
+	  , getKeys  = __webpack_require__(253);
+	
+	module.exports = __webpack_require__(192) ? Object.defineProperties : function defineProperties(O, Properties){
+	  anObject(O);
+	  var keys   = getKeys(Properties)
+	    , length = keys.length
+	    , i = 0
+	    , P;
+	  while(length > i)dP.f(O, P = keys[i++], Properties[P]);
+	  return O;
+	};
+
+/***/ },
+/* 253 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+	var $keys       = __webpack_require__(254)
+	  , enumBugKeys = __webpack_require__(264);
+	
+	module.exports = Object.keys || function keys(O){
+	  return $keys(O, enumBugKeys);
+	};
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var has          = __webpack_require__(248)
+	  , toIObject    = __webpack_require__(255)
+	  , arrayIndexOf = __webpack_require__(258)(false)
+	  , IE_PROTO     = __webpack_require__(261)('IE_PROTO');
+	
+	module.exports = function(object, names){
+	  var O      = toIObject(object)
+	    , i      = 0
+	    , result = []
+	    , key;
+	  for(key in O)if(key != IE_PROTO)has(O, key) && result.push(key);
+	  // Don't enum bug & hidden keys
+	  while(names.length > i)if(has(O, key = names[i++])){
+	    ~arrayIndexOf(result, key) || result.push(key);
+	  }
+	  return result;
+	};
+
+/***/ },
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// to indexed object, toObject with fallback for non-array-like ES3 strings
+	var IObject = __webpack_require__(256)
+	  , defined = __webpack_require__(244);
+	module.exports = function(it){
+	  return IObject(defined(it));
+	};
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// fallback for non-array-like ES3 and non-enumerable old V8 strings
+	var cof = __webpack_require__(257);
+	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
+	  return cof(it) == 'String' ? it.split('') : Object(it);
+	};
+
+/***/ },
+/* 257 */
+/***/ function(module, exports) {
+
+	var toString = {}.toString;
+	
+	module.exports = function(it){
+	  return toString.call(it).slice(8, -1);
+	};
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// false -> Array#indexOf
+	// true  -> Array#includes
+	var toIObject = __webpack_require__(255)
+	  , toLength  = __webpack_require__(259)
+	  , toIndex   = __webpack_require__(260);
+	module.exports = function(IS_INCLUDES){
+	  return function($this, el, fromIndex){
+	    var O      = toIObject($this)
+	      , length = toLength(O.length)
+	      , index  = toIndex(fromIndex, length)
+	      , value;
+	    // Array#includes uses SameValueZero equality algorithm
+	    if(IS_INCLUDES && el != el)while(length > index){
+	      value = O[index++];
+	      if(value != value)return true;
+	    // Array#toIndex ignores holes, Array#includes - not
+	    } else for(;length > index; index++)if(IS_INCLUDES || index in O){
+	      if(O[index] === el)return IS_INCLUDES || index || 0;
+	    } return !IS_INCLUDES && -1;
+	  };
+	};
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.15 ToLength
+	var toInteger = __webpack_require__(243)
+	  , min       = Math.min;
+	module.exports = function(it){
+	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+	};
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var toInteger = __webpack_require__(243)
+	  , max       = Math.max
+	  , min       = Math.min;
+	module.exports = function(index, length){
+	  index = toInteger(index);
+	  return index < 0 ? max(index + length, 0) : min(index, length);
+	};
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var shared = __webpack_require__(262)('keys')
+	  , uid    = __webpack_require__(263);
+	module.exports = function(key){
+	  return shared[key] || (shared[key] = uid(key));
+	};
+
+/***/ },
+/* 262 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global = __webpack_require__(183)
+	  , SHARED = '__core-js_shared__'
+	  , store  = global[SHARED] || (global[SHARED] = {});
+	module.exports = function(key){
+	  return store[key] || (store[key] = {});
+	};
+
+/***/ },
+/* 263 */
+/***/ function(module, exports) {
+
+	var id = 0
+	  , px = Math.random();
+	module.exports = function(key){
+	  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+	};
+
+/***/ },
+/* 264 */
+/***/ function(module, exports) {
+
+	// IE 8- don't enum bug keys
+	module.exports = (
+	  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
+	).split(',');
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(183).document && document.documentElement;
+
+/***/ },
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var def = __webpack_require__(188).f
+	  , has = __webpack_require__(248)
+	  , TAG = __webpack_require__(267)('toStringTag');
+	
+	module.exports = function(it, tag, stat){
+	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
+	};
+
+/***/ },
+/* 267 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var store      = __webpack_require__(262)('wks')
+	  , uid        = __webpack_require__(263)
+	  , Symbol     = __webpack_require__(183).Symbol
+	  , USE_SYMBOL = typeof Symbol == 'function';
+	
+	var $exports = module.exports = function(name){
+	  return store[name] || (store[name] =
+	    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+	};
+	
+	$exports.store = store;
+
+/***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+	var has         = __webpack_require__(248)
+	  , toObject    = __webpack_require__(269)
+	  , IE_PROTO    = __webpack_require__(261)('IE_PROTO')
+	  , ObjectProto = Object.prototype;
+	
+	module.exports = Object.getPrototypeOf || function(O){
+	  O = toObject(O);
+	  if(has(O, IE_PROTO))return O[IE_PROTO];
+	  if(typeof O.constructor == 'function' && O instanceof O.constructor){
+	    return O.constructor.prototype;
+	  } return O instanceof Object ? ObjectProto : null;
+	};
+
+/***/ },
+/* 269 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.13 ToObject(argument)
+	var defined = __webpack_require__(244);
+	module.exports = function(it){
+	  return Object(defined(it));
+	};
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(271);
+	var global        = __webpack_require__(183)
+	  , hide          = __webpack_require__(187)
+	  , Iterators     = __webpack_require__(249)
+	  , TO_STRING_TAG = __webpack_require__(267)('toStringTag');
+	
+	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
+	  var NAME       = collections[i]
+	    , Collection = global[NAME]
+	    , proto      = Collection && Collection.prototype;
+	  if(proto && !proto[TO_STRING_TAG])hide(proto, TO_STRING_TAG, NAME);
+	  Iterators[NAME] = Iterators.Array;
+	}
+
+/***/ },
+/* 271 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var addToUnscopables = __webpack_require__(272)
+	  , step             = __webpack_require__(273)
+	  , Iterators        = __webpack_require__(249)
+	  , toIObject        = __webpack_require__(255);
+	
+	// 22.1.3.4 Array.prototype.entries()
+	// 22.1.3.13 Array.prototype.keys()
+	// 22.1.3.29 Array.prototype.values()
+	// 22.1.3.30 Array.prototype[@@iterator]()
+	module.exports = __webpack_require__(245)(Array, 'Array', function(iterated, kind){
+	  this._t = toIObject(iterated); // target
+	  this._i = 0;                   // next index
+	  this._k = kind;                // kind
+	// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
+	}, function(){
+	  var O     = this._t
+	    , kind  = this._k
+	    , index = this._i++;
+	  if(!O || index >= O.length){
+	    this._t = undefined;
+	    return step(1);
+	  }
+	  if(kind == 'keys'  )return step(0, index);
+	  if(kind == 'values')return step(0, O[index]);
+	  return step(0, [index, O[index]]);
+	}, 'values');
+	
+	// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
+	Iterators.Arguments = Iterators.Array;
+	
+	addToUnscopables('keys');
+	addToUnscopables('values');
+	addToUnscopables('entries');
+
+/***/ },
+/* 272 */
+/***/ function(module, exports) {
+
+	module.exports = function(){ /* empty */ };
+
+/***/ },
+/* 273 */
+/***/ function(module, exports) {
+
+	module.exports = function(done, value){
+	  return {value: value, done: !!done};
+	};
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var LIBRARY            = __webpack_require__(246)
+	  , global             = __webpack_require__(183)
+	  , ctx                = __webpack_require__(185)
+	  , classof            = __webpack_require__(275)
+	  , $export            = __webpack_require__(182)
+	  , isObject           = __webpack_require__(190)
+	  , aFunction          = __webpack_require__(186)
+	  , anInstance         = __webpack_require__(276)
+	  , forOf              = __webpack_require__(277)
+	  , speciesConstructor = __webpack_require__(281)
+	  , task               = __webpack_require__(282).set
+	  , microtask          = __webpack_require__(284)()
+	  , PROMISE            = 'Promise'
+	  , TypeError          = global.TypeError
+	  , process            = global.process
+	  , $Promise           = global[PROMISE]
+	  , process            = global.process
+	  , isNode             = classof(process) == 'process'
+	  , empty              = function(){ /* empty */ }
+	  , Internal, GenericPromiseCapability, Wrapper;
+	
+	var USE_NATIVE = !!function(){
+	  try {
+	    // correct subclassing with @@species support
+	    var promise     = $Promise.resolve(1)
+	      , FakePromise = (promise.constructor = {})[__webpack_require__(267)('species')] = function(exec){ exec(empty, empty); };
+	    // unhandled rejections tracking support, NodeJS Promise without it fails @@species test
+	    return (isNode || typeof PromiseRejectionEvent == 'function') && promise.then(empty) instanceof FakePromise;
+	  } catch(e){ /* empty */ }
+	}();
+	
+	// helpers
+	var sameConstructor = function(a, b){
+	  // with library wrapper special case
+	  return a === b || a === $Promise && b === Wrapper;
+	};
+	var isThenable = function(it){
+	  var then;
+	  return isObject(it) && typeof (then = it.then) == 'function' ? then : false;
+	};
+	var newPromiseCapability = function(C){
+	  return sameConstructor($Promise, C)
+	    ? new PromiseCapability(C)
+	    : new GenericPromiseCapability(C);
+	};
+	var PromiseCapability = GenericPromiseCapability = function(C){
+	  var resolve, reject;
+	  this.promise = new C(function($$resolve, $$reject){
+	    if(resolve !== undefined || reject !== undefined)throw TypeError('Bad Promise constructor');
+	    resolve = $$resolve;
+	    reject  = $$reject;
+	  });
+	  this.resolve = aFunction(resolve);
+	  this.reject  = aFunction(reject);
+	};
+	var perform = function(exec){
+	  try {
+	    exec();
+	  } catch(e){
+	    return {error: e};
+	  }
+	};
+	var notify = function(promise, isReject){
+	  if(promise._n)return;
+	  promise._n = true;
+	  var chain = promise._c;
+	  microtask(function(){
+	    var value = promise._v
+	      , ok    = promise._s == 1
+	      , i     = 0;
+	    var run = function(reaction){
+	      var handler = ok ? reaction.ok : reaction.fail
+	        , resolve = reaction.resolve
+	        , reject  = reaction.reject
+	        , domain  = reaction.domain
+	        , result, then;
+	      try {
+	        if(handler){
+	          if(!ok){
+	            if(promise._h == 2)onHandleUnhandled(promise);
+	            promise._h = 1;
+	          }
+	          if(handler === true)result = value;
+	          else {
+	            if(domain)domain.enter();
+	            result = handler(value);
+	            if(domain)domain.exit();
+	          }
+	          if(result === reaction.promise){
+	            reject(TypeError('Promise-chain cycle'));
+	          } else if(then = isThenable(result)){
+	            then.call(result, resolve, reject);
+	          } else resolve(result);
+	        } else reject(value);
+	      } catch(e){
+	        reject(e);
+	      }
+	    };
+	    while(chain.length > i)run(chain[i++]); // variable length - can't use forEach
+	    promise._c = [];
+	    promise._n = false;
+	    if(isReject && !promise._h)onUnhandled(promise);
+	  });
+	};
+	var onUnhandled = function(promise){
+	  task.call(global, function(){
+	    var value = promise._v
+	      , abrupt, handler, console;
+	    if(isUnhandled(promise)){
+	      abrupt = perform(function(){
+	        if(isNode){
+	          process.emit('unhandledRejection', value, promise);
+	        } else if(handler = global.onunhandledrejection){
+	          handler({promise: promise, reason: value});
+	        } else if((console = global.console) && console.error){
+	          console.error('Unhandled promise rejection', value);
+	        }
+	      });
+	      // Browsers should not trigger `rejectionHandled` event if it was handled here, NodeJS - should
+	      promise._h = isNode || isUnhandled(promise) ? 2 : 1;
+	    } promise._a = undefined;
+	    if(abrupt)throw abrupt.error;
+	  });
+	};
+	var isUnhandled = function(promise){
+	  if(promise._h == 1)return false;
+	  var chain = promise._a || promise._c
+	    , i     = 0
+	    , reaction;
+	  while(chain.length > i){
+	    reaction = chain[i++];
+	    if(reaction.fail || !isUnhandled(reaction.promise))return false;
+	  } return true;
+	};
+	var onHandleUnhandled = function(promise){
+	  task.call(global, function(){
+	    var handler;
+	    if(isNode){
+	      process.emit('rejectionHandled', promise);
+	    } else if(handler = global.onrejectionhandled){
+	      handler({promise: promise, reason: promise._v});
+	    }
+	  });
+	};
+	var $reject = function(value){
+	  var promise = this;
+	  if(promise._d)return;
+	  promise._d = true;
+	  promise = promise._w || promise; // unwrap
+	  promise._v = value;
+	  promise._s = 2;
+	  if(!promise._a)promise._a = promise._c.slice();
+	  notify(promise, true);
+	};
+	var $resolve = function(value){
+	  var promise = this
+	    , then;
+	  if(promise._d)return;
+	  promise._d = true;
+	  promise = promise._w || promise; // unwrap
+	  try {
+	    if(promise === value)throw TypeError("Promise can't be resolved itself");
+	    if(then = isThenable(value)){
+	      microtask(function(){
+	        var wrapper = {_w: promise, _d: false}; // wrap
+	        try {
+	          then.call(value, ctx($resolve, wrapper, 1), ctx($reject, wrapper, 1));
+	        } catch(e){
+	          $reject.call(wrapper, e);
+	        }
+	      });
+	    } else {
+	      promise._v = value;
+	      promise._s = 1;
+	      notify(promise, false);
+	    }
+	  } catch(e){
+	    $reject.call({_w: promise, _d: false}, e); // wrap
+	  }
+	};
+	
+	// constructor polyfill
+	if(!USE_NATIVE){
+	  // 25.4.3.1 Promise(executor)
+	  $Promise = function Promise(executor){
+	    anInstance(this, $Promise, PROMISE, '_h');
+	    aFunction(executor);
+	    Internal.call(this);
+	    try {
+	      executor(ctx($resolve, this, 1), ctx($reject, this, 1));
+	    } catch(err){
+	      $reject.call(this, err);
+	    }
+	  };
+	  Internal = function Promise(executor){
+	    this._c = [];             // <- awaiting reactions
+	    this._a = undefined;      // <- checked in isUnhandled reactions
+	    this._s = 0;              // <- state
+	    this._d = false;          // <- done
+	    this._v = undefined;      // <- value
+	    this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
+	    this._n = false;          // <- notify
+	  };
+	  Internal.prototype = __webpack_require__(285)($Promise.prototype, {
+	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
+	    then: function then(onFulfilled, onRejected){
+	      var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
+	      reaction.ok     = typeof onFulfilled == 'function' ? onFulfilled : true;
+	      reaction.fail   = typeof onRejected == 'function' && onRejected;
+	      reaction.domain = isNode ? process.domain : undefined;
+	      this._c.push(reaction);
+	      if(this._a)this._a.push(reaction);
+	      if(this._s)notify(this, false);
+	      return reaction.promise;
+	    },
+	    // 25.4.5.1 Promise.prototype.catch(onRejected)
+	    'catch': function(onRejected){
+	      return this.then(undefined, onRejected);
+	    }
+	  });
+	  PromiseCapability = function(){
+	    var promise  = new Internal;
+	    this.promise = promise;
+	    this.resolve = ctx($resolve, promise, 1);
+	    this.reject  = ctx($reject, promise, 1);
+	  };
+	}
+	
+	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
+	__webpack_require__(266)($Promise, PROMISE);
+	__webpack_require__(286)(PROMISE);
+	Wrapper = __webpack_require__(184)[PROMISE];
+	
+	// statics
+	$export($export.S + $export.F * !USE_NATIVE, PROMISE, {
+	  // 25.4.4.5 Promise.reject(r)
+	  reject: function reject(r){
+	    var capability = newPromiseCapability(this)
+	      , $$reject   = capability.reject;
+	    $$reject(r);
+	    return capability.promise;
+	  }
+	});
+	$export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
+	  // 25.4.4.6 Promise.resolve(x)
+	  resolve: function resolve(x){
+	    // instanceof instead of internal slot check because we should fix it without replacement native Promise core
+	    if(x instanceof $Promise && sameConstructor(x.constructor, this))return x;
+	    var capability = newPromiseCapability(this)
+	      , $$resolve  = capability.resolve;
+	    $$resolve(x);
+	    return capability.promise;
+	  }
+	});
+	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(287)(function(iter){
+	  $Promise.all(iter)['catch'](empty);
+	})), PROMISE, {
+	  // 25.4.4.1 Promise.all(iterable)
+	  all: function all(iterable){
+	    var C          = this
+	      , capability = newPromiseCapability(C)
+	      , resolve    = capability.resolve
+	      , reject     = capability.reject;
+	    var abrupt = perform(function(){
+	      var values    = []
+	        , index     = 0
+	        , remaining = 1;
+	      forOf(iterable, false, function(promise){
+	        var $index        = index++
+	          , alreadyCalled = false;
+	        values.push(undefined);
+	        remaining++;
+	        C.resolve(promise).then(function(value){
+	          if(alreadyCalled)return;
+	          alreadyCalled  = true;
+	          values[$index] = value;
+	          --remaining || resolve(values);
+	        }, reject);
+	      });
+	      --remaining || resolve(values);
+	    });
+	    if(abrupt)reject(abrupt.error);
+	    return capability.promise;
+	  },
+	  // 25.4.4.4 Promise.race(iterable)
+	  race: function race(iterable){
+	    var C          = this
+	      , capability = newPromiseCapability(C)
+	      , reject     = capability.reject;
+	    var abrupt = perform(function(){
+	      forOf(iterable, false, function(promise){
+	        C.resolve(promise).then(capability.resolve, reject);
+	      });
+	    });
+	    if(abrupt)reject(abrupt.error);
+	    return capability.promise;
+	  }
+	});
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// getting tag from 19.1.3.6 Object.prototype.toString()
+	var cof = __webpack_require__(257)
+	  , TAG = __webpack_require__(267)('toStringTag')
+	  // ES3 wrong here
+	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
+	
+	// fallback for IE11 Script Access Denied error
+	var tryGet = function(it, key){
+	  try {
+	    return it[key];
+	  } catch(e){ /* empty */ }
+	};
+	
+	module.exports = function(it){
+	  var O, T, B;
+	  return it === undefined ? 'Undefined' : it === null ? 'Null'
+	    // @@toStringTag case
+	    : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
+	    // builtinTag case
+	    : ARG ? cof(O)
+	    // ES3 arguments fallback
+	    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+	};
+
+/***/ },
+/* 276 */
+/***/ function(module, exports) {
+
+	module.exports = function(it, Constructor, name, forbiddenField){
+	  if(!(it instanceof Constructor) || (forbiddenField !== undefined && forbiddenField in it)){
+	    throw TypeError(name + ': incorrect invocation!');
+	  } return it;
+	};
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ctx         = __webpack_require__(185)
+	  , call        = __webpack_require__(278)
+	  , isArrayIter = __webpack_require__(279)
+	  , anObject    = __webpack_require__(189)
+	  , toLength    = __webpack_require__(259)
+	  , getIterFn   = __webpack_require__(280)
+	  , BREAK       = {}
+	  , RETURN      = {};
+	var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
+	  var iterFn = ITERATOR ? function(){ return iterable; } : getIterFn(iterable)
+	    , f      = ctx(fn, that, entries ? 2 : 1)
+	    , index  = 0
+	    , length, step, iterator, result;
+	  if(typeof iterFn != 'function')throw TypeError(iterable + ' is not iterable!');
+	  // fast case for arrays with default iterator
+	  if(isArrayIter(iterFn))for(length = toLength(iterable.length); length > index; index++){
+	    result = entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
+	    if(result === BREAK || result === RETURN)return result;
+	  } else for(iterator = iterFn.call(iterable); !(step = iterator.next()).done; ){
+	    result = call(iterator, f, step.value, entries);
+	    if(result === BREAK || result === RETURN)return result;
+	  }
+	};
+	exports.BREAK  = BREAK;
+	exports.RETURN = RETURN;
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// call something on iterator step with safe closing on error
+	var anObject = __webpack_require__(189);
+	module.exports = function(iterator, fn, value, entries){
+	  try {
+	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+	  // 7.4.6 IteratorClose(iterator, completion)
+	  } catch(e){
+	    var ret = iterator['return'];
+	    if(ret !== undefined)anObject(ret.call(iterator));
+	    throw e;
+	  }
+	};
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// check on default Array iterator
+	var Iterators  = __webpack_require__(249)
+	  , ITERATOR   = __webpack_require__(267)('iterator')
+	  , ArrayProto = Array.prototype;
+	
+	module.exports = function(it){
+	  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
+	};
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var classof   = __webpack_require__(275)
+	  , ITERATOR  = __webpack_require__(267)('iterator')
+	  , Iterators = __webpack_require__(249);
+	module.exports = __webpack_require__(184).getIteratorMethod = function(it){
+	  if(it != undefined)return it[ITERATOR]
+	    || it['@@iterator']
+	    || Iterators[classof(it)];
+	};
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
+	var anObject  = __webpack_require__(189)
+	  , aFunction = __webpack_require__(186)
+	  , SPECIES   = __webpack_require__(267)('species');
+	module.exports = function(O, D){
+	  var C = anObject(O).constructor, S;
+	  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
+	};
+
+/***/ },
+/* 282 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ctx                = __webpack_require__(185)
+	  , invoke             = __webpack_require__(283)
+	  , html               = __webpack_require__(265)
+	  , cel                = __webpack_require__(194)
+	  , global             = __webpack_require__(183)
+	  , process            = global.process
+	  , setTask            = global.setImmediate
+	  , clearTask          = global.clearImmediate
+	  , MessageChannel     = global.MessageChannel
+	  , counter            = 0
+	  , queue              = {}
+	  , ONREADYSTATECHANGE = 'onreadystatechange'
+	  , defer, channel, port;
+	var run = function(){
+	  var id = +this;
+	  if(queue.hasOwnProperty(id)){
+	    var fn = queue[id];
+	    delete queue[id];
+	    fn();
+	  }
+	};
+	var listener = function(event){
+	  run.call(event.data);
+	};
+	// Node.js 0.9+ & IE10+ has setImmediate, otherwise:
+	if(!setTask || !clearTask){
+	  setTask = function setImmediate(fn){
+	    var args = [], i = 1;
+	    while(arguments.length > i)args.push(arguments[i++]);
+	    queue[++counter] = function(){
+	      invoke(typeof fn == 'function' ? fn : Function(fn), args);
+	    };
+	    defer(counter);
+	    return counter;
+	  };
+	  clearTask = function clearImmediate(id){
+	    delete queue[id];
+	  };
+	  // Node.js 0.8-
+	  if(__webpack_require__(257)(process) == 'process'){
+	    defer = function(id){
+	      process.nextTick(ctx(run, id, 1));
+	    };
+	  // Browsers with MessageChannel, includes WebWorkers
+	  } else if(MessageChannel){
+	    channel = new MessageChannel;
+	    port    = channel.port2;
+	    channel.port1.onmessage = listener;
+	    defer = ctx(port.postMessage, port, 1);
+	  // Browsers with postMessage, skip WebWorkers
+	  // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
+	  } else if(global.addEventListener && typeof postMessage == 'function' && !global.importScripts){
+	    defer = function(id){
+	      global.postMessage(id + '', '*');
+	    };
+	    global.addEventListener('message', listener, false);
+	  // IE8-
+	  } else if(ONREADYSTATECHANGE in cel('script')){
+	    defer = function(id){
+	      html.appendChild(cel('script'))[ONREADYSTATECHANGE] = function(){
+	        html.removeChild(this);
+	        run.call(id);
+	      };
+	    };
+	  // Rest old browsers
+	  } else {
+	    defer = function(id){
+	      setTimeout(ctx(run, id, 1), 0);
+	    };
+	  }
+	}
+	module.exports = {
+	  set:   setTask,
+	  clear: clearTask
+	};
+
+/***/ },
+/* 283 */
+/***/ function(module, exports) {
+
+	// fast apply, http://jsperf.lnkit.com/fast-apply/5
+	module.exports = function(fn, args, that){
+	  var un = that === undefined;
+	  switch(args.length){
+	    case 0: return un ? fn()
+	                      : fn.call(that);
+	    case 1: return un ? fn(args[0])
+	                      : fn.call(that, args[0]);
+	    case 2: return un ? fn(args[0], args[1])
+	                      : fn.call(that, args[0], args[1]);
+	    case 3: return un ? fn(args[0], args[1], args[2])
+	                      : fn.call(that, args[0], args[1], args[2]);
+	    case 4: return un ? fn(args[0], args[1], args[2], args[3])
+	                      : fn.call(that, args[0], args[1], args[2], args[3]);
+	  } return              fn.apply(that, args);
+	};
+
+/***/ },
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(183)
+	  , macrotask = __webpack_require__(282).set
+	  , Observer  = global.MutationObserver || global.WebKitMutationObserver
+	  , process   = global.process
+	  , Promise   = global.Promise
+	  , isNode    = __webpack_require__(257)(process) == 'process';
+	
+	module.exports = function(){
+	  var head, last, notify;
+	
+	  var flush = function(){
+	    var parent, fn;
+	    if(isNode && (parent = process.domain))parent.exit();
+	    while(head){
+	      fn   = head.fn;
+	      head = head.next;
+	      try {
+	        fn();
+	      } catch(e){
+	        if(head)notify();
+	        else last = undefined;
+	        throw e;
+	      }
+	    } last = undefined;
+	    if(parent)parent.enter();
+	  };
+	
+	  // Node.js
+	  if(isNode){
+	    notify = function(){
+	      process.nextTick(flush);
+	    };
+	  // browsers with MutationObserver
+	  } else if(Observer){
+	    var toggle = true
+	      , node   = document.createTextNode('');
+	    new Observer(flush).observe(node, {characterData: true}); // eslint-disable-line no-new
+	    notify = function(){
+	      node.data = toggle = !toggle;
+	    };
+	  // environments with maybe non-completely correct, but existent Promise
+	  } else if(Promise && Promise.resolve){
+	    var promise = Promise.resolve();
+	    notify = function(){
+	      promise.then(flush);
+	    };
+	  // for other environments - macrotask based on:
+	  // - setImmediate
+	  // - MessageChannel
+	  // - window.postMessag
+	  // - onreadystatechange
+	  // - setTimeout
+	  } else {
+	    notify = function(){
+	      // strange IE + webpack dev server bug - use .call(global)
+	      macrotask.call(global, flush);
+	    };
+	  }
+	
+	  return function(fn){
+	    var task = {fn: fn, next: undefined};
+	    if(last)last.next = task;
+	    if(!head){
+	      head = task;
+	      notify();
+	    } last = task;
+	  };
+	};
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var hide = __webpack_require__(187);
+	module.exports = function(target, src, safe){
+	  for(var key in src){
+	    if(safe && target[key])target[key] = src[key];
+	    else hide(target, key, src[key]);
+	  } return target;
+	};
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var global      = __webpack_require__(183)
+	  , core        = __webpack_require__(184)
+	  , dP          = __webpack_require__(188)
+	  , DESCRIPTORS = __webpack_require__(192)
+	  , SPECIES     = __webpack_require__(267)('species');
+	
+	module.exports = function(KEY){
+	  var C = typeof core[KEY] == 'function' ? core[KEY] : global[KEY];
+	  if(DESCRIPTORS && C && !C[SPECIES])dP.f(C, SPECIES, {
+	    configurable: true,
+	    get: function(){ return this; }
+	  });
+	};
+
+/***/ },
+/* 287 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ITERATOR     = __webpack_require__(267)('iterator')
+	  , SAFE_CLOSING = false;
+	
+	try {
+	  var riter = [7][ITERATOR]();
+	  riter['return'] = function(){ SAFE_CLOSING = true; };
+	  Array.from(riter, function(){ throw 2; });
+	} catch(e){ /* empty */ }
+	
+	module.exports = function(exec, skipClosing){
+	  if(!skipClosing && !SAFE_CLOSING)return false;
+	  var safe = false;
+	  try {
+	    var arr  = [7]
+	      , iter = arr[ITERATOR]();
+	    iter.next = function(){ return {done: safe = true}; };
+	    arr[ITERATOR] = function(){ return iter; };
+	    exec(arr);
+	  } catch(e){ /* empty */ }
+	  return safe;
+	};
+
+/***/ },
+/* 288 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _stringify = __webpack_require__(229);
+	
+	var _stringify2 = _interopRequireDefault(_stringify);
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* global API */
+	var WordService = function () {
+	  WordService.$inject = ["$http"];
+	  function WordService($http) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, WordService);
+	    this.$http = $http;
+	  }
+	
+	  (0, _createClass3.default)(WordService, [{
+	    key: 'list',
+	    value: function list() {
+	      var _this = this;
+	      return this.$http.get(("http://127.0.0.1:3000") + '/dictionary').then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'create',
+	    value: function create(word) {
+	      var _this = this;
+	      return this.$http.post(("http://127.0.0.1:3000") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'detail',
+	    value: function detail(word) {
+	      var _this = this;
+	      return this.$http.get(("http://127.0.0.1:3000") + '/dictionary/' + word).then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'update',
+	    value: function update(word) {
+	      var _this = this;
+	      return this.$http.put(("http://127.0.0.1:3000") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }, {
+	    key: 'checkIsExist',
+	    value: function checkIsExist(words) {
+	      var _this = this;
+	      var collection = {
+	        words: words
+	      };
+	      return this.$http.post(("http://127.0.0.1:3000") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
+	        return response.data;
+	      }).catch(function () {
+	        return null;
+	      });
+	    }
+	  }]);
+	  return WordService;
+	}();
+	
+	exports.default = WordService;
+
+/***/ },
+/* 289 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _regenerator = __webpack_require__(233);
+	
+	var _regenerator2 = _interopRequireDefault(_regenerator);
+	
+	var _asyncToGenerator2 = __webpack_require__(237);
+	
+	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* global API */
+	var StatisticService = function () {
+	  StatisticService.$inject = ["$http", "$q", "$window", "$cookies"];
+	  function StatisticService($http, $q, $window, $cookies) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, StatisticService);
+	    this.$http = $http;
+	    this.window = $window;
+	  }
+	
+	  (0, _createClass3.default)(StatisticService, [{
+	    key: 'games',
+	    value: function () {
+	      var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+	        var response;
+	        return _regenerator2.default.wrap(function _callee$(_context) {
+	          while (1) {
+	            switch (_context.prev = _context.next) {
+	              case 0:
+	                _context.prev = 0;
+	                _context.next = 3;
+	                return this.$http.get(("http://127.0.0.1:3000") + '/statistic/games');
+	
+	              case 3:
+	                response = _context.sent;
+	                _context.next = 6;
+	                return response.data;
+	
+	              case 6:
+	                return _context.abrupt('return', _context.sent);
+	
+	              case 9:
+	                _context.prev = 9;
+	                _context.t0 = _context['catch'](0);
+	                throw _context.t0;
+	
+	              case 12:
+	              case 'end':
+	                return _context.stop();
+	            }
+	          }
+	        }, _callee, this, [[0, 9]]);
+	      }));
+	
+	      function games() {
+	        return _ref.apply(this, arguments);
+	      }
+	
+	      return games;
+	    }()
+	  }, {
+	    key: 'players',
+	    value: function () {
+	      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+	        var response;
+	        return _regenerator2.default.wrap(function _callee2$(_context2) {
+	          while (1) {
+	            switch (_context2.prev = _context2.next) {
+	              case 0:
+	                _context2.prev = 0;
+	                _context2.next = 3;
+	                return this.$http.get(("http://127.0.0.1:3000") + '/statistic/players');
+	
+	              case 3:
+	                response = _context2.sent;
+	                _context2.next = 6;
+	                return response.data;
+	
+	              case 6:
+	                return _context2.abrupt('return', _context2.sent);
+	
+	              case 9:
+	                _context2.prev = 9;
+	                _context2.t0 = _context2['catch'](0);
+	                throw _context2.t0;
+	
+	              case 12:
+	              case 'end':
+	                return _context2.stop();
+	            }
+	          }
+	        }, _callee2, this, [[0, 9]]);
+	      }));
+	
+	      function players() {
+	        return _ref2.apply(this, arguments);
+	      }
+	
+	      return players;
+	    }()
+	  }, {
+	    key: 'playerHistory',
+	    value: function () {
+	      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(playerID) {
+	        var response;
+	        return _regenerator2.default.wrap(function _callee3$(_context3) {
+	          while (1) {
+	            switch (_context3.prev = _context3.next) {
+	              case 0:
+	                _context3.prev = 0;
+	                _context3.next = 3;
+	                return this.$http.get(("http://127.0.0.1:3000") + '/statistic/' + playerID);
+	
+	              case 3:
+	                response = _context3.sent;
+	                _context3.next = 6;
+	                return response.data;
+	
+	              case 6:
+	                return _context3.abrupt('return', _context3.sent);
+	
+	              case 9:
+	                _context3.prev = 9;
+	                _context3.t0 = _context3['catch'](0);
+	                throw _context3.t0;
+	
+	              case 12:
+	              case 'end':
+	                return _context3.stop();
+	            }
+	          }
+	        }, _callee3, this, [[0, 9]]);
+	      }));
+	
+	      function playerHistory(_x) {
+	        return _ref3.apply(this, arguments);
+	      }
+	
+	      return playerHistory;
+	    }()
+	  }]);
+	  return StatisticService;
+	}();
+	
+	exports.default = StatisticService;
+
+/***/ },
+/* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _stringify = __webpack_require__(229);
+	
+	var _stringify2 = _interopRequireDefault(_stringify);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (UserService, PlayerService) {
+	  return {
+	    createCustomer: createCustomer
+	  };
+	
+	  function createCustomer(user) {
+	    var player = {
+	      name: user.firstName.$modelValue + ' ' + user.lastName.$modelValue,
+	      status: 'new user'
+	    };
+	    var userdb = {
+	      username: user.userName.$modelValue,
+	      password: user.password.$modelValue
+	    };
+	    return PlayerService.create(player).then(function (res) {
+	      player = res;
+	      console.log('db - ' + (0, _stringify2.default)(userdb));
+	      return player;
+	    }).then(function (pl) {
+	      console.log('pl - ' + (0, _stringify2.default)(pl));
+	      userdb.playerID = pl._id;
+	      console.log('db - ' + (0, _stringify2.default)(userdb));
+	      return UserService.create(userdb);
+	    });
+	  }
+	};
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _promise = __webpack_require__(238);
+	
+	var _promise2 = _interopRequireDefault(_promise);
+	
+	var _getIterator2 = __webpack_require__(292);
+	
+	var _getIterator3 = _interopRequireDefault(_getIterator2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (GameService, PlayerService) {
+	  return {
+	    connectNewUser: connectNewUser
+	  };
+	
+	  function connectNewUser(playerID, gameID) {
+	    return GameService.detail(gameID).then(function (result) {
+	      var game = result;
+	      var _iteratorNormalCompletion = true;
+	      var _didIteratorError = false;
+	      var _iteratorError = undefined;
+	
+	      try {
+	        for (var _iterator = (0, _getIterator3.default)(game.players), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	          var player = _step.value;
+	
+	          if (player.playerID === playerID) {
+	            return new _promise2.default(function (resolve, reject) {
+	              return resolve(game);
+	            });
+	          }
+	        }
+	      } catch (err) {
+	        _didIteratorError = true;
+	        _iteratorError = err;
+	      } finally {
+	        try {
+	          if (!_iteratorNormalCompletion && _iterator.return) {
+	            _iterator.return();
+	          }
+	        } finally {
+	          if (_didIteratorError) {
+	            throw _iteratorError;
+	          }
+	        }
+	      }
+	
+	      var newPlayer = {
+	        playerID: playerID,
+	        words: []
+	      };
+	      game.players.push(newPlayer);
+	      return GameService.update(game).then(function (obj) {
+	        return obj;
+	      });
+	    });
+	  }
+	};
+
+/***/ },
+/* 292 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(293), __esModule: true };
+
+/***/ },
+/* 293 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(270);
+	__webpack_require__(241);
+	module.exports = __webpack_require__(294);
+
+/***/ },
+/* 294 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var anObject = __webpack_require__(189)
+	  , get      = __webpack_require__(280);
+	module.exports = __webpack_require__(184).getIterator = function(it){
+	  var iterFn = get(it);
+	  if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
+	  return anObject(iterFn.call(it));
+	};
+
+/***/ },
+/* 295 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function ($q, $injector, $window) {
+	  return {
+	
+	    // All the following methods are optional
+	
+	    request: function request(config) {
+	      // Called before send a new XHR request.
+	      // This is a good place where manipulate the
+	      // request parameters.
+	
+	      return config || $q.when(config);
+	    },
+	
+	    requestError: function requestError(rejection) {
+	      // Called when another request fails.
+	
+	      // I am still searching a good use case for this.
+	      // If you are aware of it, please write a comment
+	
+	      return $q.reject(rejection);
+	    },
+	
+	    response: function response(_response) {
+	      // Called before a promise is resolved.
+	
+	      return _response || $q.when(_response);
+	    },
+	
+	    responseError: function responseError(rejection) {
+	      // Called when another XHR request returns with
+	      // an error status code.
+	      if ((rejection.status == 401 || rejection.status == -1) && rejection.config.url !== '/signin/') {
+	        $window.sessionStorage.userInfo = null;
+	        // const $window = $injector.get('$window');
+	        // $window.location.href = '#/signin';
+	
+	        var $state = $injector.get('$state');
+	        $state.go('signin');
+	      }
+	      return $q.reject(rejection);
+	    }
+	
+	  };
+	};
+
+/***/ },
+/* 296 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _connectComponent = __webpack_require__(297);
+	
+	var _connectComponent2 = _interopRequireDefault(_connectComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.connectSection', []).component('connectExistingGame', _connectComponent2.default).name;
+
+/***/ },
+/* 297 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _connectTmpl = __webpack_require__(298);
+	
+	var _connectTmpl2 = _interopRequireDefault(_connectTmpl);
+	
+	var _connectController = __webpack_require__(299);
+	
+	var _connectController2 = _interopRequireDefault(_connectController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _connectTmpl2.default,
+	  controller: _connectController2.default,
+	  bind: {
+	    user: '='
+	  }
+	};
+
+/***/ },
+/* 298 */
+/***/ function(module, exports) {
+
+	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"connect-square\">\n            <h4 class=\"brand-heading\">connect to the existing game</h4>\n            <h3 ng-show=\"!$ctrl.emptyList\">List of the actual games:</h3>\n            <h3 ng-show=\"$ctrl.emptyList\">Have no active game</h3>\n            <a ng-show=\"$ctrl.emptyList\" href=\"#/createNewGame\">\n              <h4>Back to create new game page</h4>\n            </a>\n            <table ng-show=\"!$ctrl.emptyList\" class=\"table table-hover\">\n              <tbody>\n                <tr>\n                  <th>\n                    <span class=\"connect-text\">Game word</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Player count</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Game Duration</span>\n                  </th>\n                  <th>\n                    <span class=\"connect-text\">Connect</span>\n                  </th>\n                </tr>\n                <tr ng-repeat=\"game in $ctrl.list track by $index\" ng-init=\"$ctrl.gTimer(game)\">\n                  <td>\n                    <div class=\"col-md-3 col-xs-3 col-sm-3 col-lg-3 main-text\">\n                      {{game.word}}\n                    </div>\n                  </td>\n                  <td>\n                    <span>Now\n                      {{game.players.length}}\n                      players</span>\n                  </div>\n                </td>\n                <td>\n                  <div id=\"{{game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </td>\n                <td>\n                  <button type=\"submit\" class=\"btn btn-success btn-block\" ng-click=\"$ctrl.connect(game._id)\">\n                    Connect\n                  </button>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var ConnectController = function () {
+	  ConnectController.$inject = ["GameService", "UserService", "GameFactory", "$location", "$scope", "commonFactory", "$window"];
+	  function ConnectController(GameService, UserService, GameFactory, $location, $scope, commonFactory, $window) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, ConnectController);
+	    this.GameService = GameService;
+	    this.UserService = UserService;
+	    this.GameFactory = GameFactory;
+	    this.location = $location;
+	    this.window = $window;
+	    this.scope = $scope;
+	    this.commonFactory = commonFactory;
+	    this.emptyList = false;
+	  }
+	
+	  (0, _createClass3.default)(ConnectController, [{
+	    key: '$onInit',
+	    value: function $onInit() {
+	      var _this2 = this;
+	
+	      this.GameService.list().then(function (res) {
+	        _this2.list = res;
+	        if (_this2.list.length === 0) {
+	          _this2.emptyList = true;
+	        }
+	      }).catch(function () {
+	        _this2.emptyList = false;
+	      });
+	    }
+	  }, {
+	    key: 'connect',
+	    value: function connect(gameID) {
+	      var _this = this;
+	      var user = this.UserService.getAuthUser();
+	      console.log(user);
+	      this.GameFactory.connectNewUser(user.playerID, gameID).then(function (response) {
+	        _this.UserService.userInfo.gameID = response._id;
+	        _this.window.location.href = '#/gamePlay';
+	        // _this.location.path('#/gamePlay');
+	        // _this.location.path('#/gameCreateRule');
+	      });
+	    }
+	  }, {
+	    key: 'gTimer',
+	    value: function gTimer(game) {
+	      var _this3 = this;
+	
+	      _angular2.default.element(document).ready(function () {
+	        var duration = Number(game.duration);
+	        var deadline = new Date(Date.parse(game.startTime) + duration * 60 * 1000);
+	        _this3.commonFactory.initializeClock(game._id, deadline);
+	      });
+	    }
+	    // this.scope.$on('$viewContentLoaded', function () {
+	    //   //call it here
+	    // });
+	
+	  }]);
+	  return ConnectController;
+	}();
+	
+	exports.default = ConnectController;
+
+/***/ },
+/* 300 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _createComponent = __webpack_require__(301);
+	
+	var _createComponent2 = _interopRequireDefault(_createComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.createSection', []).component('createNewGame', _createComponent2.default).name;
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createTmpl = __webpack_require__(302);
+	
+	var _createTmpl2 = _interopRequireDefault(_createTmpl);
+	
+	var _createController = __webpack_require__(303);
+	
+	var _createController2 = _interopRequireDefault(_createController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _createTmpl2.default,
+	  controller: _createController2.default,
+	  scope: {
+	    game: '='
+	  }
+	};
+
+/***/ },
+/* 302 */
+/***/ function(module, exports) {
+
+	module.exports = "<!-- About Section -->\n<div class=\"connect\">\n  <div class=\"connect-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <h4 class=\"brand-heading\">create new game</span>\n        </h4>\n        <form class=\"\" ng-submit=\"$ctrl.submitForm()\" method=\"post\" ng-model=\"game\" name=\"game\" ng-validator>\n          <div ng-class=\"{ 'has-error' : game.word.$invalid && !game.word.$pristine }\">\n            <label for=\"basic-url\">Enter your main word</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: otorhinolaryngological</span>\n              <input type=\"text\" class=\"form-control\" id=\"basic-url\" aria-describedby=\"basic-addon3\" require name=\"word\" ng-model=\"$ctrl.game.word\">\n            </div>\n          </div>\n          <div ng-class=\"{ 'has-error' : game.duration.$invalid && !game.duration.$pristine }\">\n            <label for=\"basic-url\">Select game duration</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: 30 min</span>\n              <select class=\"form-control form-control-lg\" name=\"duration\" ng-model=\"$ctrl.game.duration\" aria-describedby=\"basic-addon3\">\n                <option selected>\n                  ------------------Select game duration-------------------\n                </option>\n                <option ng-repeat=\"duration in $ctrl.durations track by $index\" ng-value=\"duration\">{{duration}}\n                  min.</option>\n              </select>\n            </div>\n          </div>\n          <div ng-class=\"{ 'has-error' : game.players.$invalid && !game.players.$pristine }\">\n            <label for=\"basic-url\">Select one or more players</label>\n            <div class=\"input-group\">\n              <span class=\"input-group-addon\" id=\"basic-addon3\">Example: Ivanov Ivan</span>\n              <select class=\"form-control form-control-lg\" name=\"players\" ng-model=\"$ctrl.game.players\" aria-describedby=\"basic-addon3\" multiple>\n                <option selected disabled>\n                  ------------------Select players-------------------\n                </option>\n                <option ng-repeat=\"player in $ctrl.players track by $index\" ng-value=\"player._id\">{{player.name}}</option>\n              </select>\n            </div>\n          </div>\n          <div class=\"signup-link\">\n            <button type=\"submit\" class=\"btn btn-success btn-block\">\n              Create new game\n            </button>\n          </div>\n          <div class=\"signup-link\">\n            <a type=\"button\" class=\"btn btn-danger btn-block\" href=\"#/\">CANCEL</a>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n";
+
+/***/ },
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _getIterator2 = __webpack_require__(292);
+	
+	var _getIterator3 = _interopRequireDefault(_getIterator2);
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var CreateController = function () {
+	  CreateController.$inject = ["GameService", "PlayerService", "UserService", "$window", "$scope"];
+	  function CreateController(GameService, PlayerService, UserService, $window, $scope) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, CreateController);
+	    this.GameService = GameService;
+	    this.PlayerService = PlayerService;
+	    this.UserService = UserService;
+	    this.durations = [1, 2, 5, 10, 15, 20, 25, 30, 45, 60];
+	    this.players = [];
+	    this.window = $window;
+	    this.scope = $scope;
+	  }
+	
+	  (0, _createClass3.default)(CreateController, [{
+	    key: '$onInit',
+	    value: function $onInit() {
+	      var _this = this;
+	      this.PlayerService.list().then(function (list) {
+	        _this.players = list;
+	      });
+	    }
+	  }, {
+	    key: 'submitForm',
+	    value: function submitForm() {
+	      var _this2 = this;
+	
+	      if (this.scope.game.word.$viewValue && this.scope.game.duration.$viewValue && this.scope.game.players.$viewValue.length > 0) {
+	        (function () {
+	          var game = {
+	            word: _this2.scope.game.word.$viewValue,
+	            duration: _this2.scope.game.duration.$viewValue
+	          };
+	          game.playerIDs = [];
+	          var _iteratorNormalCompletion = true;
+	          var _didIteratorError = false;
+	          var _iteratorError = undefined;
+	
+	          try {
+	            for (var _iterator = (0, _getIterator3.default)(_this2.scope.game.players.$viewValue), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	              var playerID = _step.value;
+	
+	              game.playerIDs.push(playerID);
+	            }
+	          } catch (err) {
+	            _didIteratorError = true;
+	            _iteratorError = err;
+	          } finally {
+	            try {
+	              if (!_iteratorNormalCompletion && _iterator.return) {
+	                _iterator.return();
+	              }
+	            } finally {
+	              if (_didIteratorError) {
+	                throw _iteratorError;
+	              }
+	            }
+	          }
+	
+	          game.playerIDs.push(_this2.UserService.getAuthUser().playerID);
+	          var _this = _this2;
+	          _this2.GameService.create(game).then(function (response) {
+	            _this.UserService.userInfo.gameID = response._id;
+	            _this.window.location.href = '#/gamePlay';
+	            // _this.location.path('#/gamePlay');
+	          });
+	        })();
+	      }
+	    }
+	  }]);
+	  return CreateController;
+	}();
+	
+	exports.default = CreateController;
+
+/***/ },
+/* 304 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _gamePlayComponent = __webpack_require__(305);
+	
+	var _gamePlayComponent2 = _interopRequireDefault(_gamePlayComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.gamePlay', []).component('gamePlay', _gamePlayComponent2.default).name;
+
+/***/ },
+/* 305 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _gamePlayTmpl = __webpack_require__(306);
+	
+	var _gamePlayTmpl2 = _interopRequireDefault(_gamePlayTmpl);
+	
+	var _gamePlayController = __webpack_require__(307);
+	
+	var _gamePlayController2 = _interopRequireDefault(_gamePlayController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _gamePlayTmpl2.default,
+	  controller: _gamePlayController2.default
+	};
+
+/***/ },
+/* 306 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"game\">\n  <div class=\"game-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"game-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 game-square\">\n            <div id=\"gameHeader\">\n              <br>\n              <h1 class=\"brand-heading\">WORD GAME</h1>\n            </div>\n            <div id=\"game\">\n              <p class=\"game-text\">Let's play. Your word:</p>\n              <p>\n                <h3>Duration:</h3>\n                <h2>\n                  <div id=\"{{$ctrl.game._id}}\">\n                    <span>\n                      <span class=\"hours\"></span>\n                      hr.</span>\n                    <span>\n                      <span class=\"minutes\"></span>\n                      min.</span>\n                    <span>\n                      <span class=\"seconds\"></span>\n                      sec.</span>\n                  </div>\n                </h2>\n              </p>\n              <p class=\"game-text\" ng-init=\"$ctrl.checkTimer()\">\n                <h2 ng-bind=\"$ctrl.game.word\" ng-init=\"$ctrl.gTimer()\"></h2>\n              </p>\n              <br>\n              <p class=\"game-text\">enter your word and click 'ENTER' button</p>\n              <div class=\"input-group\">\n                <input type=\"text\" class=\"form-control\" placeholder=\"Enter next word...\" name=\"word\" ng-keypress=\"($event.which === 13)?$ctrl.addWord($event):0\">\n                <span class=\"input-group-btn\">\n                  <button class=\"btn btn-default\" type=\"button\" ng-click=\"$ctrl.addWord($event)\">Approve</button>\n                </span>\n              </div>\n              <br>\n              <a type=\"submit\" class=\"btn btn-success btn-block\" ng-href=\"#/firstResults\">\n                Finish\n              </a>\n            </div>\n          </div>\n          <div class=\"col-md-2 col-xs-2 col-sm-2 col-lg-2 game-square game-words\">\n            <ol ng-show=\"$ctrl.userWords\" class=\"word-list\">\n              <li ng-repeat=\"word in $ctrl.userWords track by $index\" ng-bind=\"word\"></li>\n            </ol>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var PlayGameController = function () {
+	  PlayGameController.$inject = ["GameService", "UserService", "$scope", "commonFactory", "$state", "$timeout"];
+	  function PlayGameController(GameService, UserService, $scope, commonFactory, $state, $timeout) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, PlayGameController);
+	    this.GameService = GameService;
+	    this.UserService = UserService;
+	    this.scope = $scope;
+	    this.game = {};
+	    this.commonFactory = commonFactory;
+	    this.state = $state;
+	    this.timeout = $timeout;
+	  }
+	
+	  (0, _createClass3.default)(PlayGameController, [{
+	    key: '$onInit',
+	    value: function $onInit() {
+	      var _this2 = this;
+	
+	      this.getGame().then(function (result) {
+	        _this2.game = result;
+	        _this2.player = _this2.UserService.getAuthUser().playerID;
+	        _this2.getUserWords();
+	      });
+	    }
+	  }, {
+	    key: 'getUserWords',
+	    value: function getUserWords() {
+	      for (var i = 0; i < this.game.players.length; i++) {
+	        if (this.game.players[i].playerID == this.player) {
+	          this.userWords = [];
+	          for (var j = 0; j < this.game.players[i].words.length; j++) {
+	            this.userWords.push(this.game.players[i].words[j]);
+	          }
+	        }
+	      }
+	    }
+	  }, {
+	    key: 'getGame',
+	    value: function getGame() {
+	      return this.GameService.detail(this.UserService.getAuthUser().gameID).then(function (result) {
+	        return result;
+	      });
+	    }
+	  }, {
+	    key: 'addWord',
+	    value: function addWord(event) {
+	      var _this = this;
+	      // for (let i = 0; i < this.game.players.length; i++) {
+	      //   if (this.game.players[i].playerID == this.player) {
+	      //     this.game.players[i].words.push(event.target.value);
+	      //   }
+	      // }
+	      //
+	      var value = '';
+	      var input = _angular2.default.element(event.target).parent().parent().find('input');
+	      if (event.target.value) {
+	        value = event.target.value;
+	        event.target.value = '';
+	      } else {
+	        value = input.val();
+	        document.querySelector('.form-control').value = '';
+	      }
+	
+	      if (value) {
+	        try {
+	          this.userWords.push(value);
+	          var words = {
+	            words: value
+	          };
+	          event.target.value = '';
+	          return this.GameService.addWord(this.UserService.getAuthUser().gameID, words, this.player).then(function (result) {
+	            _this.game = result;
+	            return _this.game;
+	          }).catch(function () {
+	            throw new Error('Your time expired');
+	          });
+	        } catch (e) {
+	          this.message = e.message;
+	        }
+	      }
+	      return this.game;
+	    }
+	  }, {
+	    key: 'gTimer',
+	    value: function gTimer() {
+	      var _this3 = this;
+	
+	      _angular2.default.element(document).ready(function () {
+	        _this3.getGame().then(function (result) {
+	          var duration = Number(result.duration);
+	          var deadline = new Date(Date.parse(result.startTime) + duration * 60 * 1000);
+	          _this3.commonFactory.initializeClock(result._id, deadline);
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'checkTimer',
+	    value: function checkTimer() {
+	      var _this4 = this;
+	
+	      var duration = Number(this.game.duration);
+	      var deadline = new Date(Date.parse(this.game.startTime) + duration * 60 * 1000);
+	      var actualTime = new Date();
+	      if (deadline < actualTime) {
+	        // update DOM
+	        var timer = _angular2.default.element(document.getElementById('game'));
+	        timer.remove();
+	        var element = _angular2.default.element('<p class="game-text">Your time expired</p>');
+	        _angular2.default.element(document.getElementById('gameHeader')).append(element);
+	
+	        var navi = function navi() {
+	          _this4.state.go('firstResults');
+	        };
+	        this.timeout(navi.bind(this), 3000);
+	        return;
+	      }
+	      this.timer = this.timeout(this.checkTimer.bind(this), 1000);
+	      this.scope.$on('$locationChangeStart', function () {
+	        _this4.timeout.cancel(_this4.timer);
+	      });
+	      var deregister = this.scope.$on('$destroy', function () {
+	        _this4.timeout.cancel(_this4.timer);
+	      });
+	      this.timer.then(deregister, deregister);
+	    }
+	  }]);
+	  return PlayGameController;
+	}();
+	
+	exports.default = PlayGameController;
+
+/***/ },
+/* 308 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _firstResultsComponent = __webpack_require__(309);
+	
+	var _firstResultsComponent2 = _interopRequireDefault(_firstResultsComponent);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.firstResults', []).component('firstResults', _firstResultsComponent2.default).name;
+
+/***/ },
+/* 309 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _firstResultsTmpl = __webpack_require__(310);
+	
+	var _firstResultsTmpl2 = _interopRequireDefault(_firstResultsTmpl);
+	
+	var _firstResultsController = __webpack_require__(311);
+	
+	var _firstResultsController2 = _interopRequireDefault(_firstResultsController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _firstResultsTmpl2.default,
+	  controller: _firstResultsController2.default
+	};
+
+/***/ },
+/* 310 */
+/***/ function(module, exports) {
+
+	module.exports = "<!-- game Header -->\n<div class=\"f-res\">\n  <div class=\"f-res-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 f-res-square\">\n            <br>\n            <h1 class=\"brand-heading\">FIRST RESULTS</h1>\n            <h3>Play word was\n              <h2 ng-bind=\"$ctrl.game.word\"></h2>\n            </h3>\n            <div class=\"f-res-text\">\n              <span ng-show=\"!isDraw\">\n                <span ng-bind=\"$ctrl.winner.name\"></span>\n                WINS</span>\n              <span ng-show=\"isDraw\">A DRAW RESULT</span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div ng-class=\"$ctrl.colClass\" ng-repeat=\"player in $ctrl.game.players track by player.playerID\">\n            <div class=\"row\">\n              <player player=\"player\"></player>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\" style=\"padding-bottom: 10px;\">\n        <a href=\"#/\" class=\"btn btn-success btn-block\">Back to main page</a>\n      </div>\n    </div>\n  </div>\n</div>\n";
+
+/***/ },
+/* 311 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _stringify = __webpack_require__(229);
+	
+	var _stringify2 = _interopRequireDefault(_stringify);
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var FirstResultsController = function () {
+	  FirstResultsController.$inject = ["GameService", "PlayerService", "UserService", "$scope", "commonFactory", "$q", "$timeout", "$state"];
+	  function FirstResultsController(GameService, PlayerService, UserService, $scope, commonFactory, $q, $timeout, $state) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, FirstResultsController);
+	    this.GameService = GameService;
+	    this.PlayerService = PlayerService;
+	    this.scope = $scope;
+	    this.commonFactory = commonFactory;
+	    this.UserService = UserService;
+	    this.$q = $q;
+	    this.timeout = $timeout;
+	    this.state = $state;
+	  }
+	
+	  (0, _createClass3.default)(FirstResultsController, [{
+	    key: '$onInit',
+	    value: function $onInit() {
+	      var _this = this;
+	
+	      this.getGame().then(function (result) {
+	        _this.game = result;
+	        var plCount = _this.game.players.length;
+	        var index = Math.floor(12 / plCount) || 1;
+	        _this.colClass = 'col-md-' + index + ' col-xs-' + index + ' col-sm-' + index + ' col-lg-' + index + ' game-square game-words';
+	        if (!_this.isDrawResult(_this.game)) {
+	          var id = _this.findWinner(_this.game);
+	          _this.getPlayer(id).then(function (res) {
+	            _this.winner = res;
+	          });
+	        }
+	        _this.checkWords(_this.game);
+	      });
+	    }
+	  }, {
+	    key: 'isDrawResult',
+	    value: function isDrawResult(game) {
+	      this.scope.isDraw = false;
+	      for (var i = 0; i < game.players.length; i++) {
+	        if (game.players[i].words.length === game.players[0].words.length) {
+	          this.scope.isDraw = true;
+	        } else {
+	          this.scope.isDraw = false;
+	          return false;
+	        }
+	      }
+	      return this.scope.isDraw;
+	    }
+	  }, {
+	    key: 'findWinner',
+	    value: function findWinner(game) {
+	      var id = '';
+	      var count = 0;
+	      for (var i = 0; i < game.players.length; i++) {
+	        if (game.players[i].words.length > count) {
+	          id = game.players[i].playerID;
+	          count = game.players[i].words.length;
+	        }
+	      }
+	      return id;
+	    }
+	  }, {
+	    key: 'getPlayer',
+	    value: function getPlayer(id) {
+	      return this.PlayerService.getByID(id).then(function (result) {
+	        return result;
+	      });
+	    }
+	  }, {
+	    key: 'getGame',
+	    value: function getGame() {
+	      return this.GameService.finishGame(this.UserService.getAuthUser().gameID).then(function (result) {
+	        return result;
+	      });
+	    }
+	  }, {
+	    key: 'getPlayerName',
+	    value: function getPlayerName(id) {
+	      var _this2 = this;
+	
+	      this.getPlayer(id).then(function (result) {
+	        _this2.scope.player.name = result.name;
+	      });
+	    }
+	  }, {
+	    key: 'checkWords',
+	    value: function checkWords() {
+	      for (var i = 0; i < this.game.players.length; i++) {
+	        if (this.game.players[i].playerID == this.UserService.getAuthUser().playerID) {
+	          this.game.players[i].isCertain = true;
+	          for (var j = 0; j < this.game.players[i].words.length; j++) {
+	            if (this.game.players[i].words[j].discription == '') {
+	              this.game.players[i].isCertain = false;
+	              break;
+	            }
+	          }
+	          if (this.game.players[i].isCertain) {
+	            console.log((0, _stringify2.default)(this.game, null, 2));
+	            this.GameService.save(this.game);
+	            this.timeout.cancel(this.checker);
+	            this.timeout(navi.bind(this), 3000);
+	            return;
+	          }
+	        }
+	      }
+	
+	      function navi() {
+	        this.state.go('final');
+	      }
+	      this.checker = this.timeout(this.checkWords.bind(this), 2000);
+	
+	      // this.GameService.detail(this.UserService.getAuthUser().gameID).then(res => {
+	      //   this.game = res;
+	      //   for (let i = 0; i <= res.players.length; i++) {
+	      //     if (res.players[i].playerID ==
+	      //       this.UserService.getAuthUser().playerID) {
+	      //       if (res.players[i].isCertain) {
+	      //         this.timeout(navi.bind(this), 3000);
+	      //       }
+	      //     }
+	      //   }
+	      //
+	      //   function navi() {
+	      //     this.state.go('finalSection');
+	      //   }
+	      //   setTimeout(this.checkWords.bind(this), 2000);
+	      // });
+	    }
+	  }]);
+	  return FirstResultsController;
+	}();
+	
+	exports.default = FirstResultsController;
+
+/***/ },
+/* 312 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _playerComponent = __webpack_require__(313);
+	
+	var _playerComponent2 = _interopRequireDefault(_playerComponent);
+	
+	var _discriptionController = __webpack_require__(316);
+	
+	var _discriptionController2 = _interopRequireDefault(_discriptionController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('app.components.player', []).component('player', _playerComponent2.default).controller('AddDiscriptionController', _discriptionController2.default).name;
+
+/***/ },
+/* 313 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _playerTmpl = __webpack_require__(314);
+	
+	var _playerTmpl2 = _interopRequireDefault(_playerTmpl);
+	
+	var _playerController = __webpack_require__(315);
+	
+	var _playerController2 = _interopRequireDefault(_playerController);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  template: _playerTmpl2.default,
+	  controller: _playerController2.default,
+	  bindings: {
+	    player: '='
+	  }
+	};
+
+/***/ },
+/* 314 */
+/***/ function(module, exports) {
+
+	module.exports = "<!-- player Header -->\n<div>\n  <ol class=\"list-group\">\n    <li class=\"f-res-text list-group-item disabled\">\n      <span ng-bind=\"$ctrl.plName\"></span>\n      <span class=\"badge\" ng-class=\"counterClass\" ng-bind=\"$ctrl.counter\"></span>\n    </li>\n    <li ng-repeat=\"word in $ctrl.player.words track by $index\" class=\"list-group-item\">\n      <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n        <a class=\"f-res-words\" ng-show=\"!word.discription\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word.word, word.discription)\"></a>\n        <span class=\"f-res-words\" ng-show=\"word.discription\">\n          <span  ng-bind=\"word.word\"></span>\n          <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n        </span>\n      </div>\n    </li>\n  </ol>\n  <ol ng-show=\"$ctrl.player.wrongWords.length>0\" class=\"list-group\">\n    <li class=\"f-res-text list-group-itllem disabled\" style=\"background-color: rgba(255, 71, 69, 1);color: white;\">\n      <span>WRONG WORDS</span>\n      <span class=\"badge\" ng-bind=\"$ctrl.player.wrongWords.length\"></span>\n    </li>\n    <li ng-repeat=\"wrWord in $ctrl.player.wrongWords\" class=\"list-group-item\" style=\"background-color: rgba(255, 0, 0, 0.2);\">\n      {{wrWord.word}}\n      <span class=\"f-res-words\" ng-bind=\"wrWord\">\n        <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n      </span>\n    </li>\n  </ol>\n</div>\n";
 
 /***/ },
 /* 315 */
@@ -71670,7 +71749,128 @@
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _lodash = __webpack_require__(313);
+	var _lodash = __webpack_require__(211);
+	
+	var _lodash2 = _interopRequireDefault(_lodash);
+	
+	var _discriptionController = __webpack_require__(316);
+	
+	var _discriptionController2 = _interopRequireDefault(_discriptionController);
+	
+	var _discriptionTmpl = __webpack_require__(317);
+	
+	var _discriptionTmpl2 = _interopRequireDefault(_discriptionTmpl);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var PlayerController = function () {
+	  PlayerController.$inject = ["PlayerService", "GameService", "$q", "$uibModal", "$scope", "UserService"];
+	  function PlayerController(PlayerService, GameService, $q, $uibModal, $scope, UserService) {
+	    'ngInject';
+	
+	    (0, _classCallCheck3.default)(this, PlayerController);
+	    this.PlayerService = PlayerService;
+	    this.GameService = GameService;
+	    this.$q = $q;
+	    this.$uibModal = $uibModal;
+	    this.scope = $scope;
+	    this.counter = 0;
+	    this.UserService = UserService;
+	  }
+	
+	  (0, _createClass3.default)(PlayerController, [{
+	    key: '$onInit',
+	    value: function $onInit() {
+	      var _this2 = this;
+	
+	      this.getPlayer(this.player.playerID).then(function (result) {
+	        _this2.plName = result.name;
+	        if (_this2.player.words.length > 0) {
+	          for (var i = 0; i < _this2.player.words.length; i++) {
+	            if (_this2.player.words[i].discription) {
+	              _this2.counter++;
+	            }
+	          }
+	          if (_this2.counter < _this2.player.words.length) {
+	            _this2.scope.counterClass = 'counter-fail';
+	          } else {
+	            _this2.scope.counterClass = 'counter-pass';
+	          }
+	        }
+	      });
+	    }
+	  }, {
+	    key: 'getPlayer',
+	    value: function getPlayer(id) {
+	      return this.PlayerService.getByID(id).then(function (result) {
+	        return result;
+	      });
+	    }
+	  }, {
+	    key: 'open',
+	    value: function open(word, discription) {
+	      var _this = this;
+	      var newWord = {
+	        word: word,
+	        discription: discription
+	      };
+	      var modalInstance = this.$uibModal.open({
+	        animation: true,
+	        template: _discriptionTmpl2.default,
+	        controller: _discriptionController2.default,
+	        controllerAs: 'vm',
+	        size: 'lg',
+	        resolve: {
+	          word: function word() {
+	            return newWord;
+	          }
+	        }
+	      });
+	
+	      modalInstance.result.then(function (result) {
+	        // console.log(`this.player.words = ${JSON.stringify(_this.player.words,null,2)}`);
+	        _this.counter = 0;
+	        for (var i = 0; i < _this.player.words.length; i++) {
+	          if (_this.player.words[i].word == result.word) {
+	            _this.player.words[i].discription = result.discription;
+	          }
+	          if (_this.player.words[i].discription != '') {
+	            _this.counter++;
+	          }
+	        }
+	      }, function () {
+	        console.log('Modal dismissed at: ' + new Date());
+	      });
+	    }
+	  }]);
+	  return PlayerController;
+	}();
+	
+	exports.default = PlayerController;
+
+/***/ },
+/* 316 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classCallCheck2 = __webpack_require__(177);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(178);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _angular = __webpack_require__(158);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _lodash = __webpack_require__(211);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
@@ -71704,13 +71904,13 @@
 	exports.default = AddDiscriptionController;
 
 /***/ },
-/* 316 */
+/* 317 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"modal-header\">\n  <h3 class=\"modal-title\">Enter discription for\n    <strong ng-bind=\"vm.word.word\"></strong>\n  </h3>\n</div>\n<div class=\"modal-body\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Discription\" aria-describedby=\"sizing-addon1\" ng-model=\"vm.word.discription\">\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" type=\"button\" ng-click=\"vm.ok()\">OK</button>\n  <button class=\"btn btn-warning\" type=\"button\" ng-click=\"vm.cancel()\">Cancel</button>\n</div>\n";
 
 /***/ },
-/* 317 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71723,7 +71923,7 @@
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _finalComponent = __webpack_require__(318);
+	var _finalComponent = __webpack_require__(319);
 	
 	var _finalComponent2 = _interopRequireDefault(_finalComponent);
 	
@@ -71732,7 +71932,7 @@
 	exports.default = _angular2.default.module('app.components.finalSection', []).component('finalSection', _finalComponent2.default).name;
 
 /***/ },
-/* 318 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71741,11 +71941,11 @@
 	  value: true
 	});
 	
-	var _finalTmpl = __webpack_require__(319);
+	var _finalTmpl = __webpack_require__(320);
 	
 	var _finalTmpl2 = _interopRequireDefault(_finalTmpl);
 	
-	var _finalController = __webpack_require__(320);
+	var _finalController = __webpack_require__(321);
 	
 	var _finalController2 = _interopRequireDefault(_finalController);
 	
@@ -71760,13 +71960,13 @@
 	};
 
 /***/ },
-/* 319 */
+/* 320 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- game Header -->\n<div class=\"f-res\">\n  <div class=\"f-res-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"f-res-table\">\n          <div class=\"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 f-res-square\">\n            <br>\n            <h1 class=\"brand-heading\" ng-init=\"$ctrl.checkWords()\">YOU'r winner</h1>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\" style=\"padding-bottom: 10px;\">\n        <a href=\"#/\" class=\"btn btn-success btn-block\">Back to main page</a>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 320 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71806,7 +72006,7 @@
 	exports.default = FinalController;
 
 /***/ },
-/* 321 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71819,7 +72019,7 @@
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _adminComponent = __webpack_require__(322);
+	var _adminComponent = __webpack_require__(323);
 	
 	var _adminComponent2 = _interopRequireDefault(_adminComponent);
 	
@@ -71828,7 +72028,7 @@
 	exports.default = _angular2.default.module('app.components.admin', []).component('admin', _adminComponent2.default).name;
 
 /***/ },
-/* 322 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71837,11 +72037,11 @@
 	  value: true
 	});
 	
-	var _adminTmpl = __webpack_require__(323);
+	var _adminTmpl = __webpack_require__(324);
 	
 	var _adminTmpl2 = _interopRequireDefault(_adminTmpl);
 	
-	var _adminController = __webpack_require__(324);
+	var _adminController = __webpack_require__(325);
 	
 	var _adminController2 = _interopRequireDefault(_adminController);
 	
@@ -71856,13 +72056,13 @@
 	};
 
 /***/ },
-/* 323 */
+/* 324 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- About Section -->\n<div class=\"admin\">\n  <div class=\"admin-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"admin-square\">\n            <h4 class=\"brand-heading\">Hi Mr. ADMIN\n              <span ng-bind=\"$ctrl.user.userName\"></span>\n            </h4>\n            <div ng-show=\"$ctrl.words.length>0\">\n              <div ng-repeat=\"word in $ctrl.words track by $index\">\n                <a class=\"admin-text\" ng-click=\"$ctrl.open(word.word)\">\n                  Discriptions for\n                  <span ng-bind=\"word.word\"></span>\n                </a>\n                <div ng-show=\"$ctrl.openWord==word.word\">\n                  <div ng-repeat=\"discription in word.discriptions track by $index\">\n                    <div class=\"row\">\n                      <div class=\"discription\">\n                        <div class=\"col-md-9\">\n                          <div class=\"discription-text\">\n                            <span ng-bind=\"discription.discription\"></span>\n                          </div>\n                        </div>\n                        <div class=\"col-md-3\">\n                          <div class=\"discription-btn\">\n                            <button class=\"btn btn-default\" type=\"button\" ng-click=\"$ctrl.save(word, discription.discription)\">save</button>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <br/>\n              </div>\n            </div>\n            <div class=\"admin-text\" ng-show=\"$ctrl.words.length==0\">\n              <h2>Congrtulations!!!</h2>\n              <h3>All words are in the dictionary</h3>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 324 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71879,7 +72079,7 @@
 	
 	var _createClass3 = _interopRequireDefault(_createClass2);
 	
-	var _lodash = __webpack_require__(313);
+	var _lodash = __webpack_require__(211);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
@@ -71999,4 +72199,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-4cc7c85a57664c9c3717.js.map
+//# sourceMappingURL=bundle-cc4d728a8f61dacd3857.js.map

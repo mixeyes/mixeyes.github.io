@@ -71193,47 +71193,52 @@
 	    value: function submitForm() {
 	      var _this2 = this;
 	
-	      if (this.scope.game.word.$viewValue && this.scope.game.duration.$viewValue && this.scope.game.players.$viewValue.length > 0) {
-	        (function () {
-	          var game = {
-	            word: _this2.scope.game.word.$viewValue,
-	            duration: _this2.scope.game.duration.$viewValue
-	          };
-	          game.playerIDs = [];
-	          var _iteratorNormalCompletion = true;
-	          var _didIteratorError = false;
-	          var _iteratorError = undefined;
+	      if (this.scope.game.word.$viewValue && this.scope.game.duration.$viewValue
+	      // && this.scope.game.players.$viewValue.length >= 0
+	      ) {
+	          (function () {
+	            var game = {
+	              word: _this2.scope.game.word.$viewValue,
+	              duration: _this2.scope.game.duration.$viewValue
+	            };
+	            game.playerIDs = [];
+	            if (_this2.scope.game.players.$viewValue === undefined || _this2.scope.game.players.$viewValue.length == 0) {
+	              game.playerIDs.push('57961b4eaa5b13d533320768');
+	            } else {
+	              var _iteratorNormalCompletion = true;
+	              var _didIteratorError = false;
+	              var _iteratorError = undefined;
 	
-	          try {
-	            for (var _iterator = (0, _getIterator3.default)(_this2.scope.game.players.$viewValue), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	              var playerID = _step.value;
+	              try {
+	                for (var _iterator = (0, _getIterator3.default)(_this2.scope.game.players.$viewValue), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	                  var playerID = _step.value;
 	
-	              game.playerIDs.push(playerID);
-	            }
-	          } catch (err) {
-	            _didIteratorError = true;
-	            _iteratorError = err;
-	          } finally {
-	            try {
-	              if (!_iteratorNormalCompletion && _iterator.return) {
-	                _iterator.return();
+	                  game.playerIDs.push(playerID);
+	                }
+	              } catch (err) {
+	                _didIteratorError = true;
+	                _iteratorError = err;
+	              } finally {
+	                try {
+	                  if (!_iteratorNormalCompletion && _iterator.return) {
+	                    _iterator.return();
+	                  }
+	                } finally {
+	                  if (_didIteratorError) {
+	                    throw _iteratorError;
+	                  }
+	                }
 	              }
-	            } finally {
-	              if (_didIteratorError) {
-	                throw _iteratorError;
-	              }
 	            }
-	          }
-	
-	          game.playerIDs.push(_this2.UserService.getAuthUser().playerID);
-	          var _this = _this2;
-	          _this2.GameService.create(game).then(function (response) {
-	            _this.UserService.userInfo.gameID = response._id;
-	            _this.window.location.href = '#/gamePlay';
-	            // _this.location.path('#/gamePlay');
-	          });
-	        })();
-	      }
+	            game.playerIDs.push(_this2.UserService.getAuthUser().playerID);
+	            var _this = _this2;
+	            _this2.GameService.create(game).then(function (response) {
+	              _this.UserService.userInfo.gameID = response._id;
+	              _this.window.location.href = '#/gamePlay';
+	              // _this.location.path('#/gamePlay');
+	            });
+	          })();
+	        }
 	    }
 	  }]);
 	  return CreateController;
@@ -71725,7 +71730,7 @@
 /* 314 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- player Header -->\n<div>\n  <ol class=\"list-group\">\n    <li class=\"f-res-text list-group-item disabled\">\n      <span ng-bind=\"$ctrl.plName\"></span>\n      <span class=\"badge\" ng-class=\"counterClass\" ng-bind=\"$ctrl.counter\"></span>\n    </li>\n    <li ng-repeat=\"word in $ctrl.player.words track by $index\" class=\"list-group-item\">\n      <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n        <a class=\"f-res-words\" ng-show=\"!word.discription\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word.word, word.discription)\"></a>\n        <span class=\"f-res-words\" ng-show=\"word.discription\">\n          <span  ng-bind=\"word.word\"></span>\n          <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n        </span>\n      </div>\n    </li>\n  </ol>\n  <ol ng-show=\"$ctrl.player.wrongWords.length>0\" class=\"list-group\">\n    <li class=\"f-res-text list-group-itllem disabled\" style=\"background-color: rgba(255, 71, 69, 1);color: white;\">\n      <span>WRONG WORDS</span>\n      <span class=\"badge\" ng-bind=\"$ctrl.player.wrongWords.length\"></span>\n    </li>\n    <li ng-repeat=\"wrWord in $ctrl.player.wrongWords\" class=\"list-group-item\" style=\"background-color: rgba(255, 0, 0, 0.2);\">\n      {{wrWord.word}}\n      <span class=\"f-res-words\" ng-bind=\"wrWord\">\n        <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n      </span>\n    </li>\n  </ol>\n</div>\n";
+	module.exports = "<!-- player Header -->\n<div>\n  <ol class=\"list-group\">\n    <li class=\"f-res-text list-group-item disabled\">\n      <span ng-bind=\"$ctrl.plName\"></span>\n      <span class=\"badge\" ng-class=\"counterClass\" ng-bind=\"$ctrl.counter\"></span>\n    </li>\n    <li ng-repeat=\"word in $ctrl.player.words track by $index\" class=\"list-group-item\">\n      <div tooltip-animation=\"true\" uib-tooltip=\"{{word.discription}}\">\n        <a class=\"f-res-words\" ng-show=\"!word.discription\" ng-bind=\"word.word\" href=\"\" ng-click=\"$ctrl.open(word.word, word.discription)\"></a>\n        <span class=\"f-res-words\" ng-show=\"word.discription\">\n          <span  ng-bind=\"word.word\"></span>\n          <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n        </span>\n      </div>\n    </li>\n  </ol>\n  <ol ng-show=\"$ctrl.player.wrongWords.length>0\" class=\"list-group\">\n    <li class=\"f-res-text list-group-item disabled f-res-wrong-head\">\n      <span>WRONG WORDS</span>\n      <span class=\"badge\" ng-bind=\"$ctrl.player.wrongWords.length\"></span>\n    </li>\n    <li ng-repeat=\"wrWord in $ctrl.player.wrongWords\" class=\"list-group-item f-res-wrong\">\n      {{wrWord.word}}\n      <span class=\"f-res-words\" ng-bind=\"wrWord\">\n        <span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span>\n      </span>\n    </li>\n  </ol>\n</div>\n";
 
 /***/ },
 /* 315 */
@@ -72199,4 +72204,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-55043e6084cb4b2250d6.js.map
+//# sourceMappingURL=bundle-cb3362401bc1b8c01e0c.js.map

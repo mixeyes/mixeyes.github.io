@@ -9813,6 +9813,13 @@ h3.modal-title {
 .list-group {
   margin: 5px;
 }
+.list-group .f-res-wrong-head {
+  background-color: #ff4745;
+  color: white;
+}
+.list-group .f-res-wrong {
+  background-color: rgba(255, 0, 0, 0.2);
+}
 .navbar-item {
   background-color: rgba(105, 105, 105, 0.7);
 }
@@ -9991,4 +9998,4 @@ label {
 }
 
 
-/*# sourceMappingURL=app-55043e6084cb4b2250d6.css.map*/
+/*# sourceMappingURL=app-cb3362401bc1b8c01e0c.css.map*/

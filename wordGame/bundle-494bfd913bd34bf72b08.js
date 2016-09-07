@@ -50671,7 +50671,7 @@
 /* 209 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- About Section -->\n<div class=\"profile\">\n  <div class=\"profile-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"profile-square\">\n            <h4 class=\"brand-heading\">Hi\n              <span ng-bind=\"$ctrl.user.userName\"></span>\n            </h4>\n            <div class=\"row\">\n              <h3>Games statistic</h3>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Total game count:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.gamesCount\"></h5>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Players won:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.playersWon\"></h5>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Bot won:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.botWon\"></h5>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Draw games:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.drawCount\"></h5>\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <h3>Players chart</h3>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>player name</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5>count of won games</h5>\n                </div>\n              </div>\n              <div class=\"row\" ng-repeat=\"winner in $ctrl.players | orderBy : '-count'\">\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"winner.name\"></h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"winner.count\"></h5>\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <h3>Player games history</h3>\n              <div class=\"row\">\n                <div class=\"col-md-4\">\n                  <h4>##</h4>\n                </div>\n                <div class=\"col-md-4\">\n                  <h4>game word</h4>\n                </div>\n                <div class=\"col-md-4\">\n                  <h4>date of the game</h4>\n                </div>\n              </div>\n\n              <div class=\"row\" ng-click=\"$ctrl.open(game._id)\" ng-repeat=\"game in $ctrl.history track by $index\">\n                <div class=\"row\">\n                  <div class=\"col-md-4\">\n                    <h5 ng-bind=\"$index\"></h5>\n                  </div>\n                  <div class=\"col-md-4\">\n                    <h5 ng-bind=\"game.word\"></h5>\n                  </div>\n                  <div class=\"col-md-4\">\n                    <h5 ng-bind=\"game.startTime\"></h5>\n                  </div>\n                </div>\n                <div class=\"row profile-words\" ng-show=\"$ctrl.openedGame==game._id\">\n                  <div ng-class=\"$ctrl.colClass\" ng-repeat=\"player in game.players track by player.playerID\">\n                    <div class=\"row\">\n                      <player player=\"player\"></player>\n                    </div>\n                  </div>\n                </div>\n                <br/>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "<!-- About Section -->\n<div class=\"profile\">\n  <div class=\"profile-body\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n          <div class=\"profile-square\">\n            <h4 class=\"brand-heading\">Hi\n              <span ng-bind=\"$ctrl.user.userName\"></span>\n            </h4>\n<<<<<<< HEAD\n            <div class=\"row\">\n              <h3>Games statistic</h3>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Total game count:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.gamesCount\"></h5>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Players won:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.playersWon\"></h5>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Bot won:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.botWon\"></h5>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>Draw games:</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"$ctrl.games.drawCount\"></h5>\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <h3>Players chart</h3>\n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                  <h5>player name</h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5>count of won games</h5>\n                </div>\n              </div>\n              <div class=\"row\" ng-repeat=\"winner in $ctrl.players | orderBy : '-count'\">\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"winner.name\"></h5>\n                </div>\n                <div class=\"col-md-6\">\n                  <h5 ng-bind=\"winner.count\"></h5>\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <h3>Player games history</h3>\n              <div class=\"row\">\n                <div class=\"col-md-4\">\n                  <h4>##</h4>\n                </div>\n                <div class=\"col-md-4\">\n                  <h4>game word</h4>\n                </div>\n                <div class=\"col-md-4\">\n                  <h4>date of the game</h4>\n                </div>\n              </div>\n\n              <div class=\"row\" ng-click=\"$ctrl.open(game._id)\" ng-repeat=\"game in $ctrl.history track by $index\">\n                <div class=\"row\">\n                  <div class=\"col-md-4\">\n                    <h5 ng-bind=\"$index\"></h5>\n                  </div>\n                  <div class=\"col-md-4\">\n                    <h5 ng-bind=\"game.word\"></h5>\n                  </div>\n                  <div class=\"col-md-4\">\n                    <h5 ng-bind=\"game.startTime\"></h5>\n                  </div>\n                </div>\n                <div class=\"row profile-words\" ng-show=\"$ctrl.openedGame==game._id\">\n                  <div ng-class=\"$ctrl.colClass\" ng-repeat=\"player in game.players track by player.playerID\">\n                    <div class=\"row\">\n                      <player player=\"player\"></player>\n                    </div>\n                  </div>\n                </div>\n                <br/>\n              </div>\n            </div>\n=======\n            <!-- <div class=\"container\"> -->\n              <div class=\"row\">\n                <h3>Game statistic</h3>\n              </div>\n              <div class=\"row\">\n                <h3>Player statistic</h3>\n              </div>\n              <div class=\"row\">\n                <h3>Player games history</h3>\n              </div>\n            <!-- </div> -->\n>>>>>>> master\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 210 */
@@ -68019,7 +68019,7 @@
 	    key: 'list',
 	    value: function list() {
 	      var _this = this;
-	      return this.$http.get(("http://127.0.0.1:3000") + '/games').then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -68029,7 +68029,7 @@
 	    key: 'create',
 	    value: function create(game) {
 	      var _this = this;
-	      return this.$http.post(("http://127.0.0.1:3000") + '/games', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/games', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -68039,7 +68039,7 @@
 	    key: 'detail',
 	    value: function detail(id) {
 	      var _this = this;
-	      return this.$http.get(("http://127.0.0.1:3000") + '/games/' + id).then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/' + id).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -68049,7 +68049,7 @@
 	    key: 'update',
 	    value: function update(game) {
 	      var _this = this;
-	      return this.$http.put(("http://127.0.0.1:3000") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + game._id + '/newPlayer', (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -68060,7 +68060,7 @@
 	    value: function save(game) {
 	      var _this = this;
 	      console.log((0, _stringify2.default)(game, null, 2));
-	      return this.$http.put(("http://127.0.0.1:3000") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + game._id, (0, _stringify2.default)(game)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -68070,7 +68070,7 @@
 	    key: 'addWord',
 	    value: function addWord(gameID, words, playerID) {
 	      var _this = this;
-	      return this.$http.put(("http://127.0.0.1:3000") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/games/' + gameID + '/players/' + playerID, (0, _stringify2.default)(words)).then(function (response) {
 	        var obj = response.data;
 	        return obj;
 	      }).catch(function () {
@@ -68080,14 +68080,14 @@
 	  }, {
 	    key: 'finishGame',
 	    value: function finishGame(id) {
-	      return this.$http.get(("http://127.0.0.1:3000") + '/games/' + id + '/finalize').then(function (res) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/' + id + '/finalize').then(function (res) {
 	        return res.data;
 	      });
 	    }
 	  }, {
 	    key: 'finishedList',
 	    value: function finishedList() {
-	      return this.$http.get(("http://127.0.0.1:3000") + '/games/finished').then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/games/finished').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -68160,7 +68160,7 @@
 	    key: 'create',
 	    value: function create(user) {
 	      console.log(user);
-	      return this.$http.post(("http://127.0.0.1:3000") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/user/signup/', (0, _stringify2.default)(user)).then(function (resp) {
 	        return resp.data;
 	      });
 	    }
@@ -68173,7 +68173,7 @@
 	        username: user.userName.$modelValue,
 	        password: user.password.$modelValue
 	      };
-	      return this.$http.post(("http://127.0.0.1:3000") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/user/login', (0, _stringify2.default)(userdb)).then(function (response) {
 	        _this.userInfo = {
 	          userID: response.data._id,
 	          userName: response.data.username,
@@ -68191,7 +68191,7 @@
 	    value: function logout() {
 	      var _this = this;
 	      var deferred = this.q.defer();
-	      return this.$http.get(("http://127.0.0.1:3000") + '/user/logout').then(function (result) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/user/logout').then(function (result) {
 	        _this.deleteAuthUser();
 	        deferred.resolve(result);
 	      }, function (error) {
@@ -68277,7 +68277,7 @@
 	              case 0:
 	                _context.prev = 0;
 	                _context.next = 3;
-	                return this.$http.get(("http://127.0.0.1:3000") + '/player');
+	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/player');
 	
 	              case 3:
 	                response = _context.sent;
@@ -68317,7 +68317,7 @@
 	              case 0:
 	                _context2.prev = 0;
 	                _context2.next = 3;
-	                return this.$http.post(("http://127.0.0.1:3000") + '/player/', (0, _stringify2.default)(player));
+	                return this.$http.post(("https://wgbackend.herokuapp.com") + '/player/', (0, _stringify2.default)(player));
 	
 	              case 3:
 	                response = _context2.sent;
@@ -68353,7 +68353,7 @@
 	              case 0:
 	                _context3.prev = 0;
 	                _context3.next = 3;
-	                return this.$http.get(("http://127.0.0.1:3000") + '/player/' + id);
+	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/player/' + id);
 	
 	              case 3:
 	                response = _context3.sent;
@@ -70528,7 +70528,7 @@
 	    key: 'list',
 	    value: function list() {
 	      var _this = this;
-	      return this.$http.get(("http://127.0.0.1:3000") + '/dictionary').then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/dictionary').then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -70538,7 +70538,7 @@
 	    key: 'create',
 	    value: function create(word) {
 	      var _this = this;
-	      return this.$http.post(("http://127.0.0.1:3000") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/dictionary', (0, _stringify2.default)(word)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -70548,7 +70548,7 @@
 	    key: 'detail',
 	    value: function detail(word) {
 	      var _this = this;
-	      return this.$http.get(("http://127.0.0.1:3000") + '/dictionary/' + word).then(function (response) {
+	      return this.$http.get(("https://wgbackend.herokuapp.com") + '/dictionary/' + word).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -70558,7 +70558,7 @@
 	    key: 'update',
 	    value: function update(word) {
 	      var _this = this;
-	      return this.$http.put(("http://127.0.0.1:3000") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
+	      return this.$http.put(("https://wgbackend.herokuapp.com") + '/dictionary/' + word + '/discription', (0, _stringify2.default)(word)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -70571,7 +70571,7 @@
 	      var collection = {
 	        words: words
 	      };
-	      return this.$http.post(("http://127.0.0.1:3000") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
+	      return this.$http.post(("https://wgbackend.herokuapp.com") + '/dictionary/is-exist', (0, _stringify2.default)(collection)).then(function (response) {
 	        return response.data;
 	      }).catch(function () {
 	        return null;
@@ -70633,7 +70633,7 @@
 	              case 0:
 	                _context.prev = 0;
 	                _context.next = 3;
-	                return this.$http.get(("http://127.0.0.1:3000") + '/statistic/games');
+	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/statistic/games');
 	
 	              case 3:
 	                response = _context.sent;
@@ -70673,7 +70673,7 @@
 	              case 0:
 	                _context2.prev = 0;
 	                _context2.next = 3;
-	                return this.$http.get(("http://127.0.0.1:3000") + '/statistic/players');
+	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/statistic/players');
 	
 	              case 3:
 	                response = _context2.sent;
@@ -70713,7 +70713,7 @@
 	              case 0:
 	                _context3.prev = 0;
 	                _context3.next = 3;
-	                return this.$http.get(("http://127.0.0.1:3000") + '/statistic/' + playerID);
+	                return this.$http.get(("https://wgbackend.herokuapp.com") + '/statistic/' + playerID);
 	
 	              case 3:
 	                response = _context3.sent;
@@ -72199,4 +72199,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=bundle-cc4d728a8f61dacd3857.js.map
+//# sourceMappingURL=bundle-494bfd913bd34bf72b08.js.map
